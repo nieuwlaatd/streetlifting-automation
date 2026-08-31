@@ -1,0 +1,51 @@
+name: Hevy synchroniseren
+
+# Haalt de Hevy-historie op en zet de berekende programmastand in de repo,
+# zodat de Claude-routines hem kunnen lezen zonder zelf naar buiten te bellen.
+
+on:
+  schedule:
+    # 05:15 UTC, ruim voor het dagbericht van 06:00 UTC
+    - cron: "15 5 * * *"
+    # 16:15 UTC op zondag, voor het weekrapport van 17:00 UTC
+    - cron: "15 16 * * 0"
+  # Handmatig starten vanaf het tabblad Actions
+  workflow_dispatch:
+  # Aanhaakpunt voor de Hevy-webhook, via een relay die een
+  # repository_dispatch met type "hevy-workout" stuurt
+  repository_dispatch:
+    types: [hevy-workout]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hevy-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Hevy ophalen en doorrekenen
+        env:
+          HEVY_API_KEY: ${{ secrets.HEVY_API_KEY }}
+        run: python scripts/hevy_sync.py
+
+      - name: Wijzigingen vastleggen
+        run: |
+          git config user.name "hevy-sync"
+          git config user.email "hevy-sync@users.noreply.github.com"
+          git add data/
+          if git diff --staged --quiet; then
+            echo "Niets veranderd."
+          else
+            git commit -m "Hevy-data bijgewerkt $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi

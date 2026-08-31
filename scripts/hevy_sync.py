@@ -1,0 +1,282 @@
+"""Haalt de Hevy-historie op en rekent de programmastand uit.
+
+Draait in GitHub Actions, waar wel internettoegang naar Hevy is. Schrijft twee
+bestanden weg die de Claude-routines lezen nadat ze de repo hebben gecloond:
+
+    data/hevy-raw.json          alle sessies, onbewerkt
+    data/programma-status.json  berekende stand: e1RM per lift, week, voorschrift
+
+De rekenkunde staat bewust hier en niet in de routineprompt. Een model dat
+percentages uit het hoofd vermenigvuldigt maakt fouten; Python niet.
+
+Omgevingsvariabele: HEVY_API_KEY
+"""
+
+import datetime as dt
+import json
+import os
+import pathlib
+import sys
+import urllib.error
+import urllib.request
+
+BASE = "https://api.hevyapp.com"
+START = dt.date(2026, 9, 7)          # week 1, dag 1
+LICHAAMSGEWICHT_TERUGVAL = 77.0
+UITGANG = {"dip": 52.5, "pullup": 60.0, "squat": 100.0, "muscleup": None}
+
+LIFTS = {
+    "dip": ("Chest Dip (Weighted)",),
+    "pullup": ("Pull Up (Weighted)", "Chin Up (Weighted)"),
+    "squat": ("Squat (Barbell)",),
+    "muscleup": ("Muscle Up", "Muscle Up (Weighted)", "Bar Muscle Up"),
+}
+LICHAAMSGEBONDEN = {"dip", "pullup", "muscleup"}   # percentage over systeembelasting
+
+# reps -> {rpe: percentage van 1RM}
+RPE_TABEL = {
+    1: {6: .86, 7: .89, 8: .92, 9: .96, 10: 1.00},
+    2: {6: .84, 7: .86, 8: .89, 9: .92, 10: .96},
+    3: {6: .81, 7: .84, 8: .86, 9: .89, 10: .92},
+    4: {6: .79, 7: .81, 8: .84, 9: .86, 10: .89},
+    5: {6: .76, 7: .79, 8: .81, 9: .84, 10: .86},
+    6: {6: .74, 7: .76, 8: .79, 9: .81, 10: .84},
+    7: {6: .72, 7: .735, 8: .765, 9: .785, 10: .815},
+    8: {6: .70, 7: .71, 8: .74, 9: .76, 10: .79},
+}
+
+# blok -> cyclusweek -> (sets, reps, percentage)
+SCHEMA = {
+    1: {  # dip en pull-up; squat heeft een eigen tabel
+        1: (4, 5, .79), 2: (4, 5, .81), 3: (4, 5, .83),
+        4: (5, 4, .85), 5: (4, 4, .87), 6: (2, 5, .65),
+    },
+    2: {1: (5, 3, .825), 2: (5, 3, .85), 3: (4, 3, .875),
+        4: (4, 2, .90), 5: (3, 2, .925), 6: (2, 3, .70)},
+    3: {1: (4, 2, .875), 2: (4, 2, .90), 3: (3, 2, .925),
+        4: (4, 1, .95), 5: (2, 1, .975), 6: (2, 3, .70)},
+    4: {1: (3, 2, .90), 2: (3, 1, .93), 3: (3, 1, .95),
+        4: (2, 1, .975), 5: (1, 1, 1.00), 6: (2, 3, .65)},
+}
+SCHEMA_SQUAT_BLOK1 = {
+    1: (5, 5, .75), 2: (5, 5, .78), 3: (5, 5, .80),
+    4: (5, 5, .83), 5: (5, 5, .85), 6: (2, 5, .60),
+}
+RPE_PLAFOND = {1: 7, 2: 7.5, 3: 8, 4: 8, 5: 8.5, 6: 5}
+
+DAGEN = {0: "Dip zwaar", 2: "Pull zwaar", 3: "Squat zwaar", 4: "Volume + muscle-up"}
+DAG_KERNLIFT = {0: "dip", 2: "pullup", 3: "squat", 4: None}
+
+# Streefwaarden per week, voor het weekrapport
+TARGETS = {
+    "dip":      [(12, 65), (24, 80), (36, 92), (48, 102), (52, 105)],
+    "squat":    [(12, 120), (24, 135), (36, 148), (48, 157), (52, 160)],
+    "pullup":   [(12, 65), (24, 70), (36, 75), (48, 79), (52, 80)],
+    "muscleup": [(12, 0), (24, 10), (36, 16), (48, 21), (52, 22)],
+}
+
+
+def api(pad, key):
+    req = urllib.request.Request(BASE + pad, headers={"api-key": key, "Accept": "application/json"})
+    with urllib.request.urlopen(req, timeout=60) as r:
+        return json.load(r)
+
+
+def alle_workouts(key):
+    uit, pagina = [], 1
+    while True:
+        blok = api(f"/v1/workouts?page={pagina}&pageSize=10", key)
+        rijen = blok.get("workouts") or []
+        uit.extend(rijen)
+        if not rijen or pagina >= blok.get("page_count", 1) or pagina > 60:
+            return uit
+        pagina += 1
+
+
+def percentage(reps, rpe, falen):
+    """Welk aandeel van het 1RM was deze set."""
+    reps = max(1, min(int(reps or 1), 8))
+    if rpe is None:
+        rpe = 10 if falen else None
+    if rpe is None:                       # geen RPE: Epley
+        return 1.0 / (1.0 + reps / 30.0)
+    rpe = max(6.0, min(float(rpe), 10.0))
+    rij = RPE_TABEL[reps]
+    onder = int(rpe)
+    if onder >= 10:
+        return rij[10]
+    return rij[onder] + (rij[onder + 1] - rij[onder]) * (rpe - onder)
+
+
+def e1rm(set_, bw, gebonden):
+    gewicht = float(set_.get("weight_kg") or 0)
+    reps = set_.get("reps")
+    if not reps:
+        return None
+    pct = percentage(reps, set_.get("rpe"), set_.get("type") == "failure")
+    if gebonden:
+        systeem = (bw + gewicht) / pct
+        return round(systeem - bw, 1)
+    return round(gewicht / pct, 1)
+
+
+def afronden(x):
+    return round(x * 2) / 2 if x < 5 else round(x / 2.5) * 2.5
+
+
+def programma_positie(vandaag):
+    dagen = (vandaag - START).days
+    week = dagen // 7 + 1
+    if week < 1:
+        return {"week": 0, "cyclusweek": 1, "blok": 1, "voor_start": True,
+                "deload": False, "startdatum": START.isoformat()}
+    blok = 1 if week <= 12 else 2 if week <= 24 else 3 if week <= 36 else 4 if week <= 48 else 5
+    cw = (week - 1) % 6 + 1
+    return {"week": week, "cyclusweek": cw, "blok": blok, "voor_start": False,
+            "deload": cw == 6, "startdatum": START.isoformat()}
+
+
+def target_op_week(lift, week):
+    punten = TARGETS[lift]
+    start = UITGANG[lift] or 0
+    vorige_wk, vorige_val = 0, start
+    for wk, val in punten:
+        if week <= wk:
+            deel = (week - vorige_wk) / (wk - vorige_wk) if wk > vorige_wk else 1
+            return round(vorige_val + (val - vorige_val) * deel, 1)
+        vorige_wk, vorige_val = wk, val
+    return punten[-1][1]
+
+
+def main():
+    key = os.environ.get("HEVY_API_KEY", "").strip()
+    if not key:
+        sys.exit("HEVY_API_KEY ontbreekt in de omgeving.")
+
+    try:
+        workouts = alle_workouts(key)
+        metingen = (api("/v1/body_measurements?page=1&pageSize=10", key) or {}).get("body_measurements") or []
+    except urllib.error.HTTPError as e:
+        sys.exit(f"Hevy API gaf HTTP {e.code}: {e.reason}")
+
+    bw = LICHAAMSGEWICHT_TERUGVAL
+    gewichten = [(m.get("date"), m.get("weight_kg")) for m in metingen if m.get("weight_kg")]
+    gewichten.sort()
+    if gewichten:
+        bw = float(gewichten[-1][1])
+
+    vandaag = dt.date.today()
+    pos = programma_positie(vandaag)
+    grens = vandaag - dt.timedelta(weeks=6)
+
+    stand = {}
+    for lift, titels in LIFTS.items():
+        gebonden = lift in LICHAAMSGEBONDEN
+        sessies, beste_recent = [], None
+        for w in workouts:
+            datum = (w.get("start_time") or "")[:10]
+            if not datum:
+                continue
+            d = dt.date.fromisoformat(datum)
+            for oef in w.get("exercises", []):
+                if oef.get("title") not in titels and not any(
+                        t.lower() in (oef.get("title") or "").lower() for t in titels):
+                    continue
+                for s in oef.get("sets", []):
+                    if s.get("type") == "warmup":
+                        continue
+                    v = e1rm(s, bw, gebonden)
+                    if v is None:
+                        continue
+                    sessies.append({"datum": datum, "gewicht": s.get("weight_kg"),
+                                    "reps": s.get("reps"), "rpe": s.get("rpe"),
+                                    "type": s.get("type"), "e1rm": v})
+                    if d >= grens and (beste_recent is None or v > beste_recent):
+                        beste_recent = v
+        if beste_recent is None:
+            beste_recent = UITGANG[lift]
+        sessies.sort(key=lambda r: r["datum"])
+        stand[lift] = {
+            "e1rm": beste_recent,
+            "bron": "hevy" if sessies else "uitgangswaarde",
+            "target_nu": target_op_week(lift, max(pos["week"], 1)),
+            "aantal_werksets_totaal": len(sessies),
+            "laatste_sets": sessies[-8:],
+        }
+
+    # Voorschrift per kernlift voor deze cyclusweek
+    cw, blok = pos["cyclusweek"], min(pos["blok"], 4)
+    voorschrift = {}
+    for lift in ("dip", "pullup", "squat"):
+        tabel = SCHEMA_SQUAT_BLOK1 if (lift == "squat" and blok == 1) else SCHEMA[blok]
+        sets, reps, pct = tabel[cw]
+        basis = stand[lift]["e1rm"] or UITGANG[lift]
+        if lift in LICHAAMSGEBONDEN:
+            kg = afronden((bw + basis) * pct - bw)
+        else:
+            kg = afronden(basis * pct)
+        voorschrift[lift] = {"sets": sets, "reps": reps, "percentage": round(pct * 100, 1),
+                             "kg": kg, "rpe_plafond": RPE_PLAFOND[cw]}
+
+    # Nalevingscijfers over de afgelopen 7 dagen
+    week_grens = vandaag - dt.timedelta(days=7)
+    dipsets = pullsets = kern_totaal = kern_met_rpe = kern_falen = 0
+    sessiedagen = set()
+    for w in workouts:
+        datum = (w.get("start_time") or "")[:10]
+        if not datum or dt.date.fromisoformat(datum) < week_grens:
+            continue
+        sessiedagen.add(datum)
+        for oef in w.get("exercises", []):
+            titel = oef.get("title") or ""
+            werk = [s for s in oef.get("sets", []) if s.get("type") != "warmup"]
+            if titel in LIFTS["dip"] or titel == "Chest Dip":
+                dipsets += len(werk)
+            if titel in LIFTS["pullup"] or titel == "Pull Up":
+                pullsets += len(werk)
+            if any(titel in t for t in LIFTS.values()):
+                kern_totaal += len(werk)
+                kern_met_rpe += sum(1 for s in werk if s.get("rpe") is not None)
+                kern_falen += sum(1 for s in werk if s.get("type") == "failure")
+
+    status = {
+        "gegenereerd_op": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
+        "vandaag": vandaag.isoformat(),
+        "weekdag": vandaag.weekday(),
+        "dagthema": DAGEN.get(vandaag.weekday()),
+        "kernlift_vandaag": DAG_KERNLIFT.get(vandaag.weekday()),
+        "positie": pos,
+        "lichaamsgewicht": bw,
+        "lichaamsgewicht_bron": "hevy" if gewichten else "terugval 77 kg",
+        "stand": stand,
+        "voorschrift_deze_week": voorschrift,
+        "afgelopen_7_dagen": {
+            "sessies": len(sessiedagen),
+            "dipwerksets": dipsets, "dipdoel": 10,
+            "pullupwerksets": pullsets, "pullupdoel": 7,
+            "kernsets": kern_totaal,
+            "kernsets_met_rpe": kern_met_rpe,
+            "kernsets_tot_falen": kern_falen,
+        },
+        "totaal_nu": round(sum(
+            (stand[l]["e1rm"] or 0) for l in ("dip", "pullup", "squat", "muscleup")), 1),
+        "totaal_doel": 367,
+    }
+
+    uit = pathlib.Path("data")
+    uit.mkdir(exist_ok=True)
+    (uit / "hevy-raw.json").write_text(
+        json.dumps({"lichaamsmetingen": metingen, "workouts": workouts}, indent=1, ensure_ascii=False),
+        encoding="utf-8")
+    (uit / "programma-status.json").write_text(
+        json.dumps(status, indent=1, ensure_ascii=False), encoding="utf-8")
+
+    print(f"{len(workouts)} sessies opgehaald, lichaamsgewicht {bw} kg")
+    print(f"week {pos['week']}, cyclusweek {pos['cyclusweek']}, blok {pos['blok']}")
+    for lift in ("dip", "pullup", "squat"):
+        v = voorschrift[lift]
+        print(f"  {lift:8s} e1RM {stand[lift]['e1rm']:>6} -> {v['sets']}x{v['reps']} @ {v['kg']} kg")
+
+
+if __name__ == "__main__":
+    main()
