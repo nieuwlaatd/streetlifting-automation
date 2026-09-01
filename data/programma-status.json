@@ -1,5 +1,5 @@
 {
- "gegenereerd_op": "2026-09-01T13:10:44+00:00",
+ "gegenereerd_op": "2026-09-01T14:11:14+00:00",
  "vandaag": "2026-09-01",
  "weekdag": 1,
  "dagthema": null,
@@ -85,7 +85,8 @@
      "type": "failure",
      "e1rm": 49.0
     }
-   ]
+   ],
+   "laatste_notitie": null
   },
   "pullup": {
    "e1rm": 62.7,
@@ -157,7 +158,11 @@
      "type": "normal",
      "e1rm": 47.8
     }
-   ]
+   ],
+   "laatste_notitie": {
+    "datum": "2026-09-01",
+    "tekst": "Dacht dat ik 4x25 moest doen, maar was 4x30"
+   }
   },
   "squat": {
    "e1rm": 94.1,
@@ -229,14 +234,16 @@
      "type": "normal",
      "e1rm": 93.3
     }
-   ]
+   ],
+   "laatste_notitie": null
   },
   "muscleup": {
    "e1rm": null,
    "bron": "uitgangswaarde",
    "target_nu": 0.0,
    "aantal_werksets_totaal": 0,
-   "laatste_sets": []
+   "laatste_sets": [],
+   "laatste_notitie": null
   }
  },
  "voorschrift_deze_week": {
@@ -245,21 +252,62 @@
    "reps": 5,
    "percentage": 74.0,
    "kg": 15.0,
-   "rpe_plafond": 7
+   "rpe_plafond": 7,
+   "correctiefactor": 1.0,
+   "bijgesteld_omdat": null
   },
   "pullup": {
    "sets": 4,
    "reps": 5,
    "percentage": 74.0,
    "kg": 27.5,
-   "rpe_plafond": 7
+   "rpe_plafond": 7,
+   "correctiefactor": 1.0,
+   "bijgesteld_omdat": null
   },
   "squat": {
    "sets": 5,
    "reps": 5,
    "percentage": 72.0,
    "kg": 67.5,
-   "rpe_plafond": 7
+   "rpe_plafond": 7,
+   "correctiefactor": 1.0,
+   "bijgesteld_omdat": null
+  }
+ },
+ "terugkoppeling": {
+  "dip": {
+   "factor": 1.0,
+   "oordeel_vorige_sessie": null,
+   "reden": null,
+   "vorig_voorschrift": {
+    "datum": "2026-09-01",
+    "sets": 4,
+    "reps": 5,
+    "kg": 15.0
+   }
+  },
+  "pullup": {
+   "factor": 1.0,
+   "oordeel_vorige_sessie": null,
+   "reden": null,
+   "vorig_voorschrift": {
+    "datum": "2026-09-01",
+    "sets": 4,
+    "reps": 5,
+    "kg": 25.0
+   }
+  },
+  "squat": {
+   "factor": 1.0,
+   "oordeel_vorige_sessie": null,
+   "reden": null,
+   "vorig_voorschrift": {
+    "datum": "2026-09-01",
+    "sets": 5,
+    "reps": 5,
+    "kg": 67.5
+   }
   }
  },
  "afgelopen_7_dagen": {

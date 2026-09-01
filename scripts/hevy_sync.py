@@ -20,6 +20,8 @@ import sys
 import urllib.error
 import urllib.request
 
+import regelaar
+
 BASE = "https://api.hevyapp.com"
 START = dt.date(2026, 9, 7)          # week 1, dag 1
 LICHAAMSGEWICHT_TERUGVAL = 77.0
@@ -174,6 +176,59 @@ def target_op_week(lift, week):
     return punten[-1][1]
 
 
+STATE_PAD = pathlib.Path("data") / "regelaar.json"
+
+
+def lees_state():
+    if STATE_PAD.exists():
+        try:
+            return json.loads(STATE_PAD.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            pass
+    return {}
+
+
+def schrijf_state(state):
+    STATE_PAD.parent.mkdir(exist_ok=True)
+    STATE_PAD.write_text(json.dumps(state, indent=1, ensure_ascii=False), encoding="utf-8")
+
+
+def _matcht(titel, titels):
+    titel = titel or ""
+    return titel in titels or any(t.lower() in titel.lower() for t in titels)
+
+
+def sessie_na(workouts, titels, na_datum):
+    """Datum, werksets en notitie van de eerste sessie met deze lift vanaf na_datum."""
+    kandidaten = []
+    for w in workouts:
+        datum = (w.get("start_time") or "")[:10]
+        if not datum or datum < na_datum:
+            continue
+        for oef in w.get("exercises", []):
+            if not _matcht(oef.get("title"), titels):
+                continue
+            werk = [s for s in oef.get("sets", []) if s.get("type") != "warmup"]
+            if werk:
+                kandidaten.append((datum, werk, oef.get("notes") or ""))
+    if not kandidaten:
+        return "", [], ""
+    kandidaten.sort(key=lambda r: r[0])
+    return kandidaten[0]
+
+
+def laatste_notitie(workouts, titels):
+    """De meest recente notitie bij deze oefening, voor het weekrapport."""
+    beste = ("", "")
+    for w in workouts:
+        datum = (w.get("start_time") or "")[:10]
+        for oef in w.get("exercises", []):
+            if _matcht(oef.get("title"), titels) and (oef.get("notes") or "").strip():
+                if datum > beste[0]:
+                    beste = (datum, oef["notes"].strip()[:300])
+    return {"datum": beste[0], "tekst": beste[1]} if beste[0] else None
+
+
 def main():
     key = os.environ.get("HEVY_API_KEY", "").strip()
     if not key:
@@ -229,21 +284,67 @@ def main():
             "target_nu": target_op_week(lift, max(pos["week"], 1)),
             "aantal_werksets_totaal": len(sessies),
             "laatste_sets": sessies[-8:],
+            "laatste_notitie": laatste_notitie(workouts, titels),
         }
 
-    # Voorschrift per kernlift voor deze cyclusweek
+    # ---- Terugkoppeling: was het vorige voorschrift te zwaar of te licht? ----
+    state = lees_state()
+    terugkoppeling = {}
+    for lift, titels in LIFTS.items():
+        if lift == "muscleup":
+            continue
+        eerder = state.get(lift, {})
+        factor = float(eerder.get("factor", 1.0))
+        vorig = eerder.get("laatste_voorschrift")
+        al_beoordeeld = eerder.get("laatste_beoordeelde_sessie", "")
+        oordeel = reden = None
+        if vorig:
+            datum_na, sets_na, notitie_tekst = sessie_na(workouts, titels, vorig["datum"])
+            # Elke sessie telt maar een keer mee. Zonder deze grendel zou een
+            # tweede run op dezelfde dag de correctie dubbel toepassen.
+            if sets_na and datum_na > al_beoordeeld:
+                notitie = regelaar.lees_notitie(notitie_tekst)
+                oordeel, reden = regelaar.beoordeel(vorig, sets_na, notitie)
+                if oordeel:
+                    factor = regelaar.nieuwe_factor(factor, oordeel)
+                    state.setdefault(lift, {})["laatste_beoordeelde_sessie"] = datum_na
+        terugkoppeling[lift] = {
+            "factor": factor,
+            "oordeel_vorige_sessie": oordeel,
+            "reden": reden,
+            "vorig_voorschrift": vorig,
+        }
+
+    # ---- Voorschrift per kernlift voor deze cyclusweek ----
     cw, blok = pos["cyclusweek"], min(pos["blok"], 4)
     voorschrift = {}
     for lift in ("dip", "pullup", "squat"):
         tabel = SCHEMA_SQUAT_BLOK1 if (lift == "squat" and blok == 1) else SCHEMA[blok]
         sets, reps, pct = tabel[cw]
         basis = stand[lift]["e1rm"] or UITGANG[lift]
+        factor = terugkoppeling[lift]["factor"]
         if lift in LICHAAMSGEBONDEN:
-            kg = afronden((bw + basis) * pct - bw)
+            kg = afronden(((bw + basis) * pct - bw) * factor)
         else:
-            kg = afronden(basis * pct)
-        voorschrift[lift] = {"sets": sets, "reps": reps, "percentage": round(pct * 100, 1),
-                             "kg": kg, "rpe_plafond": RPE_PLAFOND[cw]}
+            kg = afronden(basis * pct * factor)
+        voorschrift[lift] = {
+            "sets": sets, "reps": reps, "percentage": round(pct * 100, 1),
+            "kg": kg, "rpe_plafond": RPE_PLAFOND[cw],
+            "correctiefactor": factor,
+            "bijgesteld_omdat": terugkoppeling[lift]["reden"] if terugkoppeling[lift]["oordeel_vorige_sessie"] else None,
+        }
+        state.setdefault(lift, {})["factor"] = factor
+        state[lift]["laatste_voorschrift"] = {
+            "datum": vandaag.isoformat(), "sets": sets, "reps": reps, "kg": kg,
+        }
+        log = state[lift].setdefault("log", [])
+        if terugkoppeling[lift]["oordeel_vorige_sessie"]:
+            log.append({"datum": vandaag.isoformat(),
+                        "oordeel": terugkoppeling[lift]["oordeel_vorige_sessie"],
+                        "reden": terugkoppeling[lift]["reden"],
+                        "nieuwe_factor": factor})
+            del log[:-20]
+    schrijf_state(state)
 
     # Nalevingscijfers over de afgelopen 7 dagen
     week_grens = vandaag - dt.timedelta(days=7)
@@ -277,6 +378,7 @@ def main():
         "lichaamsgewicht_bron": "hevy" if gewichten else "terugval 77 kg",
         "stand": stand,
         "voorschrift_deze_week": voorschrift,
+        "terugkoppeling": terugkoppeling,
         "afgelopen_7_dagen": {
             "sessies": len(sessiedagen),
             "dipwerksets": dipsets, "dipdoel": 10,
