@@ -46,21 +46,28 @@ RPE_TABEL = {
 }
 
 # blok -> cyclusweek -> (sets, reps, percentage)
+#
+# De percentages zijn VERMOEIDHEIDSGECORRIGEERD. Een RPE-tabel geeft de waarde
+# voor EEN set; bij meerdere sets op hetzelfde gewicht loopt de RPE per set op,
+# ongeveer 2 procentpunt per extra set. De eerste versie van dit schema paste de
+# eenzetswaarde toe op vier sets, waardoor set 4 op RPE 9 a 10 uitkwam. Deze
+# tabellen liggen daarom 4 tot 6 punten lager, zodat de LAATSTE set op het
+# RPE-plafond uitkomt en niet de eerste.
 SCHEMA = {
     1: {  # dip en pull-up; squat heeft een eigen tabel
-        1: (4, 5, .79), 2: (4, 5, .81), 3: (4, 5, .83),
-        4: (5, 4, .85), 5: (4, 4, .87), 6: (2, 5, .65),
+        1: (4, 5, .74), 2: (4, 5, .76), 3: (4, 5, .78),
+        4: (5, 4, .81), 5: (4, 4, .84), 6: (2, 5, .62),
     },
-    2: {1: (5, 3, .825), 2: (5, 3, .85), 3: (4, 3, .875),
-        4: (4, 2, .90), 5: (3, 2, .925), 6: (2, 3, .70)},
-    3: {1: (4, 2, .875), 2: (4, 2, .90), 3: (3, 2, .925),
-        4: (4, 1, .95), 5: (2, 1, .975), 6: (2, 3, .70)},
-    4: {1: (3, 2, .90), 2: (3, 1, .93), 3: (3, 1, .95),
-        4: (2, 1, .975), 5: (1, 1, 1.00), 6: (2, 3, .65)},
+    2: {1: (5, 3, .78), 2: (5, 3, .80), 3: (4, 3, .83),
+        4: (4, 2, .86), 5: (3, 2, .89), 6: (2, 3, .66)},
+    3: {1: (4, 2, .83), 2: (4, 2, .86), 3: (3, 2, .88),
+        4: (4, 1, .92), 5: (2, 1, .95), 6: (2, 3, .66)},
+    4: {1: (3, 2, .86), 2: (3, 1, .90), 3: (3, 1, .92),
+        4: (2, 1, .95), 5: (1, 1, 1.00), 6: (2, 3, .62)},
 }
 SCHEMA_SQUAT_BLOK1 = {
-    1: (5, 5, .75), 2: (5, 5, .78), 3: (5, 5, .80),
-    4: (5, 5, .83), 5: (5, 5, .85), 6: (2, 5, .60),
+    1: (5, 5, .72), 2: (5, 5, .74), 3: (5, 5, .76),
+    4: (5, 5, .78), 5: (5, 5, .80), 6: (2, 5, .58),
 }
 RPE_PLAFOND = {1: 7, 2: 7.5, 3: 8, 4: 8, 5: 8.5, 6: 5}
 
@@ -114,10 +121,29 @@ def e1rm(set_, bw, gebonden):
     if not reps:
         return None
     pct = percentage(reps, set_.get("rpe"), set_.get("type") == "failure")
+    schatting = (bw + gewicht) / pct if gebonden else gewicht / pct
+    # Extrapolatie vanaf hoge reps overschat structureel: een set van 7 of 8
+    # zegt meer over je uithoudingsvermogen dan over je maximum. Afwaarderen.
+    if reps >= 7:
+        schatting *= 0.96
+    elif reps == 6:
+        schatting *= 0.98
     if gebonden:
-        systeem = (bw + gewicht) / pct
-        return round(systeem - bw, 1)
-    return round(gewicht / pct, 1)
+        return round(schatting - bw, 1)
+    return round(schatting, 1)
+
+
+def robuuste_e1rm(waarden):
+    """Mediaan van de drie hoogste, zodat een enkele uitschieter niet bepaalt.
+
+    Een losse zware single (of een set die te optimistisch als falen is
+    gelogd) trok het geschatte maximum eerder omhoog, en daarmee elk
+    voorgeschreven gewicht van die week.
+    """
+    if not waarden:
+        return None
+    top = sorted(waarden, reverse=True)[:3]
+    return top[len(top) // 2] if len(top) >= 3 else top[-1]
 
 
 def afronden(x):
@@ -172,7 +198,7 @@ def main():
     stand = {}
     for lift, titels in LIFTS.items():
         gebonden = lift in LICHAAMSGEBONDEN
-        sessies, beste_recent = [], None
+        sessies, recente_waarden = [], []
         for w in workouts:
             datum = (w.get("start_time") or "")[:10]
             if not datum:
@@ -191,8 +217,9 @@ def main():
                     sessies.append({"datum": datum, "gewicht": s.get("weight_kg"),
                                     "reps": s.get("reps"), "rpe": s.get("rpe"),
                                     "type": s.get("type"), "e1rm": v})
-                    if d >= grens and (beste_recent is None or v > beste_recent):
-                        beste_recent = v
+                    if d >= grens:
+                        recente_waarden.append(v)
+        beste_recent = robuuste_e1rm(recente_waarden)
         if beste_recent is None:
             beste_recent = UITGANG[lift]
         sessies.sort(key=lambda r: r["datum"])

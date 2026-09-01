@@ -1,9 +1,9 @@
 {
- "gegenereerd_op": "2026-08-31T19:33:38+00:00",
- "vandaag": "2026-08-31",
- "weekdag": 0,
- "dagthema": "Dip zwaar",
- "kernlift_vandaag": "dip",
+ "gegenereerd_op": "2026-09-01T13:10:44+00:00",
+ "vandaag": "2026-09-01",
+ "weekdag": 1,
+ "dagthema": null,
+ "kernlift_vandaag": null,
  "positie": {
   "week": 0,
   "cyclusweek": 1,
@@ -16,7 +16,7 @@
  "lichaamsgewicht_bron": "hevy",
  "stand": {
   "dip": {
-   "e1rm": 54.3,
+   "e1rm": 47.4,
    "bron": "hevy",
    "target_nu": 53.5,
    "aantal_werksets_totaal": 10,
@@ -27,7 +27,7 @@
      "reps": 7,
      "rpe": null,
      "type": "failure",
-     "e1rm": 42.0
+     "e1rm": 37.3
     },
     {
      "datum": "2026-07-31",
@@ -35,7 +35,7 @@
      "reps": 8,
      "rpe": null,
      "type": "failure",
-     "e1rm": 45.8
+     "e1rm": 40.9
     },
     {
      "datum": "2026-08-20",
@@ -83,48 +83,16 @@
      "reps": 7,
      "rpe": null,
      "type": "failure",
-     "e1rm": 54.3
+     "e1rm": 49.0
     }
    ]
   },
   "pullup": {
-   "e1rm": 64.6,
+   "e1rm": 62.7,
    "bron": "hevy",
    "target_nu": 60.4,
-   "aantal_werksets_totaal": 33,
+   "aantal_werksets_totaal": 37,
    "laatste_sets": [
-    {
-     "datum": "2026-08-03",
-     "gewicht": 40,
-     "reps": 6,
-     "rpe": null,
-     "type": "failure",
-     "e1rm": 62.3
-    },
-    {
-     "datum": "2026-08-03",
-     "gewicht": 50,
-     "reps": 3,
-     "rpe": null,
-     "type": "normal",
-     "e1rm": 62.7
-    },
-    {
-     "datum": "2026-08-13",
-     "gewicht": 55,
-     "reps": 1,
-     "rpe": null,
-     "type": "failure",
-     "e1rm": 55.0
-    },
-    {
-     "datum": "2026-08-21",
-     "gewicht": 40,
-     "reps": 6,
-     "rpe": null,
-     "type": "normal",
-     "e1rm": 63.4
-    },
     {
      "datum": "2026-08-26",
      "gewicht": 60,
@@ -139,7 +107,7 @@
      "reps": 8,
      "rpe": null,
      "type": "failure",
-     "e1rm": 45.8
+     "e1rm": 40.9
     },
     {
      "datum": "2026-08-28",
@@ -147,7 +115,7 @@
      "reps": 8,
      "rpe": null,
      "type": "failure",
-     "e1rm": 45.8
+     "e1rm": 40.9
     },
     {
      "datum": "2026-08-28",
@@ -155,12 +123,44 @@
      "reps": 7,
      "rpe": null,
      "type": "failure",
+     "e1rm": 37.3
+    },
+    {
+     "datum": "2026-09-01",
+     "gewicht": 25,
+     "reps": 5,
+     "rpe": null,
+     "type": "normal",
      "e1rm": 42.0
+    },
+    {
+     "datum": "2026-09-01",
+     "gewicht": 25,
+     "reps": 5,
+     "rpe": null,
+     "type": "normal",
+     "e1rm": 42.0
+    },
+    {
+     "datum": "2026-09-01",
+     "gewicht": 30,
+     "reps": 5,
+     "rpe": null,
+     "type": "normal",
+     "e1rm": 47.8
+    },
+    {
+     "datum": "2026-09-01",
+     "gewicht": 30,
+     "reps": 5,
+     "rpe": null,
+     "type": "normal",
+     "e1rm": 47.8
     }
    ]
   },
   "squat": {
-   "e1rm": 101.1,
+   "e1rm": 94.1,
    "bron": "hevy",
    "target_nu": 101.7,
    "aantal_werksets_totaal": 14,
@@ -171,7 +171,7 @@
      "reps": 6,
      "rpe": null,
      "type": "failure",
-     "e1rm": 95.2
+     "e1rm": 93.3
     },
     {
      "datum": "2026-06-11",
@@ -219,7 +219,7 @@
      "reps": 6,
      "rpe": null,
      "type": "normal",
-     "e1rm": 96.0
+     "e1rm": 94.1
     },
     {
      "datum": "2026-08-05",
@@ -243,35 +243,35 @@
   "dip": {
    "sets": 4,
    "reps": 5,
-   "percentage": 79.0,
-   "kg": 27.5,
+   "percentage": 74.0,
+   "kg": 15.0,
    "rpe_plafond": 7
   },
   "pullup": {
    "sets": 4,
    "reps": 5,
-   "percentage": 79.0,
-   "kg": 35.0,
+   "percentage": 74.0,
+   "kg": 27.5,
    "rpe_plafond": 7
   },
   "squat": {
    "sets": 5,
    "reps": 5,
-   "percentage": 75.0,
-   "kg": 75.0,
+   "percentage": 72.0,
+   "kg": 67.5,
    "rpe_plafond": 7
   }
  },
  "afgelopen_7_dagen": {
-  "sessies": 4,
+  "sessies": 5,
   "dipwerksets": 4,
   "dipdoel": 10,
-  "pullupwerksets": 4,
+  "pullupwerksets": 8,
   "pullupdoel": 7,
-  "kernsets": 8,
+  "kernsets": 12,
   "kernsets_met_rpe": 0,
   "kernsets_tot_falen": 7
  },
- "totaal_nu": 220.0,
+ "totaal_nu": 204.2,
  "totaal_doel": 367
 }

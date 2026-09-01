@@ -21,13 +21,288 @@
  ],
  "workouts": [
   {
+   "id": "54ae4160-7d64-4f58-8688-b99a95d9e181",
+   "title": "Rug",
+   "routine_id": null,
+   "description": "",
+   "start_time": "2026-09-01T11:39:01+00:00",
+   "end_time": "2026-09-01T12:29:03+00:00",
+   "updated_at": "2026-09-01T13:03:53.530Z",
+   "created_at": "2026-09-01T12:29:08.783Z",
+   "exercises": [
+    {
+     "index": 0,
+     "title": "Pull Up (Weighted)",
+     "notes": "Dacht dat ik 4x25 moest doen, maar was 4x30",
+     "exercise_template_id": "729237D1",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "warmup",
+       "weight_kg": 0,
+       "reps": 3,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "warmup",
+       "weight_kg": 10,
+       "reps": 3,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "warmup",
+       "weight_kg": 20,
+       "reps": 3,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      },
+      {
+       "index": 3,
+       "type": "normal",
+       "weight_kg": 25,
+       "reps": 5,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      },
+      {
+       "index": 4,
+       "type": "normal",
+       "weight_kg": 25,
+       "reps": 5,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      },
+      {
+       "index": 5,
+       "type": "normal",
+       "weight_kg": 30,
+       "reps": 5,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      },
+      {
+       "index": 6,
+       "type": "normal",
+       "weight_kg": 30,
+       "reps": 5,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "title": "Seated Cable Row - V Grip (Cable)",
+     "notes": "Moest 90x6 x4. Maar was te zwaar. Gedropt naar 80x 8",
+     "exercise_template_id": "0393F233",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "warmup",
+       "weight_kg": 70,
+       "reps": 3,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "failure",
+       "weight_kg": 90,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "failure",
+       "weight_kg": 80,
+       "reps": 8,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      },
+      {
+       "index": 3,
+       "type": "failure",
+       "weight_kg": 80,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "title": "Rear Delt Reverse Fly (Machine)",
+     "notes": "Claude stelde 25x 12 voor. Pr is 25x 7...",
+     "exercise_template_id": "D8281C62",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "failure",
+       "weight_kg": 22.5,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "failure",
+       "weight_kg": 20,
+       "reps": 7,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "title": "Behind the Back Curl (Cable)",
+     "notes": "",
+     "exercise_template_id": "2DBCA395",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "failure",
+       "weight_kg": 17.5,
+       "reps": 14,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "failure",
+       "weight_kg": 15,
+       "reps": 14,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "title": "Lying Leg Curl (Machine)",
+     "notes": "",
+     "exercise_template_id": "B8127AD1",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "warmup",
+       "weight_kg": 35,
+       "reps": 5,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "failure",
+       "weight_kg": 45,
+       "reps": 7,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "failure",
+       "weight_kg": 40,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 5,
+     "title": "Hanging Leg Raise",
+     "notes": "",
+     "exercise_template_id": "F8356514",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": null,
+       "reps": 14,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 6,
+     "title": "Crunch (Machine)",
+     "notes": "",
+     "exercise_template_id": "EB43ADD4",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "failure",
+       "weight_kg": 45,
+       "reps": 4,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      }
+     ]
+    }
+   ]
+  },
+  {
    "id": "3494eae4-1ffd-4518-9067-a9a22cbf0d39",
    "title": "Borst",
    "routine_id": null,
    "description": "",
    "start_time": "2026-08-31T15:24:56+00:00",
    "end_time": "2026-08-31T16:19:34+00:00",
-   "updated_at": "2026-08-31T16:54:14.869Z",
+   "updated_at": "2026-09-01T11:39:24.015Z",
    "created_at": "2026-08-31T16:19:48.993Z",
    "exercises": [
     {
@@ -253,7 +528,7 @@
    "description": "",
    "start_time": "2026-08-28T13:06:29+00:00",
    "end_time": "2026-08-28T13:43:57+00:00",
-   "updated_at": "2026-08-28T13:44:03.242Z",
+   "updated_at": "2026-09-01T13:04:24.378Z",
    "created_at": "2026-08-28T13:44:03.242Z",
    "exercises": [
     {
@@ -460,7 +735,7 @@
    "description": "",
    "start_time": "2026-08-26T18:04:02+00:00",
    "end_time": "2026-08-26T18:39:15+00:00",
-   "updated_at": "2026-08-26T18:52:55.531Z",
+   "updated_at": "2026-09-01T13:04:23.608Z",
    "created_at": "2026-08-26T18:39:21.199Z",
    "exercises": [
     {
