@@ -37,9 +37,12 @@ De GARD PRO FIT-app draait op het GloryFit-platform en heeft geen API of
 cloud-export, dus die gegevens kunnen niet automatisch opgehaald worden.
 Noteer ze in plaats daarvan in het beschrijvingsveld van je Hevy-sessie:
 
-    slaap 6u30 stappen 8500 moe 3
+    slaap 6u30 stappen 8500 moe 3 kcal 2700 eiwit 145
 
-Alles is optioneel. `moe` loopt van 1 (fris) tot 5 (gesloopt). Twee signalen
+Alles is optioneel. `moe` loopt van 1 (fris) tot 5 (gesloopt). De Eetmeter
+van het Voedingscentrum heeft geen API, alleen een PDF- en XML-export via
+de website; twee getallen overtypen is minder werk dan wekelijks een
+bestand exporteren. Eiwit onder de 110 g telt mee als herstelsignaal. Twee signalen
 tegelijk, bijvoorbeeld weinig slaap en hoge vermoeidheid, levert een advies op
 in je dagbericht. Het schema verlaagt zichzelf niet automatisch: een korte
 nacht is normaal, pas een patroon telt.

@@ -20,8 +20,15 @@ SCHRIJFWIJZE  (alles optioneel, volgorde maakt niet uit)
     stappen 8500     ook 8.5k
     moe 4            hoe vermoeid je je voelt, 1 = fris, 5 = gesloopt
     rust 52          rustpols
+    kcal 2600        energie over de dag
+    eiwit 150        gram eiwit
 
-Bijvoorbeeld:  slaap 5u45 stappen 12000 moe 4
+Bijvoorbeeld:  slaap 5u45 stappen 12000 moe 4 kcal 2700 eiwit 145
+
+De Eetmeter van het Voedingscentrum heeft geen API, alleen een PDF- en
+XML-export via de website. Twee getallen overtypen is minder werk dan wekelijks
+een bestand exporteren, en voor dit doel is het genoeg: wat telt is of je
+eiwit haalt en of je gewicht de goede kant op beweegt.
 
 Staat er niets, dan gebeurt er niets. Herstelgegevens zijn een aanvulling,
 geen voorwaarde.
@@ -71,6 +78,14 @@ def lees(tekst):
     if m and 30 <= int(m.group(1)) <= 120:
         uit["rustpols"] = int(m.group(1))
 
+    m = re.search(r"\b(?:kcal|calorieen|calorieën|energie)\s*:?\s*(\d{3,5})\b", t)
+    if m and 800 <= int(m.group(1)) <= 8000:
+        uit["kcal"] = int(m.group(1))
+
+    m = re.search(r"\b(?:eiwit|eiwitten|protein)\s*:?\s*(\d{2,3})\b", t)
+    if m and 20 <= int(m.group(1)) <= 400:
+        uit["eiwit_gram"] = int(m.group(1))
+
     return uit
 
 
@@ -107,6 +122,9 @@ def beoordeel(recent):
         redenen.append(f"vermoeidheid {moe} van 5")
     if stappen is not None and stappen > 15000:
         redenen.append(f"{stappen} stappen gisteren")
+    eiwit = recent.get("eiwit_gram")
+    if eiwit is not None and eiwit < 110:
+        redenen.append(f"{eiwit} g eiwit, onder de ondergrens van 125")
 
     if len(redenen) >= 2:
         return {
