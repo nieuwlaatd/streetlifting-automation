@@ -20,6 +20,7 @@ import sys
 import urllib.error
 import urllib.request
 
+import herstel
 import regelaar
 
 BASE = "https://api.hevyapp.com"
@@ -367,6 +368,15 @@ def main():
                 kern_met_rpe += sum(1 for s in werk if s.get("rpe") is not None)
                 kern_falen += sum(1 for s in werk if s.get("type") == "failure")
 
+    # ---- Herstel: slaap, stappen en vermoeidheid uit je Hevy-notities ----
+    herstel_dagen = []
+    for w in sorted(workouts, key=lambda x: x.get("start_time") or "", reverse=True)[:14]:
+        gevonden = herstel.uit_workout(w)
+        if gevonden:
+            gevonden["datum"] = (w.get("start_time") or "")[:10]
+            herstel_dagen.append(gevonden)
+    herstel_oordeel = herstel.beoordeel(herstel_dagen[0] if herstel_dagen else {})
+
     status = {
         "gegenereerd_op": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
         "vandaag": vandaag.isoformat(),
@@ -379,6 +389,7 @@ def main():
         "stand": stand,
         "voorschrift_deze_week": voorschrift,
         "terugkoppeling": terugkoppeling,
+        "herstel": {"recent": herstel_dagen[:7], "oordeel": herstel_oordeel},
         "afgelopen_7_dagen": {
             "sessies": len(sessiedagen),
             "dipwerksets": dipsets, "dipdoel": 10,

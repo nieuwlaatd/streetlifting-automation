@@ -31,6 +31,19 @@ leest getallen en levert alleen de formulering en de beoordeling.
 3. Tabblad Actions > Hevy synchroniseren > Run workflow. Er hoort daarna een
    commit te verschijnen met `data/programma-status.json`.
 
+## Herstel bijhouden
+
+De GARD PRO FIT-app draait op het GloryFit-platform en heeft geen API of
+cloud-export, dus die gegevens kunnen niet automatisch opgehaald worden.
+Noteer ze in plaats daarvan in het beschrijvingsveld van je Hevy-sessie:
+
+    slaap 6u30 stappen 8500 moe 3
+
+Alles is optioneel. `moe` loopt van 1 (fris) tot 5 (gesloopt). Twee signalen
+tegelijk, bijvoorbeeld weinig slaap en hoge vermoeidheid, levert een advies op
+in je dagbericht. Het schema verlaagt zichzelf niet automatisch: een korte
+nacht is normaal, pas een patroon telt.
+
 ## Programma aanpassen
 
 Alle constanten staan bovenin `scripts/hevy_sync.py`:
