@@ -9,6 +9,13 @@ on:
     - cron: "15 5 * * *"
     # 16:15 UTC op zondag, voor het weekrapport van 17:00 UTC
     - cron: "15 16 * * 0"
+  # Bij een wijziging in de code, zodat een aanpassing meteen doorwerkt.
+  # data/ is uitgezonderd: anders zou de eigen datacommit zichzelf opnieuw starten.
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'data/**'
+
   # Handmatig starten vanaf het tabblad Actions
   workflow_dispatch:
   # Aanhaakpunt voor de Hevy-webhook, via een relay die een
@@ -26,6 +33,9 @@ concurrency:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    # Het secret staat als ENVIRONMENT secret, niet als repository secret.
+    # Zonder deze regel is secrets.HEVY_API_KEY leeg.
+    environment: Hevy_api_key
     steps:
       - uses: actions/checkout@v4
 
