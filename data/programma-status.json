@@ -1,9 +1,9 @@
 {
- "gegenereerd_op": "2026-09-01T14:55:19+00:00",
- "vandaag": "2026-09-01",
- "weekdag": 1,
- "dagthema": null,
- "kernlift_vandaag": null,
+ "gegenereerd_op": "2026-09-02T09:40:03+00:00",
+ "vandaag": "2026-09-02",
+ "weekdag": 2,
+ "dagthema": "Pull zwaar",
+ "kernlift_vandaag": "pullup",
  "positie": {
   "week": 0,
   "cyclusweek": 1,
@@ -319,7 +319,7 @@
   }
  },
  "afgelopen_7_dagen": {
-  "sessies": 5,
+  "sessies": 4,
   "dipwerksets": 4,
   "dipdoel": 10,
   "pullupwerksets": 8,
