@@ -50,14 +50,35 @@ EX = {
 }
 
 
+def _met_herhaling(doe, pogingen=5):
+    """Vangt 429 en tijdelijke serverfouten op met oplopende wachttijd.
+
+    De Hevy API knijpt af bij te veel verkeer. Zonder deze lus faalt de hele
+    ochtendrun op een enkele piek, en staat er geen routine klaar.
+    """
+    import time
+    for poging in range(pogingen):
+        try:
+            return doe()
+        except urllib.error.HTTPError as fout:
+            if fout.code in (429, 500, 502, 503, 504) and poging < pogingen - 1:
+                wacht = 2 ** poging * 5          # 5, 10, 20, 40 seconden
+                print(f"  HTTP {fout.code}, opnieuw over {wacht}s")
+                time.sleep(wacht)
+                continue
+            raise
+
+
 def api(pad, methode="GET", body=None, key=None):
-    data = json.dumps(body).encode() if body is not None else None
-    req = urllib.request.Request(
-        BASE + pad, data=data, method=methode,
-        headers={"api-key": key, "Content-Type": "application/json", "Accept": "application/json"})
-    with urllib.request.urlopen(req, timeout=60) as r:
-        tekst = r.read().decode()
-        return json.loads(tekst) if tekst.strip() else {}
+    def doe():
+        data = json.dumps(body).encode() if body is not None else None
+        req = urllib.request.Request(
+            BASE + pad, data=data, method=methode,
+            headers={"api-key": key, "Content-Type": "application/json", "Accept": "application/json"})
+        with urllib.request.urlopen(req, timeout=60) as r:
+            tekst = r.read().decode()
+            return json.loads(tekst) if tekst.strip() else {}
+    return _met_herhaling(doe)
 
 
 def oef(template, sets, rust=None, notitie=None):
