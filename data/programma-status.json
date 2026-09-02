@@ -1,5 +1,5 @@
 {
- "gegenereerd_op": "2026-09-02T20:30:17+00:00",
+ "gegenereerd_op": "2026-09-02T20:31:18+00:00",
  "vandaag": "2026-09-02",
  "weekdag": 2,
  "dagthema": "Pull zwaar",
@@ -289,21 +289,36 @@
    "factor": 1.0,
    "oordeel_vorige_sessie": null,
    "reden": null,
-   "vorig_voorschrift": null,
+   "vorig_voorschrift": {
+    "datum": "2026-09-02",
+    "sets": 4,
+    "reps": 5,
+    "kg": 15.0
+   },
    "gemist": false
   },
   "pullup": {
    "factor": 1.0,
    "oordeel_vorige_sessie": null,
    "reden": null,
-   "vorig_voorschrift": null,
+   "vorig_voorschrift": {
+    "datum": "2026-09-02",
+    "sets": 4,
+    "reps": 5,
+    "kg": 27.5
+   },
    "gemist": false
   },
   "squat": {
    "factor": 1.0,
    "oordeel_vorige_sessie": null,
    "reden": null,
-   "vorig_voorschrift": null,
+   "vorig_voorschrift": {
+    "datum": "2026-09-02",
+    "sets": 5,
+    "reps": 5,
+    "kg": 67.5
+   },
    "gemist": false
   }
  },
