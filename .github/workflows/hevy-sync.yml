@@ -48,6 +48,11 @@ jobs:
           HEVY_API_KEY: ${{ secrets.HEVY_API_KEY }}
         run: python scripts/hevy_sync.py
 
+      - name: Routines in Hevy bijwerken
+        env:
+          HEVY_API_KEY: ${{ secrets.HEVY_API_KEY }}
+        run: python scripts/hevy_routines.py
+
       - name: Wijzigingen vastleggen
         run: |
           git config user.name "hevy-sync"
