@@ -299,6 +299,7 @@ def main():
         vorig = eerder.get("laatste_voorschrift")
         al_beoordeeld = eerder.get("laatste_beoordeelde_sessie", "")
         oordeel = reden = None
+        gemist = False
         if vorig:
             datum_na, sets_na, notitie_tekst = sessie_na(workouts, titels, vorig["datum"])
             # Elke sessie telt maar een keer mee. Zonder deze grendel zou een
@@ -309,11 +310,20 @@ def main():
                 if oordeel:
                     factor = regelaar.nieuwe_factor(factor, oordeel)
                     state.setdefault(lift, {})["laatste_beoordeelde_sessie"] = datum_na
+            elif not sets_na:
+                # Voorschrift stond klaar maar er is niet mee getraind. De
+                # kalender loopt door, jouw lichaam niet: zonder deze controle
+                # zou het gewicht blijven klimmen op een lift die stilstaat.
+                dagen_stil = (vandaag - dt.date.fromisoformat(vorig["datum"])).days
+                if dagen_stil >= 7:
+                    gemist = True
+                    reden = f"vorige sessie niet gedaan, {dagen_stil} dagen stil"
         terugkoppeling[lift] = {
             "factor": factor,
             "oordeel_vorige_sessie": oordeel,
             "reden": reden,
             "vorig_voorschrift": vorig,
+            "gemist": gemist,
         }
 
     # ---- Voorschrift per kernlift voor deze cyclusweek ----
@@ -324,26 +334,45 @@ def main():
         sets, reps, pct = tabel[cw]
         basis = stand[lift]["e1rm"] or UITGANG[lift]
         factor = terugkoppeling[lift]["factor"]
-        if lift in LICHAAMSGEBONDEN:
-            kg = afronden(((bw + basis) * pct - bw) * factor)
-        else:
-            kg = afronden(basis * pct * factor)
+        rauw = ((bw + basis) * pct - bw) if lift in LICHAAMSGEBONDEN else basis * pct
+        volgens_plan = afronden(rauw)          # wat de bloktabel zonder correctie zegt
+        kg = afronden(rauw * factor)
+
+        # Sessie overgeslagen: niet verder klimmen dan wat er vorige keer stond.
+        vorig = terugkoppeling[lift]["vorig_voorschrift"]
+        vastgehouden = False
+        if terugkoppeling[lift]["gemist"] and vorig and kg > vorig["kg"]:
+            kg = vorig["kg"]
+            vastgehouden = True
+
+        redenen = []
+        if terugkoppeling[lift]["oordeel_vorige_sessie"]:
+            redenen.append(terugkoppeling[lift]["reden"])
+        if vastgehouden:
+            redenen.append(f"vastgehouden op {kg:g} kg omdat de vorige sessie niet gedaan is")
+
         voorschrift[lift] = {
             "sets": sets, "reps": reps, "percentage": round(pct * 100, 1),
             "kg": kg, "rpe_plafond": RPE_PLAFOND[cw],
             "correctiefactor": factor,
-            "bijgesteld_omdat": terugkoppeling[lift]["reden"] if terugkoppeling[lift]["oordeel_vorige_sessie"] else None,
+            "kg_volgens_plan": volgens_plan,
+            "afwijking_kg": round(kg - volgens_plan, 1),
+            "bijgesteld_omdat": " en ".join(redenen) if redenen else None,
+            "sessie_gemist": terugkoppeling[lift]["gemist"],
         }
         state.setdefault(lift, {})["factor"] = factor
         state[lift]["laatste_voorschrift"] = {
             "datum": vandaag.isoformat(), "sets": sets, "reps": reps, "kg": kg,
         }
         log = state[lift].setdefault("log", [])
-        if terugkoppeling[lift]["oordeel_vorige_sessie"]:
+        oordeel = terugkoppeling[lift]["oordeel_vorige_sessie"]
+        if oordeel or vastgehouden:
             log.append({"datum": vandaag.isoformat(),
-                        "oordeel": terugkoppeling[lift]["oordeel_vorige_sessie"],
-                        "reden": terugkoppeling[lift]["reden"],
-                        "nieuwe_factor": factor})
+                        "oordeel": oordeel or "gemist",
+                        "reden": voorschrift[lift]["bijgesteld_omdat"],
+                        "nieuwe_factor": factor,
+                        "kg": kg,
+                        "kg_volgens_plan": volgens_plan})
             del log[:-20]
     schrijf_state(state)
 
