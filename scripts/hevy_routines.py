@@ -97,17 +97,43 @@ def werksets(aantal, reps, gewicht=None, opwarming=0):
     return uit
 
 
+TEST_PERCENTAGE = 0.92        # RPE 9 ongeveer: zwaar, maar er zit een rep in
+
+
 def bouw_routines(status):
     v = status["voorschrift_deze_week"]
     pos = status["positie"]
+    stand = status.get("stand", {})
+    bw = float(status.get("lichaamsgewicht") or 77)
     dip, pull, squat = v["dip"], v["pullup"], v["squat"]
-    kop = f"week {pos['week']} · cyclusweek {pos['cyclusweek']}" + (" · DELOAD" if pos["deload"] else "")
+    testweek = pos["cyclusweek"] == 5
 
     def kern_notitie(x):
         return f"KERNLIFT — RPE-plafond {x['rpe_plafond']}. Stop bij het plafond, niet bij falen."
 
+    def met_test(sets, lift):
+        """Plakt in cyclusweek 5 een testsingle achter de werksets.
+
+        Eens per zes weken, niet vaker: de schatting loopt al mee met elke
+        werkset, dus dit is een ijkpunt en geen wekelijkse krachtproef. Zonder
+        deze regel in de routine zou de instructie nergens meer opduiken nu de
+        dagberichten uit staan.
+        """
+        if not testweek:
+            return sets
+        e1rm = (stand.get(lift) or {}).get("e1rm")
+        if not e1rm:
+            return sets
+        rauw = (bw + e1rm) * TEST_PERCENTAGE - bw if lift in ("dip", "pullup") else e1rm * TEST_PERCENTAGE
+        return sets + [{"type": "normal", "reps": 1, "weight_kg": round(rauw / 2.5) * 2.5}]
+
+    test_notitie = ("TESTSINGLE — één rep op RPE 9: zwaar, maar er zit er nog één in. "
+                    "Voelt het als RPE 8 of lichter, doe er 2,5 kg bij en probeer nog één keer. "
+                    "Hieruit wordt het volgende blok berekend, dus log de RPE.")
+
     ma = [
-        oef(EX["dip_w"], werksets(dip["sets"], dip["reps"], dip["kg"], opwarming=3), 180, kern_notitie(dip)),
+        oef(EX["dip_w"], met_test(werksets(dip["sets"], dip["reps"], dip["kg"], opwarming=3), "dip"), 180,
+            kern_notitie(dip) + (" " + test_notitie if testweek else "")),
         oef(EX["dip_w"], werksets(2, 8, round(dip["kg"] / 2 / 2.5) * 2.5), 120, "Back-off, helft van het kerngewicht."),
         oef(EX["squat"], werksets(4, 4, round(squat["kg"] * 0.85 / 2.5) * 2.5), 150,
             "Snelheidswerk, RPE-plafond 6. Elke rep explosief omhoog."),
@@ -116,7 +142,8 @@ def bouw_routines(status):
         oef(EX["abwheel"], werksets(2, 12), 60),
     ]
     wo = [
-        oef(EX["pullup_w"], werksets(pull["sets"], pull["reps"], pull["kg"], opwarming=3), 180, kern_notitie(pull)),
+        oef(EX["pullup_w"], met_test(werksets(pull["sets"], pull["reps"], pull["kg"], opwarming=3), "pullup"), 180,
+            kern_notitie(pull) + (" " + test_notitie if testweek else "")),
         oef(EX["row"], werksets(3, 8), 120, "RPE 8."),
         oef(EX["reardelt"], werksets(2, 13), 90),
         oef(EX["curl"], werksets(2, 11), 90),
@@ -125,8 +152,9 @@ def bouw_routines(status):
         oef(EX["latpull"], werksets(2, 11), 90, "Optioneel, laat vallen bij tijdnood."),
     ]
     do = [
-        oef(EX["squat"], werksets(squat["sets"], squat["reps"], squat["kg"], opwarming=3), 210,
-            kern_notitie(squat) + " Heupplooi onder de knie, wedstrijddiepte."),
+        oef(EX["squat"], met_test(werksets(squat["sets"], squat["reps"], squat["kg"], opwarming=3), "squat"), 210,
+            kern_notitie(squat) + " Heupplooi onder de knie, wedstrijddiepte."
+            + (" " + test_notitie if testweek else "")),
         oef(EX["hipthrust"], werksets(2, 8), 120),
         oef(EX["legcurl"], werksets(3, 7), 90),
         oef(EX["legext"], werksets(2, 11), 90),
@@ -146,7 +174,7 @@ def bouw_routines(status):
         oef(EX["tricep"], werksets(2, 11), 60),
         oef(EX["crunch"], werksets(2, 13), 60),
     ]
-    wk = f"wk{pos['week']}" + ("-DELOAD" if pos["deload"] else "")
+    wk = f"wk{pos['week']}" + ("-DELOAD" if pos["deload"] else "") + (" TEST" if testweek else "")
     # Het notes-veld van een routine wordt door Hevy niet bewaard, dus alles
     # wat je vooraf wilt zien staat in de titel. Terugvinden gebeurt op het
     # voorvoegsel ("SL 1"), zodat de rest van de titel mag meebewegen.
