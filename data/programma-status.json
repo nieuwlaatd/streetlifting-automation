@@ -1,9 +1,9 @@
 {
- "gegenereerd_op": "2026-09-02T20:31:18+00:00",
- "vandaag": "2026-09-02",
- "weekdag": 2,
- "dagthema": "Pull zwaar",
- "kernlift_vandaag": "pullup",
+ "gegenereerd_op": "2026-09-03T09:52:32+00:00",
+ "vandaag": "2026-09-03",
+ "weekdag": 3,
+ "dagthema": "Squat zwaar",
+ "kernlift_vandaag": "squat",
  "positie": {
   "week": 0,
   "cyclusweek": 1,
@@ -331,14 +331,14 @@
   }
  },
  "afgelopen_7_dagen": {
-  "sessies": 4,
+  "sessies": 3,
   "dipwerksets": 4,
   "dipdoel": 10,
-  "pullupwerksets": 8,
+  "pullupwerksets": 6,
   "pullupdoel": 7,
-  "kernsets": 12,
+  "kernsets": 10,
   "kernsets_met_rpe": 0,
-  "kernsets_tot_falen": 7
+  "kernsets_tot_falen": 6
  },
  "totaal_nu": 204.2,
  "totaal_doel": 367
