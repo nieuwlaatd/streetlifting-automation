@@ -20,13 +20,23 @@
   "log": []
  },
  "squat": {
-  "factor": 1.0,
+  "factor": 1.025,
   "laatste_voorschrift": {
    "datum": "2026-09-03",
    "sets": 5,
    "reps": 5,
-   "kg": 67.5
+   "kg": 70.0
   },
-  "log": []
+  "log": [
+   {
+    "datum": "2026-09-03",
+    "oordeel": "te_makkelijk",
+    "reden": "zwaarder gedraaid dan voorgeschreven en gehaald",
+    "nieuwe_factor": 1.025,
+    "kg": 70.0,
+    "kg_volgens_plan": 67.5
+   }
+  ],
+  "laatste_beoordeelde_sessie": "2026-09-03"
  }
 }
