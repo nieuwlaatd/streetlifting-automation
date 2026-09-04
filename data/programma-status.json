@@ -1,9 +1,9 @@
 {
- "gegenereerd_op": "2026-09-03T18:49:01+00:00",
- "vandaag": "2026-09-03",
- "weekdag": 3,
- "dagthema": "Squat zwaar",
- "kernlift_vandaag": "squat",
+ "gegenereerd_op": "2026-09-04T09:41:37+00:00",
+ "vandaag": "2026-09-04",
+ "weekdag": 4,
+ "dagthema": "Volume + muscle-up",
+ "kernlift_vandaag": null,
  "positie": {
   "week": 0,
   "cyclusweek": 1,
@@ -280,7 +280,7 @@
    "correctiefactor": 1.025,
    "kg_volgens_plan": 67.5,
    "afwijking_kg": 2.5,
-   "bijgesteld_omdat": "zwaarder gedraaid dan voorgeschreven en gehaald",
+   "bijgesteld_omdat": null,
    "sessie_gemist": false
   }
  },
@@ -311,13 +311,13 @@
   },
   "squat": {
    "factor": 1.025,
-   "oordeel_vorige_sessie": "te_makkelijk",
-   "reden": "zwaarder gedraaid dan voorgeschreven en gehaald",
+   "oordeel_vorige_sessie": null,
+   "reden": null,
    "vorig_voorschrift": {
     "datum": "2026-09-03",
     "sets": 5,
     "reps": 5,
-    "kg": 67.5
+    "kg": 70.0
    },
    "gemist": false
   }
