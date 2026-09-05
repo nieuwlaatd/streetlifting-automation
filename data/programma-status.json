@@ -1,8 +1,8 @@
 {
- "gegenereerd_op": "2026-09-04T09:41:37+00:00",
- "vandaag": "2026-09-04",
- "weekdag": 4,
- "dagthema": "Volume + muscle-up",
+ "gegenereerd_op": "2026-09-05T09:07:07+00:00",
+ "vandaag": "2026-09-05",
+ "weekdag": 5,
+ "dagthema": null,
  "kernlift_vandaag": null,
  "positie": {
   "week": 0,
@@ -19,40 +19,8 @@
    "e1rm": 47.4,
    "bron": "hevy",
    "target_nu": 53.5,
-   "aantal_werksets_totaal": 10,
+   "aantal_werksets_totaal": 14,
    "laatste_sets": [
-    {
-     "datum": "2026-07-18",
-     "gewicht": 20,
-     "reps": 7,
-     "rpe": null,
-     "type": "failure",
-     "e1rm": 37.3
-    },
-    {
-     "datum": "2026-07-31",
-     "gewicht": 20,
-     "reps": 8,
-     "rpe": null,
-     "type": "failure",
-     "e1rm": 40.9
-    },
-    {
-     "datum": "2026-08-20",
-     "gewicht": 30,
-     "reps": 1,
-     "rpe": null,
-     "type": "normal",
-     "e1rm": 33.6
-    },
-    {
-     "datum": "2026-08-20",
-     "gewicht": 0,
-     "reps": 5,
-     "rpe": null,
-     "type": "normal",
-     "e1rm": 12.8
-    },
     {
      "datum": "2026-08-28",
      "gewicht": 30,
@@ -84,6 +52,38 @@
      "rpe": null,
      "type": "failure",
      "e1rm": 49.0
+    },
+    {
+     "datum": "2026-09-04",
+     "gewicht": 10,
+     "reps": 9,
+     "rpe": 6,
+     "type": "normal",
+     "e1rm": 42.3
+    },
+    {
+     "datum": "2026-09-04",
+     "gewicht": 15,
+     "reps": 9,
+     "rpe": 8,
+     "type": "normal",
+     "e1rm": 42.4
+    },
+    {
+     "datum": "2026-09-04",
+     "gewicht": 10,
+     "reps": 9,
+     "rpe": 8.5,
+     "type": "normal",
+     "e1rm": 34.4
+    },
+    {
+     "datum": "2026-09-04",
+     "gewicht": 10,
+     "reps": 5,
+     "rpe": 10,
+     "type": "normal",
+     "e1rm": 24.2
     }
    ],
    "laatste_notitie": null
@@ -165,7 +165,7 @@
    }
   },
   "squat": {
-   "e1rm": 94.1,
+   "e1rm": 93.3,
    "bron": "hevy",
    "target_nu": 101.7,
    "aantal_werksets_totaal": 19,
@@ -238,12 +238,56 @@
    "laatste_notitie": null
   },
   "muscleup": {
-   "e1rm": null,
-   "bron": "uitgangswaarde",
+   "e1rm": 14.7,
+   "bron": "hevy",
    "target_nu": 0.0,
-   "aantal_werksets_totaal": 0,
-   "laatste_sets": [],
-   "laatste_notitie": null
+   "aantal_werksets_totaal": 5,
+   "laatste_sets": [
+    {
+     "datum": "2026-09-04",
+     "gewicht": null,
+     "reps": 2,
+     "rpe": 6,
+     "type": "normal",
+     "e1rm": 14.7
+    },
+    {
+     "datum": "2026-09-04",
+     "gewicht": null,
+     "reps": 2,
+     "rpe": 6,
+     "type": "normal",
+     "e1rm": 14.7
+    },
+    {
+     "datum": "2026-09-04",
+     "gewicht": null,
+     "reps": 2,
+     "rpe": 6,
+     "type": "normal",
+     "e1rm": 14.7
+    },
+    {
+     "datum": "2026-09-04",
+     "gewicht": null,
+     "reps": 2,
+     "rpe": 6,
+     "type": "normal",
+     "e1rm": 14.7
+    },
+    {
+     "datum": "2026-09-04",
+     "gewicht": null,
+     "reps": 2,
+     "rpe": 6,
+     "type": "normal",
+     "e1rm": 14.7
+    }
+   ],
+   "laatste_notitie": {
+    "datum": "2026-09-04",
+    "tekst": "Deze is wel taai. Heb die techniek nog niet helemaal. En mijn triceps lijken te zwak. Ik val gelijk."
+   }
   }
  },
  "voorschrift_deze_week": {
@@ -253,10 +297,10 @@
    "percentage": 74.0,
    "kg": 15.0,
    "rpe_plafond": 7,
-   "correctiefactor": 1.0,
+   "correctiefactor": 0.95,
    "kg_volgens_plan": 15.0,
    "afwijking_kg": 0.0,
-   "bijgesteld_omdat": null,
+   "bijgesteld_omdat": "RPE 10 gelogd, boven het plafond",
    "sessie_gemist": false
   },
   "pullup": {
@@ -286,11 +330,11 @@
  },
  "terugkoppeling": {
   "dip": {
-   "factor": 1.0,
-   "oordeel_vorige_sessie": null,
-   "reden": null,
+   "factor": 0.95,
+   "oordeel_vorige_sessie": "te_zwaar",
+   "reden": "RPE 10 gelogd, boven het plafond",
    "vorig_voorschrift": {
-    "datum": "2026-09-03",
+    "datum": "2026-09-04",
     "sets": 4,
     "reps": 5,
     "kg": 15.0
@@ -302,7 +346,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-09-03",
+    "datum": "2026-09-04",
     "sets": 4,
     "reps": 5,
     "kg": 27.5
@@ -314,7 +358,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-09-03",
+    "datum": "2026-09-04",
     "sets": 5,
     "reps": 5,
     "kg": 70.0
@@ -332,14 +376,14 @@
  },
  "afgelopen_7_dagen": {
   "sessies": 4,
-  "dipwerksets": 4,
+  "dipwerksets": 8,
   "dipdoel": 10,
-  "pullupwerksets": 6,
+  "pullupwerksets": 12,
   "pullupdoel": 7,
-  "kernsets": 15,
-  "kernsets_met_rpe": 5,
-  "kernsets_tot_falen": 6
+  "kernsets": 19,
+  "kernsets_met_rpe": 14,
+  "kernsets_tot_falen": 1
  },
- "totaal_nu": 204.2,
+ "totaal_nu": 218.1,
  "totaal_doel": 367
 }
