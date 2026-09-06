@@ -48,6 +48,9 @@ jobs:
           HEVY_API_KEY: ${{ secrets.HEVY_API_KEY }}
         run: python scripts/hevy_sync.py
 
+      - name: Schema van coach Kaj ophalen
+        run: python scripts/coach_schema.py
+
       - name: Routines in Hevy bijwerken
         env:
           HEVY_API_KEY: ${{ secrets.HEVY_API_KEY }}

@@ -1,13 +1,14 @@
-"""Zet de vier trainingsdagen als routines klaar in Hevy, met de juiste gewichten.
+"""Zet het schema van coach Kaj als routines in Hevy.
 
-Zo hoeft er niets meer op een telefoonscherm gelezen te worden: je opent Hevy,
-start de routine van vandaag, en de gewichten staan er al in. De app waarin je
-toch al logt is meteen het schema.
+Bron is data/coachschema.json, dat rechtstreeks uit Kaj's Google Sheet komt.
+Deze code verzint niets: sets, reps en RPE worden overgenomen zoals ze in de
+Sheet staan. Voegt Kaj een week toe, dan volgt Hevy de ochtend erna vanzelf.
 
-Draait na hevy_sync.py, want die berekent het voorschrift dat hier ingevuld
-wordt. Bestaat een routine al, dan wordt hij bijgewerkt (PUT) in plaats van
-opnieuw aangemaakt, zodat je hem in Hevy kunt vastpinnen en hij op zijn plek
-blijft staan.
+WAAROM ER GEEN GEWICHTEN IN STAAN
+Kaj programmeert op RPE, niet op kilo's. "Competition Dip 3x3 @ RPE 6" betekent
+dat jij op de dag zelf het gewicht kiest dat op RPE 6 uitkomt. Een vooraf
+ingevuld gewicht zou dat oordeel overschrijven, en daarmee het schema kapot
+maken. Hevy toont bij een leeg gewichtsveld vanzelf wat je vorige keer deed.
 
 Omgevingsvariabele: HEVY_API_KEY
 """
@@ -19,50 +20,56 @@ import urllib.error
 import urllib.request
 
 BASE = "https://api.hevyapp.com"
-MAP_PREFIX = "SL"                 # herkenbaar voorvoegsel, zo vinden we ze terug
+MAP_PREFIX = "SL"
 FOLDER = "Streetlifting"
 
-# Exercise template ids uit de Hevy-bibliotheek.
-EX = {
-    "dip_w": "29472BE1",          # Chest Dip (Weighted)
-    "dip": "6FCD7755",            # Chest Dip
-    "pullup_w": "1B2B1E7C",       # Pull Up  (gewicht als extra kg)
-    "squat": "D04AC939",          # Squat (Barbell)
-    "bench": "79D0BB3A",          # Bench Press (Barbell)
-    "skull": "68F8A292",          # Skullcrusher (Dumbbell)
-    "abwheel": "99D5F10E",        # Ab Wheel
-    "row": "91FAFBA3",            # Iso-Lateral Low Row
-    "reardelt": "D8281C62",       # Rear Delt Reverse Fly (Machine)
-    "curl": "ADA8623C",           # Bicep Curl (Cable)
-    "nordic": "108D7A14",         # Nordic Hamstrings Curls
-    "legraise": "F8356514",       # Hanging Leg Raise
-    "latpull": "6A6C31A5",        # Lat Pulldown (Cable)
-    "hipthrust": "68CE0B9B",      # Hip Thrust (Machine)
-    "legcurl": "B8127AD1",        # Lying Leg Curl (Machine)
-    "legext": "75A4F6C4",         # Leg Extension (Machine)
-    "calf": "062AB91A",           # Seated Calf Raise
-    "adduction": "8BEBFED6",      # Hip Adduction (Machine)
-    "lateral": "BE289E45",        # Lateral Raise (Cable)
-    "hammer": "7E3BC8B6",         # Hammer Curl (Dumbbell)
-    "tricep": "94B7239B",         # Triceps Rope Pushdown
-    "crunch": "23A48484",         # Cable Crunch
-    "muscleup": "9F9C164B",       # Muscle Up
+# Kaj's oefeningnamen naar Hevy-templates. Bestaat een oefening niet letterlijk
+# in Hevy, dan pakken we de dichtstbijzijnde en zetten Kaj's naam in de notitie,
+# zodat er in het logboek geen twijfel over kan bestaan.
+MAP = {
+    "Competition Dip": ("29472BE1", None),
+    "Competition Chin-up": ("023943F1", None),
+    "Competition Pull-Up": ("1B2B1E7C", None),
+    "45 degree Incline Dumbbell Press": ("07B38369", "45 graden"),
+    "Cable Side Raise": ("BE289E45", None),
+    "Plate Loaded Knee Raise": ("98237BA2", "Plate loaded"),
+    "Skull Crusher": ("68F8A292", None),
+    "3-1-0 Tempo Squat": ("D04AC939", "Tempo 3-1-0: 3 sec zakken, 1 sec pauze, normaal omhoog"),
+    "Paused Squat": ("CE1054CE", None),
+    "Diagonal Bodyweight Pull-up": ("1B2B1E7C", "Diagonaal, lichaamsgewicht"),
+    "Bar Cable Pullover": ("B123DD01", "Met stang aan de kabel"),
+    "Leg Extension": ("75A4F6C4", None),
+    "Cable row": ("F1D60854", None),
+    "Spider Curl": ("90427D4A", None),
+    "2s Paused Dip": ("29472BE1", "2 seconden pauze onderin"),
+    "Close Grip Larsen Press": ("79D0BB3A", "Larsen press, benen van de grond"),
+    "2s Paused Squat": ("CE1054CE", "2 seconden pauze onderin"),
+    "Cable Fly": ("651F844C", None),
+    "Cable Knee Tuck": ("08590920", "Kabel knee tuck"),
+    "Ab Roll Out": ("99D5F10E", None),
+    "Competition Squat": ("D04AC939", None),
+    "Band Assisted Muscle-Up": ("9F9C164B", "Met band"),
+    "3-1-0 Tempo Dip": ("29472BE1", "Tempo 3-1-0"),
+    "3s Tempo Pull-Up": ("1B2B1E7C", "3 sec zakken"),
+    "Leg Curl": ("B8127AD1", None),
+    "Wide Grip Row": ("C3BCABB3", None),
+    "Tricep Extension": ("94B7239B", None),
+    "Side Plank Leg Raised": ("E3EDA509", "Been geheven"),
 }
+
+KORT = {"maandag": "Ma", "dinsdag": "Di", "woensdag": "Wo",
+        "donderdag": "Do", "vrijdag": "Vr", "zaterdag": "Za", "zondag": "Zo"}
 
 
 def _met_herhaling(doe, pogingen=5):
-    """Vangt 429 en tijdelijke serverfouten op met oplopende wachttijd.
-
-    De Hevy API knijpt af bij te veel verkeer. Zonder deze lus faalt de hele
-    ochtendrun op een enkele piek, en staat er geen routine klaar.
-    """
+    """Vangt 429 en tijdelijke serverfouten op met oplopende wachttijd."""
     import time
     for poging in range(pogingen):
         try:
             return doe()
         except urllib.error.HTTPError as fout:
             if fout.code in (429, 500, 502, 503, 504) and poging < pogingen - 1:
-                wacht = 2 ** poging * 5          # 5, 10, 20, 40 seconden
+                wacht = 2 ** poging * 5
                 print(f"  HTTP {fout.code}, opnieuw over {wacht}s")
                 time.sleep(wacht)
                 continue
@@ -74,116 +81,96 @@ def api(pad, methode="GET", body=None, key=None):
         data = json.dumps(body).encode() if body is not None else None
         req = urllib.request.Request(
             BASE + pad, data=data, method=methode,
-            headers={"api-key": key, "Content-Type": "application/json", "Accept": "application/json"})
+            headers={"api-key": key, "Content-Type": "application/json",
+                     "Accept": "application/json"})
         with urllib.request.urlopen(req, timeout=60) as r:
             tekst = r.read().decode()
             return json.loads(tekst) if tekst.strip() else {}
     return _met_herhaling(doe)
 
 
-def oef(template, sets, rust=None, notitie=None):
-    return {"exercise_template_id": template, "superset_id": None,
-            "rest_seconds": rust, "notes": notitie, "sets": sets}
+def maak_sets(oefening):
+    """Bouwt de sets. Reps kan een getal, een bereik of 'x' zijn."""
+    try:
+        aantal = int(float(oefening["sets"] or 1))
+    except ValueError:
+        aantal = 1
+    aantal = max(1, min(aantal, 10))
 
+    reps_tekst = (oefening["reps"] or "").strip()
+    reps, bereik = None, None
+    if "-" in reps_tekst:
+        stukken = reps_tekst.split("-")
+        try:
+            bereik = (int(stukken[0]), int(stukken[1]))
+            reps = bereik[0]
+        except ValueError:
+            pass
+    else:
+        try:
+            reps = int(float(reps_tekst))
+        except ValueError:
+            reps = None            # bijvoorbeeld 'x' of '30 sec'
 
-def werksets(aantal, reps, gewicht=None, opwarming=0):
-    uit = []
-    for i in range(opwarming):
-        deel = [0.4, 0.6, 0.8][min(i, 2)]
-        uit.append({"type": "warmup", "reps": max(3, reps - 1),
-                    "weight_kg": round((gewicht or 0) * deel / 2.5) * 2.5 if gewicht else 0})
+    sets = []
     for _ in range(aantal):
-        uit.append({"type": "normal", "reps": reps, "weight_kg": gewicht})
+        s = {"type": "normal", "reps": reps, "weight_kg": None}
+        if bereik:
+            s["rep_range"] = {"start": bereik[0], "end": bereik[1]}
+        sets.append(s)
+    return sets
+
+
+def notitie(oefening, hevy_titel_afwijkend):
+    delen = []
+    if hevy_titel_afwijkend:
+        delen.append(f"Kaj: {oefening['naam']}")
+    if hevy_titel_afwijkend is None and oefening["naam"]:
+        pass
+    rl = (oefening["rpe_load"] or "").strip()
+    if rl and rl.lower() != "x":
+        delen.append(f"RPE {rl}" if not rl.lower().startswith("rpe") else rl)
+    reps = (oefening["reps"] or "").strip()
+    if reps and not reps.replace("-", "").isdigit():
+        delen.append(f"Reps: {reps}")
+    if oefening["opmerking"]:
+        delen.append(oefening["opmerking"])
+    return " · ".join(delen) or None
+
+
+def bouw_routines(schema):
+    uit = []
+    for blok in schema["blokken"]:
+        for i, dag in enumerate(blok["dagen"], start=1):
+            oefeningen = []
+            for o in dag["oefeningen"]:
+                gevonden = MAP.get(o["naam"])
+                if not gevonden:
+                    print(f"  LET OP: geen Hevy-oefening voor {o['naam']!r}, overgeslagen")
+                    continue
+                template, extra = gevonden
+                stukken = [f"Kaj: {o['naam']}"]
+                rl = (o["rpe_load"] or "").strip()
+                if rl and rl.lower() != "x":
+                    stukken.append(f"RPE {rl}")
+                if extra:
+                    stukken.append(extra)
+                if o["opmerking"]:
+                    stukken.append(o["opmerking"])
+                reps = (o["reps"] or "").strip()
+                if reps and not reps.replace("-", "").isdigit():
+                    stukken.append(f"Reps: {reps}")
+                oefeningen.append({
+                    "exercise_template_id": template,
+                    "superset_id": None,
+                    "rest_seconds": 180 if "Competition" in o["naam"] else 90,
+                    "notes": " · ".join(stukken),
+                    "sets": maak_sets(o),
+                })
+            thema = dag["thema"] or dag["dag"].capitalize()
+            titel = f"{MAP_PREFIX} {i} · {KORT[dag['dag']]} — {thema}"
+            uit.append((f"{MAP_PREFIX} {i}", titel[:95], oefeningen))
     return uit
-
-
-TEST_PERCENTAGE = 0.92        # RPE 9 ongeveer: zwaar, maar er zit een rep in
-
-
-def bouw_routines(status):
-    v = status["voorschrift_deze_week"]
-    pos = status["positie"]
-    stand = status.get("stand", {})
-    bw = float(status.get("lichaamsgewicht") or 77)
-    dip, pull, squat = v["dip"], v["pullup"], v["squat"]
-    testweek = pos["cyclusweek"] == 5
-
-    def kern_notitie(x):
-        return f"KERNLIFT — RPE-plafond {x['rpe_plafond']}. Stop bij het plafond, niet bij falen."
-
-    def met_test(sets, lift):
-        """Plakt in cyclusweek 5 een testsingle achter de werksets.
-
-        Eens per zes weken, niet vaker: de schatting loopt al mee met elke
-        werkset, dus dit is een ijkpunt en geen wekelijkse krachtproef. Zonder
-        deze regel in de routine zou de instructie nergens meer opduiken nu de
-        dagberichten uit staan.
-        """
-        if not testweek:
-            return sets
-        e1rm = (stand.get(lift) or {}).get("e1rm")
-        if not e1rm:
-            return sets
-        rauw = (bw + e1rm) * TEST_PERCENTAGE - bw if lift in ("dip", "pullup") else e1rm * TEST_PERCENTAGE
-        return sets + [{"type": "normal", "reps": 1, "weight_kg": round(rauw / 2.5) * 2.5}]
-
-    test_notitie = ("TESTSINGLE — één rep op RPE 9: zwaar, maar er zit er nog één in. "
-                    "Voelt het als RPE 8 of lichter, doe er 2,5 kg bij en probeer nog één keer. "
-                    "Hieruit wordt het volgende blok berekend, dus log de RPE.")
-
-    ma = [
-        oef(EX["dip_w"], met_test(werksets(dip["sets"], dip["reps"], dip["kg"], opwarming=3), "dip"), 180,
-            kern_notitie(dip) + (" " + test_notitie if testweek else "")),
-        oef(EX["dip_w"], werksets(2, 8, round(dip["kg"] / 2 / 2.5) * 2.5), 120, "Back-off, helft van het kerngewicht."),
-        oef(EX["squat"], werksets(4, 4, round(squat["kg"] * 0.85 / 2.5) * 2.5), 150,
-            "Snelheidswerk, RPE-plafond 6. Elke rep explosief omhoog."),
-        oef(EX["bench"], werksets(2, 8), 120, "Assistentie, RPE 8."),
-        oef(EX["skull"], werksets(2, 10), 90),
-        oef(EX["abwheel"], werksets(2, 12), 60),
-    ]
-    wo = [
-        oef(EX["pullup_w"], met_test(werksets(pull["sets"], pull["reps"], pull["kg"], opwarming=3), "pullup"), 180,
-            kern_notitie(pull) + (" " + test_notitie if testweek else "")),
-        oef(EX["row"], werksets(3, 8), 120, "RPE 8."),
-        oef(EX["reardelt"], werksets(2, 13), 90),
-        oef(EX["curl"], werksets(2, 11), 90),
-        oef(EX["nordic"], werksets(2, 5), 120, "Excentrisch afremmen."),
-        oef(EX["legraise"], werksets(3, 12), 60),
-        oef(EX["latpull"], werksets(2, 11), 90, "Optioneel, laat vallen bij tijdnood."),
-    ]
-    do = [
-        oef(EX["squat"], met_test(werksets(squat["sets"], squat["reps"], squat["kg"], opwarming=3), "squat"), 210,
-            kern_notitie(squat) + " Heupplooi onder de knie, wedstrijddiepte."
-            + (" " + test_notitie if testweek else "")),
-        oef(EX["hipthrust"], werksets(2, 8), 120),
-        oef(EX["legcurl"], werksets(3, 7), 90),
-        oef(EX["legext"], werksets(2, 11), 90),
-        oef(EX["calf"], werksets(2, 12), 60),
-        oef(EX["adduction"], werksets(2, 12), 60, "Optioneel."),
-    ]
-    vr = [
-        oef(EX["pullup_w"], werksets(5, 3), 90,
-            "Muscle-upwerk. Explosieve high pull-ups: trekken tot je onderste ribben."),
-        oef(EX["muscleup"], werksets(5, 2), 120,
-            "Negatieve muscle-ups: spring erin, zak in 3 tot 5 seconden door de transitie terug."),
-        oef(EX["dip"], werksets(3, 8), 90, "Straight-bar dips, bovenste helft van de muscle-up."),
-        oef(EX["dip_w"], werksets(4, 9, round(dip["kg"] / 2 / 2.5) * 2.5), 120, "Volume, RPE 8."),
-        oef(EX["pullup_w"], werksets(3, 7, round(pull["kg"] * 0.6 / 2.5) * 2.5), 120, "Volume, RPE 8."),
-        oef(EX["lateral"], werksets(2, 13), 60),
-        oef(EX["hammer"], werksets(2, 11), 60),
-        oef(EX["tricep"], werksets(2, 11), 60),
-        oef(EX["crunch"], werksets(2, 13), 60),
-    ]
-    wk = f"wk{pos['week']}" + ("-DELOAD" if pos["deload"] else "") + (" TEST" if testweek else "")
-    # Het notes-veld van een routine wordt door Hevy niet bewaard, dus alles
-    # wat je vooraf wilt zien staat in de titel. Terugvinden gebeurt op het
-    # voorvoegsel ("SL 1"), zodat de rest van de titel mag meebewegen.
-    return [
-        ("SL 1", f"SL 1 · Ma — Dip +{dip['kg']:g} · {wk}", ma),
-        ("SL 2", f"SL 2 · Wo — Pull-up +{pull['kg']:g} · {wk}", wo),
-        ("SL 3", f"SL 3 · Do — Squat {squat['kg']:g} · {wk}", do),
-        ("SL 4", f"SL 4 · Vr — Volume + muscle-up · {wk}", vr),
-    ]
 
 
 def main():
@@ -191,11 +178,10 @@ def main():
     if not key:
         sys.exit("HEVY_API_KEY ontbreekt.")
     try:
-        status = json.load(open("data/programma-status.json", encoding="utf-8"))
+        schema = json.load(open("data/coachschema.json", encoding="utf-8"))
     except FileNotFoundError:
-        sys.exit("data/programma-status.json ontbreekt; draai eerst hevy_sync.py.")
+        sys.exit("data/coachschema.json ontbreekt; draai eerst coach_schema.py.")
 
-    # Map opzoeken of aanmaken.
     folder_id = None
     try:
         mappen = (api("/v1/routine_folders?page=1&pageSize=10", key=key) or {}).get("routine_folders") or []
@@ -206,29 +192,28 @@ def main():
             nieuw = api("/v1/routine_folders", "POST", {"routine_folder": {"title": FOLDER}}, key)
             folder_id = (nieuw.get("routine_folder") or {}).get("id")
     except urllib.error.HTTPError as e:
-        print(f"Map aanmaken overgeslagen (HTTP {e.code}); routines komen in My Routines.")
+        print(f"Map overgeslagen (HTTP {e.code}); routines komen in My Routines.")
 
-    # Bestaande routines ophalen, zodat we bijwerken in plaats van dupliceren.
     bestaand, pagina = {}, 1
     while pagina <= 10:
         blok = api(f"/v1/routines?page={pagina}&pageSize=10", key=key)
         for r in blok.get("routines") or []:
             titel = r.get("title") or ""
             if titel.startswith(MAP_PREFIX + " "):
-                bestaand[" ".join(titel.split()[:2])] = r["id"]   # sleutel: "SL 1"
+                bestaand[" ".join(titel.split()[:2])] = r["id"]
         if pagina >= blok.get("page_count", 1):
             break
         pagina += 1
 
-    for sleutel, titel, oefeningen in bouw_routines(status):
+    for sleutel, titel, oefeningen in bouw_routines(schema):
         body = {"routine": {"title": titel, "exercises": oefeningen}}
         if sleutel in bestaand:
             api(f"/v1/routines/{bestaand[sleutel]}", "PUT", body, key)
-            print(f"bijgewerkt: {titel}")
+            print(f"bijgewerkt: {titel}  ({len(oefeningen)} oefeningen)")
         else:
             body["routine"]["folder_id"] = folder_id
             api("/v1/routines", "POST", body, key)
-            print(f"aangemaakt: {titel}")
+            print(f"aangemaakt: {titel}  ({len(oefeningen)} oefeningen)")
 
 
 if __name__ == "__main__":

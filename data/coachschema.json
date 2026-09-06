@@ -1,0 +1,268 @@
+{
+ "opgehaald": "2026-09-06T17:39:00+00:00",
+ "bron": "https://docs.google.com/spreadsheets/d/1QGxPFQB17u9zDPNXMl74pcVUERlX2g7RwZBRk-Trpfo/export?format=xlsx",
+ "blokken": [
+  {
+   "blok": "Blok intro",
+   "week": 1,
+   "dagen": [
+    {
+     "dag": "maandag",
+     "weekdag": 0,
+     "datum_label": "September 07",
+     "thema": "Primaire Dip + Secundaire Pull-Up",
+     "oefeningen": [
+      {
+       "naam": "Competition Dip",
+       "sets": "3",
+       "reps": "3",
+       "rpe_load": "6",
+       "opmerking": ""
+      },
+      {
+       "naam": "Competition Dip",
+       "sets": "3",
+       "reps": "6",
+       "rpe_load": "6",
+       "opmerking": ""
+      },
+      {
+       "naam": "Competition Chin-up",
+       "sets": "3",
+       "reps": "5",
+       "rpe_load": "4->5->6",
+       "opmerking": ""
+      },
+      {
+       "naam": "45 degree Incline Dumbbell Press",
+       "sets": "3",
+       "reps": "6-12",
+       "rpe_load": "",
+       "opmerking": ""
+      },
+      {
+       "naam": "Cable Side Raise",
+       "sets": "2",
+       "reps": "10-15",
+       "rpe_load": "",
+       "opmerking": ""
+      },
+      {
+       "naam": "Plate Loaded Knee Raise",
+       "sets": "3",
+       "reps": "6-12",
+       "rpe_load": "",
+       "opmerking": ""
+      },
+      {
+       "naam": "Skull Crusher",
+       "sets": "2",
+       "reps": "6-12",
+       "rpe_load": "",
+       "opmerking": ""
+      }
+     ]
+    },
+    {
+     "dag": "dinsdag",
+     "weekdag": 1,
+     "datum_label": "September 08",
+     "thema": "Secundaire Squat + Muscle up",
+     "oefeningen": [
+      {
+       "naam": "3-1-0 Tempo Squat",
+       "sets": "1",
+       "reps": "3",
+       "rpe_load": "5",
+       "opmerking": ""
+      },
+      {
+       "naam": "Paused Squat",
+       "sets": "2",
+       "reps": "5",
+       "rpe_load": "5",
+       "opmerking": ""
+      },
+      {
+       "naam": "Diagonal Bodyweight Pull-up",
+       "sets": "5",
+       "reps": "4",
+       "rpe_load": "x",
+       "opmerking": ""
+      },
+      {
+       "naam": "Bar Cable Pullover",
+       "sets": "3",
+       "reps": "4-8",
+       "rpe_load": "8",
+       "opmerking": ""
+      },
+      {
+       "naam": "Leg Extension",
+       "sets": "3",
+       "reps": "8-15",
+       "rpe_load": "",
+       "opmerking": ""
+      },
+      {
+       "naam": "Cable row",
+       "sets": "2",
+       "reps": "6-12",
+       "rpe_load": "",
+       "opmerking": ""
+      },
+      {
+       "naam": "Spider Curl",
+       "sets": "3",
+       "reps": "6-12",
+       "rpe_load": "",
+       "opmerking": ""
+      }
+     ]
+    },
+    {
+     "dag": "donderdag",
+     "weekdag": 3,
+     "datum_label": "September 10",
+     "thema": "Primaire Pull-Up + Tertiaire Dip + Squat",
+     "oefeningen": [
+      {
+       "naam": "Competition Pull-Up",
+       "sets": "3",
+       "reps": "6",
+       "rpe_load": "6",
+       "opmerking": ""
+      },
+      {
+       "naam": "Competition Pull-Up",
+       "sets": "1",
+       "reps": "3",
+       "rpe_load": "6",
+       "opmerking": ""
+      },
+      {
+       "naam": "2s Paused Dip",
+       "sets": "2",
+       "reps": "4",
+       "rpe_load": "5",
+       "opmerking": ""
+      },
+      {
+       "naam": "Close Grip Larsen Press",
+       "sets": "2",
+       "reps": "7",
+       "rpe_load": "5",
+       "opmerking": "Grip schouderbreedte"
+      },
+      {
+       "naam": "2s Paused Squat",
+       "sets": "3",
+       "reps": "4",
+       "rpe_load": "5",
+       "opmerking": ""
+      },
+      {
+       "naam": "Cable Fly",
+       "sets": "2",
+       "reps": "8-15",
+       "rpe_load": "",
+       "opmerking": ""
+      },
+      {
+       "naam": "Cable Knee Tuck",
+       "sets": "3",
+       "reps": "10-15",
+       "rpe_load": "",
+       "opmerking": ""
+      },
+      {
+       "naam": "Ab Roll Out",
+       "sets": "3",
+       "reps": "x",
+       "rpe_load": "",
+       "opmerking": ""
+      }
+     ]
+    },
+    {
+     "dag": "zaterdag",
+     "weekdag": 5,
+     "datum_label": "September 12",
+     "thema": "Primaire Muscle-Up + Squat + Secundaire Dip + Tertiaire Pull-Up",
+     "oefeningen": [
+      {
+       "naam": "Competition Squat",
+       "sets": "3",
+       "reps": "5",
+       "rpe_load": "4->5->6",
+       "opmerking": ""
+      },
+      {
+       "naam": "Competition Squat",
+       "sets": "2",
+       "reps": "7",
+       "rpe_load": "5",
+       "opmerking": ""
+      },
+      {
+       "naam": "Band Assisted Muscle-Up",
+       "sets": "5",
+       "reps": "2",
+       "rpe_load": "x",
+       "opmerking": ""
+      },
+      {
+       "naam": "3-1-0 Tempo Dip",
+       "sets": "1",
+       "reps": "3",
+       "rpe_load": "",
+       "opmerking": ""
+      },
+      {
+       "naam": "Competition Dip",
+       "sets": "2",
+       "reps": "6",
+       "rpe_load": "",
+       "opmerking": ""
+      },
+      {
+       "naam": "3s Tempo Pull-Up",
+       "sets": "3",
+       "reps": "5",
+       "rpe_load": "",
+       "opmerking": ""
+      },
+      {
+       "naam": "Leg Curl",
+       "sets": "3",
+       "reps": "8-15",
+       "rpe_load": "",
+       "opmerking": ""
+      },
+      {
+       "naam": "Wide Grip Row",
+       "sets": "2",
+       "reps": "6-12",
+       "rpe_load": "",
+       "opmerking": ""
+      },
+      {
+       "naam": "Tricep Extension",
+       "sets": "3",
+       "reps": "8-15",
+       "rpe_load": "",
+       "opmerking": ""
+      },
+      {
+       "naam": "Side Plank Leg Raised",
+       "sets": "4",
+       "reps": "30 sec",
+       "rpe_load": "",
+       "opmerking": "per been"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
