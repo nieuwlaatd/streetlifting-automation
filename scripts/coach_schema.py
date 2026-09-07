@@ -77,12 +77,13 @@ def parse(bestand):
                 huidig = {"dag": dag, "weekdag": DAGNAMEN[dag],
                           "datum_label": a.split("|")[-1].strip() if "|" in a else "",
                           "thema": tekst(ws.cell(row=r, column=5).value),
-                          "oefeningen": []}
+                          "tabblad": naam, "kop_rij": r, "oefeningen": []}
                 dagen.append(huidig)
                 continue
             if huidig is None:
                 continue
             huidig["oefeningen"].append({
+                "rij": r,                     # waar de schrijver de sets neerzet
                 "naam": a,
                 "sets": tekst(ws.cell(row=r, column=2).value),
                 "reps": tekst(ws.cell(row=r, column=3).value),
@@ -105,7 +106,9 @@ def main():
     for b in blokken:
         print(f"{b['blok']} — week {b['week']}: {len(b['dagen'])} dagen")
         for d in b["dagen"]:
-            print(f"   {d['dag']:10s} {len(d['oefeningen'])} oefeningen — {d['thema']}")
+            rijen = [o["rij"] for o in d["oefeningen"]]
+            bereik = f"rij {min(rijen)}-{max(rijen)}" if rijen else "leeg"
+            print(f"   {d['dag']:10s} {len(d['oefeningen'])} oefeningen ({bereik}) — {d['thema']}")
 
 
 if __name__ == "__main__":

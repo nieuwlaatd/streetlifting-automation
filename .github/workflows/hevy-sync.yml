@@ -45,7 +45,7 @@ jobs:
 
       # Alleen coach_schema.py heeft een pakket nodig; de rest is standaardbibliotheek.
       - name: Afhankelijkheden
-        run: pip install --quiet openpyxl
+        run: pip install --quiet openpyxl google-auth google-api-python-client
 
       - name: Hevy ophalen en doorrekenen
         env:
@@ -62,6 +62,14 @@ jobs:
         env:
           HEVY_API_KEY: ${{ secrets.HEVY_API_KEY }}
         run: python scripts/hevy_routines.py
+
+      # Zonder GOOGLE_SERVICE_ACCOUNT slaat dit script zichzelf netjes over.
+      - name: Sessies naar de Sheet van Kaj schrijven
+        continue-on-error: true
+        env:
+          HEVY_API_KEY: ${{ secrets.HEVY_API_KEY }}
+          GOOGLE_SERVICE_ACCOUNT: ${{ secrets.GOOGLE_SERVICE_ACCOUNT }}
+        run: python scripts/sheets_log.py
 
       - name: Wijzigingen vastleggen
         run: |
