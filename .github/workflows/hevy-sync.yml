@@ -43,12 +43,19 @@ jobs:
         with:
           python-version: "3.12"
 
+      # Alleen coach_schema.py heeft een pakket nodig; de rest is standaardbibliotheek.
+      - name: Afhankelijkheden
+        run: pip install --quiet openpyxl
+
       - name: Hevy ophalen en doorrekenen
         env:
           HEVY_API_KEY: ${{ secrets.HEVY_API_KEY }}
         run: python scripts/hevy_sync.py
 
+      # Valt Google even weg, dan draait de rest door op het schema dat al in
+      # de repo staat. Beter een dag oude routine dan helemaal geen routine.
       - name: Schema van coach Kaj ophalen
+        continue-on-error: true
         run: python scripts/coach_schema.py
 
       - name: Routines in Hevy bijwerken
