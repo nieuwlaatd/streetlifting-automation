@@ -1,9 +1,9 @@
 {
- "gegenereerd_op": "2026-09-07T12:38:38+00:00",
- "vandaag": "2026-09-07",
- "weekdag": 0,
- "dagthema": "Dip zwaar",
- "kernlift_vandaag": "dip",
+ "gegenereerd_op": "2026-09-08T09:43:44+00:00",
+ "vandaag": "2026-09-08",
+ "weekdag": 1,
+ "dagthema": null,
+ "kernlift_vandaag": null,
  "positie": {
   "week": 1,
   "cyclusweek": 1,
@@ -375,14 +375,14 @@
   }
  },
  "afgelopen_7_dagen": {
-  "sessies": 4,
-  "dipwerksets": 8,
+  "sessies": 3,
+  "dipwerksets": 7,
   "dipdoel": 10,
   "pullupwerksets": 12,
   "pullupdoel": 7,
-  "kernsets": 19,
+  "kernsets": 18,
   "kernsets_met_rpe": 14,
-  "kernsets_tot_falen": 1
+  "kernsets_tot_falen": 0
  },
  "totaal_nu": 218.1,
  "totaal_doel": 367
