@@ -228,7 +228,13 @@ def main():
             waarden = [zet_set(s) for s in werk[:5]]
 
             rij = doel["rij"]
-            if rpes and (overschrijf or not cel(rij, 6)):
+            # Een eerdere versie schreef met USER_ENTERED, waardoor Google van
+            # een RPE-bereik als "6-7" de datum 6 juli maakte. Zulke cellen
+            # herkennen we en herstellen we; met de hand ingevulde RPE's
+            # blijven staan.
+            bestaand_f = str(cel(rij, 6))
+            verminkt = bestaand_f.startswith("20") and bestaand_f.count("-") >= 2
+            if rpes and (overschrijf or verminkt or not bestaand_f):
                 rpe_cel = (f"{min(rpes):g}-{max(rpes):g}" if min(rpes) != max(rpes)
                            else f"{min(rpes):g}")
                 updates.append({"range": f"'{tabblad}'!F{rij}", "values": [[rpe_cel]]})
@@ -249,7 +255,7 @@ def main():
         return
     svc.values().batchUpdate(
         spreadsheetId=SHEET_ID,
-        body={"valueInputOption": "USER_ENTERED", "data": updates}).execute()
+        body={"valueInputOption": "RAW", "data": updates}).execute()
     print(f"{len(updates)} cellen bijgewerkt in de Sheet.")
 
 
