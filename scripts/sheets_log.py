@@ -1,7 +1,9 @@
 """Zet gelogde Hevy-sessies over naar de Google Sheet van coach Kaj.
 
 Kaj wil de werkelijke uitvoering in zijn Sheet zien: per oefening de RPE in
-kolom F en de sets in G tot en met K. Dit script leest de laatste sessies uit
+kolom F, de sets in G tot en met K, en in L waar het van zijn plan afweek.
+Zijn eigen kolommen A tot en met E blijven onaangeroerd, zodat het voorschrift
+en de uitvoering naast elkaar staan in plaats van door elkaar. Dit script leest de laatste sessies uit
 Hevy, zoekt bij elke oefening de bijbehorende rij en vult die in.
 
 WAT ER NIET GEBEURT
@@ -43,6 +45,7 @@ HEVY_NAAR_KAJ = {
     "Pull Up": ["Competition Pull-Up", "Diagonal Bodyweight Pull-up", "3s Tempo Pull-Up"],
     "Incline Bench Press (Dumbbell)": ["45 degree Incline Dumbbell Press"],
     "Lateral Raise (Cable)": ["Cable Side Raise"],
+    "Single Arm Lateral Raise (Cable)": ["Cable Side Raise"],
     "Knee Raise Parallel Bars": ["Plate Loaded Knee Raise"],
     "Skullcrusher (Dumbbell)": ["Skull Crusher"],
     "Squat (Barbell)": ["3-1-0 Tempo Squat", "Competition Squat"],
@@ -105,6 +108,45 @@ def zet_set(s):
     if not g:
         return f"BW x{reps}"
     return f"{g:g} x{reps}"
+
+
+def bereik(tekst):
+    """'6-12' wordt (6, 12); '3' wordt (3, 3); 'x' wordt None."""
+    if "-" in str(tekst):
+        a, b = str(tekst).split("-")[:2]
+        try:
+            return int(a), int(b)
+        except ValueError:
+            return None
+    try:
+        n = int(float(tekst))
+        return n, n
+    except (ValueError, TypeError):
+        return None
+
+
+def afwijking(plan, werk, hevy_titel):
+    """Beschrijft in het kort hoe de uitvoering zich tot het plan verhoudt.
+
+    Dit is de reden dat er een kolom L bijkomt: zonder zo'n regel ziet de coach
+    wel de gedraaide sets, maar niet waar die van zijn voorschrift afweken.
+    """
+    delen = []
+    gepland_sets = bereik(plan["sets"])
+    if gepland_sets and len(werk) != gepland_sets[0]:
+        delen.append(f"{len(werk)} van {gepland_sets[0]} sets")
+    gepland_reps = bereik(plan["reps"])
+    if gepland_reps:
+        gedaan = [s.get("reps") or 0 for s in werk]
+        if any(not (gepland_reps[0] <= r <= gepland_reps[1]) for r in gedaan):
+            lo, hi = min(gedaan), max(gedaan)
+            gepland_tekst = (f"{gepland_reps[0]}-{gepland_reps[1]}"
+                             if gepland_reps[0] != gepland_reps[1] else str(gepland_reps[0]))
+            delen.append((f"reps {lo}-{hi}" if lo != hi else f"reps {lo}")
+                         + f" i.p.v. {gepland_tekst}")
+    if "Single Arm" in hevy_titel:
+        delen.append(f"variant: {hevy_titel}")
+    return "; ".join(delen) if delen else "volgens plan"
 
 
 def kies_dag(workout, dagen):
@@ -187,12 +229,19 @@ def main():
 
             rij = doel["rij"]
             if rpes and (overschrijf or not cel(rij, 6)):
-                updates.append({"range": f"'{tabblad}'!F{rij}", "values": [[max(rpes)]]})
+                rpe_cel = (f"{min(rpes):g}-{max(rpes):g}" if min(rpes) != max(rpes)
+                           else f"{min(rpes):g}")
+                updates.append({"range": f"'{tabblad}'!F{rij}", "values": [[rpe_cel]]})
             for i, waarde in enumerate(waarden):
                 kolom = chr(ord("G") + i)
                 if waarde and (overschrijf or not cel(rij, 7 + i)):
                     updates.append({"range": f"'{tabblad}'!{kolom}{rij}", "values": [[waarde]]})
                     gevuld += 1
+            # Kolom L: waar de uitvoering van het plan afweek. Kaj ziet zo in
+            # een oogopslag het verschil tussen wat hij vroeg en wat er gebeurde.
+            if overschrijf or not cel(rij, 12):
+                updates.append({"range": f"'{tabblad}'!L{rij}",
+                                "values": [[afwijking(doel, werk, titel)]]})
         print(f"  {datum} {w.get('title','')!r} -> {dag['dag']} (gekoppeld op {reden}), {gevuld} cellen")
 
     if not updates:
