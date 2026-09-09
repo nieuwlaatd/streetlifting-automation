@@ -72,7 +72,7 @@ jobs:
         env:
           HEVY_API_KEY: ${{ secrets.HEVY_API_KEY }}
           GOOGLE_SERVICE_ACCOUNT: ${{ secrets.GOOGLE_SERVICE_ACCOUNT }}
-        run: python scripts/sheets_log.py --overschrijf
+        run: python scripts/sheets_log.py
 
       - name: Wijzigingen vastleggen
         run: |
