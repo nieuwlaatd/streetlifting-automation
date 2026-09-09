@@ -234,13 +234,18 @@ def main():
             # raden hoe zo'n verminkte cel eruitziet, beschrijven we wat een
             # geldige RPE is: een getal of een bereik tussen 1 en 10. Alles
             # daarbuiten is geen RPE en mag overschreven worden.
-            bestaand_f = str(cel(rij, 6)).strip()
-            geldig = re.fullmatch(r"\d{1,2}([.,]\d)?(\s*-\s*\d{1,2}([.,]\d)?)?", bestaand_f)
-            verminkt = bool(bestaand_f) and not geldig
-            if rpes and (overschrijf or verminkt or not bestaand_f):
-                rpe_cel = (f"{min(rpes):g}-{max(rpes):g}" if min(rpes) != max(rpes)
-                           else f"{min(rpes):g}")
-                updates.append({"range": f"'{tabblad}'!F{rij}", "values": [[rpe_cel]]})
+            # Kolom F krijgt altijd een GETAL, nooit een bereik. Een tekst als
+            # "6-7" werd door Google als datum gelezen; met een getal kan die
+            # hele klasse fouten niet meer optreden. Varieerde de RPE over de
+            # sets, dan staat dat in kolom L.
+            bestaand_f = str(cel(rij, 6)).strip().replace(",", ".")
+            try:
+                al_ingevuld = 1 <= float(bestaand_f) <= 10
+            except ValueError:
+                al_ingevuld = False
+            if rpes and (overschrijf or not al_ingevuld):
+                updates.append({"range": f"'{tabblad}'!F{rij}",
+                                "values": [[float(max(rpes))]]})
             for i, waarde in enumerate(waarden):
                 kolom = chr(ord("G") + i)
                 if waarde and (overschrijf or not cel(rij, 7 + i)):
@@ -249,8 +254,11 @@ def main():
             # Kolom L: waar de uitvoering van het plan afweek. Kaj ziet zo in
             # een oogopslag het verschil tussen wat hij vroeg en wat er gebeurde.
             if overschrijf or not cel(rij, 12):
-                updates.append({"range": f"'{tabblad}'!L{rij}",
-                                "values": [[afwijking(doel, werk, titel)]]})
+                notitie = afwijking(doel, werk, titel)
+                if rpes and min(rpes) != max(rpes):
+                    spreiding = f"RPE {min(rpes):g}-{max(rpes):g} over de sets"
+                    notitie = f"{notitie}; {spreiding}" if notitie != "volgens plan" else spreiding
+                updates.append({"range": f"'{tabblad}'!L{rij}", "values": [[notitie]]})
         print(f"  {datum} {w.get('title','')!r} -> {dag['dag']} (gekoppeld op {reden}), {gevuld} cellen")
 
     if not updates:
