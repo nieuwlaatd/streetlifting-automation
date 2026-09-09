@@ -81,7 +81,20 @@ jobs:
           git add data/
           if git diff --staged --quiet; then
             echo "Niets veranderd."
-          else
-            git commit -m "Hevy-data bijgewerkt $(date -u +'%Y-%m-%d %H:%M UTC')"
-            git push
+            exit 0
           fi
+          git commit -m "Hevy-data bijgewerkt $(date -u +'%Y-%m-%d %H:%M UTC')"
+          # Er kan intussen iets anders gepusht zijn: een tweede run, of een
+          # commit vanaf een werkplek. Zonder deze lus klapt de hele run op een
+          # botsing die met opnieuw proberen verholpen is.
+          for poging in 1 2 3; do
+            if git push; then
+              echo "Gepusht bij poging $poging."
+              exit 0
+            fi
+            echo "Push geweigerd, remote is verschoven. Opnieuw proberen."
+            git pull --rebase --autostash origin main || true
+            sleep 5
+          done
+          echo "Kon na drie pogingen niet pushen." >&2
+          exit 1
