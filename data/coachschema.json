@@ -1,5 +1,5 @@
 {
- "opgehaald": "2026-09-09T20:54:05+00:00",
+ "opgehaald": "2026-09-09T20:58:43+00:00",
  "bron": "https://docs.google.com/spreadsheets/d/1QGxPFQB17u9zDPNXMl74pcVUERlX2g7RwZBRk-Trpfo/export?format=xlsx",
  "blokken": [
   {
@@ -10,6 +10,7 @@
      "dag": "maandag",
      "weekdag": 0,
      "datum_label": "September 07",
+     "datum": "2026-09-07",
      "thema": "Primaire Dip + Secundaire Pull-Up",
      "tabblad": "Blok intro",
      "kop_rij": 8,
@@ -76,6 +77,7 @@
      "dag": "dinsdag",
      "weekdag": 1,
      "datum_label": "September 08",
+     "datum": "2026-09-08",
      "thema": "Secundaire Squat + Muscle up",
      "tabblad": "Blok intro",
      "kop_rij": 18,
@@ -142,6 +144,7 @@
      "dag": "donderdag",
      "weekdag": 3,
      "datum_label": "September 10",
+     "datum": "2026-09-10",
      "thema": "Primaire Pull-Up + Tertiaire Dip + Squat",
      "tabblad": "Blok intro",
      "kop_rij": 28,
@@ -216,6 +219,7 @@
      "dag": "zaterdag",
      "weekdag": 5,
      "datum_label": "September 12",
+     "datum": "2026-09-12",
      "thema": "Primaire Muscle-Up + Squat + Secundaire Dip + Tertiaire Pull-Up",
      "tabblad": "Blok intro",
      "kop_rij": 39,

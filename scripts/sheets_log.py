@@ -165,10 +165,28 @@ def kies_dag(workout, dagen):
                     verwacht.add(hevy_naam)
         return len(titels & verwacht)
 
-    op_weekdag = [d for d in dagen if d["weekdag"] == datum.weekday()]
+    def plausibel(dag):
+        """Kan deze sessie bij deze geplande dag horen, qua datum?
+
+        Zonder deze grens koppelde een sessie van 4 september zich aan de
+        zaterdag van 12 september, puur omdat de oefeningen leken. Een training
+        kan een dag vroeg zijn of een paar dagen ingehaald worden, maar niet
+        acht dagen voor het schema uit lopen.
+        """
+        gepland = dag.get("datum")
+        if not gepland:
+            return True                     # geen datum bekend: niet blokkeren
+        verschil = (datum - dt.date.fromisoformat(gepland)).days
+        return -1 <= verschil <= 6
+
+    kandidaten = [d for d in dagen if plausibel(d)]
+    if not kandidaten:
+        return None, "valt buiten het datumbereik van elke geplande dag"
+
+    op_weekdag = [d for d in kandidaten if d["weekdag"] == datum.weekday()]
     if op_weekdag and overlap(op_weekdag[0]) >= 2:
         return op_weekdag[0], "weekdag"
-    beste = max(dagen, key=overlap)
+    beste = max(kandidaten, key=overlap)
     return (beste, "oefeningen") if overlap(beste) >= 3 else (None, "te weinig overlap")
 
 
@@ -341,6 +359,18 @@ def main():
                                 "values": [[notities.samenvatting(notitie_tekst)]]})
             geraakte_rijen.append(rij)
         print(f"  {datum} {w.get('title','')!r} -> {dag['dag']} (gekoppeld op {reden}), {gevuld} cellen")
+
+    vandaag = dt.date.today()
+    for dag in dagen:
+        gepland = dag.get("datum")
+        if not gepland or dt.date.fromisoformat(gepland) <= vandaag:
+            continue
+        rijen = [o["rij"] for o in dag["oefeningen"]]
+        if any(cel(r, c) for r in rijen for c in range(6, 14)):
+            print(f"  {dag['dag']} ({gepland}) ligt in de toekomst; ingevulde cellen worden gewist")
+            for r in rijen:
+                updates.append({"range": f"'{tabblad}'!F{r}:M{r}",
+                                "values": [[""] * 8]})
 
     for kop in sorted(set(kop_rijen)):
         if overschrijf or not cel(kop, 12):

@@ -32,6 +32,40 @@ EXPORT = f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/export?format=xlsx"
 DAGNAMEN = {"maandag": 0, "dinsdag": 1, "woensdag": 2, "donderdag": 3,
             "vrijdag": 4, "zaterdag": 5, "zondag": 6}
 
+MAANDEN = {
+    "january": 1, "januari": 1, "february": 2, "februari": 2, "march": 3, "maart": 3,
+    "april": 4, "may": 5, "mei": 5, "june": 6, "juni": 6, "july": 7, "juli": 7,
+    "august": 8, "augustus": 8, "september": 9, "october": 10, "oktober": 10,
+    "november": 11, "december": 12,
+}
+
+
+def lees_datum(label):
+    """'September 12' wordt een echte datum.
+
+    Het jaartal staat er niet bij, dus we kiezen het jaar waarin die dag het
+    dichtst bij vandaag ligt. Zonder datum kan een sessie aan de verkeerde dag
+    gekoppeld worden, en dan komt een training in een blok terecht dat nog
+    moet plaatsvinden.
+    """
+    if not label:
+        return None
+    m = re.search(r"([A-Za-z]+)\s+(\d{1,2})", label.strip())
+    if not m:
+        return None
+    maand = MAANDEN.get(m.group(1).lower())
+    if not maand:
+        return None
+    dag = int(m.group(2))
+    vandaag = dt.date.today()
+    kandidaten = []
+    for jaar in (vandaag.year - 1, vandaag.year, vandaag.year + 1):
+        try:
+            kandidaten.append(dt.date(jaar, maand, dag))
+        except ValueError:
+            pass
+    return min(kandidaten, key=lambda d: abs((d - vandaag).days)) if kandidaten else None
+
 
 def ontdatum(waarde):
     """Draait de datumconversie van Google Sheets terug naar een repbereik."""
@@ -74,8 +108,11 @@ def parse(bestand):
                 continue                          # kolomkoppen overslaan
             dag = a.split("|")[0].strip().lower()
             if dag in DAGNAMEN:
+                label = a.split("|")[-1].strip() if "|" in a else ""
+                datum = lees_datum(label)
                 huidig = {"dag": dag, "weekdag": DAGNAMEN[dag],
-                          "datum_label": a.split("|")[-1].strip() if "|" in a else "",
+                          "datum_label": label,
+                          "datum": datum.isoformat() if datum else None,
                           "thema": tekst(ws.cell(row=r, column=5).value),
                           "tabblad": naam, "kop_rij": r, "oefeningen": []}
                 dagen.append(huidig)
@@ -108,7 +145,8 @@ def main():
         for d in b["dagen"]:
             rijen = [o["rij"] for o in d["oefeningen"]]
             bereik = f"rij {min(rijen)}-{max(rijen)}" if rijen else "leeg"
-            print(f"   {d['dag']:10s} {len(d['oefeningen'])} oefeningen ({bereik}) — {d['thema']}")
+            print(f"   {d['dag']:10s} {d.get('datum') or '?':10s} "
+                  f"{len(d['oefeningen'])} oefeningen ({bereik}) — {d['thema'][:40]}")
 
 
 if __name__ == "__main__":
