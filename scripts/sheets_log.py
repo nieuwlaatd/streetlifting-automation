@@ -314,11 +314,21 @@ def main():
             if uit_notitie and not any(s.get("weight_kg") for s in werk):
                 werk = [dict(s, weight_kg=g) for s, g in zip(werk, uit_notitie)]
 
-            rpes = [s["rpe"] for s in werk if s.get("rpe") is not None]
+            # RPE per set, in dezelfde volgorde als de kolommen G tot en met K.
+            # Een enkel getal zegt niets over of het opliep binnen de oefening;
+            # 6, 6, 8 vertelt de coach iets anders dan 8, 8, 8.
+            per_set = [s.get("rpe") for s in werk]
             notitie_rpes, gold_voor_alle = notities.lees_rpes(notitie_tekst)
             # De notitie wint van het veld als hij zegt dat het veld niet klopte.
-            if notitie_rpes and (not rpes or notities.corrigeert_veld(notitie_tekst)):
-                rpes = notitie_rpes * len(werk) if gold_voor_alle else notitie_rpes
+            if notitie_rpes and (not any(x is not None for x in per_set)
+                                 or notities.corrigeert_veld(notitie_tekst)):
+                if gold_voor_alle:
+                    per_set = [notitie_rpes[0]] * len(werk)
+                else:
+                    per_set = [notitie_rpes[i] if i < len(notitie_rpes) else None
+                               for i in range(len(werk))]
+            rpes = [x for x in per_set if x is not None]
+            rpe_tekst = ", ".join(f"{x:g}" if x is not None else "-" for x in per_set) if rpes else ""
 
             waarden = [zet_set(s) for s in werk[:5]]
 
@@ -332,14 +342,14 @@ def main():
             # "6-7" werd door Google als datum gelezen; met een getal kan die
             # hele klasse fouten niet meer optreden. Varieerde de RPE over de
             # sets, dan staat dat in kolom L.
-            bestaand_f = str(cel(rij, 6)).strip().replace(",", ".")
-            try:
-                al_ingevuld = 1 <= float(bestaand_f) <= 10
-            except ValueError:
-                al_ingevuld = False
-            if rpes and (overschrijf or not al_ingevuld):
-                updates.append({"range": f"'{tabblad}'!F{rij}",
-                                "values": [[float(max(rpes))]]})
+            bestaand_f = str(cel(rij, 6)).strip()
+            # Geldig is een reeks als "6", "8.5" of "6, 6, 8"; alles anders
+            # (bijvoorbeeld een datum uit een oudere versie) mag overschreven.
+            al_ingevuld = bool(bestaand_f) and all(
+                re.fullmatch(r"-|\d{1,2}([.,]\d)?", deel.strip())
+                for deel in bestaand_f.split(","))
+            if rpe_tekst and (overschrijf or not al_ingevuld):
+                updates.append({"range": f"'{tabblad}'!F{rij}", "values": [[rpe_tekst]]})
                 opmaak_rijen.append(rij)
             for i, waarde in enumerate(waarden):
                 kolom = chr(ord("G") + i)
@@ -349,11 +359,8 @@ def main():
             # Kolom L: waar de uitvoering van het plan afweek. Kaj ziet zo in
             # een oogopslag het verschil tussen wat hij vroeg en wat er gebeurde.
             if overschrijf or not cel(rij, 12):
-                notitie = afwijking(doel, werk, titel)
-                if rpes and min(rpes) != max(rpes):
-                    spreiding = f"RPE {min(rpes):g}-{max(rpes):g} over de sets"
-                    notitie = f"{notitie}; {spreiding}" if notitie != "volgens plan" else spreiding
-                updates.append({"range": f"'{tabblad}'!L{rij}", "values": [[notitie]]})
+                updates.append({"range": f"'{tabblad}'!L{rij}",
+                                "values": [[afwijking(doel, werk, titel)]]})
             if notitie_tekst and (overschrijf or not cel(rij, 13)):
                 updates.append({"range": f"'{tabblad}'!M{rij}",
                                 "values": [[notities.samenvatting(notitie_tekst)]]})
@@ -387,15 +394,15 @@ def main():
 
     opmaak_netjes(svc, blad_id, tabblad, geraakte_rijen, kop_rijen)
 
-    # Een cel die ooit een datum bevatte houdt die opmaak vast: het getal 7
-    # wordt dan getoond als 7 januari 1900. De waarde klopt, de weergave niet.
-    # Daarom zetten we de opmaak van elke aangeraakte RPE-cel terug op getal.
+    # Een cel die ooit een datum bevatte houdt die opmaak vast. Kolom F krijgt
+    # daarom expliciet tekstopmaak: een reeks als "6, 6, 8" is geen getal, en zo
+    # kan Google er ook nooit meer iets anders van maken.
     if opmaak_rijen and blad_id is not None:
         verzoeken = [{
             "repeatCell": {
                 "range": {"sheetId": blad_id, "startRowIndex": r - 1, "endRowIndex": r,
                           "startColumnIndex": 5, "endColumnIndex": 6},
-                "cell": {"userEnteredFormat": {"numberFormat": {"type": "NUMBER", "pattern": "0.#"}}},
+                "cell": {"userEnteredFormat": {"numberFormat": {"type": "TEXT"}}},
                 "fields": "userEnteredFormat.numberFormat",
             }} for r in sorted(set(opmaak_rijen))]
         svc.batchUpdate(spreadsheetId=SHEET_ID, body={"requests": verzoeken}).execute()
