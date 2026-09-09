@@ -1,5 +1,5 @@
 {
- "gegenereerd_op": "2026-09-09T20:40:31+00:00",
+ "gegenereerd_op": "2026-09-09T20:42:18+00:00",
  "vandaag": "2026-09-09",
  "weekdag": 2,
  "dagthema": "Pull zwaar",
@@ -327,7 +327,7 @@
    "correctiefactor": 0.9737,
    "kg_volgens_plan": 67.5,
    "afwijking_kg": -2.5,
-   "bijgesteld_omdat": "0 van 5 sets gehaald",
+   "bijgesteld_omdat": null,
    "sessie_gemist": false
   }
  },
@@ -358,13 +358,13 @@
   },
   "squat": {
    "factor": 0.9737,
-   "oordeel_vorige_sessie": "te_zwaar",
-   "reden": "0 van 5 sets gehaald",
+   "oordeel_vorige_sessie": null,
+   "reden": null,
    "vorig_voorschrift": {
     "datum": "2026-09-09",
     "sets": 5,
     "reps": 5,
-    "kg": 70.0
+    "kg": 65.0
    },
    "gemist": false
   }
