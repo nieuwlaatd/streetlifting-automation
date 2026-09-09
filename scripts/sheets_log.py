@@ -103,14 +103,17 @@ def sheets_client():
     return build("sheets", "v4", credentials=creds, cache_discovery=False)
 
 
-def zet_set(s):
-    """Een set als leesbare tekst: gewicht x reps."""
+def zet_set(s, rpe=None):
+    """Een set als leesbare tekst: gewicht, reps en de RPE van die set.
+
+    Bijvoorbeeld "10x9 @6". De RPE hoort bij de set en niet bij de oefening,
+    dus die staat hier en niet alleen in de samenvattende kolom.
+    """
     g, reps = s.get("weight_kg"), s.get("reps")
     if reps is None:
         return ""
-    if not g:
-        return f"BW x{reps}"
-    return f"{g:g} x{reps}"
+    basis = f"{g:g}x{reps}" if g else f"BWx{reps}"
+    return f"{basis} @{rpe:g}" if rpe is not None else basis
 
 
 def bereik(tekst):
@@ -328,9 +331,16 @@ def main():
                     per_set = [notitie_rpes[i] if i < len(notitie_rpes) else None
                                for i in range(len(werk))]
             rpes = [x for x in per_set if x is not None]
-            rpe_tekst = ", ".join(f"{x:g}" if x is not None else "-" for x in per_set) if rpes else ""
+            # Kolom F vat samen: het bereik waarbinnen de oefening viel.
+            # De RPE per set staat bij de set zelf, in G tot en met K.
+            if not rpes:
+                rpe_tekst = ""
+            elif min(rpes) == max(rpes):
+                rpe_tekst = f"{min(rpes):g}"
+            else:
+                rpe_tekst = f"{min(rpes):g}-{max(rpes):g}"
 
-            waarden = [zet_set(s) for s in werk[:5]]
+            waarden = [zet_set(s, r) for s, r in zip(werk[:5], per_set[:5])]
 
             rij = doel["rij"]
             # Een eerdere versie schreef met USER_ENTERED, waardoor Google van
@@ -345,9 +355,10 @@ def main():
             bestaand_f = str(cel(rij, 6)).strip()
             # Geldig is een reeks als "6", "8.5" of "6, 6, 8"; alles anders
             # (bijvoorbeeld een datum uit een oudere versie) mag overschreven.
-            al_ingevuld = bool(bestaand_f) and all(
-                re.fullmatch(r"-|\d{1,2}([.,]\d)?", deel.strip())
-                for deel in bestaand_f.split(","))
+            # Geldig is "6", "8.5" of een bereik als "6-8". Een datum uit een
+            # oudere versie heeft twee streepjes en valt dus af.
+            al_ingevuld = bool(re.fullmatch(
+                r"\d{1,2}([.,]\d)?(\s*-\s*\d{1,2}([.,]\d)?)?", bestaand_f))
             if rpe_tekst and (overschrijf or not al_ingevuld):
                 updates.append({"range": f"'{tabblad}'!F{rij}", "values": [[rpe_tekst]]})
                 opmaak_rijen.append(rij)
