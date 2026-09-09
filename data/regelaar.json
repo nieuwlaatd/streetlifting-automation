@@ -1,8 +1,8 @@
 {
  "dip": {
-  "factor": 0.95,
+  "factor": 0.9025,
   "laatste_voorschrift": {
-   "datum": "2026-09-08",
+   "datum": "2026-09-09",
    "sets": 4,
    "reps": 5,
    "kg": 15.0
@@ -15,24 +15,42 @@
     "nieuwe_factor": 0.95,
     "kg": 15.0,
     "kg_volgens_plan": 15.0
+   },
+   {
+    "datum": "2026-09-09",
+    "oordeel": "te_zwaar",
+    "reden": "2 van 4 sets gehaald",
+    "nieuwe_factor": 0.9025,
+    "kg": 15.0,
+    "kg_volgens_plan": 17.5
    }
   ],
-  "laatste_beoordeelde_sessie": "2026-09-04"
+  "laatste_beoordeelde_sessie": "2026-09-08"
  },
  "pullup": {
-  "factor": 1.0,
+  "factor": 0.95,
   "laatste_voorschrift": {
-   "datum": "2026-09-08",
+   "datum": "2026-09-09",
    "sets": 4,
    "reps": 5,
    "kg": 27.5
   },
-  "log": []
+  "log": [
+   {
+    "datum": "2026-09-09",
+    "oordeel": "te_zwaar",
+    "reden": "2 van 4 sets gehaald",
+    "nieuwe_factor": 0.95,
+    "kg": 27.5,
+    "kg_volgens_plan": 27.5
+   }
+  ],
+  "laatste_beoordeelde_sessie": "2026-09-08"
  },
  "squat": {
   "factor": 1.025,
   "laatste_voorschrift": {
-   "datum": "2026-09-08",
+   "datum": "2026-09-09",
    "sets": 5,
    "reps": 5,
    "kg": 70.0
