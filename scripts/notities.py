@@ -56,6 +56,21 @@ def lees_rpes(tekst):
     return uit, alle
 
 
+def corrigeert_veld(tekst):
+    """Zegt de notitie expliciet dat het veld in Hevy niet klopte?
+
+    'Beide rpe 5, maar kan dat niet invullen' is geen aanvulling maar een
+    correctie: het RPE-veld begint bij 6, dus wat er staat is niet wat hij
+    voelde. In dat geval wint de notitie van het veld.
+    """
+    if not tekst:
+        return False
+    t = tekst.lower()
+    return any(z in t for z in (
+        "kan dat niet invullen", "kan ik niet invullen", "kon dat niet",
+        "kon ik niet", "kan niet invullen", "gaat niet in hevy", "past niet"))
+
+
 def lees_setgewichten(tekst, aantal_sets):
     """Per-set gewichten uit een notitie met rangtelwoorden.
 

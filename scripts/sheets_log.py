@@ -298,7 +298,8 @@ def main():
 
             rpes = [s["rpe"] for s in werk if s.get("rpe") is not None]
             notitie_rpes, gold_voor_alle = notities.lees_rpes(notitie_tekst)
-            if notitie_rpes and not rpes:
+            # De notitie wint van het veld als hij zegt dat het veld niet klopte.
+            if notitie_rpes and (not rpes or notities.corrigeert_veld(notitie_tekst)):
                 rpes = notitie_rpes * len(werk) if gold_voor_alle else notitie_rpes
 
             waarden = [zet_set(s) for s in werk[:5]]
