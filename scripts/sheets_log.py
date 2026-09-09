@@ -32,6 +32,8 @@ import sys
 import urllib.error
 import urllib.request
 
+import notities
+
 SHEET_ID = "1QGxPFQB17u9zDPNXMl74pcVUERlX2g7RwZBRk-Trpfo"
 BASE = "https://api.hevyapp.com"
 DAGEN_TERUG = 10
@@ -170,6 +172,62 @@ def kies_dag(workout, dagen):
     return (beste, "oefeningen") if overlap(beste) >= 3 else (None, "te weinig overlap")
 
 
+def opmaak_netjes(svc, blad_id, tabblad, rijen, kop_rijen):
+    """Laat kolom L en M meelopen met de opmaak die de coach al gebruikt.
+
+    Kaj kleurt zijn dagblokken: groen voor squat, blauw voor dip, grijs voor
+    assistentie, goud voor de kopregel. Vanaf rij 28 zijn L en M bovendien al
+    zwart, dus zonder deze stap staat de toegevoegde tekst daar zwart op zwart.
+    Elke cel die wij schrijven krijgt daarom de achtergrond van kolom A op
+    diezelfde rij, met een letterkleur die daar leesbaar op is.
+    """
+    if blad_id is None or not (rijen or kop_rijen):
+        return
+    alle = sorted(set(rijen) | set(kop_rijen))
+    grid = svc.get(spreadsheetId=SHEET_ID, includeGridData=True,
+                   ranges=[f"'{tabblad}'!A1:M{max(alle)}"],
+                   fields="sheets(data(rowData(values(effectiveFormat(backgroundColor)))))"
+                   ).execute()
+    rijdata = grid["sheets"][0]["data"][0].get("rowData", [])
+
+    def achtergrond(rij):
+        if rij - 1 >= len(rijdata):
+            return None
+        waarden = rijdata[rij - 1].get("values") or []
+        if not waarden:
+            return None
+        return (waarden[0].get("effectiveFormat") or {}).get("backgroundColor")
+
+    verzoeken = []
+    for rij in alle:
+        kleur = achtergrond(rij)
+        if not kleur:
+            continue
+        # Helderheid bepaalt of zwarte of witte letters leesbaar zijn.
+        helder = (0.299 * kleur.get("red", 1) + 0.587 * kleur.get("green", 1)
+                  + 0.114 * kleur.get("blue", 1))
+        letter = {"red": 0, "green": 0, "blue": 0} if helder > 0.55 else {"red": 1, "green": 1, "blue": 1}
+        verzoeken.append({
+            "repeatCell": {
+                "range": {"sheetId": blad_id, "startRowIndex": rij - 1, "endRowIndex": rij,
+                          "startColumnIndex": 11, "endColumnIndex": 13},
+                "cell": {"userEnteredFormat": {
+                    "backgroundColor": kleur,
+                    "textFormat": {"foregroundColor": letter,
+                                   "bold": rij in kop_rijen, "fontSize": 10},
+                    "wrapStrategy": "CLIP",
+                }},
+                "fields": ("userEnteredFormat(backgroundColor,textFormat.foregroundColor,"
+                           "textFormat.bold,textFormat.fontSize,wrapStrategy)"),
+            }})
+    verzoeken.append({"updateDimensionProperties": {
+        "range": {"sheetId": blad_id, "dimension": "COLUMNS",
+                  "startIndex": 11, "endIndex": 13},
+        "properties": {"pixelSize": 260}, "fields": "pixelSize"}})
+    svc.batchUpdate(spreadsheetId=SHEET_ID, body={"requests": verzoeken}).execute()
+    print(f"opmaak van L en M gelijkgetrokken op {len(verzoeken)-1} rijen.")
+
+
 def main():
     overschrijf = "--overschrijf" in sys.argv
     key = os.environ.get("HEVY_API_KEY", "").strip()
@@ -203,7 +261,7 @@ def main():
         r = huidig[rij - 1] if len(huidig) >= rij else []
         return (r[kol - 1] if len(r) >= kol else "") or ""
 
-    updates, opmaak_rijen = [], []
+    updates, opmaak_rijen, geraakte_rijen, kop_rijen = [], [], [], []
     for w in sorted(recent, key=lambda x: x["start_time"]):
         dag, reden = kies_dag(w, dagen)
         datum = w["start_time"][:10]
@@ -211,6 +269,7 @@ def main():
             print(f"  {datum} {w.get('title','')!r}: overgeslagen ({reden})")
             continue
 
+        kop_rijen.append(dag["kop_rij"] + 1)     # de OEFENING|SETS|... regel
         gebruikt = set()
         gevuld = 0
         for oef in w.get("exercises", []):
@@ -228,7 +287,20 @@ def main():
             werk = [s for s in oef.get("sets", []) if s.get("type") != "warmup"]
             if not werk:
                 continue
+            notitie_tekst = oef.get("notes") or ""
+
+            # De notitie draagt data die Hevy niet kwijt kan: gewicht bij een
+            # oefening zonder gewichtsveld, of een RPE onder de 6. Die telt dus
+            # even zwaar mee als de velden zelf.
+            uit_notitie = notities.lees_setgewichten(notitie_tekst, len(werk))
+            if uit_notitie and not any(s.get("weight_kg") for s in werk):
+                werk = [dict(s, weight_kg=g) for s, g in zip(werk, uit_notitie)]
+
             rpes = [s["rpe"] for s in werk if s.get("rpe") is not None]
+            notitie_rpes, gold_voor_alle = notities.lees_rpes(notitie_tekst)
+            if notitie_rpes and not rpes:
+                rpes = notitie_rpes * len(werk) if gold_voor_alle else notitie_rpes
+
             waarden = [zet_set(s) for s in werk[:5]]
 
             rij = doel["rij"]
@@ -263,7 +335,16 @@ def main():
                     spreiding = f"RPE {min(rpes):g}-{max(rpes):g} over de sets"
                     notitie = f"{notitie}; {spreiding}" if notitie != "volgens plan" else spreiding
                 updates.append({"range": f"'{tabblad}'!L{rij}", "values": [[notitie]]})
+            if notitie_tekst and (overschrijf or not cel(rij, 13)):
+                updates.append({"range": f"'{tabblad}'!M{rij}",
+                                "values": [[notities.samenvatting(notitie_tekst)]]})
+            geraakte_rijen.append(rij)
         print(f"  {datum} {w.get('title','')!r} -> {dag['dag']} (gekoppeld op {reden}), {gevuld} cellen")
+
+    for kop in sorted(set(kop_rijen)):
+        if overschrijf or not cel(kop, 12):
+            updates.append({"range": f"'{tabblad}'!L{kop}:M{kop}",
+                            "values": [["AFWIJKING VAN PLAN", "NOTITIE DYLAN"]]})
 
     if not updates:
         print("Niets in te vullen; alles stond al of er was geen match.")
@@ -272,6 +353,8 @@ def main():
         spreadsheetId=SHEET_ID,
         body={"valueInputOption": "RAW", "data": updates}).execute()
     print(f"{len(updates)} cellen bijgewerkt in de Sheet.")
+
+    opmaak_netjes(svc, blad_id, tabblad, geraakte_rijen, kop_rijen)
 
     # Een cel die ooit een datum bevatte houdt die opmaak vast: het getal 7
     # wordt dan getoond als 7 januari 1900. De waarde klopt, de weergave niet.
