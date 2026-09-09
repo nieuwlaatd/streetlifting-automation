@@ -9,6 +9,9 @@ on:
     - cron: "15 5 * * *"
     # 16:15 UTC op zondag, voor het weekrapport van 17:00 UTC
     - cron: "15 16 * * 0"
+    # 20:30 UTC, oftewel 22:30 bij Dylan: een avondtraining staat daarmee
+    # dezelfde dag nog in het document van de coach in plaats van pas morgen.
+    - cron: "30 20 * * *"
   # Bij een wijziging in de code, zodat een aanpassing meteen doorwerkt.
   # data/ is uitgezonderd: anders zou de eigen datacommit zichzelf opnieuw starten.
   push:
@@ -69,7 +72,7 @@ jobs:
         env:
           HEVY_API_KEY: ${{ secrets.HEVY_API_KEY }}
           GOOGLE_SERVICE_ACCOUNT: ${{ secrets.GOOGLE_SERVICE_ACCOUNT }}
-        run: python scripts/sheets_log.py
+        run: python scripts/sheets_log.py --overschrijf
 
       - name: Wijzigingen vastleggen
         run: |

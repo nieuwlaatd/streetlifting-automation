@@ -321,14 +321,17 @@ def main():
             # Een enkel getal zegt niets over of het opliep binnen de oefening;
             # 6, 6, 8 vertelt de coach iets anders dan 8, 8, 8.
             per_set = [s.get("rpe") for s in werk]
+            # Noemt de notitie een RPE, dan wint die van het gelogde veld. Het
+            # RPE-veld in Hevy begint bij 6, dus alles daaronder kan Dylan daar
+            # niet kwijt: "Ik deed rpe 5 -6,5 -" betekent set 1 op 5 en set 2 op
+            # 6,5, ook al staat er 6 in het veld. Posities die de notitie niet
+            # noemt houden hun gelogde waarde.
             notitie_rpes, gold_voor_alle = notities.lees_rpes(notitie_tekst)
-            # De notitie wint van het veld als hij zegt dat het veld niet klopte.
-            if notitie_rpes and (not any(x is not None for x in per_set)
-                                 or notities.corrigeert_veld(notitie_tekst)):
+            if notitie_rpes:
                 if gold_voor_alle:
                     per_set = [notitie_rpes[0]] * len(werk)
                 else:
-                    per_set = [notitie_rpes[i] if i < len(notitie_rpes) else None
+                    per_set = [notitie_rpes[i] if i < len(notitie_rpes) else per_set[i]
                                for i in range(len(werk))]
             rpes = [x for x in per_set if x is not None]
             # Kolom F vat samen: het bereik waarbinnen de oefening viel.
