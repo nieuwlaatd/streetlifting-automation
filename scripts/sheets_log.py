@@ -193,6 +193,9 @@ def main():
         return
     svc = client.spreadsheets()
     tabblad = dagen[0]["tabblad"]
+    meta = svc.get(spreadsheetId=SHEET_ID).execute()
+    blad_id = next((b["properties"]["sheetId"] for b in meta["sheets"]
+                    if b["properties"]["title"] == tabblad), None)
     huidig = svc.values().get(spreadsheetId=SHEET_ID,
                               range=f"'{tabblad}'!A1:K60").execute().get("values", [])
 
@@ -200,7 +203,7 @@ def main():
         r = huidig[rij - 1] if len(huidig) >= rij else []
         return (r[kol - 1] if len(r) >= kol else "") or ""
 
-    updates = []
+    updates, opmaak_rijen = [], []
     for w in sorted(recent, key=lambda x: x["start_time"]):
         dag, reden = kies_dag(w, dagen)
         datum = w["start_time"][:10]
@@ -246,6 +249,7 @@ def main():
             if rpes and (overschrijf or not al_ingevuld):
                 updates.append({"range": f"'{tabblad}'!F{rij}",
                                 "values": [[float(max(rpes))]]})
+                opmaak_rijen.append(rij)
             for i, waarde in enumerate(waarden):
                 kolom = chr(ord("G") + i)
                 if waarde and (overschrijf or not cel(rij, 7 + i)):
@@ -268,6 +272,20 @@ def main():
         spreadsheetId=SHEET_ID,
         body={"valueInputOption": "RAW", "data": updates}).execute()
     print(f"{len(updates)} cellen bijgewerkt in de Sheet.")
+
+    # Een cel die ooit een datum bevatte houdt die opmaak vast: het getal 7
+    # wordt dan getoond als 7 januari 1900. De waarde klopt, de weergave niet.
+    # Daarom zetten we de opmaak van elke aangeraakte RPE-cel terug op getal.
+    if opmaak_rijen and blad_id is not None:
+        verzoeken = [{
+            "repeatCell": {
+                "range": {"sheetId": blad_id, "startRowIndex": r - 1, "endRowIndex": r,
+                          "startColumnIndex": 5, "endColumnIndex": 6},
+                "cell": {"userEnteredFormat": {"numberFormat": {"type": "NUMBER", "pattern": "0.#"}}},
+                "fields": "userEnteredFormat.numberFormat",
+            }} for r in sorted(set(opmaak_rijen))]
+        svc.batchUpdate(spreadsheetId=SHEET_ID, body={"requests": verzoeken}).execute()
+        print(f"opmaak hersteld op {len(verzoeken)} RPE-cellen.")
 
 
 if __name__ == "__main__":
