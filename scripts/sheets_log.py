@@ -27,6 +27,7 @@ bewerkrechten.
 import datetime as dt
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.request
@@ -229,11 +230,13 @@ def main():
 
             rij = doel["rij"]
             # Een eerdere versie schreef met USER_ENTERED, waardoor Google van
-            # een RPE-bereik als "6-7" de datum 6 juli maakte. Zulke cellen
-            # herkennen we en herstellen we; met de hand ingevulde RPE's
-            # blijven staan.
-            bestaand_f = str(cel(rij, 6))
-            verminkt = bestaand_f.startswith("20") and bestaand_f.count("-") >= 2
+            # een RPE-bereik als "6-7" de datum 6 juli maakte. In plaats van te
+            # raden hoe zo'n verminkte cel eruitziet, beschrijven we wat een
+            # geldige RPE is: een getal of een bereik tussen 1 en 10. Alles
+            # daarbuiten is geen RPE en mag overschreven worden.
+            bestaand_f = str(cel(rij, 6)).strip()
+            geldig = re.fullmatch(r"\d{1,2}([.,]\d)?(\s*-\s*\d{1,2}([.,]\d)?)?", bestaand_f)
+            verminkt = bool(bestaand_f) and not geldig
             if rpes and (overschrijf or verminkt or not bestaand_f):
                 rpe_cel = (f"{min(rpes):g}-{max(rpes):g}" if min(rpes) != max(rpes)
                            else f"{min(rpes):g}")
