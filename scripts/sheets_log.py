@@ -45,11 +45,14 @@ DAGEN_TERUG = 10
 HEVY_NAAR_KAJ = {
     "Chest Dip (Weighted)": ["Competition Dip", "2s Paused Dip", "3-1-0 Tempo Dip"],
     "Chin Up (Weighted)": ["Competition Chin-up"],
-    "Pull Up": ["Competition Pull-Up", "Diagonal Bodyweight Pull-up", "3s Tempo Pull-Up"],
+    "Pull Up (Weighted)": ["Competition Pull-Up", "3s Tempo Pull-Up"],
+    "Pull Up": ["Diagonal Bodyweight Pull-up", "Competition Pull-Up", "3s Tempo Pull-Up"],
     "Incline Bench Press (Dumbbell)": ["45 degree Incline Dumbbell Press"],
     "Lateral Raise (Cable)": ["Cable Side Raise"],
     "Single Arm Lateral Raise (Cable)": ["Cable Side Raise"],
+    "Plate Loaded Knee Raise": ["Plate Loaded Knee Raise"],
     "Knee Raise Parallel Bars": ["Plate Loaded Knee Raise"],
+    "Hanging Knee Raise": ["Plate Loaded Knee Raise", "Cable Knee Tuck"],
     "Skullcrusher (Dumbbell)": ["Skull Crusher"],
     "Squat (Barbell)": ["3-1-0 Tempo Squat", "Competition Squat"],
     "Pause Squat (Barbell)": ["Paused Squat", "2s Paused Squat"],
@@ -59,8 +62,13 @@ HEVY_NAAR_KAJ = {
     "Spider Curl (Dumbbell)": ["Spider Curl"],
     "Bench Press (Barbell)": ["Close Grip Larsen Press"],
     "Cable Fly Crossovers": ["Cable Fly"],
-    "Hanging Knee Raise": ["Cable Knee Tuck"],
+    "Chest Fly (Machine)": ["Cable Fly"],
+    "Chest Fly (Dumbbell)": ["Cable Fly"],
+    "Cable Knee Tuck": ["Cable Knee Tuck"],
+    "Crunch (Machine)": ["Cable Knee Tuck"],
+    "Cable Crunch": ["Cable Knee Tuck"],
     "Ab Wheel": ["Ab Roll Out"],
+    "Band Assisted Muscle-Up": ["Band Assisted Muscle-Up"],
     "Muscle Up": ["Band Assisted Muscle-Up"],
     "Lying Leg Curl (Machine)": ["Leg Curl"],
     "Seated Cable Row - Bar Wide Grip": ["Wide Grip Row"],
@@ -140,7 +148,7 @@ def afwijking(plan, werk, hevy_titel):
     delen = []
     gepland_sets = bereik(plan["sets"])
     if gepland_sets and len(werk) != gepland_sets[0]:
-        delen.append(f"{len(werk)} van {gepland_sets[0]} sets")
+        delen.append(f"{len(werk)} sets i.p.v. {gepland_sets[0]}")
     gepland_reps = bereik(plan["reps"])
     if gepland_reps:
         gedaan = [s.get("reps") or 0 for s in werk]
@@ -276,7 +284,7 @@ def main():
     blad_id = next((b["properties"]["sheetId"] for b in meta["sheets"]
                     if b["properties"]["title"] == tabblad), None)
     huidig = svc.values().get(spreadsheetId=SHEET_ID,
-                              range=f"'{tabblad}'!A1:K60").execute().get("values", [])
+                              range=f"'{tabblad}'!A1:M60").execute().get("values", [])
 
     def cel(rij, kol):
         r = huidig[rij - 1] if len(huidig) >= rij else []
@@ -293,6 +301,7 @@ def main():
         kop_rijen.append(dag["kop_rij"] + 1)     # de OEFENING|SETS|... regel
         gebruikt = set()
         gevuld = 0
+        buiten = []
         for oef in w.get("exercises", []):
             titel = oef.get("title") or ""
             kandidaten = HEVY_NAAR_KAJ.get(titel, [])
@@ -302,6 +311,14 @@ def main():
                     doel = o
                     break
             if doel is None:
+                # Een oefening die niet in het plan staat. Die stil laten
+                # vallen zou de coach een vertekend beeld geven: hij ziet dan
+                # een lege regel en niet dat er iets anders voor in de plaats
+                # kwam. Hij komt daarom onder de dagkop te staan.
+                los = [s for s in oef.get("sets", []) if s.get("type") != "warmup"]
+                if los:
+                    buiten.append(f"{titel}: "
+                                  + ", ".join(zet_set(s, s.get("rpe")) for s in los[:5]))
                 continue
             gebruikt.add(doel["rij"])
 
@@ -323,16 +340,9 @@ def main():
             per_set = [s.get("rpe") for s in werk]
             # Noemt de notitie een RPE, dan wint die van het gelogde veld. Het
             # RPE-veld in Hevy begint bij 6, dus alles daaronder kan Dylan daar
-            # niet kwijt: "Ik deed rpe 5 -6,5 -" betekent set 1 op 5 en set 2 op
-            # 6,5, ook al staat er 6 in het veld. Posities die de notitie niet
-            # noemt houden hun gelogde waarde.
-            notitie_rpes, gold_voor_alle = notities.lees_rpes(notitie_tekst)
-            if notitie_rpes:
-                if gold_voor_alle:
-                    per_set = [notitie_rpes[0]] * len(werk)
-                else:
-                    per_set = [notitie_rpes[i] if i < len(notitie_rpes) else per_set[i]
-                               for i in range(len(werk))]
+            # niet kwijt. Welke set hij bedoelt staat in de zin zelf; dat leest
+            # notities.rpe_toewijzing uit.
+            per_set = notities.rpe_toewijzing(notitie_tekst, len(werk), per_set)
             rpes = [x for x in per_set if x is not None]
             # Kolom F vat samen: het bereik waarbinnen de oefening viel.
             # De RPE per set staat bij de set zelf, in G tot en met K.
@@ -379,6 +389,11 @@ def main():
                 updates.append({"range": f"'{tabblad}'!M{rij}",
                                 "values": [[notities.samenvatting(notitie_tekst)]]})
             geraakte_rijen.append(rij)
+
+        if buiten and (overschrijf or not cel(dag["kop_rij"], 13)):
+            updates.append({"range": f"'{tabblad}'!M{dag['kop_rij']}",
+                            "values": [["Buiten plan gedaan — " + " | ".join(buiten)]]})
+            geraakte_rijen.append(dag["kop_rij"])
         print(f"  {datum} {w.get('title','')!r} -> {dag['dag']} (gekoppeld op {reden}), {gevuld} cellen")
 
     vandaag = dt.date.today()

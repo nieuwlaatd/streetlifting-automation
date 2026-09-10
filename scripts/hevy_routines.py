@@ -15,6 +15,7 @@ Omgevingsvariabele: HEVY_API_KEY
 
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.request
@@ -23,16 +24,22 @@ BASE = "https://api.hevyapp.com"
 MAP_PREFIX = "SL"
 FOLDER = "Streetlifting"
 
-# Kaj's oefeningnamen naar Hevy-templates. Bestaat een oefening niet letterlijk
-# in Hevy, dan pakken we de dichtstbijzijnde en zetten Kaj's naam in de notitie,
-# zodat er in het logboek geen twijfel over kan bestaan.
+# Kaj's oefeningnamen naar Hevy-templates.
+#
+# TWEE REGELS
+# Waar geladen kan worden hoort een variant met gewichtsveld. Een competition
+# pull-up op de gewone "Pull Up" heeft geen plek voor de kilo's, en dan moet
+# Dylan tijdens het trainen zelf een andere oefening opzoeken.
+# Bestaat een oefening niet in Hevy, dan is er een eigen template aangemaakt
+# onder Kaj's eigen naam, zodat het gewicht wel kwijt kan en de naam in het
+# logboek klopt met het schema.
 MAP = {
     "Competition Dip": ("29472BE1", None),
     "Competition Chin-up": ("023943F1", None),
-    "Competition Pull-Up": ("1B2B1E7C", None),
+    "Competition Pull-Up": ("729237D1", None),          # Pull Up (Weighted)
     "45 degree Incline Dumbbell Press": ("07B38369", "45 graden"),
     "Cable Side Raise": ("BE289E45", None),
-    "Plate Loaded Knee Raise": ("98237BA2", "Plate loaded"),
+    "Plate Loaded Knee Raise": ("e625db58-286f-40a5-855a-f1ef4f5f2a82", None),
     "Skull Crusher": ("68F8A292", None),
     "3-1-0 Tempo Squat": ("D04AC939", "Tempo 3-1-0: 3 sec zakken, 1 sec pauze, normaal omhoog"),
     "Paused Squat": ("CE1054CE", None),
@@ -45,12 +52,12 @@ MAP = {
     "Close Grip Larsen Press": ("79D0BB3A", "Larsen press, benen van de grond"),
     "2s Paused Squat": ("CE1054CE", "2 seconden pauze onderin"),
     "Cable Fly": ("651F844C", None),
-    "Cable Knee Tuck": ("08590920", "Kabel knee tuck"),
+    "Cable Knee Tuck": ("daa1345e-d274-4b11-b584-c4b8472d876d", None),
     "Ab Roll Out": ("99D5F10E", None),
     "Competition Squat": ("D04AC939", None),
-    "Band Assisted Muscle-Up": ("9F9C164B", "Met band"),
+    "Band Assisted Muscle-Up": ("f2734cb1-6a7a-4801-80c5-6d948b342c49", None),
     "3-1-0 Tempo Dip": ("29472BE1", "Tempo 3-1-0"),
-    "3s Tempo Pull-Up": ("1B2B1E7C", "3 sec zakken"),
+    "3s Tempo Pull-Up": ("729237D1", "3 sec zakken"),   # gewogen: gewicht kan erbij
     "Leg Curl": ("B8127AD1", None),
     "Wide Grip Row": ("C3BCABB3", None),
     "Tricep Extension": ("94B7239B", None),
@@ -89,8 +96,13 @@ def api(pad, methode="GET", body=None, key=None):
     return _met_herhaling(doe)
 
 
-def maak_sets(oefening):
-    """Bouwt de sets. Reps kan een getal, een bereik of 'x' zijn."""
+# Oefeningen die Hevy in seconden meet in plaats van reps. Zonder deze lijst
+# leest 'reps' als "30 sec" nergens op uit en blijft de set leeg.
+DUUR = {"E3EDA509"}
+
+
+def maak_sets(oefening, template=None):
+    """Bouwt de sets. Reps kan een getal, een bereik, 'x' of '30 sec' zijn."""
     try:
         aantal = int(float(oefening["sets"] or 1))
     except ValueError:
@@ -112,10 +124,18 @@ def maak_sets(oefening):
         except ValueError:
             reps = None            # bijvoorbeeld 'x' of '30 sec'
 
+    seconden = None
+    if template in DUUR:
+        m = re.search(r"(\d+)", reps_tekst)
+        seconden = int(m.group(1)) if m else 30
+        reps, bereik = None, None
+
     sets = []
     for _ in range(aantal):
         s = {"type": "normal", "reps": reps, "weight_kg": None}
-        if bereik:
+        if seconden is not None:
+            s["duration_seconds"] = seconden
+        elif bereik:
             s["rep_range"] = {"start": bereik[0], "end": bereik[1]}
         sets.append(s)
     return sets
@@ -165,7 +185,7 @@ def bouw_routines(schema):
                     "superset_id": None,
                     "rest_seconds": 180 if "Competition" in o["naam"] else 90,
                     "notes": " · ".join(stukken),
-                    "sets": maak_sets(o),
+                    "sets": maak_sets(o, template),
                 })
             thema = dag["thema"] or dag["dag"].capitalize()
             titel = f"{MAP_PREFIX} {i} · {KORT[dag['dag']]} — {thema}"

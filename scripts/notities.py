@@ -113,3 +113,68 @@ def samenvatting(tekst, limiet=180):
         return ""
     schoon = " ".join(str(tekst).split())
     return schoon if len(schoon) <= limiet else schoon[:limiet - 1] + "…"
+
+
+TELWOORD = {"een": 1, "één": 1, "1": 1, "twee": 2, "2": 2, "drie": 3, "3": 3,
+            "vier": 4, "4": 4, "vijf": 5, "5": 5}
+
+
+def rpe_toewijzing(tekst, aantal_sets, gelogd):
+    """Welke RPE hoort bij welke set, gelezen uit de notitie.
+
+    Het RPE-veld in Hevy begint bij 6, dus alles daaronder schrijft Dylan in de
+    notitie. Die notitie wint dan van het veld. Maar waar hij het over heeft
+    verschilt per zin, en dat verschil is niet cosmetisch:
+
+        "Rpe 5 bij beide"                -> elke set 5
+        "Laatste twee sets waren op rpe 5" -> alleen de laatste twee
+        "Ik deed rpe 5 -6,5 -"           -> set 1 op 5, set 2 op 6,5, rest blijft
+        "Rpe 5"                          -> de hele oefening op 5
+
+    Eerder werd alles vanaf set 1 geteld. Bij "laatste twee" belandde de 5 dus
+    op de eerste set, precies de sets waar hij het niet over had. Posities die
+    de notitie niet noemt houden hun gelogde waarde.
+    """
+    uit = list(gelogd)
+    if not tekst or aantal_sets < 1:
+        return uit
+    rpes, _ = lees_rpes(tekst)
+    if not rpes:
+        return uit
+    t = tekst.lower()
+
+    # "+10 bij de eerste ... bij de laatste": expliciet per set.
+    paren = re.findall(
+        r"(\d{1,2}(?:[.,]\d)?)\s*(?:bij|op|voor)?\s*(?:de\s+)?"
+        r"(eerste|1e|1ste|tweede|2e|2de|derde|3e|3de|vierde|4e|vijfde|5e|laatste|leste)", t)
+    if len(paren) >= 2 and "rpe" in t:
+        for getal, woord in paren:
+            i = aantal_sets - 1 if woord in LAATSTE else ORDINAAL.get(woord)
+            waarde = float(getal.replace(",", "."))
+            if i is not None and i < aantal_sets and 1 <= waarde <= 10:
+                uit[i] = waarde
+        return uit
+
+    # "laatste twee", "eerste drie": een aaneengesloten staart of kop.
+    staart = re.search(r"\blaatste\s+(\w+)", t)
+    kop = re.search(r"\beerste\s+(\w+)", t)
+    for m, vanaf_achter in ((staart, True), (kop, False)):
+        if not m:
+            continue
+        n = TELWOORD.get(m.group(1))
+        if not n:
+            continue
+        n = min(n, aantal_sets)
+        posities = range(aantal_sets - n, aantal_sets) if vanaf_achter else range(n)
+        for j, i in enumerate(posities):
+            uit[i] = rpes[j] if j < len(rpes) else rpes[0]
+        return uit
+
+    # "beide", "alle", of één waarde zonder verdere aanduiding: geldt overal.
+    if any(w in t for w in ("beide", "alle", "allebei", "elke set")) or len(rpes) == 1:
+        return [rpes[0]] * aantal_sets
+
+    # Anders op volgorde, vanaf de eerste set.
+    for i in range(min(len(rpes), aantal_sets)):
+        uit[i] = rpes[i]
+    return uit
