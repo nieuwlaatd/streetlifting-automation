@@ -1,9 +1,9 @@
 {
- "gegenereerd_op": "2026-09-10T22:43:55+00:00",
- "vandaag": "2026-09-10",
- "weekdag": 3,
- "dagthema": "Squat zwaar",
- "kernlift_vandaag": "squat",
+ "gegenereerd_op": "2026-09-11T09:44:22+00:00",
+ "vandaag": "2026-09-11",
+ "weekdag": 4,
+ "dagthema": "Volume + muscle-up",
+ "kernlift_vandaag": null,
  "positie": {
   "week": 1,
   "cyclusweek": 1,
@@ -12,11 +12,11 @@
   "deload": false,
   "startdatum": "2026-09-07"
  },
- "lichaamsgewicht": 77.0999984741211,
+ "lichaamsgewicht": 76.75,
  "lichaamsgewicht_bron": "hevy",
  "stand": {
   "dip": {
-   "e1rm": 49.7,
+   "e1rm": 49.6,
    "bron": "hevy",
    "target_nu": 53.5,
    "aantal_werksets_totaal": 22,
@@ -27,7 +27,7 @@
      "reps": 9,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 42.4
+     "e1rm": 42.2
     },
     {
      "datum": "2026-09-08",
@@ -35,7 +35,7 @@
      "reps": 9,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 49.2
+     "e1rm": 49.1
     },
     {
      "datum": "2026-09-08",
@@ -43,7 +43,7 @@
      "reps": 7,
      "rpe": 7,
      "type": "normal",
-     "e1rm": 49.7
+     "e1rm": 49.6
     },
     {
      "datum": "2026-09-08",
@@ -51,7 +51,7 @@
      "reps": 5,
      "rpe": 8.5,
      "type": "normal",
-     "e1rm": 52.7
+     "e1rm": 52.6
     },
     {
      "datum": "2026-09-08",
@@ -59,7 +59,7 @@
      "reps": 5,
      "rpe": 7,
      "type": "normal",
-     "e1rm": 45.8
+     "e1rm": 45.7
     },
     {
      "datum": "2026-09-08",
@@ -67,7 +67,7 @@
      "reps": 5,
      "rpe": 7,
      "type": "normal",
-     "e1rm": 45.8
+     "e1rm": 45.7
     },
     {
      "datum": "2026-09-10",
@@ -75,7 +75,7 @@
      "reps": 4,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 39.5
+     "e1rm": 39.4
     },
     {
      "datum": "2026-09-10",
@@ -83,7 +83,7 @@
      "reps": 4,
      "rpe": null,
      "type": "normal",
-     "e1rm": 27.3
+     "e1rm": 27.2
     }
    ],
    "laatste_notitie": {
@@ -111,7 +111,7 @@
      "reps": 5,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 50.7
+     "e1rm": 50.6
     },
     {
      "datum": "2026-09-08",
@@ -119,7 +119,7 @@
      "reps": 5,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 63.8
+     "e1rm": 63.7
     },
     {
      "datum": "2026-09-08",
@@ -127,7 +127,7 @@
      "reps": 5,
      "rpe": 8,
      "type": "normal",
-     "e1rm": 67.5
+     "e1rm": 67.4
     },
     {
      "datum": "2026-09-10",
@@ -135,7 +135,7 @@
      "reps": 5,
      "rpe": 7,
      "type": "normal",
-     "e1rm": 58.5
+     "e1rm": 58.4
     },
     {
      "datum": "2026-09-10",
@@ -143,7 +143,7 @@
      "reps": 5,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 50.7
+     "e1rm": 50.6
     },
     {
      "datum": "2026-09-10",
@@ -151,7 +151,7 @@
      "reps": 6,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 51.5
+     "e1rm": 51.4
     },
     {
      "datum": "2026-09-10",
@@ -159,7 +159,7 @@
      "reps": 3,
      "rpe": 8,
      "type": "normal",
-     "e1rm": 59.1
+     "e1rm": 59.0
     }
    ],
    "laatste_notitie": {
@@ -244,7 +244,7 @@
    }
   },
   "muscleup": {
-   "e1rm": 14.7,
+   "e1rm": 14.6,
    "bron": "hevy",
    "target_nu": 0.0,
    "aantal_werksets_totaal": 5,
@@ -255,7 +255,7 @@
      "reps": 2,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 14.7
+     "e1rm": 14.6
     },
     {
      "datum": "2026-09-04",
@@ -263,7 +263,7 @@
      "reps": 2,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 14.7
+     "e1rm": 14.6
     },
     {
      "datum": "2026-09-04",
@@ -271,7 +271,7 @@
      "reps": 2,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 14.7
+     "e1rm": 14.6
     },
     {
      "datum": "2026-09-04",
@@ -279,7 +279,7 @@
      "reps": 2,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 14.7
+     "e1rm": 14.6
     },
     {
      "datum": "2026-09-04",
@@ -287,7 +287,7 @@
      "reps": 2,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 14.7
+     "e1rm": 14.6
     }
    ],
    "laatste_notitie": {
@@ -381,15 +381,15 @@
   }
  },
  "afgelopen_7_dagen": {
-  "sessies": 5,
+  "sessies": 4,
   "dipwerksets": 15,
   "dipdoel": 10,
   "pullupwerksets": 21,
   "pullupdoel": 7,
-  "kernsets": 30,
-  "kernsets_met_rpe": 29,
+  "kernsets": 25,
+  "kernsets_met_rpe": 24,
   "kernsets_tot_falen": 0
  },
- "totaal_nu": 222.3,
+ "totaal_nu": 222.1,
  "totaal_doel": 367
 }
