@@ -1,8 +1,8 @@
 {
- "gegenereerd_op": "2026-09-11T22:44:01+00:00",
- "vandaag": "2026-09-11",
- "weekdag": 4,
- "dagthema": "Volume + muscle-up",
+ "gegenereerd_op": "2026-09-12T09:23:59+00:00",
+ "vandaag": "2026-09-12",
+ "weekdag": 5,
+ "dagthema": null,
  "kernlift_vandaag": null,
  "positie": {
   "week": 1,
@@ -381,13 +381,13 @@
   }
  },
  "afgelopen_7_dagen": {
-  "sessies": 4,
-  "dipwerksets": 15,
+  "sessies": 3,
+  "dipwerksets": 8,
   "dipdoel": 10,
-  "pullupwerksets": 21,
+  "pullupwerksets": 13,
   "pullupdoel": 7,
-  "kernsets": 25,
-  "kernsets_met_rpe": 24,
+  "kernsets": 16,
+  "kernsets_met_rpe": 15,
   "kernsets_tot_falen": 0
  },
  "totaal_nu": 222.1,
