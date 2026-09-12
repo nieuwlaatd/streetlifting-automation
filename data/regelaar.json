@@ -1,11 +1,11 @@
 {
  "dip": {
-  "factor": 0.8574,
+  "factor": 0.8145,
   "laatste_voorschrift": {
    "datum": "2026-09-12",
    "sets": 4,
    "reps": 5,
-   "kg": 15.0
+   "kg": 12.5
   },
   "log": [
    {
@@ -31,12 +31,20 @@
     "nieuwe_factor": 0.8574,
     "kg": 15.0,
     "kg_volgens_plan": 17.5
+   },
+   {
+    "datum": "2026-09-12",
+    "oordeel": "te_zwaar",
+    "reden": "0 van 4 sets gehaald",
+    "nieuwe_factor": 0.8145,
+    "kg": 12.5,
+    "kg_volgens_plan": 17.5
    }
   ],
-  "laatste_beoordeelde_sessie": "2026-09-10"
+  "laatste_beoordeelde_sessie": "2026-09-12"
  },
  "pullup": {
-  "factor": 0.9025,
+  "factor": 0.8574,
   "laatste_voorschrift": {
    "datum": "2026-09-12",
    "sets": 4,
@@ -59,17 +67,25 @@
     "nieuwe_factor": 0.9025,
     "kg": 25.0,
     "kg_volgens_plan": 27.5
+   },
+   {
+    "datum": "2026-09-12",
+    "oordeel": "te_zwaar",
+    "reden": "notitie meldt dat het te zwaar was",
+    "nieuwe_factor": 0.8574,
+    "kg": 25.0,
+    "kg_volgens_plan": 27.5
    }
   ],
-  "laatste_beoordeelde_sessie": "2026-09-10"
+  "laatste_beoordeelde_sessie": "2026-09-12"
  },
  "squat": {
-  "factor": 0.925,
+  "factor": 0.8788,
   "laatste_voorschrift": {
    "datum": "2026-09-12",
    "sets": 5,
    "reps": 5,
-   "kg": 62.5
+   "kg": 60.0
   },
   "log": [
    {
@@ -95,8 +111,16 @@
     "nieuwe_factor": 0.925,
     "kg": 62.5,
     "kg_volgens_plan": 67.5
+   },
+   {
+    "datum": "2026-09-12",
+    "oordeel": "te_zwaar",
+    "reden": "2 van 5 sets gehaald",
+    "nieuwe_factor": 0.8788,
+    "kg": 60.0,
+    "kg_volgens_plan": 67.5
    }
   ],
-  "laatste_beoordeelde_sessie": "2026-09-10"
+  "laatste_beoordeelde_sessie": "2026-09-12"
  }
 }
