@@ -1,11 +1,11 @@
 {
  "status": "ok",
- "fouten_aanvulling": [],
- "rechten_ontbreken": [
-  "slaap",
-  "activiteit"
+ "fouten_aanvulling": [
+  "verbrand: HTTP 400",
+  "stappen: HTTP 400"
  ],
- "opgehaald": "2026-09-13T18:26:30+00:00",
+ "rechten_ontbreken": [],
+ "opgehaald": "2026-09-13T18:39:20+00:00",
  "bron": "Google Health API",
  "streefgewicht_kg": 73,
  "samenvatting": {
@@ -145,7 +145,64 @@
     }
    }
   },
-  "sleep": null
+  "sleep": {
+   "name": "str",
+   "dataSource": {
+    "recordingMethod": "str",
+    "device": {
+     "displayName": "str"
+    },
+    "platform": "str"
+   },
+   "sleep": {
+    "interval": {
+     "startTime": "str",
+     "startUtcOffset": "str",
+     "endTime": "str",
+     "endUtcOffset": "str"
+    },
+    "type": "str",
+    "stages": [
+     {
+      "startTime": "str",
+      "startUtcOffset": "str",
+      "endTime": "str",
+      "endUtcOffset": "str",
+      "type": "str"
+     }
+    ],
+    "metadata": {
+     "stagesStatus": "str",
+     "processed": "bool",
+     "mainSleep": "bool"
+    },
+    "summary": {
+     "minutesInSleepPeriod": "str",
+     "minutesAfterWakeUp": "str",
+     "minutesToFallAsleep": "str",
+     "minutesAsleep": "str",
+     "minutesAwake": "str",
+     "stagesSummary": [
+      {
+       "type": "str",
+       "minutes": "str",
+       "count": "str"
+      }
+     ]
+    },
+    "createTime": "str",
+    "updateTime": "str",
+    "shortAwakenings": [
+     {
+      "startTime": "str",
+      "startUtcOffset": "str",
+      "endTime": "str",
+      "endUtcOffset": "str",
+      "type": "str"
+     }
+    ]
+   }
+  }
  },
  "dagen": [
   {
