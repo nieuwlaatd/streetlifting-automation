@@ -1,11 +1,8 @@
 {
  "status": "ok",
- "fouten_aanvulling": [
-  "verbrand: HTTP 400 Invalid argument in request.",
-  "stappen: HTTP 400 Invalid argument in request."
- ],
+ "fouten_aanvulling": [],
  "rechten_ontbreken": [],
- "opgehaald": "2026-09-13T18:41:30+00:00",
+ "opgehaald": "2026-09-13T18:43:21+00:00",
  "bron": "Google Health API",
  "streefgewicht_kg": 73,
  "samenvatting": {
@@ -22,9 +19,9 @@
   "slaap_7d_uur": null,
   "kortste_nacht_7d_uur": null,
   "nachten_onder_6u_7d": 0,
-  "verbrand_7d_kcal": null,
-  "stappen_7d": null,
-  "energiebalans_7d_kcal": null
+  "verbrand_7d_kcal": 2533.0,
+  "stappen_7d": 5228.0,
+  "energiebalans_7d_kcal": -283.0
  },
  "_veldnamen": {
   "weight": {
@@ -204,6 +201,10 @@
    }
   }
  },
+ "_veldnamen_rollup": {
+  "total-calories": {},
+  "steps": {}
+ },
  "dagen": [
   {
    "datum": "2026-09-03",
@@ -215,8 +216,34 @@
    "vet_g": null,
    "voedingslogs": 0,
    "slaap_uur": null,
-   "verbrand_kcal": null,
-   "stappen": null
+   "verbrand_kcal": 1668,
+   "stappen": 296
+  },
+  {
+   "datum": "2026-09-04",
+   "gewicht_kg": null,
+   "vet_pct": null,
+   "kcal": null,
+   "eiwit_g": null,
+   "koolhydraten_g": null,
+   "vet_g": null,
+   "voedingslogs": 0,
+   "slaap_uur": null,
+   "verbrand_kcal": 1828,
+   "stappen": 7452
+  },
+  {
+   "datum": "2026-09-05",
+   "gewicht_kg": null,
+   "vet_pct": null,
+   "kcal": null,
+   "eiwit_g": null,
+   "koolhydraten_g": null,
+   "vet_g": null,
+   "voedingslogs": 0,
+   "slaap_uur": null,
+   "verbrand_kcal": 1828,
+   "stappen": 7522
   },
   {
    "datum": "2026-09-06",
@@ -228,8 +255,8 @@
    "vet_g": 103,
    "voedingslogs": 1,
    "slaap_uur": null,
-   "verbrand_kcal": null,
-   "stappen": null
+   "verbrand_kcal": 1828,
+   "stappen": 2647
   },
   {
    "datum": "2026-09-07",
@@ -241,8 +268,8 @@
    "vet_g": 60,
    "voedingslogs": 1,
    "slaap_uur": null,
-   "verbrand_kcal": null,
-   "stappen": null
+   "verbrand_kcal": 1828,
+   "stappen": 922
   },
   {
    "datum": "2026-09-08",
@@ -254,8 +281,8 @@
    "vet_g": 64,
    "voedingslogs": 1,
    "slaap_uur": null,
-   "verbrand_kcal": null,
-   "stappen": null
+   "verbrand_kcal": 1828,
+   "stappen": 7422
   },
   {
    "datum": "2026-09-09",
@@ -267,8 +294,8 @@
    "vet_g": 90,
    "voedingslogs": 1,
    "slaap_uur": null,
-   "verbrand_kcal": null,
-   "stappen": null
+   "verbrand_kcal": 2638,
+   "stappen": 3844
   },
   {
    "datum": "2026-09-10",
@@ -280,8 +307,8 @@
    "vet_g": 92,
    "voedingslogs": 1,
    "slaap_uur": null,
-   "verbrand_kcal": null,
-   "stappen": null
+   "verbrand_kcal": 3762,
+   "stappen": 11038
   },
   {
    "datum": "2026-09-11",
@@ -293,8 +320,8 @@
    "vet_g": 69,
    "voedingslogs": 1,
    "slaap_uur": null,
-   "verbrand_kcal": null,
-   "stappen": null
+   "verbrand_kcal": 2584,
+   "stappen": 5741
   },
   {
    "datum": "2026-09-12",
@@ -306,8 +333,8 @@
    "vet_g": 56,
    "voedingslogs": 1,
    "slaap_uur": null,
-   "verbrand_kcal": null,
-   "stappen": null
+   "verbrand_kcal": 3263,
+   "stappen": 4982
   },
   {
    "datum": "2026-09-13",
