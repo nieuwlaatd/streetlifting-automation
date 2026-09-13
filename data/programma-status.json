@@ -1,5 +1,5 @@
 {
- "gegenereerd_op": "2026-09-13T18:01:38+00:00",
+ "gegenereerd_op": "2026-09-13T18:15:45+00:00",
  "vandaag": "2026-09-13",
  "weekdag": 6,
  "dagthema": null,
@@ -14,6 +14,12 @@
  },
  "lichaamsgewicht": 77.0,
  "lichaamsgewicht_bron": "hevy",
+ "gezondheid": {
+  "status": "niet_gekoppeld",
+  "opgehaald": null,
+  "fout": null,
+  "streefgewicht_kg": 73
+ },
  "stand": {
   "dip": {
    "e1rm": 49.7,
