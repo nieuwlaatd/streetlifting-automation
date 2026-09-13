@@ -1,5 +1,5 @@
 {
- "gegenereerd_op": "2026-09-13T10:18:58+00:00",
+ "gegenereerd_op": "2026-09-13T17:27:55+00:00",
  "vandaag": "2026-09-13",
  "weekdag": 6,
  "dagthema": null,
@@ -12,14 +12,15 @@
   "deload": false,
   "startdatum": "2026-09-07"
  },
- "lichaamsgewicht": 76.75,
+ "lichaamsgewicht": 77.0,
  "lichaamsgewicht_bron": "hevy",
  "stand": {
   "dip": {
-   "e1rm": 49.6,
+   "e1rm": 49.7,
    "bron": "hevy",
    "target_nu": 53.5,
    "aantal_werksets_totaal": 25,
+   "laatste_sessie": "2026-09-12",
    "laatste_sets": [
     {
      "datum": "2026-09-08",
@@ -27,7 +28,8 @@
      "reps": 5,
      "rpe": 8.5,
      "type": "normal",
-     "e1rm": 52.6
+     "e1rm": 52.7,
+     "variant": null
     },
     {
      "datum": "2026-09-08",
@@ -35,7 +37,8 @@
      "reps": 5,
      "rpe": 7,
      "type": "normal",
-     "e1rm": 45.7
+     "e1rm": 45.8,
+     "variant": null
     },
     {
      "datum": "2026-09-08",
@@ -43,7 +46,8 @@
      "reps": 5,
      "rpe": 7,
      "type": "normal",
-     "e1rm": 45.7
+     "e1rm": 45.8,
+     "variant": null
     },
     {
      "datum": "2026-09-10",
@@ -51,7 +55,8 @@
      "reps": 4,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 39.4
+     "e1rm": 39.5,
+     "variant": null
     },
     {
      "datum": "2026-09-10",
@@ -59,7 +64,8 @@
      "reps": 4,
      "rpe": null,
      "type": "normal",
-     "e1rm": 27.2
+     "e1rm": 27.3,
+     "variant": null
     },
     {
      "datum": "2026-09-12",
@@ -67,7 +73,8 @@
      "reps": 3,
      "rpe": null,
      "type": "normal",
-     "e1rm": 24.2
+     "e1rm": 24.2,
+     "variant": null
     },
     {
      "datum": "2026-09-12",
@@ -75,7 +82,8 @@
      "reps": 6,
      "rpe": 7,
      "type": "normal",
-     "e1rm": 41.6
+     "e1rm": 41.6,
+     "variant": null
     },
     {
      "datum": "2026-09-12",
@@ -83,7 +91,8 @@
      "reps": 6,
      "rpe": null,
      "type": "normal",
-     "e1rm": 13.5
+     "e1rm": 13.6,
+     "variant": null
     }
    ],
    "laatste_notitie": {
@@ -96,6 +105,7 @@
    "bron": "hevy",
    "target_nu": 60.4,
    "aantal_werksets_totaal": 46,
+   "laatste_sessie": "2026-09-12",
    "laatste_sets": [
     {
      "datum": "2026-09-08",
@@ -103,7 +113,8 @@
      "reps": 5,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 63.7
+     "e1rm": 63.8,
+     "variant": null
     },
     {
      "datum": "2026-09-08",
@@ -111,7 +122,8 @@
      "reps": 5,
      "rpe": 8,
      "type": "normal",
-     "e1rm": 67.4
+     "e1rm": 67.4,
+     "variant": null
     },
     {
      "datum": "2026-09-10",
@@ -119,7 +131,8 @@
      "reps": 5,
      "rpe": 7,
      "type": "normal",
-     "e1rm": 58.4
+     "e1rm": 58.4,
+     "variant": null
     },
     {
      "datum": "2026-09-10",
@@ -127,7 +140,8 @@
      "reps": 5,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 50.6
+     "e1rm": 50.6,
+     "variant": null
     },
     {
      "datum": "2026-09-10",
@@ -135,7 +149,8 @@
      "reps": 6,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 51.4
+     "e1rm": 51.5,
+     "variant": null
     },
     {
      "datum": "2026-09-10",
@@ -143,7 +158,8 @@
      "reps": 3,
      "rpe": 8,
      "type": "normal",
-     "e1rm": 59.0
+     "e1rm": 59.0,
+     "variant": null
     },
     {
      "datum": "2026-09-12",
@@ -151,7 +167,8 @@
      "reps": 5,
      "rpe": null,
      "type": "normal",
-     "e1rm": 36.1
+     "e1rm": 36.2,
+     "variant": null
     },
     {
      "datum": "2026-09-12",
@@ -159,7 +176,8 @@
      "reps": 5,
      "rpe": 8,
      "type": "normal",
-     "e1rm": 36.5
+     "e1rm": 36.6,
+     "variant": null
     }
    ],
    "laatste_notitie": {
@@ -172,6 +190,7 @@
    "bron": "hevy",
    "target_nu": 101.7,
    "aantal_werksets_totaal": 30,
+   "laatste_sessie": "2026-09-12",
    "laatste_sets": [
     {
      "datum": "2026-09-10",
@@ -179,7 +198,8 @@
      "reps": 5,
      "rpe": null,
      "type": "normal",
-     "e1rm": 70.0
+     "e1rm": 70.0,
+     "variant": null
     },
     {
      "datum": "2026-09-10",
@@ -187,7 +207,8 @@
      "reps": 5,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 78.9
+     "e1rm": 78.9,
+     "variant": null
     },
     {
      "datum": "2026-09-10",
@@ -195,7 +216,8 @@
      "reps": 5,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 78.9
+     "e1rm": 78.9,
+     "variant": null
     },
     {
      "datum": "2026-09-12",
@@ -203,7 +225,8 @@
      "reps": 5,
      "rpe": null,
      "type": "normal",
-     "e1rm": 70.0
+     "e1rm": 70.0,
+     "variant": null
     },
     {
      "datum": "2026-09-12",
@@ -211,7 +234,8 @@
      "reps": 5,
      "rpe": null,
      "type": "normal",
-     "e1rm": 81.7
+     "e1rm": 81.7,
+     "variant": null
     },
     {
      "datum": "2026-09-12",
@@ -219,7 +243,8 @@
      "reps": 5,
      "rpe": 7,
      "type": "normal",
-     "e1rm": 101.3
+     "e1rm": 101.3,
+     "variant": null
     },
     {
      "datum": "2026-09-12",
@@ -227,7 +252,8 @@
      "reps": 7,
      "rpe": null,
      "type": "normal",
-     "e1rm": 71.0
+     "e1rm": 71.0,
+     "variant": null
     },
     {
      "datum": "2026-09-12",
@@ -235,7 +261,8 @@
      "reps": 7,
      "rpe": 7,
      "type": "normal",
-     "e1rm": 78.4
+     "e1rm": 78.4,
+     "variant": null
     }
    ],
    "laatste_notitie": {
@@ -244,10 +271,11 @@
    }
   },
   "muscleup": {
-   "e1rm": 14.6,
+   "e1rm": null,
    "bron": "hevy",
    "target_nu": 0.0,
-   "aantal_werksets_totaal": 5,
+   "aantal_werksets_totaal": 9,
+   "laatste_sessie": "2026-09-12",
    "laatste_sets": [
     {
      "datum": "2026-09-04",
@@ -255,7 +283,8 @@
      "reps": 2,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 14.6
+     "e1rm": null,
+     "variant": "poging"
     },
     {
      "datum": "2026-09-04",
@@ -263,7 +292,8 @@
      "reps": 2,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 14.6
+     "e1rm": null,
+     "variant": "poging"
     },
     {
      "datum": "2026-09-04",
@@ -271,7 +301,8 @@
      "reps": 2,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 14.6
+     "e1rm": null,
+     "variant": "poging"
     },
     {
      "datum": "2026-09-04",
@@ -279,15 +310,44 @@
      "reps": 2,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 14.6
+     "e1rm": null,
+     "variant": "poging"
     },
     {
-     "datum": "2026-09-04",
-     "gewicht": null,
+     "datum": "2026-09-12",
+     "gewicht": 0,
      "reps": 2,
-     "rpe": 6,
+     "rpe": null,
      "type": "normal",
-     "e1rm": 14.6
+     "e1rm": null,
+     "variant": "met band"
+    },
+    {
+     "datum": "2026-09-12",
+     "gewicht": 0,
+     "reps": 2,
+     "rpe": null,
+     "type": "normal",
+     "e1rm": null,
+     "variant": "met band"
+    },
+    {
+     "datum": "2026-09-12",
+     "gewicht": 0,
+     "reps": 2,
+     "rpe": null,
+     "type": "normal",
+     "e1rm": null,
+     "variant": "met band"
+    },
+    {
+     "datum": "2026-09-12",
+     "gewicht": 0,
+     "reps": 7,
+     "rpe": null,
+     "type": "normal",
+     "e1rm": null,
+     "variant": "met band"
     }
    ],
    "laatste_notitie": {
@@ -340,7 +400,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-09-12",
+    "datum": "2026-09-13",
     "sets": 4,
     "reps": 5,
     "kg": 12.5
@@ -352,7 +412,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-09-12",
+    "datum": "2026-09-13",
     "sets": 4,
     "reps": 5,
     "kg": 25.0
@@ -364,7 +424,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-09-12",
+    "datum": "2026-09-13",
     "sets": 5,
     "reps": 5,
     "kg": 60.0
@@ -386,10 +446,10 @@
   "dipdoel": 10,
   "pullupwerksets": 15,
   "pullupdoel": 7,
-  "kernsets": 26,
+  "kernsets": 30,
   "kernsets_met_rpe": 19,
   "kernsets_tot_falen": 0
  },
- "totaal_nu": 222.9,
+ "totaal_nu": 208.4,
  "totaal_doel": 367
 }
