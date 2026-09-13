@@ -1,0 +1,31 @@
+name: Google Health koppeltest
+
+# Losse test, zodat een mislukte koppeling de dagelijkse Hevy-sync niet raakt.
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/google-health-test.yml"
+      - "scripts/google_health.py"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    environment: Hevy_api_key
+    env:
+      GOOGLE_HEALTH_CLIENT_ID: ${{ secrets.GOOGLE_HEALTH_CLIENT_ID }}
+      GOOGLE_HEALTH_CLIENT_SECRET: ${{ secrets.GOOGLE_HEALTH_CLIENT_SECRET }}
+      GOOGLE_HEALTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_HEALTH_REFRESH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 1 token en rechten
+        run: python scripts/google_health.py check token
+      - name: 2 gewicht lezen
+        if: always()
+        run: python scripts/google_health.py check gewicht
+      - name: 3 voeding lezen
+        if: always()
+        run: python scripts/google_health.py check voeding
