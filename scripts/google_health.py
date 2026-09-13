@@ -172,21 +172,27 @@ def dagtotalen(datatype, veld, token, vandaag):
 
     Verbrande calorieën en stappen staan niet als losse meetpunten in de API
     maar alleen als optelling. De API accepteert voor total-calories maximaal
-    veertien dagen per verzoek, dus we vragen de periode in stukken op.
+    veertien dagen per verzoek, dus we vragen de periode in blokken op.
+
+    Drie dingen die de API streng controleert, alle drie gevonden via een
+    HTTP 400: de datum hoort in een "date"-object, de tijd moet erbij staan,
+    en het bereik loopt tot en met gisteren. Vandaag is nog niet af en telt
+    in de gemiddelden toch al niet mee.
     """
-    uit, eind = {}, vandaag + dt.timedelta(days=1)
-    begin_totaal = vandaag - dt.timedelta(days=DAGEN_TERUG)
-    while eind > begin_totaal:
-        # Dertien in plaats van veertien dagen: of het einde meetelt, staat
-        # niet in de documentatie, en een dag te veel geeft een HTTP 400.
-        begin = max(begin_totaal, eind - dt.timedelta(days=13))
-        # De grenzen zijn civiele datumtijden: de datum zit in een "date"-object.
-        # Kale year/month/day wijst de API af met "Unknown name year".
-        body = {"range": {"start": {"date": {"year": begin.year, "month": begin.month,
-                                             "day": begin.day}},
-                          "end": {"date": {"year": eind.year, "month": eind.month,
-                                           "day": eind.day}}},
-                "windowSizeDays": 1, "pageSize": 100}
+    uit = {}
+    laatste = vandaag - dt.timedelta(days=1)
+    eerste = vandaag - dt.timedelta(days=DAGEN_TERUG)
+    blok_eind = laatste
+    while blok_eind >= eerste:
+        blok_begin = max(eerste, blok_eind - dt.timedelta(days=12))   # 13 dagen per blok
+        body = {"range": {
+                    "start": {"date": {"year": blok_begin.year, "month": blok_begin.month,
+                                       "day": blok_begin.day},
+                              "time": {"hours": 0, "minutes": 0, "seconds": 0, "nanos": 0}},
+                    "end": {"date": {"year": blok_eind.year, "month": blok_eind.month,
+                                     "day": blok_eind.day},
+                            "time": {"hours": 23, "minutes": 59, "seconds": 59, "nanos": 0}}},
+                "windowSizeDays": 1}
         req = urllib.request.Request(f"{BASE}/{datatype}/dataPoints:dailyRollUp",
                                      data=json.dumps(body).encode(), method="POST",
                                      headers={"Authorization": f"Bearer {token}",
@@ -195,14 +201,33 @@ def dagtotalen(datatype, veld, token, vandaag):
             antwoord = json.load(r)
         for punt in antwoord.get("rollupDataPoints") or []:
             datum = civiele_datum(punt.get("civilStartTime"))
-            waarde = None
-            for inhoud in punt.values():
-                if isinstance(inhoud, dict) and veld in inhoud:
-                    waarde = inhoud[veld]
-            if datum and isinstance(waarde, (int, float)):
+            waarde = rollup_waarde(punt, veld)
+            if datum and waarde is not None:
                 uit[datum] = waarde
-        eind = begin
+        DIAGNOSE[datatype] = sleutels((antwoord.get("rollupDataPoints") or [{}])[0])
+        blok_eind = blok_begin - dt.timedelta(days=1)
     return uit
+
+
+DIAGNOSE = {}
+
+
+def rollup_waarde(punt, veld):
+    """Het getal uit een rollup-punt. De API geeft grote getallen als tekst.
+
+    Voorbeeld uit de documentatie: {"steps": {"countSum": "3822"}}. Staat het
+    verwachte veld er niet, dan pakken we het eerste veld dat op Sum eindigt.
+    """
+    for sleutel, inhoud in punt.items():
+        if not isinstance(inhoud, dict) or sleutel.startswith("civil"):
+            continue
+        kandidaten = [inhoud.get(veld)] + [v for k, v in inhoud.items() if k.endswith("Sum")]
+        for waarde in kandidaten:
+            try:
+                return float(waarde)
+            except (TypeError, ValueError):
+                continue
+    return None
 
 
 # ---------------------------------------------------------------- ontleden
@@ -476,6 +501,7 @@ def haal():
         "_veldnamen": {naam: sleutels(punten[0]) if punten else None
                        for naam, punten in (("weight", gewicht), ("body-fat", vet),
                                             ("nutrition-log", voeding), ("sleep", slaap))},
+        "_veldnamen_rollup": DIAGNOSE,
         "dagen": dagen,
     })
     # Alleen aantallen in de log; de waarden staan in het privébestand.
@@ -502,7 +528,8 @@ def check(onderdeel):
         except urllib.error.HTTPError as fout:
             stop(f"total-calories: HTTP {fout.code} {foutuitleg(fout)}")
         if not totalen:
-            stop("activiteit: API bereikbaar, maar geen verbrande calorieën gevonden.")
+            stop("activiteit: API bereikbaar, maar geen verbrande calorieën gevonden. "
+                 f"Structuur: {json.dumps(DIAGNOSE)[:400]}")
         print(f"activiteit: {len(totalen)} dagen met verbrande calorieën.")
         return
     if onderdeel not in DATATYPE:
