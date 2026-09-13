@@ -2,7 +2,7 @@
  "status": "ok",
  "fouten_aanvulling": [],
  "rechten_ontbreken": [],
- "opgehaald": "2026-09-13T18:43:21+00:00",
+ "opgehaald": "2026-09-13T18:44:51+00:00",
  "bron": "Google Health API",
  "streefgewicht_kg": 73,
  "samenvatting": {
@@ -16,9 +16,9 @@
   "eiwit_per_kg": 1.85,
   "dagen_met_voeding_7d": 7,
   "dagen_met_gewicht_7d": 5,
-  "slaap_7d_uur": null,
-  "kortste_nacht_7d_uur": null,
-  "nachten_onder_6u_7d": 0,
+  "slaap_7d_uur": 7.01,
+  "kortste_nacht_7d_uur": 0.28,
+  "nachten_onder_6u_7d": 1,
   "verbrand_7d_kcal": 2533.0,
   "stappen_7d": 5228.0,
   "energiebalans_7d_kcal": -283.0
@@ -202,8 +202,56 @@
   }
  },
  "_veldnamen_rollup": {
-  "total-calories": {},
-  "steps": {}
+  "total-calories": {
+   "civilStartTime": {
+    "date": {
+     "year": "int",
+     "month": "int",
+     "day": "int"
+    },
+    "time": {}
+   },
+   "civilEndTime": {
+    "date": {
+     "year": "int",
+     "month": "int",
+     "day": "int"
+    },
+    "time": {
+     "hours": "int",
+     "minutes": "int",
+     "seconds": "int"
+    }
+   },
+   "totalCalories": {
+    "kcalSum": "float"
+   }
+  },
+  "steps": {
+   "civilStartTime": {
+    "date": {
+     "year": "int",
+     "month": "int",
+     "day": "int"
+    },
+    "time": {}
+   },
+   "civilEndTime": {
+    "date": {
+     "year": "int",
+     "month": "int",
+     "day": "int"
+    },
+    "time": {
+     "hours": "int",
+     "minutes": "int",
+     "seconds": "int"
+    }
+   },
+   "steps": {
+    "countSum": "str"
+   }
+  }
  },
  "dagen": [
   {
@@ -293,7 +341,7 @@
    "koolhydraten_g": 227,
    "vet_g": 90,
    "voedingslogs": 1,
-   "slaap_uur": null,
+   "slaap_uur": 0.28,
    "verbrand_kcal": 2638,
    "stappen": 3844
   },
@@ -306,7 +354,7 @@
    "koolhydraten_g": 261,
    "vet_g": 92,
    "voedingslogs": 1,
-   "slaap_uur": null,
+   "slaap_uur": 8.25,
    "verbrand_kcal": 3762,
    "stappen": 11038
   },
@@ -319,7 +367,7 @@
    "koolhydraten_g": 461,
    "vet_g": 69,
    "voedingslogs": 1,
-   "slaap_uur": null,
+   "slaap_uur": 9.02,
    "verbrand_kcal": 2584,
    "stappen": 5741
   },
@@ -332,7 +380,7 @@
    "koolhydraten_g": 228,
    "vet_g": 56,
    "voedingslogs": 1,
-   "slaap_uur": null,
+   "slaap_uur": 8.6,
    "verbrand_kcal": 3263,
    "stappen": 4982
   },
@@ -345,7 +393,7 @@
    "koolhydraten_g": null,
    "vet_g": null,
    "voedingslogs": 0,
-   "slaap_uur": null,
+   "slaap_uur": 8.92,
    "verbrand_kcal": null,
    "stappen": null
   }
