@@ -120,6 +120,14 @@ def repo_is_prive():
 
 # ---------------------------------------------------------------- ophalen
 
+def foutuitleg(fout):
+    """De uitleg die Google bij een foutcode meestuurt. Bevat geen meetwaarden."""
+    try:
+        return json.loads(fout.read().decode()).get("error", {}).get("message", "")[:300]
+    except Exception:
+        return ""
+
+
 def _get(url, token):
     req = urllib.request.Request(url, headers={"Authorization": f"Bearer {token}"})
     with urllib.request.urlopen(req, timeout=60) as r:
@@ -443,7 +451,7 @@ def haal():
             try:
                 doel.update(dagtotalen(datatype, veld, token, vandaag))
             except urllib.error.HTTPError as fout:
-                fouten.append(f"{naam}: HTTP {fout.code}")
+                fouten.append(f"{naam}: HTTP {fout.code} {foutuitleg(fout)}")
     for f in fouten:
         print(f"::warning::Google Health {f}")
 
@@ -486,7 +494,7 @@ def check(onderdeel):
         try:
             totalen = dagtotalen("total-calories", "kcalSum", token, dt.date.today())
         except urllib.error.HTTPError as fout:
-            stop(f"total-calories: HTTP {fout.code}")
+            stop(f"total-calories: HTTP {fout.code} {foutuitleg(fout)}")
         if not totalen:
             stop("activiteit: API bereikbaar, maar geen verbrande calorieën gevonden.")
         print(f"activiteit: {len(totalen)} dagen met verbrande calorieën.")
