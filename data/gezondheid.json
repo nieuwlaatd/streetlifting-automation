@@ -1,7 +1,11 @@
 {
  "status": "ok",
- "rechten_ontbreken": [],
- "opgehaald": "2026-09-13T18:18:38+00:00",
+ "fouten_aanvulling": [],
+ "rechten_ontbreken": [
+  "slaap",
+  "activiteit"
+ ],
+ "opgehaald": "2026-09-13T18:26:30+00:00",
  "bron": "Google Health API",
  "streefgewicht_kg": 73,
  "samenvatting": {
@@ -14,7 +18,13 @@
   "eiwit_7d_g": 141.86,
   "eiwit_per_kg": 1.85,
   "dagen_met_voeding_7d": 7,
-  "dagen_met_gewicht_7d": 5
+  "dagen_met_gewicht_7d": 5,
+  "slaap_7d_uur": null,
+  "kortste_nacht_7d_uur": null,
+  "nachten_onder_6u_7d": 0,
+  "verbrand_7d_kcal": null,
+  "stappen_7d": null,
+  "energiebalans_7d_kcal": null
  },
  "_veldnamen": {
   "weight": {
@@ -134,7 +144,8 @@
      "grams": "float"
     }
    }
-  }
+  },
+  "sleep": null
  },
  "dagen": [
   {
@@ -145,7 +156,10 @@
    "eiwit_g": null,
    "koolhydraten_g": null,
    "vet_g": null,
-   "voedingslogs": 0
+   "voedingslogs": 0,
+   "slaap_uur": null,
+   "verbrand_kcal": null,
+   "stappen": null
   },
   {
    "datum": "2026-09-06",
@@ -155,7 +169,10 @@
    "eiwit_g": 131,
    "koolhydraten_g": 147,
    "vet_g": 103,
-   "voedingslogs": 1
+   "voedingslogs": 1,
+   "slaap_uur": null,
+   "verbrand_kcal": null,
+   "stappen": null
   },
   {
    "datum": "2026-09-07",
@@ -165,7 +182,10 @@
    "eiwit_g": 149,
    "koolhydraten_g": 162,
    "vet_g": 60,
-   "voedingslogs": 1
+   "voedingslogs": 1,
+   "slaap_uur": null,
+   "verbrand_kcal": null,
+   "stappen": null
   },
   {
    "datum": "2026-09-08",
@@ -175,7 +195,10 @@
    "eiwit_g": 163,
    "koolhydraten_g": 232,
    "vet_g": 64,
-   "voedingslogs": 1
+   "voedingslogs": 1,
+   "slaap_uur": null,
+   "verbrand_kcal": null,
+   "stappen": null
   },
   {
    "datum": "2026-09-09",
@@ -185,7 +208,10 @@
    "eiwit_g": 169,
    "koolhydraten_g": 227,
    "vet_g": 90,
-   "voedingslogs": 1
+   "voedingslogs": 1,
+   "slaap_uur": null,
+   "verbrand_kcal": null,
+   "stappen": null
   },
   {
    "datum": "2026-09-10",
@@ -195,7 +221,10 @@
    "eiwit_g": 157,
    "koolhydraten_g": 261,
    "vet_g": 92,
-   "voedingslogs": 1
+   "voedingslogs": 1,
+   "slaap_uur": null,
+   "verbrand_kcal": null,
+   "stappen": null
   },
   {
    "datum": "2026-09-11",
@@ -205,7 +234,10 @@
    "eiwit_g": 128,
    "koolhydraten_g": 461,
    "vet_g": 69,
-   "voedingslogs": 1
+   "voedingslogs": 1,
+   "slaap_uur": null,
+   "verbrand_kcal": null,
+   "stappen": null
   },
   {
    "datum": "2026-09-12",
@@ -215,7 +247,10 @@
    "eiwit_g": 96,
    "koolhydraten_g": 228,
    "vet_g": 56,
-   "voedingslogs": 1
+   "voedingslogs": 1,
+   "slaap_uur": null,
+   "verbrand_kcal": null,
+   "stappen": null
   },
   {
    "datum": "2026-09-13",
@@ -225,7 +260,10 @@
    "eiwit_g": null,
    "koolhydraten_g": null,
    "vet_g": null,
-   "voedingslogs": 0
+   "voedingslogs": 0,
+   "slaap_uur": null,
+   "verbrand_kcal": null,
+   "stappen": null
   }
  ]
 }

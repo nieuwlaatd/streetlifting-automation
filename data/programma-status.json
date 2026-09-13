@@ -1,5 +1,5 @@
 {
- "gegenereerd_op": "2026-09-13T18:18:42+00:00",
+ "gegenereerd_op": "2026-09-13T18:26:32+00:00",
  "vandaag": "2026-09-13",
  "weekdag": 6,
  "dagthema": null,
@@ -16,7 +16,7 @@
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-09-13T18:18:38+00:00",
+  "opgehaald": "2026-09-13T18:26:30+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
   "gewicht_7d_kg": 76.74,
@@ -28,7 +28,13 @@
   "eiwit_7d_g": 141.86,
   "eiwit_per_kg": 1.85,
   "dagen_met_voeding_7d": 7,
-  "dagen_met_gewicht_7d": 5
+  "dagen_met_gewicht_7d": 5,
+  "slaap_7d_uur": null,
+  "kortste_nacht_7d_uur": null,
+  "nachten_onder_6u_7d": 0,
+  "verbrand_7d_kcal": null,
+  "stappen_7d": null,
+  "energiebalans_7d_kcal": null
  },
  "stand": {
   "dip": {
