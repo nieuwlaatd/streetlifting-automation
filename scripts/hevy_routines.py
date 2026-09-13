@@ -158,9 +158,35 @@ def notitie(oefening, hevy_titel_afwijkend):
     return " · ".join(delen) or None
 
 
-def bouw_routines(schema):
+def huidige_week(blokken, vandaag):
+    """Het weekblok dat nu aan de beurt is.
+
+    Dat is de eerste week waarvan de laatste trainingsdag nog niet voorbij is.
+    Op zaterdag staat week 1 dus nog klaar voor die dag; vanaf zondag schuift
+    Hevy door naar week 2. Staat er nog geen volgende week in de Sheet, dan
+    blijft de laatste staan in plaats van dat de routines leeg raken.
+
+    Voorheen werden alle blokken achter elkaar in dezelfde vier routines gezet,
+    waardoor altijd de laatste week in de Sheet won, ook als die nog weken weg was.
+    """
+    def laatste_dag(blok):
+        datums = [d["datum"] for d in blok["dagen"] if d.get("datum")]
+        return max(datums) if datums else "0000"
+
+    for blok in blokken:
+        if laatste_dag(blok) >= vandaag.isoformat():
+            return blok
+    return blokken[-1] if blokken else None
+
+
+def bouw_routines(schema, vandaag=None):
+    import datetime as dt
     uit = []
-    for blok in schema["blokken"]:
+    blok = huidige_week(schema["blokken"], vandaag or dt.date.today())
+    if blok is None:
+        return uit
+    print(f"Week {blok.get('week')} uit '{blok['blok']}' wordt in Hevy gezet.")
+    for _ in [blok]:
         for i, dag in enumerate(blok["dagen"], start=1):
             oefeningen = []
             for o in dag["oefeningen"]:
@@ -170,9 +196,14 @@ def bouw_routines(schema):
                     continue
                 template, extra = gevonden
                 stukken = [f"Kaj: {o['naam']}"]
-                rl = (o["rpe_load"] or "").strip()
-                if rl and rl.lower() != "x":
-                    stukken.append(f"RPE {rl}")
+                # Vanaf week 2 geeft Kaj naast de RPE een kilobereik. Dat komt
+                # als richtlijn in de notitie en niet in het gewichtsveld: de
+                # RPE blijft leidend, het bereik is waar hij het ongeveer verwacht.
+                rpe = (o.get("rpe") if "rpe" in o else o["rpe_load"] or "").strip()
+                if rpe and rpe.lower() != "x":
+                    stukken.append(f"RPE {rpe}")
+                if o.get("kg"):
+                    stukken.append(f"{o['kg']} kg")
                 if extra:
                     stukken.append(extra)
                 if o["opmerking"]:
@@ -188,7 +219,8 @@ def bouw_routines(schema):
                     "sets": maak_sets(o, template),
                 })
             thema = dag["thema"] or dag["dag"].capitalize()
-            titel = f"{MAP_PREFIX} {i} · {KORT[dag['dag']]} — {thema}"
+            week = f" wk{blok['week']}" if blok.get("week") else ""
+            titel = f"{MAP_PREFIX} {i} · {KORT[dag['dag']]}{week} — {thema}"
             uit.append((f"{MAP_PREFIX} {i}", titel[:95], oefeningen))
     return uit
 

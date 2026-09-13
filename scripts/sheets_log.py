@@ -2,6 +2,8 @@
 
 Kaj wil de werkelijke uitvoering in zijn Sheet zien: per oefening de RPE in
 kolom F, de sets in G tot en met K, en in L waar het van zijn plan afweek.
+Die letters gelden voor week 1; elke volgende week staat 18 kolommen verder
+(week 2 begint in S), en alles schuift mee.
 Zijn eigen kolommen A tot en met E blijven onaangeroerd, zodat het voorschrift
 en de uitvoering naast elkaar staan in plaats van door elkaar. Dit script leest de laatste sessies uit
 Hevy, zoekt bij elke oefening de bijbehorende rij en vult die in.
@@ -201,60 +203,103 @@ def kies_dag(workout, dagen):
     return (beste, "oefeningen") if overlap(beste) >= 3 else (None, "te weinig overlap")
 
 
-def opmaak_netjes(svc, blad_id, tabblad, rijen, kop_rijen):
-    """Laat kolom L en M meelopen met de opmaak die de coach al gebruikt.
+def letter(n):
+    """Kolomnummer (1 = A) naar kolomletters: 19 wordt S, 31 wordt AE."""
+    uit = ""
+    while n:
+        n, rest = divmod(n - 1, 26)
+        uit = chr(65 + rest) + uit
+    return uit
+
+
+class Blok:
+    """De kolommen van een weekblok.
+
+    Kaj zet elke week naast de vorige: week 1 begint in kolom A, week 2 in
+    kolom S. Binnen een blok is de indeling steeds gelijk, dus alles volgt uit
+    de beginkolom. Voorheen stonden F tot en met M hier vast, waardoor week 2
+    over week 1 heen geschreven zou worden.
+    """
+
+    def __init__(self, dag):
+        self.tab = dag["tabblad"]
+        self.start = dag.get("kolom", 1)
+        self.rpe = self.start + 5               # WERKELIJKE RPE, in week 1 kolom F
+        self.eerste_set = self.start + 6        # Set 1, in week 1 kolom G
+        self.afwijking = self.start + 11        # in week 1 kolom L
+        self.notitie = self.start + 12          # in week 1 kolom M
+
+    def a1(self, kolom, rij, tot=None):
+        bereik = f"{letter(kolom)}{rij}" + (f":{letter(tot)}{rij}" if tot else "")
+        return f"'{self.tab}'!{bereik}"
+
+
+def opmaak_netjes(svc, blad_ids, doelen):
+    """Laat de afwijking- en notitiekolom meelopen met Kajs opmaak.
 
     Kaj kleurt zijn dagblokken: groen voor squat, blauw voor dip, grijs voor
-    assistentie, goud voor de kopregel. Vanaf rij 28 zijn L en M bovendien al
-    zwart, dus zonder deze stap staat de toegevoegde tekst daar zwart op zwart.
-    Elke cel die wij schrijven krijgt daarom de achtergrond van kolom A op
-    diezelfde rij, met een letterkleur die daar leesbaar op is.
+    assistentie, goud voor de kopregel. Rechts van zijn kolommen staat soms al
+    een zwarte achtergrond, dus zonder deze stap staat de toegevoegde tekst
+    zwart op zwart. Elke cel die wij schrijven krijgt daarom de achtergrond van
+    de eerste kolom van dat blok op diezelfde rij, met een leesbare letterkleur.
+
+    doelen: verzameling van (tabblad, beginkolom, rij, is_kopregel).
     """
-    if blad_id is None or not (rijen or kop_rijen):
-        return
-    alle = sorted(set(rijen) | set(kop_rijen))
-    grid = svc.get(spreadsheetId=SHEET_ID, includeGridData=True,
-                   ranges=[f"'{tabblad}'!A1:M{max(alle)}"],
-                   fields="sheets(data(rowData(values(effectiveFormat(backgroundColor)))))"
-                   ).execute()
-    rijdata = grid["sheets"][0]["data"][0].get("rowData", [])
-
-    def achtergrond(rij):
-        if rij - 1 >= len(rijdata):
-            return None
-        waarden = rijdata[rij - 1].get("values") or []
-        if not waarden:
-            return None
-        return (waarden[0].get("effectiveFormat") or {}).get("backgroundColor")
-
-    verzoeken = []
-    for rij in alle:
-        kleur = achtergrond(rij)
-        if not kleur:
+    per_tab = {}
+    for tab, start, rij, kop in doelen:
+        per_tab.setdefault(tab, []).append((start, rij, kop))
+    for tab, items in per_tab.items():
+        blad_id = blad_ids.get(tab)
+        if blad_id is None:
             continue
-        # Helderheid bepaalt of zwarte of witte letters leesbaar zijn.
-        helder = (0.299 * kleur.get("red", 1) + 0.587 * kleur.get("green", 1)
-                  + 0.114 * kleur.get("blue", 1))
-        letter = {"red": 0, "green": 0, "blue": 0} if helder > 0.55 else {"red": 1, "green": 1, "blue": 1}
-        verzoeken.append({
-            "repeatCell": {
-                "range": {"sheetId": blad_id, "startRowIndex": rij - 1, "endRowIndex": rij,
-                          "startColumnIndex": 11, "endColumnIndex": 13},
-                "cell": {"userEnteredFormat": {
-                    "backgroundColor": kleur,
-                    "textFormat": {"foregroundColor": letter,
-                                   "bold": rij in kop_rijen, "fontSize": 10},
-                    "wrapStrategy": "CLIP",
-                }},
-                "fields": ("userEnteredFormat(backgroundColor,textFormat.foregroundColor,"
-                           "textFormat.bold,textFormat.fontSize,wrapStrategy)"),
-            }})
-    verzoeken.append({"updateDimensionProperties": {
-        "range": {"sheetId": blad_id, "dimension": "COLUMNS",
-                  "startIndex": 11, "endIndex": 13},
-        "properties": {"pixelSize": 260}, "fields": "pixelSize"}})
-    svc.batchUpdate(spreadsheetId=SHEET_ID, body={"requests": verzoeken}).execute()
-    print(f"opmaak van L en M gelijkgetrokken op {len(verzoeken)-1} rijen.")
+        hoogste = max(rij for _, rij, _ in items)
+        grid = svc.get(spreadsheetId=SHEET_ID, includeGridData=True,
+                       ranges=[f"'{tab}'!A1:AZ{hoogste}"],
+                       fields="sheets(data(rowData(values(effectiveFormat(backgroundColor)))))"
+                       ).execute()
+        rijdata = grid["sheets"][0]["data"][0].get("rowData", [])
+
+        def achtergrond(rij, kolom):
+            if rij - 1 >= len(rijdata):
+                return None
+            waarden = rijdata[rij - 1].get("values") or []
+            if len(waarden) < kolom:
+                return None
+            return (waarden[kolom - 1].get("effectiveFormat") or {}).get("backgroundColor")
+
+        verzoeken, kolommen = [], set()
+        for start, rij, kop in sorted(set(items)):
+            kleur = achtergrond(rij, start)
+            if not kleur:
+                continue
+            # Helderheid bepaalt of zwarte of witte letters leesbaar zijn.
+            helder = (0.299 * kleur.get("red", 1) + 0.587 * kleur.get("green", 1)
+                      + 0.114 * kleur.get("blue", 1))
+            letterkleur = ({"red": 0, "green": 0, "blue": 0} if helder > 0.55
+                           else {"red": 1, "green": 1, "blue": 1})
+            begin = start + 10                   # 0-gebaseerd: de afwijkingkolom
+            kolommen.add(begin)
+            verzoeken.append({
+                "repeatCell": {
+                    "range": {"sheetId": blad_id, "startRowIndex": rij - 1, "endRowIndex": rij,
+                              "startColumnIndex": begin, "endColumnIndex": begin + 2},
+                    "cell": {"userEnteredFormat": {
+                        "backgroundColor": kleur,
+                        "textFormat": {"foregroundColor": letterkleur,
+                                       "bold": kop, "fontSize": 10},
+                        "wrapStrategy": "CLIP",
+                    }},
+                    "fields": ("userEnteredFormat(backgroundColor,textFormat.foregroundColor,"
+                               "textFormat.bold,textFormat.fontSize,wrapStrategy)"),
+                }})
+        for begin in kolommen:
+            verzoeken.append({"updateDimensionProperties": {
+                "range": {"sheetId": blad_id, "dimension": "COLUMNS",
+                          "startIndex": begin, "endIndex": begin + 2},
+                "properties": {"pixelSize": 260}, "fields": "pixelSize"}})
+        if verzoeken:
+            svc.batchUpdate(spreadsheetId=SHEET_ID, body={"requests": verzoeken}).execute()
+            print(f"opmaak gelijkgetrokken in '{tab}': {len(verzoeken) - len(kolommen)} rijen.")
 
 
 def main():
@@ -279,37 +324,36 @@ def main():
         print("GOOGLE_SERVICE_ACCOUNT niet gezet; overslaan. Zie de kop van dit bestand.")
         return
     svc = client.spreadsheets()
-    tabblad = dagen[0]["tabblad"]
     meta = svc.get(spreadsheetId=SHEET_ID).execute()
-    blad_id = next((b["properties"]["sheetId"] for b in meta["sheets"]
-                    if b["properties"]["title"] == tabblad), None)
-    huidig = svc.values().get(spreadsheetId=SHEET_ID,
-                              range=f"'{tabblad}'!A1:M60").execute().get("values", [])
+    blad_ids = {b["properties"]["title"]: b["properties"]["sheetId"] for b in meta["sheets"]}
 
-    def cel(rij, kol):
-        r = huidig[rij - 1] if len(huidig) >= rij else []
+    inhoud = {}
+
+    def cel(tab, rij, kol):
+        if tab not in inhoud:
+            inhoud[tab] = svc.values().get(spreadsheetId=SHEET_ID,
+                                           range=f"'{tab}'!A1:AZ200").execute().get("values", [])
+        waarden = inhoud[tab]
+        r = waarden[rij - 1] if len(waarden) >= rij else []
         return (r[kol - 1] if len(r) >= kol else "") or ""
 
-    updates, opmaak_rijen, geraakte_rijen, kop_rijen = [], [], [], []
+    updates, tekstcellen, opmaak = [], set(), set()
     for w in sorted(recent, key=lambda x: x["start_time"]):
         dag, reden = kies_dag(w, dagen)
         datum = w["start_time"][:10]
         if dag is None:
             print(f"  {datum} {w.get('title','')!r}: overgeslagen ({reden})")
             continue
+        b = Blok(dag)
+        kop = dag["kop_rij"] + 1                  # de OEFENING|SETS|... regel
+        opmaak.add((b.tab, b.start, kop, True))
 
-        kop_rijen.append(dag["kop_rij"] + 1)     # de OEFENING|SETS|... regel
-        gebruikt = set()
-        gevuld = 0
-        buiten = []
+        gebruikt, gevuld, buiten = set(), 0, []
         for oef in w.get("exercises", []):
             titel = oef.get("title") or ""
             kandidaten = HEVY_NAAR_KAJ.get(titel, [])
-            doel = None
-            for o in dag["oefeningen"]:
-                if o["naam"] in kandidaten and o["rij"] not in gebruikt:
-                    doel = o
-                    break
+            doel = next((o for o in dag["oefeningen"]
+                         if o["naam"] in kandidaten and o["rij"] not in gebruikt), None)
             if doel is None:
                 # Een oefening die niet in het plan staat. Die stil laten
                 # vallen zou de coach een vertekend beeld geven: hij ziet dan
@@ -334,84 +378,67 @@ def main():
             if uit_notitie and not any(s.get("weight_kg") for s in werk):
                 werk = [dict(s, weight_kg=g) for s, g in zip(werk, uit_notitie)]
 
-            # RPE per set, in dezelfde volgorde als de kolommen G tot en met K.
-            # Een enkel getal zegt niets over of het opliep binnen de oefening;
-            # 6, 6, 8 vertelt de coach iets anders dan 8, 8, 8.
-            per_set = [s.get("rpe") for s in werk]
-            # Noemt de notitie een RPE, dan wint die van het gelogde veld. Het
-            # RPE-veld in Hevy begint bij 6, dus alles daaronder kan Dylan daar
-            # niet kwijt. Welke set hij bedoelt staat in de zin zelf; dat leest
-            # notities.rpe_toewijzing uit.
-            per_set = notities.rpe_toewijzing(notitie_tekst, len(werk), per_set)
+            # RPE per set, in dezelfde volgorde als de setkolommen. Noemt de
+            # notitie een RPE, dan wint die van het gelogde veld: het RPE-veld
+            # in Hevy begint bij 6, dus alles daaronder staat in de notitie.
+            per_set = notities.rpe_toewijzing(notitie_tekst, len(werk),
+                                              [s.get("rpe") for s in werk])
             rpes = [x for x in per_set if x is not None]
-            # Kolom F vat samen: het bereik waarbinnen de oefening viel.
-            # De RPE per set staat bij de set zelf, in G tot en met K.
             if not rpes:
                 rpe_tekst = ""
             elif min(rpes) == max(rpes):
                 rpe_tekst = f"{min(rpes):g}"
             else:
                 rpe_tekst = f"{min(rpes):g}-{max(rpes):g}"
-
             waarden = [zet_set(s, r) for s, r in zip(werk[:5], per_set[:5])]
 
             rij = doel["rij"]
-            # Een eerdere versie schreef met USER_ENTERED, waardoor Google van
-            # een RPE-bereik als "6-7" de datum 6 juli maakte. In plaats van te
-            # raden hoe zo'n verminkte cel eruitziet, beschrijven we wat een
-            # geldige RPE is: een getal of een bereik tussen 1 en 10. Alles
-            # daarbuiten is geen RPE en mag overschreven worden.
-            # Kolom F krijgt altijd een GETAL, nooit een bereik. Een tekst als
-            # "6-7" werd door Google als datum gelezen; met een getal kan die
-            # hele klasse fouten niet meer optreden. Varieerde de RPE over de
-            # sets, dan staat dat in kolom L.
-            bestaand_f = str(cel(rij, 6)).strip()
-            # Geldig is een reeks als "6", "8.5" of "6, 6, 8"; alles anders
-            # (bijvoorbeeld een datum uit een oudere versie) mag overschreven.
             # Geldig is "6", "8.5" of een bereik als "6-8". Een datum uit een
-            # oudere versie heeft twee streepjes en valt dus af.
+            # oudere versie van dit script heeft twee streepjes en valt af.
             al_ingevuld = bool(re.fullmatch(
-                r"\d{1,2}([.,]\d)?(\s*-\s*\d{1,2}([.,]\d)?)?", bestaand_f))
+                r"\d{1,2}([.,]\d)?(\s*-\s*\d{1,2}([.,]\d)?)?", str(cel(b.tab, rij, b.rpe)).strip()))
             if rpe_tekst and (overschrijf or not al_ingevuld):
-                updates.append({"range": f"'{tabblad}'!F{rij}", "values": [[rpe_tekst]]})
-                opmaak_rijen.append(rij)
+                updates.append({"range": b.a1(b.rpe, rij), "values": [[rpe_tekst]]})
+                tekstcellen.add((b.tab, b.rpe, rij))
             for i, waarde in enumerate(waarden):
-                kolom = chr(ord("G") + i)
-                if waarde and (overschrijf or not cel(rij, 7 + i)):
-                    updates.append({"range": f"'{tabblad}'!{kolom}{rij}", "values": [[waarde]]})
+                kolom = b.eerste_set + i
+                if waarde and (overschrijf or not cel(b.tab, rij, kolom)):
+                    updates.append({"range": b.a1(kolom, rij), "values": [[waarde]]})
                     gevuld += 1
-            # Kolom L: waar de uitvoering van het plan afweek. Kaj ziet zo in
-            # een oogopslag het verschil tussen wat hij vroeg en wat er gebeurde.
-            if overschrijf or not cel(rij, 12):
-                updates.append({"range": f"'{tabblad}'!L{rij}",
+            # De afwijkingkolom: waar de uitvoering van het plan afweek. Kaj ziet
+            # zo in een oogopslag het verschil tussen wat hij vroeg en wat er gebeurde.
+            if overschrijf or not cel(b.tab, rij, b.afwijking):
+                updates.append({"range": b.a1(b.afwijking, rij),
                                 "values": [[afwijking(doel, werk, titel)]]})
-            if notitie_tekst and (overschrijf or not cel(rij, 13)):
-                updates.append({"range": f"'{tabblad}'!M{rij}",
+            if notitie_tekst and (overschrijf or not cel(b.tab, rij, b.notitie)):
+                updates.append({"range": b.a1(b.notitie, rij),
                                 "values": [[notities.samenvatting(notitie_tekst)]]})
-            geraakte_rijen.append(rij)
+            opmaak.add((b.tab, b.start, rij, False))
 
-        if buiten and (overschrijf or not cel(dag["kop_rij"], 13)):
-            updates.append({"range": f"'{tabblad}'!M{dag['kop_rij']}",
+        if buiten and (overschrijf or not cel(b.tab, dag["kop_rij"], b.notitie)):
+            updates.append({"range": b.a1(b.notitie, dag["kop_rij"]),
                             "values": [["Buiten plan gedaan — " + " | ".join(buiten)]]})
-            geraakte_rijen.append(dag["kop_rij"])
-        print(f"  {datum} {w.get('title','')!r} -> {dag['dag']} (gekoppeld op {reden}), {gevuld} cellen")
+            opmaak.add((b.tab, b.start, dag["kop_rij"], False))
+        if overschrijf or not cel(b.tab, kop, b.afwijking):
+            updates.append({"range": b.a1(b.afwijking, kop, b.notitie),
+                            "values": [["AFWIJKING VAN PLAN", "NOTITIE DYLAN"]]})
+        print(f"  {datum} {w.get('title','')!r} -> {dag['dag']} {dag.get('datum')} "
+              f"(kolom {letter(b.start)}, gekoppeld op {reden}), {gevuld} cellen")
 
+    # Een dag die nog moet komen hoort leeg te zijn. Staat er toch iets, dan is
+    # een sessie eerder aan de verkeerde dag gekoppeld en wordt dat rechtgezet.
     vandaag = dt.date.today()
     for dag in dagen:
         gepland = dag.get("datum")
         if not gepland or dt.date.fromisoformat(gepland) <= vandaag:
             continue
+        b = Blok(dag)
         rijen = [o["rij"] for o in dag["oefeningen"]]
-        if any(cel(r, c) for r in rijen for c in range(6, 14)):
+        if any(cel(b.tab, r, k) for r in rijen for k in range(b.rpe, b.notitie + 1)):
             print(f"  {dag['dag']} ({gepland}) ligt in de toekomst; ingevulde cellen worden gewist")
             for r in rijen:
-                updates.append({"range": f"'{tabblad}'!F{r}:M{r}",
-                                "values": [[""] * 8]})
-
-    for kop in sorted(set(kop_rijen)):
-        if overschrijf or not cel(kop, 12):
-            updates.append({"range": f"'{tabblad}'!L{kop}:M{kop}",
-                            "values": [["AFWIJKING VAN PLAN", "NOTITIE DYLAN"]]})
+                updates.append({"range": b.a1(b.rpe, r, b.notitie),
+                                "values": [[""] * (b.notitie - b.rpe + 1)]})
 
     if not updates:
         print("Niets in te vullen; alles stond al of er was geen match.")
@@ -421,19 +448,19 @@ def main():
         body={"valueInputOption": "RAW", "data": updates}).execute()
     print(f"{len(updates)} cellen bijgewerkt in de Sheet.")
 
-    opmaak_netjes(svc, blad_id, tabblad, geraakte_rijen, kop_rijen)
+    opmaak_netjes(svc, blad_ids, opmaak)
 
-    # Een cel die ooit een datum bevatte houdt die opmaak vast. Kolom F krijgt
-    # daarom expliciet tekstopmaak: een reeks als "6, 6, 8" is geen getal, en zo
-    # kan Google er ook nooit meer iets anders van maken.
-    if opmaak_rijen and blad_id is not None:
-        verzoeken = [{
-            "repeatCell": {
-                "range": {"sheetId": blad_id, "startRowIndex": r - 1, "endRowIndex": r,
-                          "startColumnIndex": 5, "endColumnIndex": 6},
-                "cell": {"userEnteredFormat": {"numberFormat": {"type": "TEXT"}}},
-                "fields": "userEnteredFormat.numberFormat",
-            }} for r in sorted(set(opmaak_rijen))]
+    # Een cel die ooit een datum bevatte houdt die opmaak vast. De RPE-kolom
+    # krijgt daarom expliciet tekstopmaak, zodat Google er nooit meer iets
+    # anders van maakt.
+    verzoeken = [{
+        "repeatCell": {
+            "range": {"sheetId": blad_ids[tab], "startRowIndex": rij - 1, "endRowIndex": rij,
+                      "startColumnIndex": kolom - 1, "endColumnIndex": kolom},
+            "cell": {"userEnteredFormat": {"numberFormat": {"type": "TEXT"}}},
+            "fields": "userEnteredFormat.numberFormat",
+        }} for tab, kolom, rij in sorted(tekstcellen) if tab in blad_ids]
+    if verzoeken:
         svc.batchUpdate(spreadsheetId=SHEET_ID, body={"requests": verzoeken}).execute()
         print(f"opmaak hersteld op {len(verzoeken)} RPE-cellen.")
 

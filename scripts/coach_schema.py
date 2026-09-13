@@ -3,13 +3,18 @@
 De Sheet is de bron, niet deze code. Voegt Kaj een week toe, dan verschijnt die
 de volgende ochtend vanzelf in Hevy zonder dat hier iets aan hoeft te veranderen.
 
-Structuur van de Sheet (tabblad per blok):
+Structuur van de Sheet:
 
-    A2   WEEK 1
+    A2   WEEK 1                                  S2   WEEK 2
+    ...                                          ...   (zelfde indeling, 18 kolommen verder)
     A8   Maandag | September 07        E8  Primaire Dip + Secundaire Pull-Up
     A9   OEFENING | SETS | REPS | RPE/LOAD KG | OPMERKINGEN | WERKELIJKE RPE | Set 1..5
     A10  Competition Dip | 3 | 3 | 6
     ...  lege regel sluit de dag af
+
+Kaj zet elke nieuwe week NAAST de vorige, niet eronder. Een eerdere versie las
+alleen kolom A en zag week 2 daardoor niet: de routines in Hevy bleven op week 1
+staan. Elke kolom met een kop "OEFENING" is nu het begin van een blok.
 
 Schrijft data/coachschema.json weg.
 
@@ -88,47 +93,84 @@ def haal_sheet():
         return io.BytesIO(r.read())
 
 
+def splits_rpe_load(waarde):
+    """'6,5-7/25-30' wordt ('6,5-7', '25-30'): RPE links, kilo's rechts.
+
+    Vanaf week 2 schrijft Kaj beide in dezelfde cel. In week 1 stond er alleen
+    een RPE, en 'x' betekent dat er niets voorgeschreven is.
+    """
+    waarde = (waarde or "").strip()
+    if not waarde or waarde.lower() == "x":
+        return "", ""
+    if "/" in waarde:
+        rpe, kg = waarde.split("/", 1)
+        return rpe.strip(), kg.strip()
+    return waarde, ""
+
+
+def blokkolommen(ws):
+    """De kolommen waarin een weekblok begint: daar staat de kop OEFENING."""
+    kolommen = set()
+    for row in ws.iter_rows():
+        for cel in row:
+            if isinstance(cel.value, str) and cel.value.strip().upper() == "OEFENING":
+                kolommen.add(cel.column)
+    return sorted(kolommen) or [1]
+
+
 def parse(bestand):
     import openpyxl
     wb = openpyxl.load_workbook(bestand, data_only=True)
     blokken = []
     for naam in wb.sheetnames:
         ws = wb[naam]
-        week = None
-        dagen, huidig = [], None
-        for r in range(1, ws.max_row + 1):
-            a = tekst(ws.cell(row=r, column=1).value)
-            if not a:
-                huidig = None                     # lege regel sluit de dag af
-                continue
-            if re.fullmatch(r"WEEK\s*\d+", a, re.I):
-                week = int(re.search(r"\d+", a).group())
-                continue
-            if a.upper() == "OEFENING":
-                continue                          # kolomkoppen overslaan
-            dag = a.split("|")[0].strip().lower()
-            if dag in DAGNAMEN:
-                label = a.split("|")[-1].strip() if "|" in a else ""
-                datum = lees_datum(label)
-                huidig = {"dag": dag, "weekdag": DAGNAMEN[dag],
-                          "datum_label": label,
-                          "datum": datum.isoformat() if datum else None,
-                          "thema": tekst(ws.cell(row=r, column=5).value),
-                          "tabblad": naam, "kop_rij": r, "oefeningen": []}
-                dagen.append(huidig)
-                continue
-            if huidig is None:
-                continue
-            huidig["oefeningen"].append({
-                "rij": r,                     # waar de schrijver de sets neerzet
-                "naam": a,
-                "sets": tekst(ws.cell(row=r, column=2).value),
-                "reps": tekst(ws.cell(row=r, column=3).value),
-                "rpe_load": tekst(ws.cell(row=r, column=4).value),
-                "opmerking": tekst(ws.cell(row=r, column=5).value),
-            })
-        if dagen:
-            blokken.append({"blok": naam, "week": week, "dagen": dagen})
+        for k in blokkolommen(ws):
+            week, dagen, huidig = None, [], None
+
+            def sluit():
+                if dagen:
+                    blokken.append({"blok": naam, "week": week, "kolom": k, "dagen": list(dagen)})
+
+            for r in range(1, ws.max_row + 1):
+                a = tekst(ws.cell(row=r, column=k).value)
+                if not a:
+                    huidig = None                     # lege regel sluit de dag af
+                    continue
+                if re.fullmatch(r"WEEK\s*\d+", a, re.I):
+                    sluit()                           # een week onder een week
+                    week, dagen, huidig = int(re.search(r"\d+", a).group()), [], None
+                    continue
+                if a.upper() == "OEFENING":
+                    continue                          # kolomkoppen overslaan
+                dag = a.split("|")[0].strip().lower()
+                if dag in DAGNAMEN:
+                    label = a.split("|")[-1].strip() if "|" in a else ""
+                    datum = lees_datum(label)
+                    huidig = {"dag": dag, "weekdag": DAGNAMEN[dag],
+                              "datum_label": label,
+                              "datum": datum.isoformat() if datum else None,
+                              "thema": tekst(ws.cell(row=r, column=k + 4).value),
+                              "tabblad": naam, "kolom": k, "week": week,
+                              "kop_rij": r, "oefeningen": []}
+                    dagen.append(huidig)
+                    continue
+                if huidig is None:
+                    continue
+                rpe_load = tekst(ws.cell(row=r, column=k + 3).value)
+                rpe, kg = splits_rpe_load(rpe_load)
+                huidig["oefeningen"].append({
+                    "rij": r,                     # waar de schrijver de sets neerzet
+                    "naam": a,
+                    "sets": tekst(ws.cell(row=r, column=k + 1).value),
+                    "reps": tekst(ws.cell(row=r, column=k + 2).value),
+                    "rpe_load": rpe_load,
+                    "rpe": rpe,
+                    "kg": kg,
+                    "opmerking": tekst(ws.cell(row=r, column=k + 4).value),
+                })
+            sluit()
+    # Op datum, zodat 'de week van nu' eenvoudig te vinden is.
+    blokken.sort(key=lambda b: min((d["datum"] or "9999") for d in b["dagen"]))
     return blokken
 
 
@@ -141,7 +183,7 @@ def main():
                     "bron": EXPORT, "blokken": blokken}, indent=1, ensure_ascii=False),
         encoding="utf-8")
     for b in blokken:
-        print(f"{b['blok']} — week {b['week']}: {len(b['dagen'])} dagen")
+        print(f"{b['blok']} — week {b['week']} (kolom {b['kolom']}): {len(b['dagen'])} dagen")
         for d in b["dagen"]:
             rijen = [o["rij"] for o in d["oefeningen"]]
             bereik = f"rij {min(rijen)}-{max(rijen)}" if rijen else "leeg"
