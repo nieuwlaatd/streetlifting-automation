@@ -1,11 +1,11 @@
 {
  "status": "ok",
  "fouten_aanvulling": [
-  "verbrand: HTTP 400",
-  "stappen: HTTP 400"
+  "verbrand: HTTP 400 Invalid JSON payload received. Unknown name \"year\" at 'range.start': Cannot find field.\nInvalid JSON payload received. Unknown name \"month\" at 'range.start': Cannot find field.\nInvalid JSON payload received. Unknown name \"day\" at 'range.start': Cannot find field.\nInvalid JSON payload received. Unkno",
+  "stappen: HTTP 400 Invalid JSON payload received. Unknown name \"year\" at 'range.start': Cannot find field.\nInvalid JSON payload received. Unknown name \"month\" at 'range.start': Cannot find field.\nInvalid JSON payload received. Unknown name \"day\" at 'range.start': Cannot find field.\nInvalid JSON payload received. Unkno"
  ],
  "rechten_ontbreken": [],
- "opgehaald": "2026-09-13T18:39:20+00:00",
+ "opgehaald": "2026-09-13T18:40:31+00:00",
  "bron": "Google Health API",
  "streefgewicht_kg": 73,
  "samenvatting": {
