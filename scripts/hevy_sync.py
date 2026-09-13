@@ -272,6 +272,22 @@ def main():
     gewichten.sort()
     if gewichten:
         bw = float(gewichten[-1][1])
+    bw_bron = "hevy" if gewichten else "terugval 77 kg"
+
+    # Google Health wint van Hevy: daar weegt Dylan zich dagelijks, en een
+    # weekgemiddelde schommelt tijdens de cut minder dan een losse weging.
+    # Het bestand bestaat alleen als de repository privé is.
+    gezondheid = None
+    pad_gezondheid = pathlib.Path("data") / "gezondheid.json"
+    if pad_gezondheid.exists():
+        try:
+            gezondheid = json.loads(pad_gezondheid.read_text(encoding="utf-8"))
+        except ValueError:
+            gezondheid = None
+    if gezondheid and gezondheid.get("status") == "ok":
+        gem = (gezondheid.get("samenvatting") or {}).get("gewicht_7d_kg")
+        if gem:
+            bw, bw_bron = float(gem), "google health, gemiddelde 7 dagen"
 
     vandaag = dt.date.today()
     pos = programma_positie(vandaag)
@@ -452,7 +468,14 @@ def main():
         "kernlift_vandaag": DAG_KERNLIFT.get(vandaag.weekday()),
         "positie": pos,
         "lichaamsgewicht": bw,
-        "lichaamsgewicht_bron": "hevy" if gewichten else "terugval 77 kg",
+        "lichaamsgewicht_bron": bw_bron,
+        "gezondheid": {
+            "status": (gezondheid or {}).get("status", "niet_gekoppeld"),
+            "opgehaald": (gezondheid or {}).get("opgehaald"),
+            "fout": (gezondheid or {}).get("fout"),
+            "streefgewicht_kg": 73,
+            **((gezondheid or {}).get("samenvatting") or {}),
+        },
         "stand": stand,
         "voorschrift_deze_week": voorschrift,
         "terugkoppeling": terugkoppeling,

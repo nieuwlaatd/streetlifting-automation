@@ -50,6 +50,17 @@ jobs:
       - name: Afhankelijkheden
         run: pip install --quiet openpyxl google-auth google-api-python-client
 
+      # Vóór Hevy, zodat het lichaamsgewicht uit Google Health meteen in de
+      # berekening meegaat. Schrijft alleen weg als de repository privé is.
+      - name: Gewicht en voeding uit Google Health
+        continue-on-error: true
+        env:
+          GOOGLE_HEALTH_CLIENT_ID: ${{ secrets.GOOGLE_HEALTH_CLIENT_ID }}
+          GOOGLE_HEALTH_CLIENT_SECRET: ${{ secrets.GOOGLE_HEALTH_CLIENT_SECRET }}
+          GOOGLE_HEALTH_REFRESH_TOKEN: ${{ secrets.GOOGLE_HEALTH_REFRESH_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/google_health.py haal
+
       - name: Hevy ophalen en doorrekenen
         env:
           HEVY_API_KEY: ${{ secrets.HEVY_API_KEY }}
