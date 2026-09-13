@@ -5,7 +5,8 @@ daar dagtotalen van in data/gezondheid.json, zodat het weekrapport kan zien of
 de cut naar 73 kg in een verantwoord tempo gaat en of het eiwit klopt.
 
 WAT ER WORDT OPGESLAGEN
-Per dag: gemiddeld gewicht, vetpercentage, kcal, eiwit, koolhydraten en vet.
+Per dag: gemiddeld gewicht, vetpercentage, kcal, eiwit, koolhydraten en vet,
+en daarnaast slaap, verbrande calorieën en stappen.
 Geen losse maaltijden en geen productnamen. Het weekrapport heeft die niet
 nodig, en wat niet is opgeslagen kan ook niet uitlekken.
 
@@ -43,8 +44,14 @@ BASE = "https://health.googleapis.com/v4/users/me/dataTypes"
 SCOPES = {
     "gewicht": "googlehealth.health_metrics_and_measurements.readonly",
     "voeding": "googlehealth.nutrition.readonly",
+    "slaap": "googlehealth.sleep.readonly",
+    "activiteit": "googlehealth.activity_and_fitness.readonly",
 }
-DATATYPE = {"gewicht": "weight", "voeding": "nutrition-log"}
+# Zonder deze twee heeft het rapport niets om op te sturen; slaap en activiteit
+# zijn aanvulling. Ontbreekt alleen een aanvulling, dan blijft de status "ok".
+KERN = ("gewicht", "voeding")
+DATATYPE = {"gewicht": "weight", "voeding": "nutrition-log", "slaap": "sleep"}
+PAGINAGROOTTE = {"sleep": 25}      # de API staat voor slaap niet meer toe
 UITVOER = pathlib.Path("data") / "gezondheid.json"
 OPENBAAR_TOEGESTAAN = True   # besluit van Dylan, 13 september 2026
 DAGEN_TERUG = 42          # zes weken: genoeg voor een trend, niet meer dan nodig
@@ -134,7 +141,7 @@ def haal_punten(datatype, token, sinds):
         punten, pagina_token = [], None
         try:
             for _ in range(MAX_PAGINAS):
-                params = {"page_size": 1000}
+                params = {"page_size": PAGINAGROOTTE.get(datatype, 1000)}
                 if filt:
                     params["filter"] = filt
                 if pagina_token:
@@ -152,7 +159,50 @@ def haal_punten(datatype, token, sinds):
     return []
 
 
+def dagtotalen(datatype, veld, token, vandaag):
+    """Dagtotalen via dailyRollUp, voor metingen die per minuut binnenkomen.
+
+    Verbrande calorieën en stappen staan niet als losse meetpunten in de API
+    maar alleen als optelling. De API accepteert voor total-calories maximaal
+    veertien dagen per verzoek, dus we vragen de periode in stukken op.
+    """
+    uit, eind = {}, vandaag + dt.timedelta(days=1)
+    begin_totaal = vandaag - dt.timedelta(days=DAGEN_TERUG)
+    while eind > begin_totaal:
+        begin = max(begin_totaal, eind - dt.timedelta(days=14))
+        body = {"range": {"start": {"year": begin.year, "month": begin.month, "day": begin.day},
+                          "end": {"year": eind.year, "month": eind.month, "day": eind.day}},
+                "windowSizeDays": 1, "pageSize": 100}
+        req = urllib.request.Request(f"{BASE}/{datatype}/dataPoints:dailyRollUp",
+                                     data=json.dumps(body).encode(), method="POST",
+                                     headers={"Authorization": f"Bearer {token}",
+                                              "Content-Type": "application/json"})
+        with urllib.request.urlopen(req, timeout=60) as r:
+            antwoord = json.load(r)
+        for punt in antwoord.get("rollupDataPoints") or []:
+            datum = civiele_datum(punt.get("civilStartTime"))
+            waarde = None
+            for inhoud in punt.values():
+                if isinstance(inhoud, dict) and veld in inhoud:
+                    waarde = inhoud[veld]
+            if datum and isinstance(waarde, (int, float)):
+                uit[datum] = waarde
+        eind = begin
+    return uit
+
+
 # ---------------------------------------------------------------- ontleden
+
+def civiele_datum(obj):
+    """Een datum uit {"date": {"year": .., "month": .., "day": ..}} of een variant."""
+    if not isinstance(obj, dict):
+        return None
+    d = obj.get("date", obj)
+    try:
+        return dt.date(int(d["year"]), int(d["month"]), int(d["day"])).isoformat()
+    except (KeyError, TypeError, ValueError):
+        return None
+
 
 ISO = re.compile(r"^\d{4}-\d{2}-\d{2}T")
 
@@ -218,13 +268,35 @@ def eiwit_uit(log):
     return None
 
 
-def per_dag(gewicht, vet, voeding):
+def slaap_per_nacht(slaap):
+    """Minuten slaap per nacht, toegekend aan de dag waarop hij wakker werd.
+
+    Een nacht van zondag op maandag hoort bij maandag: dat is de dag waarop die
+    slaap zijn effect heeft op de training. Dutjes tellen mee bij die dag.
+    """
+    uit = {}
+    for p in slaap:
+        s = p.get("sleep") or {}
+        interval = s.get("interval") or {}
+        datum = (civiele_datum(interval.get("civilEndTime"))
+                 or eerste_tijd({"t": interval.get("endTime")}))
+        minuten = (s.get("summary") or {}).get("minutesAsleep")
+        if datum and isinstance(minuten, (int, float)) and 0 < minuten < 24 * 60:
+            uit[datum] = uit.get(datum, 0) + minuten
+    return uit
+
+
+def per_dag(gewicht, vet, voeding, slaap=None, verbrand=None, stappen=None):
+    slaap, verbrand, stappen = slaap or {}, verbrand or {}, stappen or {}
     dagen = {}
 
     def dag(datum):
         return dagen.setdefault(datum, {"gewicht": [], "vet": [], "kcal": 0.0, "eiwit": 0.0,
                                         "koolhydraten": 0.0, "vetgram": 0.0, "logs": 0,
                                         "eiwit_bekend": False})
+
+    for datum in set(slaap) | set(verbrand) | set(stappen):
+        dag(datum)
 
     for p in gewicht:
         w = p.get("weight") or {}
@@ -263,6 +335,9 @@ def per_dag(gewicht, vet, voeding):
             "koolhydraten_g": round(d["koolhydraten"]) if d["logs"] else None,
             "vet_g": round(d["vetgram"]) if d["logs"] else None,
             "voedingslogs": d["logs"],
+            "slaap_uur": round(slaap[datum] / 60, 2) if datum in slaap else None,
+            "verbrand_kcal": round(verbrand[datum]) if datum in verbrand else None,
+            "stappen": round(stappen[datum]) if datum in stappen else None,
         })
     return uit
 
@@ -296,6 +371,19 @@ def samenvatting(dagen, vandaag):
         "eiwit_per_kg": round(eiwit / gew_nu, 2) if eiwit and gew_nu else None,
         "dagen_met_voeding_7d": sum(1 for r in eten if r["voedingslogs"]),
         "dagen_met_gewicht_7d": sum(1 for r in deze if r["gewicht_kg"] is not None),
+        # Slaap van vandaag is de afgelopen nacht en dus compleet; calorieën en
+        # stappen van vandaag zijn dat niet en tellen daarom niet mee.
+        "slaap_7d_uur": gemiddelde(deze, "slaap_uur"),
+        "kortste_nacht_7d_uur": min((r["slaap_uur"] for r in deze if r.get("slaap_uur")),
+                                    default=None),
+        "nachten_onder_6u_7d": sum(1 for r in deze if r.get("slaap_uur") and r["slaap_uur"] < 6),
+        "verbrand_7d_kcal": gemiddelde(eten, "verbrand_kcal"),
+        "stappen_7d": gemiddelde(eten, "stappen"),
+        # Alleen dagen waarop zowel eten als verbranding bekend is, anders zou
+        # een vergeten eetlog een fictief groot tekort opleveren.
+        "energiebalans_7d_kcal": gemiddelde(
+            [{"b": r["kcal"] - r["verbrand_kcal"]} for r in eten
+             if r.get("kcal") and r.get("verbrand_kcal")], "b"),
     }
 
 
@@ -342,9 +430,27 @@ def haal():
     except urllib.error.HTTPError as fout:
         stop(f"Google Health: HTTP {fout.code} bij ophalen")
 
-    dagen = per_dag(gewicht, vet, voeding)
+    # Aanvullingen: een fout hier mag gewicht en voeding niet tegenhouden.
+    slaap, verbrand, stappen, fouten = [], {}, {}, []
+    if "slaap" not in ontbreekt:
+        try:
+            slaap = haal_punten("sleep", token, sinds)
+        except urllib.error.HTTPError as fout:
+            fouten.append(f"slaap: HTTP {fout.code}")
+    if "activiteit" not in ontbreekt:
+        for naam, datatype, veld, doel in (("verbrand", "total-calories", "kcalSum", verbrand),
+                                            ("stappen", "steps", "countSum", stappen)):
+            try:
+                doel.update(dagtotalen(datatype, veld, token, vandaag))
+            except urllib.error.HTTPError as fout:
+                fouten.append(f"{naam}: HTTP {fout.code}")
+    for f in fouten:
+        print(f"::warning::Google Health {f}")
+
+    dagen = per_dag(gewicht, vet, voeding, slaap_per_nacht(slaap), verbrand, stappen)
     schrijf({
-        "status": "ok" if not ontbreekt else "rechten_ontbreken",
+        "status": "ok" if not any(k in ontbreekt for k in KERN) else "rechten_ontbreken",
+        "fouten_aanvulling": fouten,
         "rechten_ontbreken": ontbreekt,
         "opgehaald": nu.isoformat(timespec="seconds"),
         "bron": "Google Health API",
@@ -355,12 +461,13 @@ def haal():
         # waarom een kolom leeg blijft.
         "_veldnamen": {naam: sleutels(punten[0]) if punten else None
                        for naam, punten in (("weight", gewicht), ("body-fat", vet),
-                                            ("nutrition-log", voeding))},
+                                            ("nutrition-log", voeding), ("sleep", slaap))},
         "dagen": dagen,
     })
     # Alleen aantallen in de log; de waarden staan in het privébestand.
     print(f"{len(dagen)} dagen weggeschreven ({len(gewicht)} wegingen, "
-          f"{len(voeding)} voedingslogs).")
+          f"{len(voeding)} voedingslogs, {len(slaap)} slaapsessies, "
+          f"{len(verbrand)} dagen verbranding).")
 
 
 def check(onderdeel):
@@ -372,7 +479,7 @@ def check(onderdeel):
         mist = [n for n, s in SCOPES.items() if not any(x.endswith(s) for x in scopes)]
         if mist:
             stop(f"Token werkt, maar mist rechten voor: {', '.join(mist)}")
-        print("Token vernieuwd; beide rechten aanwezig.")
+        print("Token vernieuwd; alle rechten aanwezig.")
         return
     if onderdeel not in DATATYPE:
         stop(f"Onbekend onderdeel: {onderdeel}")
