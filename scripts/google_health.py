@@ -27,6 +27,16 @@ SCOPES = {
 DATATYPE = {"gewicht": "weight", "voeding": "nutrition-log"}
 
 
+def stop(melding):
+    """Stopt met een foutmelding die als annotatie in GitHub verschijnt.
+
+    Een annotatie is zonder inloggen te lezen, de ruwe log niet. De meldingen
+    hieronder bevatten alleen foutcodes, nooit tokens of meetwaarden.
+    """
+    print(f"::error::{melding}")
+    sys.exit(1)
+
+
 def toegangstoken():
     """Wisselt de refresh token in voor een kortlevend toegangstoken."""
     velden = {k: os.environ.get(v, "").strip() for k, v in (
@@ -35,7 +45,7 @@ def toegangstoken():
         ("refresh_token", "GOOGLE_HEALTH_REFRESH_TOKEN"))}
     ontbreekt = [k for k, v in velden.items() if not v]
     if ontbreekt:
-        sys.exit(f"Secrets ontbreken of zijn leeg: {', '.join(ontbreekt)}")
+        stop(f"Secrets ontbreken of zijn leeg: {', '.join(ontbreekt)}")
     velden["grant_type"] = "refresh_token"
     req = urllib.request.Request(TOKEN_URL, data=urllib.parse.urlencode(velden).encode(),
                                  headers={"Content-Type": "application/x-www-form-urlencoded"})
@@ -47,13 +57,14 @@ def toegangstoken():
         # verlopen of ingetrokken token, invalid_client een verkeerd id of
         # secret) en bevat zelf geen geheimen.
         try:
-            code = json.loads(fout.read().decode()).get("error", "")
+            fj = json.loads(fout.read().decode())
+            code = f"{fj.get('error', '')} ({fj.get('error_description', '')})"
         except Exception:
             code = ""
-        sys.exit(f"Token vernieuwen mislukt: HTTP {fout.code} {code}")
+        stop(f"Token vernieuwen mislukt: HTTP {fout.code} {code}")
     token = antwoord.get("access_token")
     if not token:
-        sys.exit("Geen toegangstoken ontvangen.")
+        stop("Geen toegangstoken ontvangen.")
     print(f"::add-mask::{token}")
     return token, set((antwoord.get("scope") or "").split())
 
@@ -70,7 +81,7 @@ def lees(datatype, token, aantal=5):
             reden = fout_json.get("status", "")
         except Exception:
             reden = ""
-        sys.exit(f"{datatype}: HTTP {fout.code} {reden}")
+        stop(f"{datatype}: HTTP {fout.code} {reden}")
 
 
 def main():
@@ -83,16 +94,16 @@ def main():
         mist = [naam for naam, s in SCOPES.items()
                 if not any(x.endswith(s) for x in scopes)]
         if mist:
-            sys.exit(f"Token werkt, maar mist rechten voor: {', '.join(mist)}")
+            stop(f"Token werkt, maar mist rechten voor: {', '.join(mist)}")
         print("Token vernieuwd; beide rechten aanwezig.")
         return
 
     if onderdeel not in DATATYPE:
-        sys.exit(f"Onbekend onderdeel: {onderdeel}")
+        stop(f"Onbekend onderdeel: {onderdeel}")
     antwoord = lees(DATATYPE[onderdeel], token)
     punten = antwoord.get("dataPoints") or []
     if not punten:
-        sys.exit(f"{onderdeel}: API bereikbaar, maar geen meetpunten gevonden.")
+        stop(f"{onderdeel}: API bereikbaar, maar geen meetpunten gevonden.")
     # Alleen het aantal, nooit de waarden: deze log is openbaar.
     print(f"{onderdeel}: {len(punten)} meetpunten gelezen.")
 
