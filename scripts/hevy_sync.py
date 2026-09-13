@@ -32,7 +32,12 @@ LIFTS = {
     "dip": ("Chest Dip (Weighted)",),
     "pullup": ("Pull Up (Weighted)", "Chin Up (Weighted)"),
     "squat": ("Squat (Barbell)",),
-    "muscleup": ("Muscle Up", "Muscle Up (Weighted)", "Bar Muscle Up"),
+    # Hevy schrijft "Muscle Up", Kajs oefening heet "Band Assisted Muscle-Up".
+    # Door dat streepje matchte de oude lijst de bandvariant niet, en meldde
+    # het weekrapport dat de laatste muscle-up van 4 september was terwijl
+    # Dylan er op 12 september nog mee trainde.
+    "muscleup": ("Muscle Up", "Muscle-Up", "Muscle Up (Weighted)", "Bar Muscle Up",
+                 "Band Assisted Muscle-Up"),
 }
 LICHAAMSGEBONDEN = {"dip", "pullup", "muscleup"}   # percentage over systeembelasting
 
@@ -285,16 +290,25 @@ def main():
                 if oef.get("title") not in titels and not any(
                         t.lower() in (oef.get("title") or "").lower() for t in titels):
                     continue
+                met_band = "assisted" in (oef.get("title") or "").lower()
                 for s in oef.get("sets", []):
-                    if s.get("type") == "warmup":
+                    if s.get("type") == "warmup" or not s.get("reps"):
                         continue
-                    v = e1rm(s, bw, gebonden)
-                    if v is None:
+                    # Een muscle-up met band, of zonder gelogd gewicht, is
+                    # oefenen en geen lift. De sessie telt wel mee, anders lijkt
+                    # het alsof er niet aan gewerkt wordt, maar er komt geen
+                    # geschat maximum uit. Op 4 september leverden twee
+                    # pogingen waarbij Dylan "meteen viel" anders +14,6 kg op.
+                    oefenen = lift == "muscleup" and (met_band or s.get("weight_kg") is None)
+                    v = None if oefenen else e1rm(s, bw, gebonden)
+                    if v is None and not oefenen:
                         continue
                     sessies.append({"datum": datum, "gewicht": s.get("weight_kg"),
                                     "reps": s.get("reps"), "rpe": s.get("rpe"),
-                                    "type": s.get("type"), "e1rm": v})
-                    if d >= grens:
+                                    "type": s.get("type"), "e1rm": v,
+                                    "variant": ("met band" if met_band else "poging")
+                                    if oefenen else None})
+                    if d >= grens and v is not None:
                         recente_waarden.append(v)
         beste_recent = robuuste_e1rm(recente_waarden)
         if beste_recent is None:
@@ -305,6 +319,9 @@ def main():
             "bron": "hevy" if sessies else "uitgangswaarde",
             "target_nu": target_op_week(lift, max(pos["week"], 1)),
             "aantal_werksets_totaal": len(sessies),
+            # Expliciet, zodat het weekrapport dit niet uit de sets hoeft af te
+            # leiden en er ook oefensets zonder schatting in meetellen.
+            "laatste_sessie": sessies[-1]["datum"] if sessies else None,
             "laatste_sets": sessies[-8:],
             "laatste_notitie": laatste_notitie(workouts, titels),
         }
