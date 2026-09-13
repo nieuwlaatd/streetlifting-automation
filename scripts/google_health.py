@@ -213,6 +213,22 @@ def dagtotalen(datatype, veld, token, vandaag):
 DIAGNOSE = {}
 
 
+def zonder_basisschatting(verbrand):
+    """Laat dagen weg waarop Google alleen de ruststofwisseling invult.
+
+    Zonder meting van een horloge vult Google verbrande calorieën aan met een
+    vaste schatting. Dat is op elke dag exact hetzelfde getal: op 6, 7 en 8
+    september stond er driemaal 1828. Zo'n dag laat in de energiebalans een
+    overschot zien dat er niet was. Een waarde die op drie of meer dagen tot op
+    de kilocalorie gelijk is, is geen meting en telt daarom niet mee.
+    """
+    telling = {}
+    for waarde in verbrand.values():
+        telling[round(waarde)] = telling.get(round(waarde), 0) + 1
+    basis = {w for w, n in telling.items() if n >= 3}
+    return {d: w for d, w in verbrand.items() if round(w) not in basis}
+
+
 def rollup_waarde(punt, veld):
     """Het getal uit een rollup-punt. De API geeft grote getallen als tekst.
 
@@ -320,6 +336,10 @@ def slaap_per_nacht(slaap):
         interval = s.get("interval") or {}
         datum = (civiele_datum(interval.get("civilEndTime"))
                  or lokale_datum(interval.get("endTime"), interval.get("endUtcOffset")))
+        # Een dutje is geen nacht. Zonder deze regel telt een middagdutje van
+        # twintig minuten mee als "kortste nacht".
+        if (s.get("metadata") or {}).get("mainSleep") is False:
+            continue
         # De API geeft minuten als tekst: {"minutesAsleep": "402"}.
         try:
             minuten = float((s.get("summary") or {}).get("minutesAsleep"))
@@ -327,7 +347,10 @@ def slaap_per_nacht(slaap):
             continue
         if datum and 0 < minuten < 24 * 60:
             uit[datum] = uit.get(datum, 0) + minuten
-    return uit
+    # Minder dan drie uur hoofdslaap is vrijwel altijd een horloge dat niet om
+    # zat of leeg raakte, geen echte nacht. Op 9 september stond er zo 17
+    # minuten, wat het weekgemiddelde van 8,7 naar 7,0 uur trok.
+    return {d: m for d, m in uit.items() if m >= 180}
 
 
 def lokale_datum(tijd, offset):
@@ -507,6 +530,7 @@ def haal():
     for f in fouten:
         print(f"::warning::Google Health {f}")
 
+    verbrand = zonder_basisschatting(verbrand)
     dagen = per_dag(gewicht, vet, voeding, slaap_per_nacht(slaap), verbrand, stappen)
     schrijf({
         "status": "ok" if not any(k in ontbreekt for k in KERN) else "rechten_ontbreken",
