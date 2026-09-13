@@ -6,7 +6,7 @@ momentopname uit Hevy; het levende logboek is zijn eigen Google Sheet.
 
 WAAROM ER FORMULES IN STAAN EN GEEN KALE GETALLEN
 Het lichaamsgewicht bepaalt bij dip, pull-up en muscle-up de helft van de
-belasting. Weegt Dylan volgende maand 79 kilo, dan verandert elke schatting
+belasting. Weegt Dylan straks 73 kilo, dan verandert elke schatting
 mee. Daarom staat het gewicht op EEN plek (Methode!B3) en rekent de rest zich
 daaruit. Kaj kan dat getal zelf aanpassen en ziet meteen wat het doet.
 
@@ -154,15 +154,16 @@ def bouw(workouts, bw, pad):
     ov = wb.create_sheet("Overzicht", 0)
     eerste_datum = min(w["start_time"][:10] for w in workouts)
     laatste_datum = max(w["start_time"][:10] for w in workouts)
-    zet(ov, 1, 1, "Dylan \u2014 streetlifting, klasse \u221280 kg", TITEL)
+    zet(ov, 1, 1, "Dylan \u2014 streetlifting, klasse \u221273 kg", TITEL)
     zet(ov, 2, 1, "Uitdraai voor coach Kaj \u00b7 gegevens uit Hevy tot en met "
                   + laatste_datum, SUB)
-    zet(ov, 4, 1, "Atleet", VET)
+    zet(ov, 3, 1, "Atleet", VET)
     for i, (label, waarde) in enumerate([
             ("Lichaamsgewicht", "=Methode!B3"), ("Lengte", "186 cm"),
-            ("Wedstrijdklasse", "\u221280 kg"), ("Doelwedstrijd", "circa september 2027"),
+            ("Wedstrijdklasse", "\u221273 kg"), ("Streefgewicht", "73 kg"),
+            ("Doelwedstrijd", "circa september 2027"),
             ("Gelogde sessies", len(workouts)),
-            ("Periode", eerste_datum + " t/m " + laatste_datum)], start=5):
+            ("Periode", eerste_datum + " t/m " + laatste_datum)], start=4):
         zet(ov, i, 1, label)
         zet(ov, i, 2, waarde)
 
@@ -205,8 +206,11 @@ def bouw(workouts, bw, pad):
             "Dip, pull-up en muscle-up zijn gescoord op toegevoegd gewicht; de schatting "
             "loopt over de systeembelasting (lichaamsgewicht plus schijf).",
             "Het totaal is de streetliftingsom van de vier lifts.",
-            "Doel 367 kg is gebaseerd op de middenmoot van het DSN-veld 2025 in de "
-            "\u221280 kg klasse.",
+            "Doel 367 kg stamt uit de \u221280 kg klasse. In de \u221273 kg klasse van DSN "
+            "2025 valt dat tussen plek 2 (388,75) en de middenmoot (342,5); de laagste "
+            "totaal was 311,25.",
+            "Afvallen naar 73 kg laat de systeemkracht gelijk maar verhoogt het "
+            "toegevoegde gewicht: dezelfde dip of pull-up levert dan meer kilo's op.",
             "Grootste achterstanden: dip en muscle-up. Daar zit ook de meeste ruimte.",
             "De muscle-up staat op 'geen data': de pogingen tot nu toe zijn zonder "
             "gelogd gewicht en volgens Dylans eigen notitie technisch nog niet rond. "
@@ -325,11 +329,17 @@ def main():
         sys.exit("Geen workouts opgehaald.")
     bw = hevy_sync.LICHAAMSGEWICHT_TERUGVAL
     try:
-        metingen = hevy_sync.api("/v1/body_measurements?page=1&pageSize=5", key)
-        gewichten = [m for m in (metingen.get("body_measurements") or [])
-                     if m.get("weight_kg")]
+        metingen = hevy_sync.api("/v1/body_measurements?page=1&pageSize=10", key)
+        gewichten = sorted((m for m in (metingen.get("body_measurements") or [])
+                            if m.get("weight_kg")), key=lambda m: m.get("date", ""))
         if gewichten:
-            bw = float(sorted(gewichten, key=lambda m: m.get("date", ""))[-1]["weight_kg"])
+            # Gemiddelde van de laatste zeven dagen, niet de laatste meting. Dylan
+            # zit in een cut naar 73 kg; dagwaarden schommelen een kilo en dan
+            # verspringt elke schatting mee zonder dat er iets veranderd is.
+            laatst = dt.date.fromisoformat(gewichten[-1]["date"][:10])
+            week = [float(m["weight_kg"]) for m in gewichten
+                    if (laatst - dt.date.fromisoformat(m["date"][:10])).days < 7]
+            bw = round(sum(week) / len(week), 1)
     except Exception as fout:
         print("Lichaamsgewicht niet opgehaald ({0}); {1} kg aangehouden.".format(fout, bw))
     sets, oefeningen, sessies = bouw(workouts, bw, pad)
