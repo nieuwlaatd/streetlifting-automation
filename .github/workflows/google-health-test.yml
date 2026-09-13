@@ -29,3 +29,9 @@ jobs:
       - name: 3 voeding lezen
         if: always()
         run: python scripts/google_health.py check voeding
+      - name: 4 slaap lezen
+        if: always()
+        run: python scripts/google_health.py check slaap
+      - name: 5 verbrande calorieen lezen
+        if: always()
+        run: python scripts/google_health.py check activiteit

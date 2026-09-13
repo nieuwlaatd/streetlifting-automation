@@ -481,6 +481,16 @@ def check(onderdeel):
             stop(f"Token werkt, maar mist rechten voor: {', '.join(mist)}")
         print("Token vernieuwd; alle rechten aanwezig.")
         return
+    if onderdeel == "activiteit":
+        # Verbrande calorieën bestaan alleen als dagtotaal, niet als lijst.
+        try:
+            totalen = dagtotalen("total-calories", "kcalSum", token, dt.date.today())
+        except urllib.error.HTTPError as fout:
+            stop(f"total-calories: HTTP {fout.code}")
+        if not totalen:
+            stop("activiteit: API bereikbaar, maar geen verbrande calorieën gevonden.")
+        print(f"activiteit: {len(totalen)} dagen met verbrande calorieën.")
+        return
     if onderdeel not in DATATYPE:
         stop(f"Onbekend onderdeel: {onderdeel}")
     try:
