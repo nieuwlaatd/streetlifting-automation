@@ -9,11 +9,12 @@ Per dag: gemiddeld gewicht, vetpercentage, kcal, eiwit, koolhydraten en vet.
 Geen losse maaltijden en geen productnamen. Het weekrapport heeft die niet
 nodig, en wat niet is opgeslagen kan ook niet uitlekken.
 
-WAAROM ER EEN SLOT OP ZIT
-Deze repository was openbaar, en alles in data/ staat daarmee op straat. Het
-script schrijft alleen weg als GitHub bevestigt dat de repository privé is.
-Is dat niet zo, dan stopt het met een waarschuwing. Vergeten de repository
-privé te maken kost dan een dag zonder gegevens, niet een openbaar eetlog.
+OPENBAAR, BEWUST
+De repository is openbaar, en alles in data/ is dus voor iedereen leesbaar.
+Dylan heeft op 13 september 2026 besloten dat dat voor deze dagtotalen geen
+bezwaar is; een privérepository vroeg extra koppelingen voor de routines.
+Die keuze staat hieronder als OPENBAAR_TOEGESTAAN. Zet je die op False, dan
+schrijft het script alleen nog weg in een privérepository.
 
 VERLOPEN TOKEN
 Staat de Google-app nog op "Testing", dan verloopt de refresh token na zeven
@@ -45,6 +46,7 @@ SCOPES = {
 }
 DATATYPE = {"gewicht": "weight", "voeding": "nutrition-log"}
 UITVOER = pathlib.Path("data") / "gezondheid.json"
+OPENBAAR_TOEGESTAAN = True   # besluit van Dylan, 13 september 2026
 DAGEN_TERUG = 42          # zes weken: genoeg voor een trend, niet meer dan nodig
 MAX_PAGINAS = 20
 
@@ -314,9 +316,9 @@ def schrijf(inhoud):
 # ---------------------------------------------------------------- modi
 
 def haal():
-    if not repo_is_prive():
-        print("::warning::Repository is niet privé; gezondheidsgegevens worden niet "
-              "opgeslagen. Maak de repository privé om dit aan te zetten.")
+    if not OPENBAAR_TOEGESTAAN and not repo_is_prive():
+        print("::warning::Repository is niet privé en OPENBAAR_TOEGESTAAN staat uit; "
+              "gezondheidsgegevens worden niet opgeslagen.")
         return
     nu = dt.datetime.now(dt.timezone.utc)
     vandaag = nu.date()

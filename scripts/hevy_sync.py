@@ -276,7 +276,6 @@ def main():
 
     # Google Health wint van Hevy: daar weegt Dylan zich dagelijks, en een
     # weekgemiddelde schommelt tijdens de cut minder dan een losse weging.
-    # Het bestand bestaat alleen als de repository privé is.
     gezondheid = None
     pad_gezondheid = pathlib.Path("data") / "gezondheid.json"
     if pad_gezondheid.exists():

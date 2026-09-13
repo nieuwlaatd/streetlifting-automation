@@ -51,7 +51,7 @@ jobs:
         run: pip install --quiet openpyxl google-auth google-api-python-client
 
       # Vóór Hevy, zodat het lichaamsgewicht uit Google Health meteen in de
-      # berekening meegaat. Schrijft alleen weg als de repository privé is.
+      # berekening meegaat.
       - name: Gewicht en voeding uit Google Health
         continue-on-error: true
         env:
