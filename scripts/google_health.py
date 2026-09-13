@@ -177,9 +177,15 @@ def dagtotalen(datatype, veld, token, vandaag):
     uit, eind = {}, vandaag + dt.timedelta(days=1)
     begin_totaal = vandaag - dt.timedelta(days=DAGEN_TERUG)
     while eind > begin_totaal:
-        begin = max(begin_totaal, eind - dt.timedelta(days=14))
-        body = {"range": {"start": {"year": begin.year, "month": begin.month, "day": begin.day},
-                          "end": {"year": eind.year, "month": eind.month, "day": eind.day}},
+        # Dertien in plaats van veertien dagen: of het einde meetelt, staat
+        # niet in de documentatie, en een dag te veel geeft een HTTP 400.
+        begin = max(begin_totaal, eind - dt.timedelta(days=13))
+        # De grenzen zijn civiele datumtijden: de datum zit in een "date"-object.
+        # Kale year/month/day wijst de API af met "Unknown name year".
+        body = {"range": {"start": {"date": {"year": begin.year, "month": begin.month,
+                                             "day": begin.day}},
+                          "end": {"date": {"year": eind.year, "month": eind.month,
+                                           "day": eind.day}}},
                 "windowSizeDays": 1, "pageSize": 100}
         req = urllib.request.Request(f"{BASE}/{datatype}/dataPoints:dailyRollUp",
                                      data=json.dumps(body).encode(), method="POST",
