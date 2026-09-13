@@ -58,7 +58,8 @@ HEVY_NAAR_KAJ = {
     "Skullcrusher (Dumbbell)": ["Skull Crusher"],
     "Squat (Barbell)": ["3-1-0 Tempo Squat", "Competition Squat"],
     "Pause Squat (Barbell)": ["Paused Squat", "2s Paused Squat"],
-    "Pullover (Machine)": ["Bar Cable Pullover"],
+    "Straight Arm Lat Pulldown (Cable)": ["Bar Cable Pullover"],
+    "Pullover (Machine)": ["Bar Cable Pullover"],       # zo gelogd op 9 september
     "Leg Extension (Machine)": ["Leg Extension"],
     "Seated Cable Row - Bar Grip": ["Cable row"],
     "Spider Curl (Dumbbell)": ["Spider Curl"],
@@ -160,8 +161,6 @@ def afwijking(plan, werk, hevy_titel):
                              if gepland_reps[0] != gepland_reps[1] else str(gepland_reps[0]))
             delen.append((f"reps {lo}-{hi}" if lo != hi else f"reps {lo}")
                          + f" i.p.v. {gepland_tekst}")
-    if "Single Arm" in hevy_titel:
-        delen.append(f"variant: {hevy_titel}")
     return "; ".join(delen) if delen else "volgens plan"
 
 

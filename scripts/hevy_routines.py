@@ -38,13 +38,15 @@ MAP = {
     "Competition Chin-up": ("023943F1", None),
     "Competition Pull-Up": ("729237D1", None),          # Pull Up (Weighted)
     "45 degree Incline Dumbbell Press": ("07B38369", "45 graden"),
-    "Cable Side Raise": ("BE289E45", None),
+    # Dylan doet de side raise altijd met één arm tegelijk.
+    "Cable Side Raise": ("DE68C825", None),       # Single Arm Lateral Raise (Cable)
     "Plate Loaded Knee Raise": ("e625db58-286f-40a5-855a-f1ef4f5f2a82", None),
     "Skull Crusher": ("68F8A292", None),
     "3-1-0 Tempo Squat": ("D04AC939", "Tempo 3-1-0: 3 sec zakken, 1 sec pauze, normaal omhoog"),
     "Paused Squat": ("CE1054CE", None),
     "Diagonal Bodyweight Pull-up": ("1B2B1E7C", "Diagonaal, lichaamsgewicht"),
-    "Bar Cable Pullover": ("B123DD01", "Met stang aan de kabel"),
+    # Een pullover aan de kabel met stang, niet de pullovermachine.
+    "Bar Cable Pullover": ("D2387AB1", "Met stang aan de kabel"),   # Straight Arm Lat Pulldown (Cable)
     "Leg Extension": ("75A4F6C4", None),
     "Cable row": ("F1D60854", None),
     "Spider Curl": ("90427D4A", None),
