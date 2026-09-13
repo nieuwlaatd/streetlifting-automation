@@ -204,7 +204,8 @@ def dagtotalen(datatype, veld, token, vandaag):
             waarde = rollup_waarde(punt, veld)
             if datum and waarde is not None:
                 uit[datum] = waarde
-        DIAGNOSE[datatype] = sleutels((antwoord.get("rollupDataPoints") or [{}])[0])
+        if antwoord.get("rollupDataPoints"):
+            DIAGNOSE[datatype] = sleutels(antwoord["rollupDataPoints"][0])
         blok_eind = blok_begin - dt.timedelta(days=1)
     return uit
 
@@ -318,11 +319,31 @@ def slaap_per_nacht(slaap):
         s = p.get("sleep") or {}
         interval = s.get("interval") or {}
         datum = (civiele_datum(interval.get("civilEndTime"))
-                 or eerste_tijd({"t": interval.get("endTime")}))
-        minuten = (s.get("summary") or {}).get("minutesAsleep")
-        if datum and isinstance(minuten, (int, float)) and 0 < minuten < 24 * 60:
+                 or lokale_datum(interval.get("endTime"), interval.get("endUtcOffset")))
+        # De API geeft minuten als tekst: {"minutesAsleep": "402"}.
+        try:
+            minuten = float((s.get("summary") or {}).get("minutesAsleep"))
+        except (TypeError, ValueError):
+            continue
+        if datum and 0 < minuten < 24 * 60:
             uit[datum] = uit.get(datum, 0) + minuten
     return uit
+
+
+def lokale_datum(tijd, offset):
+    """UTC-tijd plus offset ("7200s") naar de datum in Dylans eigen tijdzone.
+
+    Wakker om 00:30 in Nederland is 22:30 UTC de dag ervoor; zonder de offset
+    zou die nacht bij de verkeerde dag horen.
+    """
+    if not isinstance(tijd, str):
+        return None
+    try:
+        moment = dt.datetime.fromisoformat(tijd.replace("Z", "+00:00"))
+        seconden = float(str(offset or "0").rstrip("s"))
+        return (moment + dt.timedelta(seconds=seconden)).date().isoformat()
+    except ValueError:
+        return tijd[:10] if ISO.match(tijd) else None
 
 
 def per_dag(gewicht, vet, voeding, slaap=None, verbrand=None, stappen=None):
