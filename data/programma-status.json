@@ -1,5 +1,5 @@
 {
- "gegenereerd_op": "2026-09-13T18:15:45+00:00",
+ "gegenereerd_op": "2026-09-13T18:18:42+00:00",
  "vandaag": "2026-09-13",
  "weekdag": 6,
  "dagthema": null,
@@ -12,17 +12,27 @@
   "deload": false,
   "startdatum": "2026-09-07"
  },
- "lichaamsgewicht": 77.0,
- "lichaamsgewicht_bron": "hevy",
+ "lichaamsgewicht": 76.74,
+ "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
-  "status": "niet_gekoppeld",
-  "opgehaald": null,
+  "status": "ok",
+  "opgehaald": "2026-09-13T18:18:38+00:00",
   "fout": null,
-  "streefgewicht_kg": 73
+  "streefgewicht_kg": 73,
+  "gewicht_7d_kg": 76.74,
+  "gewicht_vorige_7d_kg": 77.0,
+  "verandering_per_week_kg": -0.26,
+  "nog_af_tot_73_kg": 3.7,
+  "vet_pct_7d": 17.38,
+  "kcal_7d": 2250.0,
+  "eiwit_7d_g": 141.86,
+  "eiwit_per_kg": 1.85,
+  "dagen_met_voeding_7d": 7,
+  "dagen_met_gewicht_7d": 5
  },
  "stand": {
   "dip": {
-   "e1rm": 49.7,
+   "e1rm": 49.6,
    "bron": "hevy",
    "target_nu": 53.5,
    "aantal_werksets_totaal": 25,
@@ -34,7 +44,7 @@
      "reps": 5,
      "rpe": 8.5,
      "type": "normal",
-     "e1rm": 52.7,
+     "e1rm": 52.6,
      "variant": null
     },
     {
@@ -43,7 +53,7 @@
      "reps": 5,
      "rpe": 7,
      "type": "normal",
-     "e1rm": 45.8,
+     "e1rm": 45.7,
      "variant": null
     },
     {
@@ -52,7 +62,7 @@
      "reps": 5,
      "rpe": 7,
      "type": "normal",
-     "e1rm": 45.8,
+     "e1rm": 45.7,
      "variant": null
     },
     {
@@ -61,7 +71,7 @@
      "reps": 4,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 39.5,
+     "e1rm": 39.4,
      "variant": null
     },
     {
@@ -70,7 +80,7 @@
      "reps": 4,
      "rpe": null,
      "type": "normal",
-     "e1rm": 27.3,
+     "e1rm": 27.2,
      "variant": null
     },
     {
@@ -97,7 +107,7 @@
      "reps": 6,
      "rpe": null,
      "type": "normal",
-     "e1rm": 13.6,
+     "e1rm": 13.5,
      "variant": null
     }
    ],
@@ -119,7 +129,7 @@
      "reps": 5,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 63.8,
+     "e1rm": 63.7,
      "variant": null
     },
     {
@@ -146,7 +156,7 @@
      "reps": 5,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 50.6,
+     "e1rm": 50.5,
      "variant": null
     },
     {
@@ -155,7 +165,7 @@
      "reps": 6,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 51.5,
+     "e1rm": 51.4,
      "variant": null
     },
     {
@@ -173,7 +183,7 @@
      "reps": 5,
      "rpe": null,
      "type": "normal",
-     "e1rm": 36.2,
+     "e1rm": 36.1,
      "variant": null
     },
     {
@@ -182,7 +192,7 @@
      "reps": 5,
      "rpe": 8,
      "type": "normal",
-     "e1rm": 36.6,
+     "e1rm": 36.5,
      "variant": null
     }
    ],
@@ -456,6 +466,6 @@
   "kernsets_met_rpe": 19,
   "kernsets_tot_falen": 0
  },
- "totaal_nu": 208.4,
+ "totaal_nu": 208.3,
  "totaal_doel": 367
 }

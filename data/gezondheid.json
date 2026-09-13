@@ -1,0 +1,231 @@
+{
+ "status": "ok",
+ "rechten_ontbreken": [],
+ "opgehaald": "2026-09-13T18:18:38+00:00",
+ "bron": "Google Health API",
+ "streefgewicht_kg": 73,
+ "samenvatting": {
+  "gewicht_7d_kg": 76.74,
+  "gewicht_vorige_7d_kg": 77.0,
+  "verandering_per_week_kg": -0.26,
+  "nog_af_tot_73_kg": 3.7,
+  "vet_pct_7d": 17.38,
+  "kcal_7d": 2250.0,
+  "eiwit_7d_g": 141.86,
+  "eiwit_per_kg": 1.85,
+  "dagen_met_voeding_7d": 7,
+  "dagen_met_gewicht_7d": 5
+ },
+ "_veldnamen": {
+  "weight": {
+   "name": "str",
+   "dataSource": {
+    "recordingMethod": "str",
+    "device": {},
+    "application": {
+     "packageName": "str"
+    },
+    "platform": "str"
+   },
+   "weight": {
+    "sampleTime": {
+     "physicalTime": "str",
+     "utcOffset": "str",
+     "civilTime": {
+      "date": {
+       "year": "int",
+       "month": "int",
+       "day": "int"
+      },
+      "time": {
+       "hours": "int",
+       "minutes": "int",
+       "seconds": "int",
+       "nanos": "int"
+      }
+     }
+    },
+    "weightGrams": "int"
+   }
+  },
+  "body-fat": {
+   "name": "str",
+   "dataSource": {
+    "recordingMethod": "str",
+    "device": {},
+    "application": {
+     "packageName": "str"
+    },
+    "platform": "str"
+   },
+   "bodyFat": {
+    "sampleTime": {
+     "physicalTime": "str",
+     "utcOffset": "str",
+     "civilTime": {
+      "date": {
+       "year": "int",
+       "month": "int",
+       "day": "int"
+      },
+      "time": {
+       "hours": "int",
+       "minutes": "int",
+       "seconds": "int",
+       "nanos": "int"
+      }
+     }
+    },
+    "percentage": "float"
+   }
+  },
+  "nutrition-log": {
+   "name": "str",
+   "dataSource": {
+    "recordingMethod": "str",
+    "device": {},
+    "application": {
+     "packageName": "str"
+    },
+    "platform": "str"
+   },
+   "nutritionLog": {
+    "interval": {
+     "startTime": "str",
+     "startUtcOffset": "str",
+     "endTime": "str",
+     "endUtcOffset": "str",
+     "civilStartTime": {
+      "date": {
+       "year": "int",
+       "month": "int",
+       "day": "int"
+      },
+      "time": {}
+     },
+     "civilEndTime": {
+      "date": {
+       "year": "int",
+       "month": "int",
+       "day": "int"
+      },
+      "time": {
+       "hours": "int",
+       "minutes": "int",
+       "seconds": "int"
+      }
+     }
+    },
+    "nutrients": [
+     {
+      "quantity": {
+       "grams": "float"
+      },
+      "nutrient": "str"
+     }
+    ],
+    "energy": {
+     "kcal": "int"
+    },
+    "totalCarbohydrate": {
+     "grams": "float"
+    },
+    "totalFat": {
+     "grams": "float"
+    }
+   }
+  }
+ },
+ "dagen": [
+  {
+   "datum": "2026-09-03",
+   "gewicht_kg": 77.0,
+   "vet_pct": null,
+   "kcal": null,
+   "eiwit_g": null,
+   "koolhydraten_g": null,
+   "vet_g": null,
+   "voedingslogs": 0
+  },
+  {
+   "datum": "2026-09-06",
+   "gewicht_kg": null,
+   "vet_pct": null,
+   "kcal": 2040,
+   "eiwit_g": 131,
+   "koolhydraten_g": 147,
+   "vet_g": 103,
+   "voedingslogs": 1
+  },
+  {
+   "datum": "2026-09-07",
+   "gewicht_kg": null,
+   "vet_pct": null,
+   "kcal": 1784,
+   "eiwit_g": 149,
+   "koolhydraten_g": 162,
+   "vet_g": 60,
+   "voedingslogs": 1
+  },
+  {
+   "datum": "2026-09-08",
+   "gewicht_kg": null,
+   "vet_pct": null,
+   "kcal": 2195,
+   "eiwit_g": 163,
+   "koolhydraten_g": 232,
+   "vet_g": 64,
+   "voedingslogs": 1
+  },
+  {
+   "datum": "2026-09-09",
+   "gewicht_kg": 76.0,
+   "vet_pct": null,
+   "kcal": 2406,
+   "eiwit_g": 169,
+   "koolhydraten_g": 227,
+   "vet_g": 90,
+   "voedingslogs": 1
+  },
+  {
+   "datum": "2026-09-10",
+   "gewicht_kg": 77.1,
+   "vet_pct": 17.5,
+   "kcal": 2522,
+   "eiwit_g": 157,
+   "koolhydraten_g": 261,
+   "vet_g": 92,
+   "voedingslogs": 1
+  },
+  {
+   "datum": "2026-09-11",
+   "gewicht_kg": 76.75,
+   "vet_pct": 17.3,
+   "kcal": 2978,
+   "eiwit_g": 128,
+   "koolhydraten_g": 461,
+   "vet_g": 69,
+   "voedingslogs": 1
+  },
+  {
+   "datum": "2026-09-12",
+   "gewicht_kg": 76.85,
+   "vet_pct": 17.3,
+   "kcal": 1825,
+   "eiwit_g": 96,
+   "koolhydraten_g": 228,
+   "vet_g": 56,
+   "voedingslogs": 1
+  },
+  {
+   "datum": "2026-09-13",
+   "gewicht_kg": 77.0,
+   "vet_pct": 17.4,
+   "kcal": null,
+   "eiwit_g": null,
+   "koolhydraten_g": null,
+   "vet_g": null,
+   "voedingslogs": 0
+  }
+ ]
+}
