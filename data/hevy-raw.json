@@ -48,13 +48,249 @@
  ],
  "workouts": [
   {
+   "id": "0f869067-c570-4bdc-9853-b563b5f347b4",
+   "title": "SL 1 · Ma wk2 — Primaire Dip + Secundaire Pull-Up",
+   "routine_id": "7efd22ce-6d43-48f5-bc6b-3e0b21d5c9ea",
+   "description": "",
+   "start_time": "2026-09-14T14:50:30+00:00",
+   "end_time": "2026-09-14T16:26:32+00:00",
+   "updated_at": "2026-09-14T16:32:17.152Z",
+   "created_at": "2026-09-14T16:26:35.653Z",
+   "exercises": [
+    {
+     "index": 0,
+     "title": "Chest Dip (Weighted)",
+     "notes": "",
+     "exercise_template_id": "29472BE1",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "warmup",
+       "weight_kg": 15,
+       "reps": 5,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 30,
+       "reps": 3,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "normal",
+       "weight_kg": 30,
+       "reps": 3,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 7,
+       "custom_metric": null
+      },
+      {
+       "index": 3,
+       "type": "normal",
+       "weight_kg": 27.5,
+       "reps": 3,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "title": "Chest Dip (Weighted)",
+     "notes": "Had beter 20 - 15 - 10 kunnen doen",
+     "exercise_template_id": "29472BE1",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 20,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 7,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 20,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "normal",
+       "weight_kg": 10,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 7,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "title": "Chin Up (Weighted)",
+     "notes": "Laatste neutral grip door last van mn linker elleboog.",
+     "exercise_template_id": "023943F1",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 20,
+       "reps": 5,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 30,
+       "reps": 5,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "normal",
+       "weight_kg": 20,
+       "reps": 5,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "title": "Incline Bench Press (Dumbbell)",
+     "notes": "",
+     "exercise_template_id": "07B38369",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 40,
+       "reps": 8,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 8,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 48,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9.5,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "normal",
+       "weight_kg": 40,
+       "reps": 7,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9.5,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "title": "Single Arm Lateral Raise (Cable)",
+     "notes": "",
+     "exercise_template_id": "DE68C825",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 7.5,
+       "reps": 14,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 7.5,
+       "reps": 14,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9.5,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 5,
+     "title": "Crunch (Machine)",
+     "notes": "Knee raises was bezet",
+     "exercise_template_id": "EB43ADD4",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 40,
+       "reps": 10,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 8,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 45,
+       "reps": 8,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 8,
+       "custom_metric": null
+      }
+     ]
+    }
+   ]
+  },
+  {
    "id": "6b6b43e3-1549-4ad3-b72d-04887f17e00f",
    "title": "SL 4 · Za — Primaire Muscle-Up + Squat + Secundaire Dip + Tertiaire Pull-Up",
    "routine_id": "2cfde704-2660-4f50-aeb1-a98b4ca265b9",
    "description": "Veel te veel sets",
    "start_time": "2026-09-12T08:07:15+00:00",
    "end_time": "2026-09-12T09:25:46+00:00",
-   "updated_at": "2026-09-12T09:25:58.919Z",
+   "updated_at": "2026-09-14T16:32:20.868Z",
    "created_at": "2026-09-12T09:25:58.919Z",
    "exercises": [
     {
