@@ -96,12 +96,12 @@
   "laatste_beoordeelde_sessie": "2026-09-14"
  },
  "squat": {
-  "factor": 0.8788,
+  "factor": 0.8349,
   "laatste_voorschrift": {
    "datum": "2026-09-15",
    "sets": 5,
    "reps": 5,
-   "kg": 60.0
+   "kg": 57.5
   },
   "log": [
    {
@@ -135,8 +135,16 @@
     "nieuwe_factor": 0.8788,
     "kg": 60.0,
     "kg_volgens_plan": 67.5
+   },
+   {
+    "datum": "2026-09-15",
+    "oordeel": "te_zwaar",
+    "reden": "0 van 5 sets gehaald",
+    "nieuwe_factor": 0.8349,
+    "kg": 57.5,
+    "kg_volgens_plan": 70.0
    }
   ],
-  "laatste_beoordeelde_sessie": "2026-09-12"
+  "laatste_beoordeelde_sessie": "2026-09-15"
  }
 }
