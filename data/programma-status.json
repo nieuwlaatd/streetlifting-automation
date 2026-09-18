@@ -1,9 +1,9 @@
 {
- "gegenereerd_op": "2026-09-17T23:00:20+00:00",
- "vandaag": "2026-09-17",
- "weekdag": 3,
- "dagthema": "Squat zwaar",
- "kernlift_vandaag": "squat",
+ "gegenereerd_op": "2026-09-18T09:47:58+00:00",
+ "vandaag": "2026-09-18",
+ "weekdag": 4,
+ "dagthema": "Volume + muscle-up",
+ "kernlift_vandaag": null,
  "positie": {
   "week": 2,
   "cyclusweek": 2,
@@ -12,29 +12,29 @@
   "deload": false,
   "startdatum": "2026-09-07"
  },
- "lichaamsgewicht": 76.86,
+ "lichaamsgewicht": 76.91,
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-09-17T23:00:10+00:00",
+  "opgehaald": "2026-09-18T09:47:47+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
-  "gewicht_7d_kg": 76.86,
-  "gewicht_vorige_7d_kg": 76.55,
-  "verandering_per_week_kg": 0.31,
+  "gewicht_7d_kg": 76.91,
+  "gewicht_vorige_7d_kg": 76.62,
+  "verandering_per_week_kg": 0.29,
   "nog_af_tot_73_kg": 3.9,
-  "vet_pct_7d": 17.33,
-  "kcal_7d": 2569.29,
-  "eiwit_7d_g": 149.43,
-  "eiwit_per_kg": 1.94,
-  "dagen_met_voeding_7d": 7,
+  "vet_pct_7d": 17.36,
+  "kcal_7d": 2577.17,
+  "eiwit_7d_g": 148.17,
+  "eiwit_per_kg": 1.93,
+  "dagen_met_voeding_7d": 6,
   "dagen_met_gewicht_7d": 7,
-  "slaap_7d_uur": 8.87,
+  "slaap_7d_uur": 8.82,
   "kortste_nacht_7d_uur": 8.5,
   "nachten_onder_6u_7d": 0,
-  "verbrand_7d_kcal": 2954.71,
-  "stappen_7d": 6993.86,
-  "energiebalans_7d_kcal": -385.43
+  "verbrand_7d_kcal": 2830.14,
+  "stappen_7d": 6185.71,
+  "energiebalans_7d_kcal": -243.0
  },
  "stand": {
   "dip": {
@@ -77,7 +77,7 @@
      "reps": 6,
      "rpe": 7,
      "type": "normal",
-     "e1rm": 48.0,
+     "e1rm": 48.1,
      "variant": null
     },
     {
@@ -95,7 +95,7 @@
      "reps": 6,
      "rpe": 7,
      "type": "normal",
-     "e1rm": 35.1,
+     "e1rm": 35.2,
      "variant": null
     },
     {
@@ -135,7 +135,7 @@
      "reps": 5,
      "rpe": 8,
      "type": "normal",
-     "e1rm": 36.5,
+     "e1rm": 36.6,
      "variant": null
     },
     {
@@ -153,7 +153,7 @@
      "reps": 5,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 63.7,
+     "e1rm": 63.8,
      "variant": null
     },
     {
@@ -180,7 +180,7 @@
      "reps": 6,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 58.0,
+     "e1rm": 58.1,
      "variant": null
     },
     {
@@ -189,7 +189,7 @@
      "reps": 6,
      "rpe": 7,
      "type": "normal",
-     "e1rm": 48.0,
+     "e1rm": 48.1,
      "variant": null
     },
     {
@@ -388,7 +388,7 @@
    "correctiefactor": 0.8,
    "kg_volgens_plan": 22.5,
    "afwijking_kg": -5.0,
-   "bijgesteld_omdat": "1 van 4 sets gehaald",
+   "bijgesteld_omdat": null,
    "sessie_gemist": false
   },
   "pullup": {
@@ -400,7 +400,7 @@
    "correctiefactor": 0.8,
    "kg_volgens_plan": 30.0,
    "afwijking_kg": -5.0,
-   "bijgesteld_omdat": "1 van 4 sets gehaald",
+   "bijgesteld_omdat": null,
    "sessie_gemist": false
   },
   "squat": {
@@ -412,15 +412,15 @@
    "correctiefactor": 0.8,
    "kg_volgens_plan": 67.5,
    "afwijking_kg": -12.5,
-   "bijgesteld_omdat": "0 van 5 sets gehaald",
+   "bijgesteld_omdat": null,
    "sessie_gemist": false
   }
  },
  "terugkoppeling": {
   "dip": {
    "factor": 0.8,
-   "oordeel_vorige_sessie": "te_zwaar",
-   "reden": "1 van 4 sets gehaald",
+   "oordeel_vorige_sessie": null,
+   "reden": null,
    "vorig_voorschrift": {
     "datum": "2026-09-17",
     "sets": 4,
@@ -431,8 +431,8 @@
   },
   "pullup": {
    "factor": 0.8,
-   "oordeel_vorige_sessie": "te_zwaar",
-   "reden": "1 van 4 sets gehaald",
+   "oordeel_vorige_sessie": null,
+   "reden": null,
    "vorig_voorschrift": {
     "datum": "2026-09-17",
     "sets": 4,
@@ -443,13 +443,13 @@
   },
   "squat": {
    "factor": 0.8,
-   "oordeel_vorige_sessie": "te_zwaar",
-   "reden": "0 van 5 sets gehaald",
+   "oordeel_vorige_sessie": null,
+   "reden": null,
    "vorig_voorschrift": {
     "datum": "2026-09-17",
     "sets": 5,
     "reps": 5,
-    "kg": 57.5
+    "kg": 55.0
    },
    "gemist": false
   }
@@ -463,13 +463,13 @@
   }
  },
  "afgelopen_7_dagen": {
-  "sessies": 5,
-  "dipwerksets": 13,
+  "sessies": 4,
+  "dipwerksets": 11,
   "dipdoel": 10,
-  "pullupwerksets": 17,
+  "pullupwerksets": 12,
   "pullupdoel": 7,
-  "kernsets": 36,
-  "kernsets_met_rpe": 25,
+  "kernsets": 30,
+  "kernsets_met_rpe": 20,
   "kernsets_tot_falen": 0
  },
  "totaal_nu": 209.4,
