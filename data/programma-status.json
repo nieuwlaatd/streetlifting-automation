@@ -1,7 +1,7 @@
 {
- "gegenereerd_op": "2026-09-19T22:25:53+00:00",
- "vandaag": "2026-09-19",
- "weekdag": 5,
+ "gegenereerd_op": "2026-09-20T09:50:15+00:00",
+ "vandaag": "2026-09-20",
+ "weekdag": 6,
  "dagthema": null,
  "kernlift_vandaag": null,
  "positie": {
@@ -12,29 +12,29 @@
   "deload": false,
   "startdatum": "2026-09-07"
  },
- "lichaamsgewicht": 76.93,
+ "lichaamsgewicht": 76.99,
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-09-19T22:25:46+00:00",
+  "opgehaald": "2026-09-20T09:50:08+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
-  "gewicht_7d_kg": 76.93,
-  "gewicht_vorige_7d_kg": 76.67,
-  "verandering_per_week_kg": 0.26,
-  "nog_af_tot_73_kg": 3.9,
-  "vet_pct_7d": 17.37,
-  "kcal_7d": 2650.57,
-  "eiwit_7d_g": 158.57,
-  "eiwit_per_kg": 2.06,
-  "dagen_met_voeding_7d": 7,
+  "gewicht_7d_kg": 76.99,
+  "gewicht_vorige_7d_kg": 76.74,
+  "verandering_per_week_kg": 0.25,
+  "nog_af_tot_73_kg": 4.0,
+  "vet_pct_7d": 17.4,
+  "kcal_7d": 2660.83,
+  "eiwit_7d_g": 163.67,
+  "eiwit_per_kg": 2.13,
+  "dagen_met_voeding_7d": 6,
   "dagen_met_gewicht_7d": 7,
-  "slaap_7d_uur": 8.93,
+  "slaap_7d_uur": 8.9,
   "kortste_nacht_7d_uur": 8.5,
   "nachten_onder_6u_7d": 0,
-  "verbrand_7d_kcal": 2790.0,
-  "stappen_7d": 6199.57,
-  "energiebalans_7d_kcal": -139.43
+  "verbrand_7d_kcal": 2669.86,
+  "stappen_7d": 6015.57,
+  "energiebalans_7d_kcal": -50.33
  },
  "stand": {
   "dip": {
@@ -59,7 +59,7 @@
      "reps": 6,
      "rpe": 9,
      "type": "normal",
-     "e1rm": 40.3,
+     "e1rm": 40.4,
      "variant": null
     },
     {
@@ -86,7 +86,7 @@
      "reps": 4,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 39.4,
+     "e1rm": 39.5,
      "variant": null
     },
     {
@@ -95,7 +95,7 @@
      "reps": 3,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 42.7,
+     "e1rm": 42.8,
      "variant": null
     },
     {
@@ -153,7 +153,7 @@
      "reps": 6,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 51.4,
+     "e1rm": 51.5,
      "variant": null
     },
     {
@@ -388,7 +388,7 @@
    "correctiefactor": 0.8,
    "kg_volgens_plan": 22.5,
    "afwijking_kg": -5.0,
-   "bijgesteld_omdat": "0 van 4 sets gehaald",
+   "bijgesteld_omdat": null,
    "sessie_gemist": false
   },
   "pullup": {
@@ -400,7 +400,7 @@
    "correctiefactor": 0.8,
    "kg_volgens_plan": 30.0,
    "afwijking_kg": -5.0,
-   "bijgesteld_omdat": "0 van 4 sets gehaald",
+   "bijgesteld_omdat": null,
    "sessie_gemist": false
   },
   "squat": {
@@ -412,15 +412,15 @@
    "correctiefactor": 0.8,
    "kg_volgens_plan": 72.5,
    "afwijking_kg": -15.0,
-   "bijgesteld_omdat": "3 van 5 sets gehaald",
+   "bijgesteld_omdat": null,
    "sessie_gemist": false
   }
  },
  "terugkoppeling": {
   "dip": {
    "factor": 0.8,
-   "oordeel_vorige_sessie": "te_zwaar",
-   "reden": "0 van 4 sets gehaald",
+   "oordeel_vorige_sessie": null,
+   "reden": null,
    "vorig_voorschrift": {
     "datum": "2026-09-19",
     "sets": 4,
@@ -431,8 +431,8 @@
   },
   "pullup": {
    "factor": 0.8,
-   "oordeel_vorige_sessie": "te_zwaar",
-   "reden": "0 van 4 sets gehaald",
+   "oordeel_vorige_sessie": null,
+   "reden": null,
    "vorig_voorschrift": {
     "datum": "2026-09-19",
     "sets": 4,
@@ -443,13 +443,13 @@
   },
   "squat": {
    "factor": 0.8,
-   "oordeel_vorige_sessie": "te_zwaar",
-   "reden": "3 van 5 sets gehaald",
+   "oordeel_vorige_sessie": null,
+   "reden": null,
    "vorig_voorschrift": {
     "datum": "2026-09-19",
     "sets": 5,
     "reps": 5,
-    "kg": 55.0
+    "kg": 57.5
    },
    "gemist": false
   }
@@ -463,13 +463,13 @@
   }
  },
  "afgelopen_7_dagen": {
-  "sessies": 5,
-  "dipwerksets": 14,
+  "sessies": 4,
+  "dipwerksets": 11,
   "dipdoel": 10,
-  "pullupwerksets": 14,
+  "pullupwerksets": 12,
   "pullupdoel": 7,
-  "kernsets": 41,
-  "kernsets_met_rpe": 31,
+  "kernsets": 27,
+  "kernsets_met_rpe": 27,
   "kernsets_tot_falen": 0
  },
  "totaal_nu": 216.1,
