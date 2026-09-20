@@ -2,7 +2,7 @@
  "status": "ok",
  "fouten_aanvulling": [],
  "rechten_ontbreken": [],
- "opgehaald": "2026-09-20T18:47:33+00:00",
+ "opgehaald": "2026-09-20T22:38:35+00:00",
  "bron": "Google Health API",
  "streefgewicht_kg": 73,
  "samenvatting": {
@@ -171,6 +171,7 @@
     "metadata": {
      "stagesStatus": "str",
      "processed": "bool",
+     "nap": "bool",
      "mainSleep": "bool"
     },
     "summary": {
@@ -188,16 +189,7 @@
      ]
     },
     "createTime": "str",
-    "updateTime": "str",
-    "shortAwakenings": [
-     {
-      "startTime": "str",
-      "startUtcOffset": "str",
-      "endTime": "str",
-      "endUtcOffset": "str",
-      "type": "str"
-     }
-    ]
+    "updateTime": "str"
    }
   }
  },
