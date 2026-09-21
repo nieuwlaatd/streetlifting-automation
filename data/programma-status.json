@@ -1,5 +1,5 @@
 {
- "gegenereerd_op": "2026-09-21T10:46:04+00:00",
+ "gegenereerd_op": "2026-09-21T23:29:47+00:00",
  "vandaag": "2026-09-21",
  "weekdag": 0,
  "dagthema": "Dip zwaar",
@@ -16,7 +16,7 @@
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-09-21T10:45:56+00:00",
+  "opgehaald": "2026-09-21T23:29:40+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
   "gewicht_7d_kg": 76.85,
@@ -24,17 +24,17 @@
   "verandering_per_week_kg": 0.06,
   "nog_af_tot_73_kg": 3.8,
   "vet_pct_7d": 17.33,
-  "kcal_7d": 2542.5,
-  "eiwit_7d_g": 155.33,
-  "eiwit_per_kg": 2.02,
-  "dagen_met_voeding_7d": 6,
+  "kcal_7d": 2421.0,
+  "eiwit_7d_g": 151.14,
+  "eiwit_per_kg": 1.97,
+  "dagen_met_voeding_7d": 7,
   "dagen_met_gewicht_7d": 7,
   "slaap_7d_uur": 8.79,
   "kortste_nacht_7d_uur": 8.15,
   "nachten_onder_6u_7d": 0,
   "verbrand_7d_kcal": 2576.43,
   "stappen_7d": 5454.86,
-  "energiebalans_7d_kcal": -28.17
+  "energiebalans_7d_kcal": -155.43
  },
  "stand": {
   "dip": {
@@ -422,10 +422,10 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-09-20",
+    "datum": "2026-09-21",
     "sets": 4,
     "reps": 5,
-    "kg": 17.5
+    "kg": 20.0
    },
    "gemist": false
   },
@@ -434,10 +434,10 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-09-20",
+    "datum": "2026-09-21",
     "sets": 4,
     "reps": 5,
-    "kg": 25.0
+    "kg": 27.5
    },
    "gemist": false
   },
@@ -446,10 +446,10 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-09-20",
+    "datum": "2026-09-21",
     "sets": 5,
     "reps": 5,
-    "kg": 57.5
+    "kg": 60.0
    },
    "gemist": false
   }
