@@ -1,9 +1,9 @@
 {
- "gegenereerd_op": "2026-09-23T23:04:18+00:00",
- "vandaag": "2026-09-23",
- "weekdag": 2,
- "dagthema": "Pull zwaar",
- "kernlift_vandaag": "pullup",
+ "gegenereerd_op": "2026-09-24T10:03:56+00:00",
+ "vandaag": "2026-09-24",
+ "weekdag": 3,
+ "dagthema": "Squat zwaar",
+ "kernlift_vandaag": "squat",
  "positie": {
   "week": 3,
   "cyclusweek": 3,
@@ -12,29 +12,29 @@
   "deload": false,
   "startdatum": "2026-09-07"
  },
- "lichaamsgewicht": 76.94,
+ "lichaamsgewicht": 76.92,
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-09-23T23:04:08+00:00",
+  "opgehaald": "2026-09-24T10:03:41+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
-  "gewicht_7d_kg": 76.94,
+  "gewicht_7d_kg": 76.92,
   "gewicht_vorige_7d_kg": 76.86,
-  "verandering_per_week_kg": 0.08,
+  "verandering_per_week_kg": 0.06,
   "nog_af_tot_73_kg": 3.9,
-  "vet_pct_7d": 17.39,
-  "kcal_7d": 2315.43,
-  "eiwit_7d_g": 142.0,
+  "vet_pct_7d": 17.37,
+  "kcal_7d": 2303.67,
+  "eiwit_7d_g": 142.5,
   "eiwit_per_kg": 1.85,
-  "dagen_met_voeding_7d": 7,
+  "dagen_met_voeding_7d": 6,
   "dagen_met_gewicht_7d": 7,
-  "slaap_7d_uur": 9.14,
+  "slaap_7d_uur": 8.98,
   "kortste_nacht_7d_uur": 8.15,
   "nachten_onder_6u_7d": 0,
-  "verbrand_7d_kcal": 2643.86,
-  "stappen_7d": 5135.14,
-  "energiebalans_7d_kcal": -328.43
+  "verbrand_7d_kcal": 2601.43,
+  "stappen_7d": 5043.29,
+  "energiebalans_7d_kcal": -369.83
  },
  "stand": {
   "dip": {
@@ -162,7 +162,7 @@
      "reps": 6,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 25.0,
+     "e1rm": 24.9,
      "variant": null
     },
     {
@@ -171,7 +171,7 @@
      "reps": 5,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 37.5,
+     "e1rm": 37.4,
      "variant": null
     },
     {
@@ -412,7 +412,7 @@
    "correctiefactor": 0.8,
    "kg_volgens_plan": 75.0,
    "afwijking_kg": -15.0,
-   "bijgesteld_omdat": "0 van 5 sets gehaald",
+   "bijgesteld_omdat": null,
    "sessie_gemist": false
   }
  },
@@ -443,8 +443,8 @@
   },
   "squat": {
    "factor": 0.8,
-   "oordeel_vorige_sessie": "te_zwaar",
-   "reden": "0 van 5 sets gehaald",
+   "oordeel_vorige_sessie": null,
+   "reden": null,
    "vorig_voorschrift": {
     "datum": "2026-09-23",
     "sets": 5,
