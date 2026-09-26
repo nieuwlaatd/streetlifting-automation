@@ -1,27 +1,29 @@
 {
  "status": "ok",
- "fouten_aanvulling": [],
+ "fouten_aanvulling": [
+  "slaap: HTTP 503"
+ ],
  "rechten_ontbreken": [],
- "opgehaald": "2026-09-25T23:26:46+00:00",
+ "opgehaald": "2026-09-26T09:53:28+00:00",
  "bron": "Google Health API",
  "streefgewicht_kg": 73,
  "samenvatting": {
-  "gewicht_7d_kg": 76.91,
-  "gewicht_vorige_7d_kg": 76.91,
-  "verandering_per_week_kg": 0.0,
+  "gewicht_7d_kg": 76.9,
+  "gewicht_vorige_7d_kg": 76.93,
+  "verandering_per_week_kg": -0.03,
   "nog_af_tot_73_kg": 3.9,
-  "vet_pct_7d": 17.36,
-  "kcal_7d": 2282.14,
-  "eiwit_7d_g": 144.43,
-  "eiwit_per_kg": 1.88,
-  "dagen_met_voeding_7d": 7,
-  "dagen_met_gewicht_7d": 7,
-  "slaap_7d_uur": 8.99,
-  "kortste_nacht_7d_uur": 8.15,
+  "vet_pct_7d": 17.35,
+  "kcal_7d": 2121.17,
+  "eiwit_7d_g": 138.83,
+  "eiwit_per_kg": 1.81,
+  "dagen_met_voeding_7d": 6,
+  "dagen_met_gewicht_7d": 6,
+  "slaap_7d_uur": null,
+  "kortste_nacht_7d_uur": null,
   "nachten_onder_6u_7d": 0,
-  "verbrand_7d_kcal": 2582.57,
-  "stappen_7d": 5260.57,
-  "energiebalans_7d_kcal": -300.43
+  "verbrand_7d_kcal": 2584.71,
+  "stappen_7d": 5243.57,
+  "energiebalans_7d_kcal": -474.33
  },
  "_veldnamen": {
   "weight": {
@@ -142,66 +144,7 @@
     }
    }
   },
-  "sleep": {
-   "name": "str",
-   "dataSource": {
-    "recordingMethod": "str",
-    "device": {
-     "displayName": "str"
-    },
-    "platform": "str"
-   },
-   "sleep": {
-    "interval": {
-     "startTime": "str",
-     "startUtcOffset": "str",
-     "endTime": "str",
-     "endUtcOffset": "str"
-    },
-    "type": "str",
-    "stages": [
-     {
-      "startTime": "str",
-      "startUtcOffset": "str",
-      "endTime": "str",
-      "endUtcOffset": "str",
-      "type": "str",
-      "createTime": "str",
-      "updateTime": "str"
-     }
-    ],
-    "metadata": {
-     "stagesStatus": "str",
-     "processed": "bool",
-     "mainSleep": "bool"
-    },
-    "summary": {
-     "minutesInSleepPeriod": "str",
-     "minutesAfterWakeUp": "str",
-     "minutesToFallAsleep": "str",
-     "minutesAsleep": "str",
-     "minutesAwake": "str",
-     "stagesSummary": [
-      {
-       "type": "str",
-       "minutes": "str",
-       "count": "str"
-      }
-     ]
-    },
-    "createTime": "str",
-    "updateTime": "str",
-    "shortAwakenings": [
-     {
-      "startTime": "str",
-      "startUtcOffset": "str",
-      "endTime": "str",
-      "endUtcOffset": "str",
-      "type": "str"
-     }
-    ]
-   }
-  }
+  "sleep": null
  },
  "_veldnamen_rollup": {
   "total-calories": {
@@ -356,7 +299,7 @@
    "koolhydraten_g": 261,
    "vet_g": 92,
    "voedingslogs": 1,
-   "slaap_uur": 8.25,
+   "slaap_uur": null,
    "verbrand_kcal": 3740,
    "stappen": 11038
   },
@@ -369,7 +312,7 @@
    "koolhydraten_g": 461,
    "vet_g": 69,
    "voedingslogs": 1,
-   "slaap_uur": 9.35,
+   "slaap_uur": null,
    "verbrand_kcal": 2377,
    "stappen": 5741
   },
@@ -382,7 +325,7 @@
    "koolhydraten_g": 317,
    "vet_g": 86,
    "voedingslogs": 1,
-   "slaap_uur": 8.98,
+   "slaap_uur": null,
    "verbrand_kcal": 3325,
    "stappen": 4982
   },
@@ -395,7 +338,7 @@
    "koolhydraten_g": 169,
    "vet_g": 93,
    "voedingslogs": 1,
-   "slaap_uur": 8.92,
+   "slaap_uur": null,
    "verbrand_kcal": 3367,
    "stappen": 9334
   },
@@ -408,7 +351,7 @@
    "koolhydraten_g": 194,
    "vet_g": 130,
    "voedingslogs": 1,
-   "slaap_uur": 8.9,
+   "slaap_uur": null,
    "verbrand_kcal": 2571,
    "stappen": 3974
   },
@@ -421,7 +364,7 @@
    "koolhydraten_g": 257,
    "vet_g": 106,
    "voedingslogs": 1,
-   "slaap_uur": 8.5,
+   "slaap_uur": null,
    "verbrand_kcal": 3553,
    "stappen": 9054
   },
@@ -434,7 +377,7 @@
    "koolhydraten_g": 260,
    "vet_g": 87,
    "voedingslogs": 1,
-   "slaap_uur": 8.92,
+   "slaap_uur": null,
    "verbrand_kcal": 2529,
    "stappen": 4860
   },
@@ -447,7 +390,7 @@
    "koolhydraten_g": 246,
    "vet_g": 122,
    "voedingslogs": 1,
-   "slaap_uur": 9.55,
+   "slaap_uur": null,
    "verbrand_kcal": 3105,
    "stappen": 5381
   },
@@ -460,7 +403,7 @@
    "koolhydraten_g": 248,
    "vet_g": 169,
    "voedingslogs": 1,
-   "slaap_uur": 8.7,
+   "slaap_uur": null,
    "verbrand_kcal": 2505,
    "stappen": 5718
   },
@@ -473,7 +416,7 @@
    "koolhydraten_g": 148,
    "vet_g": 48,
    "voedingslogs": 1,
-   "slaap_uur": 9.35,
+   "slaap_uur": null,
    "verbrand_kcal": 2486,
    "stappen": 3694
   },
@@ -486,7 +429,7 @@
    "koolhydraten_g": 175,
    "vet_g": 50,
    "voedingslogs": 1,
-   "slaap_uur": 9.13,
+   "slaap_uur": null,
    "verbrand_kcal": 2608,
    "stappen": 5401
   },
@@ -499,7 +442,7 @@
    "koolhydraten_g": 234,
    "vet_g": 117,
    "voedingslogs": 1,
-   "slaap_uur": 8.15,
+   "slaap_uur": null,
    "verbrand_kcal": 2418,
    "stappen": 4377
   },
@@ -512,7 +455,7 @@
    "koolhydraten_g": 204,
    "vet_g": 76,
    "voedingslogs": 1,
-   "slaap_uur": 9.2,
+   "slaap_uur": null,
    "verbrand_kcal": 2686,
    "stappen": 6515
   },
@@ -525,7 +468,7 @@
    "koolhydraten_g": 225,
    "vet_g": 56,
    "voedingslogs": 1,
-   "slaap_uur": 9.4,
+   "slaap_uur": null,
    "verbrand_kcal": 2475,
    "stappen": 4217
   },
@@ -538,7 +481,7 @@
    "koolhydraten_g": 156,
    "vet_g": 179,
    "voedingslogs": 1,
-   "slaap_uur": 8.93,
+   "slaap_uur": null,
    "verbrand_kcal": 2900,
    "stappen": 6902
   },
@@ -551,9 +494,9 @@
    "koolhydraten_g": null,
    "vet_g": null,
    "voedingslogs": 0,
-   "slaap_uur": 8.77,
-   "verbrand_kcal": null,
-   "stappen": null
+   "slaap_uur": null,
+   "verbrand_kcal": 2520,
+   "stappen": 5599
   }
  ]
 }
