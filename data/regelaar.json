@@ -2,10 +2,10 @@
  "dip": {
   "factor": 0.8,
   "laatste_voorschrift": {
-   "datum": "2026-09-27",
-   "sets": 4,
-   "reps": 5,
-   "kg": 20.0
+   "datum": "2026-09-28",
+   "sets": 5,
+   "reps": 4,
+   "kg": 25.0
   },
   "log": [
    {
@@ -94,10 +94,10 @@
  "pullup": {
   "factor": 0.8,
   "laatste_voorschrift": {
-   "datum": "2026-09-27",
-   "sets": 4,
-   "reps": 5,
-   "kg": 27.5
+   "datum": "2026-09-28",
+   "sets": 5,
+   "reps": 4,
+   "kg": 30.0
   },
   "log": [
    {
@@ -178,7 +178,7 @@
  "squat": {
   "factor": 0.8,
   "laatste_voorschrift": {
-   "datum": "2026-09-27",
+   "datum": "2026-09-28",
    "sets": 5,
    "reps": 5,
    "kg": 65.0
