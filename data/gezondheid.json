@@ -2,7 +2,7 @@
  "status": "ok",
  "fouten_aanvulling": [],
  "rechten_ontbreken": [],
- "opgehaald": "2026-09-29T11:23:16+00:00",
+ "opgehaald": "2026-09-29T23:54:36+00:00",
  "bron": "Google Health API",
  "streefgewicht_kg": 73,
  "samenvatting": {
@@ -11,17 +11,17 @@
   "verandering_per_week_kg": 0.44,
   "nog_af_tot_73_kg": 4.3,
   "vet_pct_7d": 17.6,
-  "kcal_7d": 2506.33,
-  "eiwit_7d_g": 149.33,
-  "eiwit_per_kg": 1.93,
-  "dagen_met_voeding_7d": 6,
+  "kcal_7d": 2463.43,
+  "eiwit_7d_g": 148.57,
+  "eiwit_per_kg": 1.92,
+  "dagen_met_voeding_7d": 7,
   "dagen_met_gewicht_7d": 6,
   "slaap_7d_uur": 8.75,
   "kortste_nacht_7d_uur": 8.37,
   "nachten_onder_6u_7d": 0,
-  "verbrand_7d_kcal": 2590.0,
-  "stappen_7d": 5218.71,
-  "energiebalans_7d_kcal": -110.5
+  "verbrand_7d_kcal": 2584.14,
+  "stappen_7d": 5217.86,
+  "energiebalans_7d_kcal": -120.71
  },
  "_veldnamen": {
   "weight": {
@@ -474,7 +474,7 @@
    "vet_g": 48,
    "voedingslogs": 1,
    "slaap_uur": 9.35,
-   "verbrand_kcal": 2607,
+   "verbrand_kcal": 2493,
    "stappen": 3694
   },
   {
@@ -487,7 +487,7 @@
    "vet_g": 50,
    "voedingslogs": 1,
    "slaap_uur": 9.13,
-   "verbrand_kcal": 2608,
+   "verbrand_kcal": 2470,
    "stappen": 5401
   },
   {
@@ -500,7 +500,7 @@
    "vet_g": 117,
    "voedingslogs": 1,
    "slaap_uur": 8.15,
-   "verbrand_kcal": 2418,
+   "verbrand_kcal": 2002,
    "stappen": 4377
   },
   {
@@ -513,7 +513,7 @@
    "vet_g": 76,
    "voedingslogs": 1,
    "slaap_uur": 9.2,
-   "verbrand_kcal": 2686,
+   "verbrand_kcal": 2555,
    "stappen": 6515
   },
   {
@@ -539,7 +539,7 @@
    "vet_g": 179,
    "voedingslogs": 1,
    "slaap_uur": 8.93,
-   "verbrand_kcal": 2900,
+   "verbrand_kcal": 2990,
    "stappen": 6902
   },
   {
@@ -585,14 +585,14 @@
    "datum": "2026-09-28",
    "gewicht_kg": 78.1,
    "vet_pct": 18.0,
-   "kcal": null,
-   "eiwit_g": null,
-   "koolhydraten_g": null,
-   "vet_g": null,
-   "voedingslogs": 0,
+   "kcal": 2206,
+   "eiwit_g": 144,
+   "koolhydraten_g": 202,
+   "vet_g": 89,
+   "voedingslogs": 1,
    "slaap_uur": 8.43,
    "verbrand_kcal": 2429,
-   "stappen": 4797
+   "stappen": 4791
   },
   {
    "datum": "2026-09-29",
