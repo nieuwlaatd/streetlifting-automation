@@ -1,6 +1,13 @@
 {
  "lichaamsmetingen": [
   {
+   "id": 71419122,
+   "date": "2026-09-30",
+   "weight_kg": 76.80000305175781,
+   "fat_percent": 17.3,
+   "created_at": "2026-09-30T14:08:35.795Z"
+  },
+  {
    "id": 71111252,
    "date": "2026-09-28",
    "weight_kg": 78.0999984741211,
@@ -62,16 +69,254 @@
    "weight_kg": 76.94999694824219,
    "fat_percent": 17.38,
    "created_at": "2026-09-19T13:59:24.561Z"
-  },
-  {
-   "id": 69368188,
-   "date": "2026-09-18",
-   "weight_kg": 77.0999984741211,
-   "fat_percent": 17.47,
-   "created_at": "2026-09-18T10:00:32.470Z"
   }
  ],
  "workouts": [
+  {
+   "id": "12b405cb-52d7-4e62-93fd-e4f7c7f5b2ce",
+   "title": "SL 2 · Di wk4 — Secundaire Squat + Muscle up",
+   "routine_id": "f1945136-113c-426a-841a-b0b094c00b9a",
+   "description": "",
+   "start_time": "2026-09-30T15:07:29+00:00",
+   "end_time": "2026-09-30T16:05:28+00:00",
+   "updated_at": "2026-09-30T16:05:30.693Z",
+   "created_at": "2026-09-30T16:05:30.693Z",
+   "exercises": [
+    {
+     "index": 0,
+     "title": "Squat (Barbell)",
+     "notes": "",
+     "exercise_template_id": "D04AC939",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "warmup",
+       "weight_kg": 60,
+       "reps": 3,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 75,
+       "reps": 3,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 7,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "title": "Pause Squat (Barbell)",
+     "notes": "",
+     "exercise_template_id": "CE1054CE",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 70,
+       "reps": 5,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 70,
+       "reps": 5,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 7,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "title": "Pull Up",
+     "notes": "",
+     "exercise_template_id": "1B2B1E7C",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": null,
+       "reps": 7,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": null,
+       "reps": 7,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "title": "Straight Arm Lat Pulldown (Cable)",
+     "notes": "",
+     "exercise_template_id": "D2387AB1",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 25,
+       "reps": 8,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 35,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "normal",
+       "weight_kg": 35,
+       "reps": 8,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9.5,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "title": "Leg Extension (Machine)",
+     "notes": "Eerste 2 single leg, dus reps delen door 2",
+     "exercise_template_id": "75A4F6C4",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 30,
+       "reps": 20,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 8.5,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 32.5,
+       "reps": 16,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9.5,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "normal",
+       "weight_kg": 62.5,
+       "reps": 10,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9.5,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 5,
+     "title": "Seated Cable Row - Bar Grip",
+     "notes": "",
+     "exercise_template_id": "F1D60854",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 70,
+       "reps": 10,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 8.5,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 80,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 6,
+     "title": "Spider Curl (Dumbbell)",
+     "notes": "",
+     "exercise_template_id": "90427D4A",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 40,
+       "reps": 8,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 8,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 40,
+       "reps": 7,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "normal",
+       "weight_kg": 40,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 10,
+       "custom_metric": null
+      }
+     ]
+    }
+   ]
+  },
   {
    "id": "168c092a-447d-495d-b9e9-6176cb3e5330",
    "title": "SL 1 · Ma wk4 — Primaire Dip + Secundaire Pull-Up",
