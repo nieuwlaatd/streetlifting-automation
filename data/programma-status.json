@@ -1,5 +1,5 @@
 {
- "gegenereerd_op": "2026-10-03T10:25:56+00:00",
+ "gegenereerd_op": "2026-10-03T23:16:28+00:00",
  "vandaag": "2026-10-03",
  "weekdag": 5,
  "dagthema": null,
@@ -12,29 +12,29 @@
   "deload": false,
   "startdatum": "2026-09-07"
  },
- "lichaamsgewicht": 77.26,
+ "lichaamsgewicht": 77.28,
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-10-03T10:25:46+00:00",
+  "opgehaald": "2026-10-03T23:16:11+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
-  "gewicht_7d_kg": 77.26,
+  "gewicht_7d_kg": 77.28,
   "gewicht_vorige_7d_kg": 77.03,
-  "verandering_per_week_kg": 0.23,
+  "verandering_per_week_kg": 0.25,
   "nog_af_tot_73_kg": 4.3,
-  "vet_pct_7d": 17.54,
-  "kcal_7d": 2308.33,
-  "eiwit_7d_g": 136.0,
-  "eiwit_per_kg": 1.76,
-  "dagen_met_voeding_7d": 6,
-  "dagen_met_gewicht_7d": 5,
+  "vet_pct_7d": 17.55,
+  "kcal_7d": 2256.86,
+  "eiwit_7d_g": 130.29,
+  "eiwit_per_kg": 1.69,
+  "dagen_met_voeding_7d": 7,
+  "dagen_met_gewicht_7d": 6,
   "slaap_7d_uur": 8.6,
   "kortste_nacht_7d_uur": 7.9,
   "nachten_onder_6u_7d": 0,
   "verbrand_7d_kcal": 2698.0,
   "stappen_7d": 5799.0,
-  "energiebalans_7d_kcal": -435.33
+  "energiebalans_7d_kcal": -441.14
  },
  "stand": {
   "dip": {
@@ -77,7 +77,7 @@
      "reps": 6,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 51.5,
+     "e1rm": 51.6,
      "variant": null
     },
     {
@@ -422,7 +422,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-10-02",
+    "datum": "2026-10-03",
     "sets": 5,
     "reps": 4,
     "kg": 25.0
@@ -434,7 +434,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-10-02",
+    "datum": "2026-10-03",
     "sets": 5,
     "reps": 4,
     "kg": 32.5
@@ -446,7 +446,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-10-02",
+    "datum": "2026-10-03",
     "sets": 5,
     "reps": 5,
     "kg": 65.0
