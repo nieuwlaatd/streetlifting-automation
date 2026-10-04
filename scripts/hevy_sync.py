@@ -21,6 +21,7 @@ import urllib.error
 import urllib.request
 
 import herstel
+import notities
 import regelaar
 
 BASE = "https://api.hevyapp.com"
@@ -130,26 +131,40 @@ def alle_workouts(key):
 
 
 def percentage(reps, rpe, falen):
-    """Welk aandeel van het 1RM was deze set."""
+    """Welk aandeel van het 1RM was deze set.
+
+    De RPE telt mee: 80 kg x 5 op RPE 7 is een andere prestatie dan 80 x 5 tot
+    falen. Dylan traint zijn kernlifts bewust op RPE 6 tot 8, dus juist die
+    reps in reserve moeten in de schatting zitten; anders lijkt hij zwakker
+    dan hij is. De tabel loopt van RPE 6 tot 10. Daaronder wordt een stap
+    doorgetrokken tot RPE 5. Lager gaan we niet: zo ver van falen schat
+    niemand de reserve nog betrouwbaar in, en een te optimistische schatting
+    trekt elk voorgeschreven gewicht omhoog.
+    """
     reps = max(1, min(int(reps or 1), 8))
     if rpe is None:
         rpe = 10 if falen else None
     if rpe is None:                       # geen RPE: Epley
         return 1.0 / (1.0 + reps / 30.0)
-    rpe = max(6.0, min(float(rpe), 10.0))
+    rpe = max(5.0, min(float(rpe), 10.0))
     rij = RPE_TABEL[reps]
+    if rpe < 6:
+        stap = rij[7] - rij[6]
+        return rij[6] - stap * (6 - rpe)
     onder = int(rpe)
     if onder >= 10:
         return rij[10]
     return rij[onder] + (rij[onder + 1] - rij[onder]) * (rpe - onder)
 
 
-def e1rm(set_, bw, gebonden):
+def e1rm(set_, bw, gebonden, rpe=None):
+    """Geschat 1RM uit een set. rpe overschrijft het veld, bijvoorbeeld uit de notitie."""
     gewicht = float(set_.get("weight_kg") or 0)
     reps = set_.get("reps")
     if not reps:
         return None
-    pct = percentage(reps, set_.get("rpe"), set_.get("type") == "failure")
+    pct = percentage(reps, rpe if rpe is not None else set_.get("rpe"),
+                     set_.get("type") == "failure")
     schatting = (bw + gewicht) / pct if gebonden else gewicht / pct
     # Extrapolatie vanaf hoge reps overschat structureel: een set van 7 of 8
     # zegt meer over je uithoudingsvermogen dan over je maximum. Afwaarderen.
@@ -163,16 +178,23 @@ def e1rm(set_, bw, gebonden):
 
 
 def robuuste_e1rm(waarden):
-    """Mediaan van de drie hoogste, zodat een enkele uitschieter niet bepaalt.
+    """Gemiddelde van de twee beste SESSIES, niet van de beste sets.
 
-    Een losse zware single (of een set die te optimistisch als falen is
-    gelogd) trok het geschatte maximum eerder omhoog, en daarmee elk
-    voorgeschreven gewicht van die week.
+    waarden: lijst van (datum, e1rm). Per sessie telt alleen de beste set.
+
+    Voorheen was dit de mediaan van de drie hoogste sets. Die kwamen vaak uit
+    een en dezelfde sessie, en de beste set viel er dan altijd af. Bij een
+    lifter die niet tot falen gaat is de zwaarste set met een eerlijke RPE
+    juist de meest informatieve; door twee sessies te middelen telt die mee,
+    terwijl een enkele te optimistisch gelogde dag nog maar half weegt.
     """
     if not waarden:
         return None
-    top = sorted(waarden, reverse=True)[:3]
-    return top[len(top) // 2] if len(top) >= 3 else top[-1]
+    per_sessie = {}
+    for datum, v in waarden:
+        per_sessie[datum] = max(v, per_sessie.get(datum, v))
+    top = sorted(per_sessie.values(), reverse=True)[:2]
+    return round(sum(top) / len(top), 1)
 
 
 def afronden(x):
@@ -204,6 +226,7 @@ def target_op_week(lift, week):
 
 
 STATE_PAD = pathlib.Path("data") / "regelaar.json"
+REGELAAR_VERSIE = 2      # 2: beoordeling op RPE en e1RM, niet op sets en reps
 
 
 def lees_state():
@@ -295,7 +318,7 @@ def main():
     stand = {}
     for lift, titels in LIFTS.items():
         gebonden = lift in LICHAAMSGEBONDEN
-        sessies, recente_waarden = [], []
+        sessies, met_rpe, zonder_rpe = [], [], []
         for w in workouts:
             datum = (w.get("start_time") or "")[:10]
             if not datum:
@@ -306,31 +329,53 @@ def main():
                         t.lower() in (oef.get("title") or "").lower() for t in titels):
                     continue
                 met_band = "assisted" in (oef.get("title") or "").lower()
-                for s in oef.get("sets", []):
-                    if s.get("type") == "warmup" or not s.get("reps"):
-                        continue
+                werk = [s for s in oef.get("sets", [])
+                        if s.get("type") != "warmup" and s.get("reps")]
+                # Het RPE-veld in Hevy begint bij 6; lager staat in de notitie
+                # ("eerste was rpe 4"). Die notitie wint, net als in de Sheet.
+                rpes = notities.rpe_toewijzing(oef.get("notes") or "", len(werk),
+                                               [s.get("rpe") for s in werk])
+                for s, rpe in zip(werk, rpes):
                     # Een muscle-up met band, of zonder gelogd gewicht, is
                     # oefenen en geen lift. De sessie telt wel mee, anders lijkt
                     # het alsof er niet aan gewerkt wordt, maar er komt geen
                     # geschat maximum uit. Op 4 september leverden twee
                     # pogingen waarbij Dylan "meteen viel" anders +14,6 kg op.
                     oefenen = lift == "muscleup" and (met_band or s.get("weight_kg") is None)
-                    v = None if oefenen else e1rm(s, bw, gebonden)
+                    v = None if oefenen else e1rm(s, bw, gebonden, rpe)
                     if v is None and not oefenen:
                         continue
                     sessies.append({"datum": datum, "gewicht": s.get("weight_kg"),
-                                    "reps": s.get("reps"), "rpe": s.get("rpe"),
+                                    "reps": s.get("reps"), "rpe": rpe,
                                     "type": s.get("type"), "e1rm": v,
                                     "variant": ("met band" if met_band else "poging")
                                     if oefenen else None})
                     if d >= grens and v is not None:
-                        recente_waarden.append(v)
-        beste_recent = robuuste_e1rm(recente_waarden)
+                        # Een set zonder RPE en niet tot falen zegt alleen dat
+                        # het minstens zoveel was. Die telt pas als er niets
+                        # beters is, anders drukt een lichte set de schatting.
+                        heeft_rpe = rpe is not None or s.get("type") == "failure"
+                        (met_rpe if heeft_rpe else zonder_rpe).append((datum, v))
+        beste_recent = robuuste_e1rm(met_rpe or zonder_rpe)
         if beste_recent is None:
             beste_recent = UITGANG[lift]
         sessies.sort(key=lambda r: r["datum"])
+        # Welke sets de schatting dragen, zodat het rapport het kan uitleggen.
+        per_sessie = {}
+        for r in sessies:
+            if r["e1rm"] is None or r["datum"] < grens.isoformat():
+                continue
+            if r["rpe"] is None and r["type"] != "failure" and met_rpe:
+                continue
+            if r["e1rm"] > per_sessie.get(r["datum"], {}).get("e1rm", -1):
+                per_sessie[r["datum"]] = r
+        onderbouwing = sorted(per_sessie.values(), key=lambda r: -r["e1rm"])[:2]
         stand[lift] = {
             "e1rm": beste_recent,
+            "e1rm_onderbouwing": [
+                {"datum": r["datum"], "set": f"{r['gewicht']:g} kg x {r['reps']}"
+                 + (f" @ RPE {r['rpe']:g}" if r["rpe"] is not None else ""),
+                 "e1rm": r["e1rm"]} for r in onderbouwing if r["gewicht"] is not None],
             "bron": "hevy" if sessies else "uitgangswaarde",
             "target_nu": target_op_week(lift, max(pos["week"], 1)),
             "aantal_werksets_totaal": len(sessies),
@@ -343,6 +388,23 @@ def main():
 
     # ---- Terugkoppeling: was het vorige voorschrift te zwaar of te licht? ----
     state = lees_state()
+    if state.get("versie") != REGELAAR_VERSIE:
+        # Tot 4 oktober 2026 vergeleek de regelaar elke sessie met de sets en
+        # reps van het eigen schema hierboven (5x4, 5x5), terwijl Dylan Kajs
+        # schema traint (3x3, 3x6, 2x7). Elke sessie heette daardoor "0 van 5
+        # sets gehaald" en alle drie de factoren zaten op de ondergrens van
+        # 0,80, ook bij sets op RPE 6. Die factoren zeggen dus niets; opnieuw
+        # beginnen op 1,0 met de beoordeling op RPE.
+        for lift in ("dip", "pullup", "squat"):
+            oud = state.setdefault(lift, {})
+            if oud.get("factor", 1.0) != 1.0:
+                oud.setdefault("log", []).append({
+                    "datum": vandaag.isoformat(), "oordeel": "reset",
+                    "reden": "oude beoordeling vergeleek met het verkeerde schema "
+                             "(sets en reps i.p.v. RPE); factor terug naar 1,0",
+                    "nieuwe_factor": 1.0, "kg": None, "kg_volgens_plan": None})
+            oud["factor"] = 1.0
+        state["versie"] = REGELAAR_VERSIE
     terugkoppeling = {}
     for lift, titels in LIFTS.items():
         if lift == "muscleup":
@@ -359,7 +421,15 @@ def main():
             # tweede run op dezelfde dag de correctie dubbel toepassen.
             if sets_na and datum_na > al_beoordeeld:
                 notitie = regelaar.lees_notitie(notitie_tekst)
-                oordeel, reden = regelaar.beoordeel(vorig, sets_na, notitie)
+                gebonden = lift in LICHAAMSGEBONDEN
+                rpes = notities.rpe_toewijzing(notitie_tekst, len(sets_na),
+                                               [s.get("rpe") for s in sets_na])
+                schattingen = [e1rm(s, bw, gebonden, r)
+                               if (r is not None or s.get("type") == "failure") else None
+                               for s, r in zip(sets_na, rpes)]
+                oordeel, reden = regelaar.beoordeel(
+                    vorig, [dict(s, rpe=r) for s, r in zip(sets_na, rpes)], notitie,
+                    schattingen, stand[lift]["e1rm"])
                 if oordeel:
                     factor = regelaar.nieuwe_factor(factor, oordeel)
                     state.setdefault(lift, {})["laatste_beoordeelde_sessie"] = datum_na
@@ -429,15 +499,19 @@ def main():
             del log[:-20]
     schrijf_state(state)
 
-    # Nalevingscijfers over de afgelopen 7 dagen
-    week_grens = vandaag - dt.timedelta(days=7)
+    # Nalevingscijfers over de verslagweek: maandag tot en met de laatste zondag.
+    # Het weekrapport draait op maandagochtend; dan gaat het over gisteren en
+    # de zes dagen daarvoor, niet over een venster dat over twee weken valt.
+    verslag_zondag = vandaag - dt.timedelta(days=(vandaag.weekday() + 1) % 7)
+    week_grens = verslag_zondag - dt.timedelta(days=6)
     dipsets = pullsets = kern_totaal = kern_met_rpe = kern_falen = 0
-    sessiedagen = set()
+    sessiedagen, sessies_week = set(), []
     for w in workouts:
         datum = (w.get("start_time") or "")[:10]
-        if not datum or dt.date.fromisoformat(datum) < week_grens:
+        if not datum or not (week_grens <= dt.date.fromisoformat(datum) <= verslag_zondag):
             continue
         sessiedagen.add(datum)
+        sessies_week.append({"datum": datum, "titel": w.get("title")})
         for oef in w.get("exercises", []):
             titel = oef.get("title") or ""
             werk = [s for s in oef.get("sets", []) if s.get("type") != "warmup"]
@@ -479,6 +553,20 @@ def main():
         "voorschrift_deze_week": voorschrift,
         "terugkoppeling": terugkoppeling,
         "herstel": {"recent": herstel_dagen[:7], "oordeel": herstel_oordeel},
+        "verslagweek": {
+            **programma_positie(verslag_zondag),
+            "van": week_grens.isoformat(), "tot_en_met": verslag_zondag.isoformat(),
+            # Op welke dag een sessie viel zegt weinig: Dylan schuift. De titel
+            # van de routine (SL 1 = maandag van Kaj, enzovoort) zegt welke het was.
+            "sessies": sorted(sessies_week, key=lambda s: s["datum"]),
+        },
+        # Hiermee ziet het rapport of de data compleet is en of het al verstuurd is.
+        "laatste_training": max(((w.get("start_time") or "") for w in workouts), default=None),
+        "e1rm_methode": ("Per set: RPE-tabel (RTS), RPE uit het veld of uit de notitie, "
+                         "geldig van RPE 5 tot 10; bij dip, pull-up en muscle-up over "
+                         "lichaamsgewicht plus extra gewicht. Per lift: gemiddelde van de "
+                         "beste set uit de twee beste sessies van de laatste 6 weken. "
+                         "Sets zonder RPE tellen alleen als er geen sets met RPE zijn."),
         "afgelopen_7_dagen": {
             "sessies": len(sessiedagen),
             "dipwerksets": dipsets, "dipdoel": 10,
