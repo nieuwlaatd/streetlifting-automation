@@ -1,7 +1,7 @@
 {
- "gegenereerd_op": "2026-10-03T23:16:28+00:00",
- "vandaag": "2026-10-03",
- "weekdag": 5,
+ "gegenereerd_op": "2026-10-04T11:08:24+00:00",
+ "vandaag": "2026-10-04",
+ "weekdag": 6,
  "dagthema": null,
  "kernlift_vandaag": null,
  "positie": {
@@ -16,25 +16,25 @@
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-10-03T23:16:11+00:00",
+  "opgehaald": "2026-10-04T11:08:14+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
   "gewicht_7d_kg": 77.28,
-  "gewicht_vorige_7d_kg": 77.03,
-  "verandering_per_week_kg": 0.25,
+  "gewicht_vorige_7d_kg": 77.07,
+  "verandering_per_week_kg": 0.21,
   "nog_af_tot_73_kg": 4.3,
   "vet_pct_7d": 17.55,
-  "kcal_7d": 2256.86,
-  "eiwit_7d_g": 130.29,
-  "eiwit_per_kg": 1.69,
-  "dagen_met_voeding_7d": 7,
+  "kcal_7d": 2079.83,
+  "eiwit_7d_g": 124.5,
+  "eiwit_per_kg": 1.61,
+  "dagen_met_voeding_7d": 6,
   "dagen_met_gewicht_7d": 6,
   "slaap_7d_uur": 8.6,
   "kortste_nacht_7d_uur": 7.9,
   "nachten_onder_6u_7d": 0,
-  "verbrand_7d_kcal": 2698.0,
-  "stappen_7d": 5799.0,
-  "energiebalans_7d_kcal": -441.14
+  "verbrand_7d_kcal": 2664.71,
+  "stappen_7d": 5555.0,
+  "energiebalans_7d_kcal": -644.5
  },
  "stand": {
   "dip": {
@@ -463,13 +463,13 @@
   }
  },
  "afgelopen_7_dagen": {
-  "sessies": 4,
-  "dipwerksets": 11,
+  "sessies": 3,
+  "dipwerksets": 8,
   "dipdoel": 10,
-  "pullupwerksets": 11,
+  "pullupwerksets": 9,
   "pullupdoel": 7,
-  "kernsets": 26,
-  "kernsets_met_rpe": 25,
+  "kernsets": 16,
+  "kernsets_met_rpe": 16,
   "kernsets_tot_falen": 0
  },
  "totaal_nu": 228.0,

@@ -1,6 +1,13 @@
 {
  "lichaamsmetingen": [
   {
+   "id": 71972907,
+   "date": "2026-10-04",
+   "weight_kg": 77.3499984741211,
+   "fat_percent": 17.62,
+   "created_at": "2026-10-04T07:39:38.571Z"
+  },
+  {
    "id": 71903347,
    "date": "2026-10-03",
    "weight_kg": 77.4000015258789,
@@ -62,13 +69,6 @@
    "weight_kg": 77,
    "fat_percent": 17.42,
    "created_at": "2026-09-24T10:48:58.978Z"
-  },
-  {
-   "id": 70233802,
-   "date": "2026-09-22",
-   "weight_kg": 77.5,
-   "fat_percent": 17.71,
-   "created_at": "2026-09-23T06:53:02.735Z"
   }
  ],
  "workouts": [
