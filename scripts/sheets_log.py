@@ -34,6 +34,7 @@ import sys
 import urllib.error
 import urllib.request
 
+import hevy_routines
 import notities
 
 SHEET_ID = "1QGxPFQB17u9zDPNXMl74pcVUERlX2g7RwZBRk-Trpfo"
@@ -120,10 +121,14 @@ def zet_set(s, rpe=None):
     Bijvoorbeeld "10x9 @6". De RPE hoort bij de set en niet bij de oefening,
     dus die staat hier en niet alleen in de samenvattende kolom.
     """
-    g, reps = s.get("weight_kg"), s.get("reps")
-    if reps is None:
+    g, reps, sec = s.get("weight_kg"), s.get("reps"), s.get("duration_seconds")
+    if reps is None and sec:
+        # Een side plank telt seconden, geen reps. Zonder dit bleef de cel leeg.
+        basis = f"{g:g}kg {sec}s" if g else f"{sec}s"
+    elif reps is None:
         return ""
-    basis = f"{g:g}x{reps}" if g else f"BWx{reps}"
+    else:
+        basis = f"{g:g}x{reps}" if g else f"BWx{reps}"
     return f"{basis} @{rpe:g}" if rpe is not None else basis
 
 
@@ -167,15 +172,12 @@ def afwijking(plan, werk, hevy_titel):
 def kies_dag(workout, dagen):
     """Welke geplande dag hoort bij deze sessie?"""
     datum = dt.date.fromisoformat(workout["start_time"][:10])
-    titels = {o.get("title") for o in workout.get("exercises", [])}
+    gedaan = [kaj_namen(o) for o in workout.get("exercises", [])]
 
     def overlap(dag):
-        verwacht = set()
-        for o in dag["oefeningen"]:
-            for hevy_naam, kaj_namen in HEVY_NAAR_KAJ.items():
-                if o["naam"] in kaj_namen:
-                    verwacht.add(hevy_naam)
-        return len(titels & verwacht)
+        """Hoeveel oefeningen uit de sessie passen op een regel van deze dag."""
+        plan = {o["naam"].strip() for o in dag["oefeningen"]}
+        return sum(1 for namen in gedaan if plan & set(namen))
 
     def plausibel(dag):
         """Kan deze sessie bij deze geplande dag horen, qua datum?
@@ -301,6 +303,210 @@ def opmaak_netjes(svc, blad_ids, doelen):
             print(f"opmaak gelijkgetrokken in '{tab}': {len(verzoeken) - len(kolommen)} rijen.")
 
 
+def kaj_namen(oef):
+    """Onder welke namen uit Kajs schema kan deze Hevy-oefening vallen?
+
+    Eerst op template-id, uit dezelfde tabel waarmee de routines gebouwd worden:
+    een oefening die Dylan vanuit de routine logt matcht dan altijd, ook als
+    Hevy de titel anders schrijft. De titeltabel hierboven vangt de rest.
+    """
+    namen = list(HEVY_NAAR_KAJ.get(oef.get("title") or "", []))
+    template = oef.get("exercise_template_id")
+    for kaj, (tid, _) in hevy_routines.MAP.items():
+        if tid == template and kaj not in namen:
+            namen.append(kaj)
+    return namen
+
+
+def echte_sets(oef):
+    """Werksets waar echt iets in staat: reps, tijd of afstand."""
+    return [s for s in oef.get("sets", [])
+            if s.get("type") != "warmup"
+            and (s.get("reps") or s.get("duration_seconds") or s.get("distance_meters"))]
+
+
+def koppel(workout, dag):
+    """Zet elke Hevy-oefening op een regel van Kajs dag.
+
+    Drie uitkomsten per oefening:
+      - gepland:   matcht op naam of template met een regel uit het plan
+      - vervangen: matcht nergens op, maar staat in Hevy op de plek van een
+                   regel die niet gedaan is. Hevy houdt de volgorde van de
+                   routine aan, dus een oefening die Dylan in de routine
+                   verwisselt blijft tussen dezelfde buren staan. Op 1 oktober
+                   stond de reverse crunch zo na de knee tuck, precies waar de
+                   ab roll-out had moeten staan.
+      - extra:     geen plek vrij, dus buiten het plan erbij gedaan.
+
+    Geeft (toewijzing, vervangen, extra) terug: toewijzing is plan-index naar
+    Hevy-oefening, vervangen de set plan-indexen die een vervanger kregen.
+    """
+    plan = dag["oefeningen"]
+    oefeningen = workout.get("exercises", [])
+    toewijzing, plek, losse = {}, {}, []
+    for pos, oef in enumerate(oefeningen):
+        namen = kaj_namen(oef)
+        doel = next((i for i, o in enumerate(plan)
+                     if o["naam"].strip() in namen and i not in toewijzing), None)
+        if doel is None:
+            losse.append(pos)
+        else:
+            toewijzing[doel] = oef
+            plek[pos] = doel
+
+    vervangen, extra = set(), []
+    for pos in losse:
+        oef = oefeningen[pos]
+        if not echte_sets(oef) and not (oef.get("notes") or "").strip():
+            continue
+        vorige = max((plek[p] for p in plek if p < pos), default=-1)
+        volgende = min((plek[p] for p in plek if p > pos), default=len(plan))
+        vrij = [i for i in range(vorige + 1, volgende) if i not in toewijzing]
+        if vrij:
+            toewijzing[vrij[0]] = oef
+            plek[pos] = vrij[0]
+            vervangen.add(vrij[0])
+        else:
+            extra.append(oef)
+    return toewijzing, vervangen, extra
+
+
+HERSTELWOORDEN = ("slaap", "stappen", "moe ", "kcal", "eiwit", "rustpols")
+ALGEMENE_WOORDEN = {"competition", "paused", "tempo", "degree", "loaded", "assisted",
+                    "bodyweight", "grip", "cable", "band", "raised", "close", "sec"}
+
+
+def lees_beschrijving(tekst, plan):
+    """Notities uit het beschrijvingsveld van de sessie, per oefening.
+
+    Hevy gooit een oefening zonder afgevinkte set weg bij het opslaan, en de
+    notitie die erbij stond gaat mee. Wat Dylan over een overgeslagen oefening
+    kwijt wil, kan dus alleen in de beschrijving van de sessie:
+
+        Muscle-up: overgeslagen door elleboog
+        Ab roll out: vervangen door reverse crunch, buik nog beurs
+
+    Een regel met een dubbele punt wordt gekoppeld aan de plan-oefening waarvan
+    een kenmerkend woord voor de dubbele punt staat. Wat nergens bij past komt
+    als dagnotitie in de kopregel. Herstelgegevens (slaap, stappen) slaan we
+    over: die leest herstel.py al.
+    """
+    per_regel, dag = {}, []
+    if not tekst:
+        return per_regel, ""
+    for regel in re.split(r"[\n;]+", tekst):
+        regel = regel.strip(" -•\t")
+        if not regel or any(w in regel.lower() + " " for w in HERSTELWOORDEN):
+            continue
+        gekoppeld = False
+        if ":" in regel:
+            label, rest = regel.split(":", 1)
+            label_woorden = re.sub(r"[^a-z0-9 ]", " ", label.lower()).split()
+            for i, o in enumerate(plan):
+                woorden = {w for w in re.sub(r"[^a-z0-9 ]", " ", o["naam"].lower()).split()
+                           if len(w) >= 3 and w not in ALGEMENE_WOORDEN and not w[0].isdigit()}
+                if any(w in label_woorden for w in woorden):
+                    per_regel.setdefault(i, []).append(rest.strip())
+                    gekoppeld = True
+                    break
+        if not gekoppeld:
+            dag.append(regel)
+    return {i: " ".join(v) for i, v in per_regel.items()}, " ".join(dag)
+
+
+def regel_rpe(oef, werk):
+    """RPE per set (notitie wint van het veld) en de samenvattende tekst."""
+    per_set = notities.rpe_toewijzing(oef.get("notes") or "", len(werk),
+                                      [s.get("rpe") for s in werk])
+    rpes = [x for x in per_set if x is not None]
+    if not rpes:
+        return per_set, ""
+    if min(rpes) == max(rpes):
+        return per_set, f"{min(rpes):g}"
+    return per_set, f"{min(rpes):g}-{max(rpes):g}"
+
+
+def verslag_van(workout, dag, reden):
+    """Wat er op deze dag gepland stond en wat er gebeurde, per regel.
+
+    Dit is de bron voor zowel de Sheet als data/uitvoering.json, zodat het
+    weekrapport hetzelfde beeld krijgt als Kaj.
+    """
+    plan = dag["oefeningen"]
+    toewijzing, vervangen, extra = koppel(workout, dag)
+    uit_beschrijving, dagnotitie = lees_beschrijving(workout.get("description") or "", plan)
+    regels = []
+    for i, o in enumerate(plan):
+        oef = toewijzing.get(i)
+        notitie = " ".join(x.strip() for x in [
+            (oef or {}).get("notes") or "", uit_beschrijving.get(i, "")] if x.strip())
+        regel = {"rij": o["rij"], "plan": o["naam"].strip(),
+                 "voorschrift": f"{o['sets']}x{o['reps']}"
+                                + (f" RPE {o['rpe']}" if o.get("rpe") else "")
+                                + (f" {o['kg']} kg" if o.get("kg") else ""),
+                 "notitie": notities.samenvatting(notitie)}
+        werk = echte_sets(oef) if oef else []
+        if not werk:
+            regel.update(status="niet gedaan", sets=[], rpe="", afwijking="niet gedaan")
+            regels.append(regel)
+            continue
+        uit_notitie = notities.lees_setgewichten(oef.get("notes") or "", len(werk))
+        if uit_notitie and not any(s.get("weight_kg") for s in werk):
+            werk = [dict(s, weight_kg=g) for s, g in zip(werk, uit_notitie)]
+        per_set, rpe_tekst = regel_rpe(oef, werk)
+        if i in vervangen:
+            status, afw = "vervangen", f"vervangen door {oef.get('title')}"
+        else:
+            status, afw = "gedaan", afwijking(o, werk, oef.get("title"))
+        regel.update(status=status, uitgevoerd_als=oef.get("title"),
+                     sets=[zet_set(s, r) for s, r in zip(werk, per_set)],
+                     rpe=rpe_tekst, afwijking=afw)
+        regels.append(regel)
+
+    extra_tekst = []
+    for oef in extra:
+        werk = echte_sets(oef)
+        per_set = regel_rpe(oef, werk)[0] if werk else []
+        stuk = f"{oef.get('title')}: " + (", ".join(
+            zet_set(s, r) for s, r in zip(werk[:5], per_set[:5])) or "geen sets")
+        if (oef.get("notes") or "").strip():
+            stuk += f" ({notities.samenvatting(oef['notes'], 80)})"
+        extra_tekst.append(stuk)
+
+    return {
+        "plan_datum": dag.get("datum"), "dag": dag["dag"], "week": dag.get("week"),
+        "thema": dag.get("thema"), "sessie_datum": workout["start_time"][:10],
+        "sessie_titel": workout.get("title"), "gekoppeld_op": reden,
+        "oefeningen": regels, "extra": extra_tekst, "dagnotitie": dagnotitie,
+        "tabblad": dag["tabblad"], "kolom": dag.get("kolom", 1), "kop_rij": dag["kop_rij"],
+    }
+
+
+UITVOERING_PAD = "data/uitvoering.json"
+# Kopregelteksten die dit script zelf schrijft en dus ook mag bijwerken.
+EIGEN_KOPTEKST = ("Buiten plan gedaan", "Extra buiten plan", "Dagnotitie")
+
+
+def schrijf_uitvoering(verslagen):
+    """Bewaart de koppeling per geplande dag, zodat het weekrapport hem leest.
+
+    Oudere dagen blijven staan: dit script kijkt maar tien dagen terug.
+    """
+    try:
+        bestaand = json.load(open(UITVOERING_PAD, encoding="utf-8"))
+    except (FileNotFoundError, ValueError):
+        bestaand = {}
+    dagen = bestaand.get("dagen", {})
+    for v in verslagen:
+        dagen[f"{v['plan_datum']} {v['dag']}"] = {
+            k: v[k] for k in v if k not in ("tabblad", "kolom", "kop_rij")}
+    uit = {"bijgewerkt": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
+           "dagen": dict(sorted(dagen.items()))}
+    with open(UITVOERING_PAD, "w", encoding="utf-8") as f:
+        json.dump(uit, f, indent=1, ensure_ascii=False)
+    print(f"{UITVOERING_PAD}: {len(verslagen)} dag(en) bijgewerkt.")
+
+
 def main():
     overschrijf = "--overschrijf" in sys.argv
     key = os.environ.get("HEVY_API_KEY", "").strip()
@@ -318,9 +524,20 @@ def main():
         print(f"Geen sessies in de afgelopen {DAGEN_TERUG} dagen.")
         return
 
+    # Eerst koppelen, los van Google: het weekrapport heeft dit ook nodig als
+    # de Sheet even niet bereikbaar is of de service-account ontbreekt.
+    verslagen = []
+    for w in sorted(recent, key=lambda x: x["start_time"]):
+        dag, reden = kies_dag(w, dagen)
+        if dag is None:
+            print(f"  {w['start_time'][:10]} {w.get('title', '')!r}: overgeslagen ({reden})")
+            continue
+        verslagen.append(verslag_van(w, dag, reden))
+    schrijf_uitvoering(verslagen)
+
     client = sheets_client()
     if client is None:
-        print("GOOGLE_SERVICE_ACCOUNT niet gezet; overslaan. Zie de kop van dit bestand.")
+        print("GOOGLE_SERVICE_ACCOUNT niet gezet; Sheet overgeslagen. Zie de kop van dit bestand.")
         return
     svc = client.spreadsheets()
     meta = svc.get(spreadsheetId=SHEET_ID).execute()
@@ -331,75 +548,27 @@ def main():
     def cel(tab, rij, kol):
         if tab not in inhoud:
             inhoud[tab] = svc.values().get(spreadsheetId=SHEET_ID,
-                                           range=f"'{tab}'!A1:AZ200").execute().get("values", [])
+                                           range=f"'{tab}'!A1:CZ200").execute().get("values", [])
         waarden = inhoud[tab]
         r = waarden[rij - 1] if len(waarden) >= rij else []
         return (r[kol - 1] if len(r) >= kol else "") or ""
 
     updates, tekstcellen, opmaak = [], set(), set()
-    for w in sorted(recent, key=lambda x: x["start_time"]):
-        dag, reden = kies_dag(w, dagen)
-        datum = w["start_time"][:10]
-        if dag is None:
-            print(f"  {datum} {w.get('title','')!r}: overgeslagen ({reden})")
-            continue
-        b = Blok(dag)
-        kop = dag["kop_rij"] + 1                  # de OEFENING|SETS|... regel
+    for v in verslagen:
+        b = Blok({"tabblad": v["tabblad"], "kolom": v["kolom"]})
+        kop = v["kop_rij"] + 1                    # de OEFENING|SETS|... regel
         opmaak.add((b.tab, b.start, kop, True))
-
-        gebruikt, gevuld, buiten = set(), 0, []
-        for oef in w.get("exercises", []):
-            titel = oef.get("title") or ""
-            kandidaten = HEVY_NAAR_KAJ.get(titel, [])
-            doel = next((o for o in dag["oefeningen"]
-                         if o["naam"] in kandidaten and o["rij"] not in gebruikt), None)
-            if doel is None:
-                # Een oefening die niet in het plan staat. Die stil laten
-                # vallen zou de coach een vertekend beeld geven: hij ziet dan
-                # een lege regel en niet dat er iets anders voor in de plaats
-                # kwam. Hij komt daarom onder de dagkop te staan.
-                los = [s for s in oef.get("sets", []) if s.get("type") != "warmup"]
-                if los:
-                    buiten.append(f"{titel}: "
-                                  + ", ".join(zet_set(s, s.get("rpe")) for s in los[:5]))
-                continue
-            gebruikt.add(doel["rij"])
-
-            werk = [s for s in oef.get("sets", []) if s.get("type") != "warmup"]
-            if not werk:
-                continue
-            notitie_tekst = oef.get("notes") or ""
-
-            # De notitie draagt data die Hevy niet kwijt kan: gewicht bij een
-            # oefening zonder gewichtsveld, of een RPE onder de 6. Die telt dus
-            # even zwaar mee als de velden zelf.
-            uit_notitie = notities.lees_setgewichten(notitie_tekst, len(werk))
-            if uit_notitie and not any(s.get("weight_kg") for s in werk):
-                werk = [dict(s, weight_kg=g) for s, g in zip(werk, uit_notitie)]
-
-            # RPE per set, in dezelfde volgorde als de setkolommen. Noemt de
-            # notitie een RPE, dan wint die van het gelogde veld: het RPE-veld
-            # in Hevy begint bij 6, dus alles daaronder staat in de notitie.
-            per_set = notities.rpe_toewijzing(notitie_tekst, len(werk),
-                                              [s.get("rpe") for s in werk])
-            rpes = [x for x in per_set if x is not None]
-            if not rpes:
-                rpe_tekst = ""
-            elif min(rpes) == max(rpes):
-                rpe_tekst = f"{min(rpes):g}"
-            else:
-                rpe_tekst = f"{min(rpes):g}-{max(rpes):g}"
-            waarden = [zet_set(s, r) for s, r in zip(werk[:5], per_set[:5])]
-
-            rij = doel["rij"]
+        gevuld = 0
+        for r in v["oefeningen"]:
+            rij = r["rij"]
             # Geldig is "6", "8.5" of een bereik als "6-8". Een datum uit een
             # oudere versie van dit script heeft twee streepjes en valt af.
             al_ingevuld = bool(re.fullmatch(
                 r"\d{1,2}([.,]\d)?(\s*-\s*\d{1,2}([.,]\d)?)?", str(cel(b.tab, rij, b.rpe)).strip()))
-            if rpe_tekst and (overschrijf or not al_ingevuld):
-                updates.append({"range": b.a1(b.rpe, rij), "values": [[rpe_tekst]]})
+            if r["rpe"] and (overschrijf or not al_ingevuld):
+                updates.append({"range": b.a1(b.rpe, rij), "values": [[r["rpe"]]]})
                 tekstcellen.add((b.tab, b.rpe, rij))
-            for i, waarde in enumerate(waarden):
+            for i, waarde in enumerate(r["sets"][:5]):
                 kolom = b.eerste_set + i
                 if waarde and (overschrijf or not cel(b.tab, rij, kolom)):
                     updates.append({"range": b.a1(kolom, rij), "values": [[waarde]]})
@@ -407,22 +576,35 @@ def main():
             # De afwijkingkolom: waar de uitvoering van het plan afweek. Kaj ziet
             # zo in een oogopslag het verschil tussen wat hij vroeg en wat er gebeurde.
             if overschrijf or not cel(b.tab, rij, b.afwijking):
-                updates.append({"range": b.a1(b.afwijking, rij),
-                                "values": [[afwijking(doel, werk, titel)]]})
-            if notitie_tekst and (overschrijf or not cel(b.tab, rij, b.notitie)):
-                updates.append({"range": b.a1(b.notitie, rij),
-                                "values": [[notities.samenvatting(notitie_tekst)]]})
+                updates.append({"range": b.a1(b.afwijking, rij), "values": [[r["afwijking"]]]})
+            # Ook bij een overgeslagen oefening: juist dan wil Kaj weten waarom.
+            if r["notitie"] and (overschrijf or not cel(b.tab, rij, b.notitie)):
+                updates.append({"range": b.a1(b.notitie, rij), "values": [[r["notitie"]]]})
             opmaak.add((b.tab, b.start, rij, False))
 
-        if buiten and (overschrijf or not cel(b.tab, dag["kop_rij"], b.notitie)):
-            updates.append({"range": b.a1(b.notitie, dag["kop_rij"]),
-                            "values": [["Buiten plan gedaan — " + " | ".join(buiten)]]})
-            opmaak.add((b.tab, b.start, dag["kop_rij"], False))
+        # Extra oefeningen en losse dagnotities komen in de kopregel van de dag.
+        # Een tekst die dit script er eerder zelf neerzette mag bijgewerkt worden;
+        # wat een mens er typte blijft staan.
+        kopdelen = []
+        if v["extra"]:
+            kopdelen.append("Extra buiten plan: " + " | ".join(v["extra"]))
+        if v["dagnotitie"]:
+            kopdelen.append("Dagnotitie: " + notities.samenvatting(v["dagnotitie"]))
+        huidig = str(cel(b.tab, v["kop_rij"], b.notitie)).strip()
+        if kopdelen and (overschrijf or not huidig or huidig.startswith(EIGEN_KOPTEKST)):
+            nieuw = " — ".join(kopdelen)
+            if nieuw != huidig:
+                updates.append({"range": b.a1(b.notitie, v["kop_rij"]), "values": [[nieuw]]})
+            opmaak.add((b.tab, b.start, v["kop_rij"], False))
+        elif not kopdelen and huidig.startswith("Buiten plan gedaan"):
+            # Een oefening die eerder als 'buiten plan' bovenaan kwam, staat nu
+            # als vervanger op zijn eigen regel. De oude kopregel klopt niet meer.
+            updates.append({"range": b.a1(b.notitie, v["kop_rij"]), "values": [[""]]})
         if overschrijf or not cel(b.tab, kop, b.afwijking):
             updates.append({"range": b.a1(b.afwijking, kop, b.notitie),
                             "values": [["AFWIJKING VAN PLAN", "NOTITIE DYLAN"]]})
-        print(f"  {datum} {w.get('title','')!r} -> {dag['dag']} {dag.get('datum')} "
-              f"(kolom {letter(b.start)}, gekoppeld op {reden}), {gevuld} cellen")
+        print(f"  {v['sessie_datum']} {v['sessie_titel']!r} -> {v['dag']} {v['plan_datum']} "
+              f"(kolom {letter(b.start)}, gekoppeld op {v['gekoppeld_op']}), {gevuld} setcellen")
 
     # Een dag die nog moet komen hoort leeg te zijn. Staat er toch iets, dan is
     # een sessie eerder aan de verkeerde dag gekoppeld en wordt dat rechtgezet.
