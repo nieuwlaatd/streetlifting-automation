@@ -11,10 +11,10 @@ Drie bronnen van terugkoppeling, in volgorde van betrouwbaarheid:
    Workout Settings > RPE Tracking.
 2. Een notitie bij de oefening. Schrijf "RPE 8" of "RIR 2", of gewoon
    Nederlands: "te zwaar", "gedropt", "makkelijk", "kon meer".
-3. Wat er objectief gebeurde: alle voorgeschreven sets en reps gehaald op het
-   voorgeschreven gewicht, of niet.
+3. Of er tot falen is getraind.
 
-Bron 3 werkt altijd, ook zonder dat je iets invult.
+Gehaalde sets en reps tellen niet meer mee: Dylan volgt Kajs schema, dat
+andere sets en reps voorschrijft dan het referentieschema in hevy_sync.
 """
 
 import re
@@ -30,7 +30,7 @@ BOVENGRENS = 1.15
 TE_ZWAAR = [
     "te zwaar", "te moeilijk", "te veel", "gedropt", "dropped", "verlaagd",
     "niet gehaald", "niet gelukt", "lukte niet", "kon niet", "gefaald",
-    "moest laten zakken", "haalde het niet", "was zwaar",
+    "moest laten zakken", "haalde het niet", "was zwaar", "ging niet meer",
 ]
 TE_MAKKELIJK = [
     "te makkelijk", "te licht", "makkelijk", "voelde licht", "kon meer",
@@ -70,28 +70,30 @@ def lees_notitie(tekst):
     return {"rpe": rpe, "signaal": signaal, "tekst": tekst.strip()[:200]}
 
 
-def beoordeel(voorschrift, sets, notitie):
+def beoordeel(voorschrift, sets, notitie, schattingen=None, basis=None):
     """Was de vorige sessie te zwaar, goed, of te makkelijk?
 
     voorschrift: dict met sets, reps, kg
     sets:        werksets van die dag, elk met weight_kg, reps, rpe, type
     notitie:     uitkomst van lees_notitie
+    schattingen: e1RM per set op basis van de RPE (None waar geen RPE is)
+    basis:       het e1RM waar het voorschrift op rustte
+
+    WAAROM NIET MEER OP SETS EN REPS
+    De routines in Hevy komen uit Kajs schema, niet uit het voorschrift van
+    hevy_sync. Dylan draait dus andere sets en reps dan hier staan, en kiest
+    het gewicht zelf op RPE. "0 van 5 sets gehaald" betekende daardoor niets:
+    het zei alleen dat hij 3x3 deed in plaats van 5x4. Tot 4 oktober 2026
+    duwde dat alle drie de lifts naar de ondergrens, ook bij sets op RPE 6.
+
+    De vraag is nu: wat zegt de zwaarste set met een RPE over het maximum?
+    Een set ver onder falen telt daarbij niet als bewijs dat het te zwaar was.
+    Te zwaar is alleen wat er echt op wijst: falen, RPE 9,5 of hoger, of een
+    notitie die het zegt.
     """
-    if not voorschrift or not sets:
+    if not sets:
         return None, "geen vergelijkbare sessie gevonden"
 
-    doel_kg = float(voorschrift["kg"])
-    doel_reps = int(voorschrift["reps"])
-    doel_sets = int(voorschrift["sets"])
-
-    # Een set telt als gehaald bij minstens het voorgeschreven gewicht
-    # (2 procent speling voor afronding op de stang) en de volle reps.
-    gehaald = sum(
-        1 for s in sets
-        if float(s.get("weight_kg") or 0) >= doel_kg * 0.98
-        and int(s.get("reps") or 0) >= doel_reps
-    )
-    zwaarder = any(float(s.get("weight_kg") or 0) > doel_kg * 1.02 for s in sets)
     rpes = [float(s["rpe"]) for s in sets if s.get("rpe") is not None]
     if notitie["rpe"] is not None:
         rpes.append(notitie["rpe"])
@@ -101,21 +103,20 @@ def beoordeel(voorschrift, sets, notitie):
     # Te zwaar wint altijd: liever een week te licht dan een blessure.
     if notitie["signaal"] == "te_zwaar":
         return "te_zwaar", "notitie meldt dat het te zwaar was"
+    if falen:
+        return "te_zwaar", "set tot falen gelogd"
     if hoogste_rpe is not None and hoogste_rpe >= 9.5:
         return "te_zwaar", f"RPE {hoogste_rpe:g} gelogd, boven het plafond"
-    if gehaald <= doel_sets - 2:
-        return "te_zwaar", f"{gehaald} van {doel_sets} sets gehaald"
 
     if notitie["signaal"] == "te_makkelijk":
         return "te_makkelijk", "notitie meldt dat het makkelijk ging"
-    if gehaald >= doel_sets and hoogste_rpe is not None and hoogste_rpe <= 6.5:
-        return "te_makkelijk", f"alles gehaald op RPE {hoogste_rpe:g}"
-    if gehaald >= doel_sets and zwaarder and not falen:
-        return "te_makkelijk", "zwaarder gedraaid dan voorgeschreven en gehaald"
-
-    if gehaald >= doel_sets:
-        return "goed", "voorschrift gehaald"
-    return "goed", f"{gehaald} van {doel_sets} sets, binnen de marge"
+    beste = max((v for v in (schattingen or []) if v is not None), default=None)
+    if beste is None:
+        return None, "geen RPE gelogd, niets te beoordelen"
+    if basis and beste >= basis * 1.03:
+        return "te_makkelijk", (f"beste set rekent uit op e1RM {beste:g}, "
+                                f"boven de schatting van {basis:g}")
+    return "goed", f"binnen het plafond, beste set rekent uit op e1RM {beste:g}"
 
 
 def nieuwe_factor(huidig, oordeel):
