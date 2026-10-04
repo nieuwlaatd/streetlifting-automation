@@ -103,9 +103,17 @@
     "nieuwe_factor": 0.8,
     "kg": 25.0,
     "kg_volgens_plan": 30.0
+   },
+   {
+    "datum": "2026-10-04",
+    "oordeel": "te_zwaar",
+    "reden": "0 van 5 sets gehaald",
+    "nieuwe_factor": 0.8,
+    "kg": 25.0,
+    "kg_volgens_plan": 30.0
    }
   ],
-  "laatste_beoordeelde_sessie": "2026-10-01"
+  "laatste_beoordeelde_sessie": "2026-10-04"
  },
  "pullup": {
   "factor": 0.8,
@@ -203,9 +211,17 @@
     "nieuwe_factor": 0.8,
     "kg": 32.5,
     "kg_volgens_plan": 40.0
+   },
+   {
+    "datum": "2026-10-04",
+    "oordeel": "te_zwaar",
+    "reden": "0 van 5 sets gehaald",
+    "nieuwe_factor": 0.8,
+    "kg": 32.5,
+    "kg_volgens_plan": 40.0
    }
   ],
-  "laatste_beoordeelde_sessie": "2026-10-01"
+  "laatste_beoordeelde_sessie": "2026-10-04"
  },
  "squat": {
   "factor": 0.8,
@@ -303,8 +319,16 @@
     "nieuwe_factor": 0.8,
     "kg": 65.0,
     "kg_volgens_plan": 82.5
+   },
+   {
+    "datum": "2026-10-04",
+    "oordeel": "te_zwaar",
+    "reden": "2 van 5 sets gehaald",
+    "nieuwe_factor": 0.8,
+    "kg": 65.0,
+    "kg_volgens_plan": 82.5
    }
   ],
-  "laatste_beoordeelde_sessie": "2026-10-01"
+  "laatste_beoordeelde_sessie": "2026-10-04"
  }
 }

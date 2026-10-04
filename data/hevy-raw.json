@@ -73,6 +73,279 @@
  ],
  "workouts": [
   {
+   "id": "c9c80108-1aea-4d9e-af77-c25639705b62",
+   "title": "SL 4 · Za wk4 — Primaire Muscle-Up + Squat + Secundaire Dip + Tertiaire Pull-Up",
+   "routine_id": "2cfde704-2660-4f50-aeb1-a98b4ca265b9",
+   "description": "",
+   "start_time": "2026-10-04T08:52:02+00:00",
+   "end_time": "2026-10-04T10:26:05+00:00",
+   "updated_at": "2026-10-04T15:53:51.817Z",
+   "created_at": "2026-10-04T15:53:51.817Z",
+   "exercises": [
+    {
+     "index": 0,
+     "title": "Squat (Barbell)",
+     "notes": "Was vrij moe dus laatste set ging niet meer",
+     "exercise_template_id": "D04AC939",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 75,
+       "reps": 5,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 80,
+       "reps": 5,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 7,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "normal",
+       "weight_kg": 90,
+       "reps": 3,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "title": "Squat (Barbell)",
+     "notes": "",
+     "exercise_template_id": "D04AC939",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 60,
+       "reps": 7,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 60,
+       "reps": 7,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "title": "Chest Dip (Weighted)",
+     "notes": "",
+     "exercise_template_id": "29472BE1",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 25,
+       "reps": 3,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 7,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "title": "Chest Dip (Weighted)",
+     "notes": "",
+     "exercise_template_id": "29472BE1",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 15,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 15,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "title": "Pull Up (Weighted)",
+     "notes": "",
+     "exercise_template_id": "729237D1",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 15,
+       "reps": 5,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 15,
+       "reps": 5,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 7,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 5,
+     "title": "Lying Leg Curl (Machine)",
+     "notes": "",
+     "exercise_template_id": "B8127AD1",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 45,
+       "reps": 9,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9.5,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 40,
+       "reps": 8,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 10,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 6,
+     "title": "Seated Cable Row - Bar Wide Grip",
+     "notes": "",
+     "exercise_template_id": "C3BCABB3",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 80,
+       "reps": 10,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 80,
+       "reps": 8,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9.5,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 7,
+     "title": "Triceps Rope Pushdown",
+     "notes": "",
+     "exercise_template_id": "94B7239B",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 27.5,
+       "reps": 11,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9.5,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 27.5,
+       "reps": 8,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9.5,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 8,
+     "title": "Side Plank",
+     "notes": "",
+     "exercise_template_id": "E3EDA509",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": null,
+       "reps": null,
+       "distance_meters": null,
+       "duration_seconds": 34,
+       "rpe": null,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": null,
+       "reps": null,
+       "distance_meters": null,
+       "duration_seconds": 34,
+       "rpe": null,
+       "custom_metric": null
+      }
+     ]
+    }
+   ]
+  },
+  {
    "id": "11599dbe-32e8-4d72-b90b-1aed2bc7a945",
    "title": "SL 3 · Do wk4 — Primaire Pull-Up + Tertiaire Dip + Squat",
    "routine_id": "0c61bdb9-9ed4-4053-a8bd-02b8f4007bd1",
