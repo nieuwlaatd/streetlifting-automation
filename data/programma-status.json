@@ -1,5 +1,5 @@
 {
- "gegenereerd_op": "2026-10-04T19:37:24+00:00",
+ "gegenereerd_op": "2026-10-04T23:30:00+00:00",
  "vandaag": "2026-10-04",
  "weekdag": 6,
  "dagthema": null,
@@ -16,7 +16,7 @@
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-10-04T19:37:09+00:00",
+  "opgehaald": "2026-10-04T23:29:50+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
   "gewicht_7d_kg": 77.28,
