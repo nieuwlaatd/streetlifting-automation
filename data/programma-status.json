@@ -1,5 +1,5 @@
 {
- "gegenereerd_op": "2026-10-04T17:36:24+00:00",
+ "gegenereerd_op": "2026-10-04T17:37:49+00:00",
  "vandaag": "2026-10-04",
  "weekdag": 6,
  "dagthema": null,
@@ -16,7 +16,7 @@
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-10-04T17:36:13+00:00",
+  "opgehaald": "2026-10-04T17:37:39+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
   "gewicht_7d_kg": 77.28,
@@ -39,6 +39,18 @@
  "stand": {
   "dip": {
    "e1rm": 55.2,
+   "e1rm_onderbouwing": [
+    {
+     "datum": "2026-09-14",
+     "set": "30 kg x 3 @ RPE 6",
+     "e1rm": 55.2
+    },
+    {
+     "datum": "2026-09-22",
+     "set": "30 kg x 4 @ RPE 7",
+     "e1rm": 55.2
+    }
+   ],
    "bron": "hevy",
    "target_nu": 56.7,
    "aantal_werksets_totaal": 58,
@@ -123,7 +135,19 @@
    }
   },
   "pullup": {
-   "e1rm": 67.5,
+   "e1rm": 70.2,
+   "e1rm_onderbouwing": [
+    {
+     "datum": "2026-10-01",
+     "set": "50 kg x 3 @ RPE 8",
+     "e1rm": 70.7
+    },
+    {
+     "datum": "2026-09-29",
+     "set": "30 kg x 5 @ RPE 5",
+     "e1rm": 69.7
+    }
+   ],
    "bron": "hevy",
    "target_nu": 61.7,
    "aantal_werksets_totaal": 73,
@@ -133,9 +157,9 @@
      "datum": "2026-09-29",
      "gewicht": 30,
      "reps": 5,
-     "rpe": 6,
+     "rpe": 5.0,
      "type": "normal",
-     "e1rm": 63.9,
+     "e1rm": 69.7,
      "variant": null
     },
     {
@@ -208,7 +232,19 @@
    }
   },
   "squat": {
-   "e1rm": 105.3,
+   "e1rm": 106.2,
+   "e1rm_onderbouwing": [
+    {
+     "datum": "2026-09-26",
+     "set": "90 kg x 5 @ RPE 8",
+     "e1rm": 111.1
+    },
+    {
+     "datum": "2026-09-12",
+     "set": "80 kg x 5 @ RPE 7",
+     "e1rm": 101.3
+    }
+   ],
    "bron": "hevy",
    "target_nu": 106.7,
    "aantal_werksets_totaal": 60,
@@ -294,6 +330,7 @@
   },
   "muscleup": {
    "e1rm": null,
+   "e1rm_onderbouwing": [],
    "bron": "hevy",
    "target_nu": 0.0,
    "aantal_werksets_totaal": 10,
@@ -383,11 +420,11 @@
    "sets": 5,
    "reps": 4,
    "percentage": 81.0,
-   "kg": 25.0,
+   "kg": 30.0,
    "rpe_plafond": 8,
-   "correctiefactor": 0.8,
+   "correctiefactor": 1.0,
    "kg_volgens_plan": 30.0,
-   "afwijking_kg": -5.0,
+   "afwijking_kg": 0.0,
    "bijgesteld_omdat": null,
    "sessie_gemist": false
   },
@@ -395,11 +432,11 @@
    "sets": 5,
    "reps": 4,
    "percentage": 81.0,
-   "kg": 32.5,
+   "kg": 42.5,
    "rpe_plafond": 8,
-   "correctiefactor": 0.8,
-   "kg_volgens_plan": 40.0,
-   "afwijking_kg": -7.5,
+   "correctiefactor": 1.0,
+   "kg_volgens_plan": 42.5,
+   "afwijking_kg": 0.0,
    "bijgesteld_omdat": null,
    "sessie_gemist": false
   },
@@ -407,18 +444,18 @@
    "sets": 5,
    "reps": 5,
    "percentage": 78.0,
-   "kg": 65.0,
+   "kg": 82.5,
    "rpe_plafond": 8,
-   "correctiefactor": 0.8,
+   "correctiefactor": 1.0,
    "kg_volgens_plan": 82.5,
-   "afwijking_kg": -17.5,
+   "afwijking_kg": 0.0,
    "bijgesteld_omdat": null,
    "sessie_gemist": false
   }
  },
  "terugkoppeling": {
   "dip": {
-   "factor": 0.8,
+   "factor": 1.0,
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
@@ -430,7 +467,7 @@
    "gemist": false
   },
   "pullup": {
-   "factor": 0.8,
+   "factor": 1.0,
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
@@ -442,7 +479,7 @@
    "gemist": false
   },
   "squat": {
-   "factor": 0.8,
+   "factor": 1.0,
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
@@ -462,6 +499,36 @@
    "gebaseerd_op": null
   }
  },
+ "verslagweek": {
+  "week": 4,
+  "cyclusweek": 4,
+  "blok": 1,
+  "voor_start": false,
+  "deload": false,
+  "startdatum": "2026-09-07",
+  "van": "2026-09-28",
+  "tot_en_met": "2026-10-04",
+  "sessies": [
+   {
+    "datum": "2026-09-29",
+    "titel": "SL 1 · Ma wk4 — Primaire Dip + Secundaire Pull-Up"
+   },
+   {
+    "datum": "2026-09-30",
+    "titel": "SL 2 · Di wk4 — Secundaire Squat + Muscle up"
+   },
+   {
+    "datum": "2026-10-01",
+    "titel": "SL 3 · Do wk4 — Primaire Pull-Up + Tertiaire Dip + Squat"
+   },
+   {
+    "datum": "2026-10-04",
+    "titel": "SL 4 · Za wk4 — Primaire Muscle-Up + Squat + Secundaire Dip + Tertiaire Pull-Up"
+   }
+  ]
+ },
+ "laatste_training": "2026-10-04T08:52:02+00:00",
+ "e1rm_methode": "Per set: RPE-tabel (RTS), RPE uit het veld of uit de notitie, geldig van RPE 5 tot 10; bij dip, pull-up en muscle-up over lichaamsgewicht plus extra gewicht. Per lift: gemiddelde van de beste set uit de twee beste sessies van de laatste 6 weken. Sets zonder RPE tellen alleen als er geen sets met RPE zijn.",
  "afgelopen_7_dagen": {
   "sessies": 4,
   "dipwerksets": 11,
@@ -472,6 +539,6 @@
   "kernsets_met_rpe": 26,
   "kernsets_tot_falen": 0
  },
- "totaal_nu": 228.0,
+ "totaal_nu": 231.6,
  "totaal_doel": 367
 }

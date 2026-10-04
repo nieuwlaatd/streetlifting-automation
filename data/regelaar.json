@@ -1,11 +1,11 @@
 {
  "dip": {
-  "factor": 0.8,
+  "factor": 1.0,
   "laatste_voorschrift": {
    "datum": "2026-10-04",
    "sets": 5,
    "reps": 4,
-   "kg": 25.0
+   "kg": 30.0
   },
   "log": [
    {
@@ -111,17 +111,25 @@
     "nieuwe_factor": 0.8,
     "kg": 25.0,
     "kg_volgens_plan": 30.0
+   },
+   {
+    "datum": "2026-10-04",
+    "oordeel": "reset",
+    "reden": "oude beoordeling vergeleek met het verkeerde schema (sets en reps i.p.v. RPE); factor terug naar 1,0",
+    "nieuwe_factor": 1.0,
+    "kg": null,
+    "kg_volgens_plan": null
    }
   ],
   "laatste_beoordeelde_sessie": "2026-10-04"
  },
  "pullup": {
-  "factor": 0.8,
+  "factor": 1.0,
   "laatste_voorschrift": {
    "datum": "2026-10-04",
    "sets": 5,
    "reps": 4,
-   "kg": 32.5
+   "kg": 42.5
   },
   "log": [
    {
@@ -219,17 +227,25 @@
     "nieuwe_factor": 0.8,
     "kg": 32.5,
     "kg_volgens_plan": 40.0
+   },
+   {
+    "datum": "2026-10-04",
+    "oordeel": "reset",
+    "reden": "oude beoordeling vergeleek met het verkeerde schema (sets en reps i.p.v. RPE); factor terug naar 1,0",
+    "nieuwe_factor": 1.0,
+    "kg": null,
+    "kg_volgens_plan": null
    }
   ],
   "laatste_beoordeelde_sessie": "2026-10-04"
  },
  "squat": {
-  "factor": 0.8,
+  "factor": 1.0,
   "laatste_voorschrift": {
    "datum": "2026-10-04",
    "sets": 5,
    "reps": 5,
-   "kg": 65.0
+   "kg": 82.5
   },
   "log": [
    {
@@ -327,8 +343,17 @@
     "nieuwe_factor": 0.8,
     "kg": 65.0,
     "kg_volgens_plan": 82.5
+   },
+   {
+    "datum": "2026-10-04",
+    "oordeel": "reset",
+    "reden": "oude beoordeling vergeleek met het verkeerde schema (sets en reps i.p.v. RPE); factor terug naar 1,0",
+    "nieuwe_factor": 1.0,
+    "kg": null,
+    "kg_volgens_plan": null
    }
   ],
   "laatste_beoordeelde_sessie": "2026-10-04"
- }
+ },
+ "versie": 2
 }
