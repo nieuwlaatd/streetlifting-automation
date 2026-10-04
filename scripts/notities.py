@@ -155,6 +155,24 @@ def rpe_toewijzing(tekst, aantal_sets, gelogd):
                 uit[i] = waarde
         return uit
 
+    # "Eerste rpe 5", "eerste was rpe 3 of 4, de tweede was rpe 5": een
+    # rangtelwoord VOOR de RPE. Dat geldt alleen voor die set. Eerder viel dit
+    # door naar "één waarde geldt overal", waardoor "Eerste rpe 5" op
+    # 19 september ook de 80 x 5 op RPE 8 tot RPE 5 maakte.
+    per_set = re.findall(
+        r"\b(eerste|1e|1ste|tweede|2e|2de|derde|3e|3de|vierde|4e|vijfde|5e|laatste|leste)"
+        r"(?:\s+set)?(?:\s+(?:was|op|ging|met))*\s+rpe\s*:?\s*"
+        r"(\d{1,2}(?:[.,]\d)?)(?:\s*(?:of|-|/|à|a)\s*(\d{1,2}(?:[.,]\d)?))?", t)
+    if per_set:
+        for woord, a, b in per_set:
+            i = aantal_sets - 1 if woord in LAATSTE else ORDINAAL.get(woord)
+            # "rpe 3 of 4": de hoogste. Een hogere RPE geeft een lagere
+            # schatting, en bij twijfel liever te voorzichtig.
+            waarde = max(float(x.replace(",", ".")) for x in (a, b) if x)
+            if i is not None and i < aantal_sets and 1 <= waarde <= 10:
+                uit[i] = waarde
+        return uit
+
     # "laatste twee", "eerste drie": een aaneengesloten staart of kop.
     staart = re.search(r"\blaatste\s+(\w+)", t)
     kop = re.search(r"\beerste\s+(\w+)", t)
