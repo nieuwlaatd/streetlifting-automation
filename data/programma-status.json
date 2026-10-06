@@ -1,9 +1,9 @@
 {
- "gegenereerd_op": "2026-10-05T12:18:48+00:00",
- "vandaag": "2026-10-05",
- "weekdag": 0,
- "dagthema": "Dip zwaar",
- "kernlift_vandaag": "dip",
+ "gegenereerd_op": "2026-10-06T01:23:30+00:00",
+ "vandaag": "2026-10-06",
+ "weekdag": 1,
+ "dagthema": null,
+ "kernlift_vandaag": null,
  "positie": {
   "week": 5,
   "cyclusweek": 5,
@@ -16,25 +16,25 @@
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-10-05T12:18:36+00:00",
+  "opgehaald": "2026-10-06T01:23:18+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
   "gewicht_7d_kg": 77.02,
-  "gewicht_vorige_7d_kg": 77.31,
-  "verandering_per_week_kg": -0.29,
+  "gewicht_vorige_7d_kg": 77.34,
+  "verandering_per_week_kg": -0.32,
   "nog_af_tot_73_kg": 4.0,
   "vet_pct_7d": 17.4,
-  "kcal_7d": 1811.29,
-  "eiwit_7d_g": 114.86,
-  "eiwit_per_kg": 1.49,
-  "dagen_met_voeding_7d": 7,
+  "kcal_7d": 1837.0,
+  "eiwit_7d_g": 115.83,
+  "eiwit_per_kg": 1.5,
+  "dagen_met_voeding_7d": 6,
   "dagen_met_gewicht_7d": 6,
-  "slaap_7d_uur": 8.65,
+  "slaap_7d_uur": 8.57,
   "kortste_nacht_7d_uur": 7.9,
   "nachten_onder_6u_7d": 0,
-  "verbrand_7d_kcal": 2801.14,
-  "stappen_7d": 6436.86,
-  "energiebalans_7d_kcal": -989.86
+  "verbrand_7d_kcal": 2821.14,
+  "stappen_7d": 6351.14,
+  "energiebalans_7d_kcal": -1021.17
  },
  "stand": {
   "dip": {
@@ -459,10 +459,10 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-10-04",
-    "sets": 5,
+    "datum": "2026-10-05",
+    "sets": 4,
     "reps": 4,
-    "kg": 30.0
+    "kg": 35.0
    },
    "gemist": false
   },
@@ -471,10 +471,10 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-10-04",
-    "sets": 5,
+    "datum": "2026-10-05",
+    "sets": 4,
     "reps": 4,
-    "kg": 42.5
+    "kg": 47.5
    },
    "gemist": false
   },
@@ -483,10 +483,10 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-10-04",
+    "datum": "2026-10-05",
     "sets": 5,
     "reps": 5,
-    "kg": 82.5
+    "kg": 85.0
    },
    "gemist": false
   }
