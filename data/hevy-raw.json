@@ -73,6 +73,280 @@
  ],
  "workouts": [
   {
+   "id": "706064b0-d3c8-41d4-a5b2-596ff02afbae",
+   "title": "SL 1 · Ma wk5 — Primaire Dip + Secundaire Pull-Up",
+   "routine_id": "7efd22ce-6d43-48f5-bc6b-3e0b21d5c9ea",
+   "description": "",
+   "start_time": "2026-10-06T15:00:49+00:00",
+   "end_time": "2026-10-06T16:22:37+00:00",
+   "updated_at": "2026-10-06T16:22:41.336Z",
+   "created_at": "2026-10-06T16:22:41.336Z",
+   "exercises": [
+    {
+     "index": 0,
+     "title": "Chest Dip (Weighted)",
+     "notes": null,
+     "exercise_template_id": "29472BE1",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 40,
+       "reps": 3,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 8.5,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 40,
+       "reps": 3,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "normal",
+       "weight_kg": 40,
+       "reps": 3,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "title": "Chest Dip (Weighted)",
+     "notes": null,
+     "exercise_template_id": "29472BE1",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 20,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 25,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 8,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "normal",
+       "weight_kg": 25,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 8.5,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "title": "Chin Up (Weighted)",
+     "notes": null,
+     "exercise_template_id": "023943F1",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 32.5,
+       "reps": 5,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 7,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 35,
+       "reps": 5,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 8,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "normal",
+       "weight_kg": 37.5,
+       "reps": 5,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "title": "Incline Bench Press (Dumbbell)",
+     "notes": "Was gesloopt bij de 2e set en wss te weinig rust.",
+     "exercise_template_id": "07B38369",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 52,
+       "reps": 8,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 52,
+       "reps": 3,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "normal",
+       "weight_kg": 40,
+       "reps": 9,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "title": "Single Arm Lateral Raise (Cable)",
+     "notes": "Rechter schouder voelde heel zwaar, dus gewicht gedropped voor 2e set",
+     "exercise_template_id": "DE68C825",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 7.5,
+       "reps": 12,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9.5,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 5,
+       "reps": 20,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 8.5,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 5,
+     "title": "Crunch (Machine)",
+     "notes": "Knee raises was weer bezet",
+     "exercise_template_id": "EB43ADD4",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 47.5,
+       "reps": 7,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 45,
+       "reps": 7,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 6,
+     "title": "Skullcrusher (Dumbbell)",
+     "notes": null,
+     "exercise_template_id": "68F8A292",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 20,
+       "reps": 8,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 20,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 10,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 7,
+     "title": "Plate Loaded Knee Raise",
+     "notes": null,
+     "exercise_template_id": "e625db58-286f-40a5-855a-f1ef4f5f2a82",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 10,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9,
+       "custom_metric": null
+      }
+     ]
+    }
+   ]
+  },
+  {
    "id": "c9c80108-1aea-4d9e-af77-c25639705b62",
    "title": "SL 4 · Za wk4 — Primaire Muscle-Up + Squat + Secundaire Dip + Tertiaire Pull-Up",
    "routine_id": "2cfde704-2660-4f50-aeb1-a98b4ca265b9",
@@ -124,7 +398,7 @@
     {
      "index": 1,
      "title": "Squat (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D04AC939",
      "superset_id": null,
      "sets": [
@@ -153,7 +427,7 @@
     {
      "index": 2,
      "title": "Chest Dip (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "29472BE1",
      "superset_id": null,
      "sets": [
@@ -172,7 +446,7 @@
     {
      "index": 3,
      "title": "Chest Dip (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "29472BE1",
      "superset_id": null,
      "sets": [
@@ -201,7 +475,7 @@
     {
      "index": 4,
      "title": "Pull Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "729237D1",
      "superset_id": null,
      "sets": [
@@ -230,7 +504,7 @@
     {
      "index": 5,
      "title": "Lying Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B8127AD1",
      "superset_id": null,
      "sets": [
@@ -259,7 +533,7 @@
     {
      "index": 6,
      "title": "Seated Cable Row - Bar Wide Grip",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "C3BCABB3",
      "superset_id": null,
      "sets": [
@@ -288,7 +562,7 @@
     {
      "index": 7,
      "title": "Triceps Rope Pushdown",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "94B7239B",
      "superset_id": null,
      "sets": [
@@ -317,7 +591,7 @@
     {
      "index": 8,
      "title": "Side Plank",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "E3EDA509",
      "superset_id": null,
      "sets": [
@@ -358,7 +632,7 @@
     {
      "index": 0,
      "title": "Pull Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "729237D1",
      "superset_id": null,
      "sets": [
@@ -397,7 +671,7 @@
     {
      "index": 1,
      "title": "Pull Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "729237D1",
      "superset_id": null,
      "sets": [
@@ -416,7 +690,7 @@
     {
      "index": 2,
      "title": "Chest Dip (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "29472BE1",
      "superset_id": null,
      "sets": [
@@ -445,7 +719,7 @@
     {
      "index": 3,
      "title": "Bench Press (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "79D0BB3A",
      "superset_id": null,
      "sets": [
@@ -474,7 +748,7 @@
     {
      "index": 4,
      "title": "Pause Squat (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "CE1054CE",
      "superset_id": null,
      "sets": [
@@ -513,7 +787,7 @@
     {
      "index": 5,
      "title": "Cable Fly Crossovers",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "651F844C",
      "superset_id": null,
      "sets": [
@@ -571,7 +845,7 @@
     {
      "index": 7,
      "title": "Reverse Crunch",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "7952B5CD",
      "superset_id": null,
      "sets": [
@@ -612,7 +886,7 @@
     {
      "index": 0,
      "title": "Squat (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D04AC939",
      "superset_id": null,
      "sets": [
@@ -641,7 +915,7 @@
     {
      "index": 1,
      "title": "Pause Squat (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "CE1054CE",
      "superset_id": null,
      "sets": [
@@ -670,7 +944,7 @@
     {
      "index": 2,
      "title": "Pull Up",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "1B2B1E7C",
      "superset_id": null,
      "sets": [
@@ -699,7 +973,7 @@
     {
      "index": 3,
      "title": "Straight Arm Lat Pulldown (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D2387AB1",
      "superset_id": null,
      "sets": [
@@ -777,7 +1051,7 @@
     {
      "index": 5,
      "title": "Seated Cable Row - Bar Grip",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "F1D60854",
      "superset_id": null,
      "sets": [
@@ -806,7 +1080,7 @@
     {
      "index": 6,
      "title": "Spider Curl (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "90427D4A",
      "superset_id": null,
      "sets": [
@@ -857,7 +1131,7 @@
     {
      "index": 0,
      "title": "Chest Dip (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "29472BE1",
      "superset_id": null,
      "sets": [
@@ -896,7 +1170,7 @@
     {
      "index": 1,
      "title": "Chest Dip (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "29472BE1",
      "superset_id": null,
      "sets": [
@@ -974,7 +1248,7 @@
     {
      "index": 3,
      "title": "Incline Bench Press (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "07B38369",
      "superset_id": null,
      "sets": [
@@ -1032,7 +1306,7 @@
     {
      "index": 5,
      "title": "Plate Loaded Knee Raise",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "e625db58-286f-40a5-855a-f1ef4f5f2a82",
      "superset_id": null,
      "sets": [
@@ -1112,7 +1386,7 @@
     {
      "index": 0,
      "title": "Squat (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D04AC939",
      "superset_id": null,
      "sets": [
@@ -1151,7 +1425,7 @@
     {
      "index": 1,
      "title": "Squat (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D04AC939",
      "superset_id": null,
      "sets": [
@@ -1180,7 +1454,7 @@
     {
      "index": 2,
      "title": "Chest Dip (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "29472BE1",
      "superset_id": null,
      "sets": [
@@ -1199,7 +1473,7 @@
     {
      "index": 3,
      "title": "Chest Dip (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "29472BE1",
      "superset_id": null,
      "sets": [
@@ -1228,7 +1502,7 @@
     {
      "index": 4,
      "title": "Pull Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "729237D1",
      "superset_id": null,
      "sets": [
@@ -1257,7 +1531,7 @@
     {
      "index": 5,
      "title": "Lying Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B8127AD1",
      "superset_id": null,
      "sets": [
@@ -1286,7 +1560,7 @@
     {
      "index": 6,
      "title": "Seated Cable Row - Bar Wide Grip",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "C3BCABB3",
      "superset_id": null,
      "sets": [
@@ -1315,7 +1589,7 @@
     {
      "index": 7,
      "title": "Triceps Rope Pushdown",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "94B7239B",
      "superset_id": null,
      "sets": [
@@ -1354,7 +1628,7 @@
     {
      "index": 8,
      "title": "Side Plank",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "E3EDA509",
      "superset_id": null,
      "sets": [
@@ -1395,7 +1669,7 @@
     {
      "index": 0,
      "title": "Pull Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "729237D1",
      "superset_id": null,
      "sets": [
@@ -1434,7 +1708,7 @@
     {
      "index": 1,
      "title": "Pull Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "729237D1",
      "superset_id": null,
      "sets": [
@@ -1453,7 +1727,7 @@
     {
      "index": 2,
      "title": "Chest Dip (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "29472BE1",
      "superset_id": null,
      "sets": [
@@ -1482,7 +1756,7 @@
     {
      "index": 3,
      "title": "Bench Press (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "79D0BB3A",
      "superset_id": null,
      "sets": [
@@ -1511,7 +1785,7 @@
     {
      "index": 4,
      "title": "Cable Fly Crossovers",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "651F844C",
      "superset_id": null,
      "sets": [
@@ -1540,7 +1814,7 @@
     {
      "index": 5,
      "title": "Cable Knee Tuck",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "daa1345e-d274-4b11-b584-c4b8472d876d",
      "superset_id": null,
      "sets": [
@@ -1579,7 +1853,7 @@
     {
      "index": 6,
      "title": "Ab Wheel",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "99D5F10E",
      "superset_id": null,
      "sets": [
@@ -1608,7 +1882,7 @@
     {
      "index": 7,
      "title": "Cable Twist (Down to up)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "92D858EA",
      "superset_id": null,
      "sets": [
@@ -1639,7 +1913,7 @@
     {
      "index": 0,
      "title": "Squat (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D04AC939",
      "superset_id": null,
      "sets": [
@@ -1658,7 +1932,7 @@
     {
      "index": 1,
      "title": "Pause Squat (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "CE1054CE",
      "superset_id": null,
      "sets": [
@@ -1687,7 +1961,7 @@
     {
      "index": 2,
      "title": "Pull Up",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "1B2B1E7C",
      "superset_id": null,
      "sets": [
@@ -1716,7 +1990,7 @@
     {
      "index": 3,
      "title": "Straight Arm Lat Pulldown (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D2387AB1",
      "superset_id": null,
      "sets": [
@@ -1794,7 +2068,7 @@
     {
      "index": 5,
      "title": "Seated Cable Row - Bar Grip",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "F1D60854",
      "superset_id": null,
      "sets": [
@@ -1823,7 +2097,7 @@
     {
      "index": 6,
      "title": "Spider Curl (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "90427D4A",
      "superset_id": null,
      "sets": [
@@ -1874,7 +2148,7 @@
     {
      "index": 0,
      "title": "Chest Dip (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "29472BE1",
      "superset_id": null,
      "sets": [
@@ -1913,7 +2187,7 @@
     {
      "index": 1,
      "title": "Chest Dip (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "29472BE1",
      "superset_id": null,
      "sets": [
@@ -1952,7 +2226,7 @@
     {
      "index": 2,
      "title": "Chin Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "023943F1",
      "superset_id": null,
      "sets": [
@@ -1991,7 +2265,7 @@
     {
      "index": 3,
      "title": "Incline Bench Press (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "07B38369",
      "superset_id": null,
      "sets": [
@@ -2030,7 +2304,7 @@
     {
      "index": 4,
      "title": "Single Arm Lateral Raise (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "DE68C825",
      "superset_id": null,
      "sets": [
@@ -2059,7 +2333,7 @@
     {
      "index": 5,
      "title": "Plate Loaded Knee Raise",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "e625db58-286f-40a5-855a-f1ef4f5f2a82",
      "superset_id": null,
      "sets": [
@@ -2098,7 +2372,7 @@
     {
      "index": 6,
      "title": "Skullcrusher (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "68F8A292",
      "superset_id": null,
      "sets": [
@@ -2178,7 +2452,7 @@
     {
      "index": 1,
      "title": "Squat (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D04AC939",
      "superset_id": null,
      "sets": [
@@ -2226,7 +2500,7 @@
     {
      "index": 3,
      "title": "Chest Dip (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "29472BE1",
      "superset_id": null,
      "sets": [
@@ -2255,7 +2529,7 @@
     {
      "index": 4,
      "title": "Chest Dip (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "29472BE1",
      "superset_id": null,
      "sets": [
@@ -2284,7 +2558,7 @@
     {
      "index": 5,
      "title": "Pull Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "729237D1",
      "superset_id": null,
      "sets": [
@@ -2313,7 +2587,7 @@
     {
      "index": 6,
      "title": "Seated Cable Row - Bar Wide Grip",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "C3BCABB3",
      "superset_id": null,
      "sets": [
@@ -2393,7 +2667,7 @@
     {
      "index": 1,
      "title": "Pull Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "729237D1",
      "superset_id": null,
      "sets": [
@@ -2412,7 +2686,7 @@
     {
      "index": 2,
      "title": "Chest Dip (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "29472BE1",
      "superset_id": null,
      "sets": [
@@ -2441,7 +2715,7 @@
     {
      "index": 3,
      "title": "Bench Press (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "79D0BB3A",
      "superset_id": null,
      "sets": [
@@ -2470,7 +2744,7 @@
     {
      "index": 4,
      "title": "Pause Squat (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "CE1054CE",
      "superset_id": null,
      "sets": [
@@ -2509,7 +2783,7 @@
     {
      "index": 5,
      "title": "Cable Fly Crossovers",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "651F844C",
      "superset_id": null,
      "sets": [
@@ -2538,7 +2812,7 @@
     {
      "index": 6,
      "title": "Cable Knee Tuck",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "daa1345e-d274-4b11-b584-c4b8472d876d",
      "superset_id": null,
      "sets": [
@@ -2579,7 +2853,7 @@
     {
      "index": 0,
      "title": "Squat (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D04AC939",
      "superset_id": null,
      "sets": [
@@ -2608,7 +2882,7 @@
     {
      "index": 1,
      "title": "Pause Squat (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "CE1054CE",
      "superset_id": null,
      "sets": [
@@ -2676,7 +2950,7 @@
     {
      "index": 3,
      "title": "Straight Arm Lat Pulldown (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D2387AB1",
      "superset_id": null,
      "sets": [
@@ -2715,7 +2989,7 @@
     {
      "index": 4,
      "title": "Leg Extension (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "75A4F6C4",
      "superset_id": null,
      "sets": [
@@ -2754,7 +3028,7 @@
     {
      "index": 5,
      "title": "Seated Cable Row - Bar Grip",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "F1D60854",
      "superset_id": null,
      "sets": [
@@ -2783,7 +3057,7 @@
     {
      "index": 6,
      "title": "Preacher Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "1E9A6B8E",
      "superset_id": null,
      "sets": [
@@ -2822,7 +3096,7 @@
     {
      "index": 7,
      "title": "Torso Rotation",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "FBB62888",
      "superset_id": null,
      "sets": [
@@ -2853,7 +3127,7 @@
     {
      "index": 0,
      "title": "Chest Dip (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "29472BE1",
      "superset_id": null,
      "sets": [
@@ -2980,7 +3254,7 @@
     {
      "index": 3,
      "title": "Incline Bench Press (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "07B38369",
      "superset_id": null,
      "sets": [
@@ -3019,7 +3293,7 @@
     {
      "index": 4,
      "title": "Single Arm Lateral Raise (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "DE68C825",
      "superset_id": null,
      "sets": [
@@ -3089,7 +3363,7 @@
     {
      "index": 0,
      "title": "Squat (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D04AC939",
      "superset_id": null,
      "sets": [
@@ -3128,7 +3402,7 @@
     {
      "index": 1,
      "title": "Squat (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D04AC939",
      "superset_id": null,
      "sets": [
@@ -3157,7 +3431,7 @@
     {
      "index": 2,
      "title": "Band Assisted Muscle-Up",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "f2734cb1-6a7a-4801-80c5-6d948b342c49",
      "superset_id": null,
      "sets": [
@@ -3206,7 +3480,7 @@
     {
      "index": 3,
      "title": "Chest Dip (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "29472BE1",
      "superset_id": null,
      "sets": [
@@ -3225,7 +3499,7 @@
     {
      "index": 4,
      "title": "Chest Dip (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "29472BE1",
      "superset_id": null,
      "sets": [
@@ -3283,7 +3557,7 @@
     {
      "index": 6,
      "title": "Lying Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B8127AD1",
      "superset_id": null,
      "sets": [
@@ -3322,7 +3596,7 @@
     {
      "index": 7,
      "title": "Seated Cable Row - Bar Wide Grip",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "C3BCABB3",
      "superset_id": null,
      "sets": [
@@ -3351,7 +3625,7 @@
     {
      "index": 8,
      "title": "Triceps Rope Pushdown",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "94B7239B",
      "superset_id": null,
      "sets": [
@@ -3461,7 +3735,7 @@
     {
      "index": 1,
      "title": "Pull Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "729237D1",
      "superset_id": null,
      "sets": [
@@ -3509,7 +3783,7 @@
     {
      "index": 3,
      "title": "Bench Press (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "79D0BB3A",
      "superset_id": null,
      "sets": [
@@ -3577,7 +3851,7 @@
     {
      "index": 5,
      "title": "Chest Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "78683336",
      "superset_id": null,
      "sets": [
@@ -3606,7 +3880,7 @@
     {
      "index": 6,
      "title": "Crunch (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "EB43ADD4",
      "superset_id": null,
      "sets": [
@@ -3685,7 +3959,7 @@
     {
      "index": 0,
      "title": "Squat (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D04AC939",
      "superset_id": null,
      "sets": [
@@ -3733,7 +4007,7 @@
     {
      "index": 2,
      "title": "Pull Up",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "1B2B1E7C",
      "superset_id": null,
      "sets": [
@@ -3880,7 +4154,7 @@
     {
      "index": 5,
      "title": "Seated Cable Row - Bar Grip",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "F1D60854",
      "superset_id": null,
      "sets": [
@@ -3919,7 +4193,7 @@
     {
      "index": 6,
      "title": "Spider Curl (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "90427D4A",
      "superset_id": null,
      "sets": [
@@ -3970,7 +4244,7 @@
     {
      "index": 0,
      "title": "Chest Dip (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "29472BE1",
      "superset_id": null,
      "sets": [
@@ -4009,7 +4283,7 @@
     {
      "index": 1,
      "title": "Chest Dip (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "29472BE1",
      "superset_id": null,
      "sets": [
@@ -4097,7 +4371,7 @@
     {
      "index": 3,
      "title": "Incline Bench Press (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "07B38369",
      "superset_id": null,
      "sets": [
@@ -4136,7 +4410,7 @@
     {
      "index": 4,
      "title": "Single Arm Lateral Raise (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "DE68C825",
      "superset_id": null,
      "sets": [
@@ -4204,7 +4478,7 @@
     {
      "index": 6,
      "title": "Skullcrusher (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "68F8A292",
      "superset_id": null,
      "sets": [
@@ -4245,7 +4519,7 @@
     {
      "index": 0,
      "title": "Pull Up",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "1B2B1E7C",
      "superset_id": null,
      "sets": [
@@ -4363,7 +4637,7 @@
     {
      "index": 2,
      "title": "Chest Dip",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "6FCD7755",
      "superset_id": null,
      "sets": [
@@ -4402,7 +4676,7 @@
     {
      "index": 3,
      "title": "Chest Dip (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "29472BE1",
      "superset_id": null,
      "sets": [
@@ -4451,7 +4725,7 @@
     {
      "index": 4,
      "title": "Pull Up",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "1B2B1E7C",
      "superset_id": null,
      "sets": [
@@ -4490,7 +4764,7 @@
     {
      "index": 5,
      "title": "Single Arm Lateral Raise (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "DE68C825",
      "superset_id": null,
      "sets": [
@@ -4519,7 +4793,7 @@
     {
      "index": 6,
      "title": "Hammer Curl (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "7E3BC8B6",
      "superset_id": null,
      "sets": [
@@ -4548,7 +4822,7 @@
     {
      "index": 7,
      "title": "Triceps Rope Pushdown",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "94B7239B",
      "superset_id": null,
      "sets": [
@@ -4587,7 +4861,7 @@
     {
      "index": 8,
      "title": "Crunch (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "EB43ADD4",
      "superset_id": null,
      "sets": [
@@ -4628,7 +4902,7 @@
     {
      "index": 0,
      "title": "Squat (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D04AC939",
      "superset_id": null,
      "sets": [
@@ -4717,7 +4991,7 @@
     {
      "index": 1,
      "title": "Hip Thrust (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "68CE0B9B",
      "superset_id": null,
      "sets": [
@@ -4766,7 +5040,7 @@
     {
      "index": 2,
      "title": "Lying Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B8127AD1",
      "superset_id": null,
      "sets": [
@@ -4834,7 +5108,7 @@
     {
      "index": 4,
      "title": "Standing Calf Raise (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "E05C2C38",
      "superset_id": null,
      "sets": [
@@ -5032,7 +5306,7 @@
     {
      "index": 3,
      "title": "Behind the Back Curl (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "2DBCA395",
      "superset_id": null,
      "sets": [
@@ -5061,7 +5335,7 @@
     {
      "index": 4,
      "title": "Lying Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B8127AD1",
      "superset_id": null,
      "sets": [
@@ -5100,7 +5374,7 @@
     {
      "index": 5,
      "title": "Hanging Leg Raise",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "F8356514",
      "superset_id": null,
      "sets": [
@@ -5119,7 +5393,7 @@
     {
      "index": 6,
      "title": "Crunch (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "EB43ADD4",
      "superset_id": null,
      "sets": [
@@ -5150,7 +5424,7 @@
     {
      "index": 0,
      "title": "Chest Dip (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "29472BE1",
      "superset_id": null,
      "sets": [
@@ -5199,7 +5473,7 @@
     {
      "index": 1,
      "title": "Bench Press (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "79D0BB3A",
      "superset_id": null,
      "sets": [
@@ -5228,7 +5502,7 @@
     {
      "index": 2,
      "title": "Chest Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "78683336",
      "superset_id": null,
      "sets": [
@@ -5257,7 +5531,7 @@
     {
      "index": 3,
      "title": "Lateral Raise (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "BE289E45",
      "superset_id": 0,
      "sets": [
@@ -5286,7 +5560,7 @@
     {
      "index": 4,
      "title": "Triceps Rope Pushdown",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "94B7239B",
      "superset_id": 0,
      "sets": [
@@ -5335,7 +5609,7 @@
     {
      "index": 5,
      "title": "Crunch (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "EB43ADD4",
      "superset_id": null,
      "sets": [
@@ -5376,7 +5650,7 @@
     {
      "index": 0,
      "title": "Chest Dip (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "29472BE1",
      "superset_id": null,
      "sets": [
@@ -5445,7 +5719,7 @@
     {
      "index": 1,
      "title": "Pull Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "729237D1",
      "superset_id": null,
      "sets": [
@@ -5484,7 +5758,7 @@
     {
      "index": 2,
      "title": "Shoulder Press (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "878CD1D0",
      "superset_id": null,
      "sets": [
@@ -5523,7 +5797,7 @@
     {
      "index": 3,
      "title": "Incline Bench Press (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "07B38369",
      "superset_id": null,
      "sets": [
@@ -5542,7 +5816,7 @@
     {
      "index": 4,
      "title": "Chest Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "78683336",
      "superset_id": null,
      "sets": [
@@ -5642,7 +5916,7 @@
     {
      "index": 1,
      "title": "Seated Cable Row - V Grip (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "0393F233",
      "superset_id": 0,
      "sets": [
@@ -5681,7 +5955,7 @@
     {
      "index": 2,
      "title": "Seated Cable Row - Bar Grip",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "F1D60854",
      "superset_id": 0,
      "sets": [
@@ -5710,7 +5984,7 @@
     {
      "index": 3,
      "title": "Rear Delt Reverse Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D8281C62",
      "superset_id": null,
      "sets": [
@@ -5739,7 +6013,7 @@
     {
      "index": 4,
      "title": "Lat Pulldown (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "6A6C31A5",
      "superset_id": null,
      "sets": [
@@ -5790,7 +6064,7 @@
     {
      "index": 0,
      "title": "Lying Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B8127AD1",
      "superset_id": null,
      "sets": [
@@ -5829,7 +6103,7 @@
     {
      "index": 1,
      "title": "Hip Thrust (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "68CE0B9B",
      "superset_id": null,
      "sets": [
@@ -5868,7 +6142,7 @@
     {
      "index": 2,
      "title": "Leg Press (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "C7973E0E",
      "superset_id": null,
      "sets": [
@@ -5907,7 +6181,7 @@
     {
      "index": 3,
      "title": "Crunch (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "EB43ADD4",
      "superset_id": null,
      "sets": [
@@ -5936,7 +6210,7 @@
     {
      "index": 4,
      "title": "Torso Rotation",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "FBB62888",
      "superset_id": null,
      "sets": [
@@ -5965,7 +6239,7 @@
     {
      "index": 5,
      "title": "Hip Abduction (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "F4B4C6EE",
      "superset_id": null,
      "sets": [
@@ -5994,7 +6268,7 @@
     {
      "index": 6,
      "title": "Hip Adduction (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "8BEBFED6",
      "superset_id": null,
      "sets": [
@@ -6023,7 +6297,7 @@
     {
      "index": 7,
      "title": "Leg Extension (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "75A4F6C4",
      "superset_id": null,
      "sets": [
@@ -6064,7 +6338,7 @@
     {
      "index": 0,
      "title": "Lying Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B8127AD1",
      "superset_id": null,
      "sets": [
@@ -6103,7 +6377,7 @@
     {
      "index": 1,
      "title": "Hip Thrust (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "68CE0B9B",
      "superset_id": null,
      "sets": [
@@ -6152,7 +6426,7 @@
     {
      "index": 2,
      "title": "Back Extension (Weighted Hyperextension)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "091737FA",
      "superset_id": null,
      "sets": [
@@ -6191,7 +6465,7 @@
     {
      "index": 3,
      "title": "Ab Wheel",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "99D5F10E",
      "superset_id": null,
      "sets": [
@@ -6220,7 +6494,7 @@
     {
      "index": 4,
      "title": "Torso Rotation",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "FBB62888",
      "superset_id": null,
      "sets": [
@@ -6249,7 +6523,7 @@
     {
      "index": 5,
      "title": "Leg Raise Parallel Bars",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "0482DA98",
      "superset_id": null,
      "sets": [
@@ -6280,7 +6554,7 @@
     {
      "index": 0,
      "title": "Pull Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "729237D1",
      "superset_id": null,
      "sets": [
@@ -6319,7 +6593,7 @@
     {
      "index": 1,
      "title": "Seated Cable Row - V Grip (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "0393F233",
      "superset_id": null,
      "sets": [
@@ -6358,7 +6632,7 @@
     {
      "index": 2,
      "title": "Rear Delt Reverse Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D8281C62",
      "superset_id": null,
      "sets": [
@@ -6387,7 +6661,7 @@
     {
      "index": 3,
      "title": "Lat Pulldown (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "6A6C31A5",
      "superset_id": null,
      "sets": [
@@ -6428,7 +6702,7 @@
     {
      "index": 0,
      "title": "Bench Press (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "79D0BB3A",
      "superset_id": null,
      "sets": [
@@ -6457,7 +6731,7 @@
     {
      "index": 1,
      "title": "Chest Dip (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "29472BE1",
      "superset_id": null,
      "sets": [
@@ -6496,7 +6770,7 @@
     {
      "index": 2,
      "title": "Chest Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "78683336",
      "superset_id": null,
      "sets": [
@@ -6525,7 +6799,7 @@
     {
      "index": 3,
      "title": "Incline Bench Press (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "07B38369",
      "superset_id": null,
      "sets": [
@@ -6566,7 +6840,7 @@
     {
      "index": 0,
      "title": "Shoulder Press (Machine Plates)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "059E835D",
      "superset_id": null,
      "sets": [
@@ -6615,7 +6889,7 @@
     {
      "index": 1,
      "title": "Skullcrusher (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "68F8A292",
      "superset_id": 0,
      "sets": [
@@ -6654,7 +6928,7 @@
     {
      "index": 2,
      "title": "Hammer Curl (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "7E3BC8B6",
      "superset_id": 0,
      "sets": [
@@ -6683,7 +6957,7 @@
     {
      "index": 3,
      "title": "Single Arm Lateral Raise (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "DE68C825",
      "superset_id": null,
      "sets": [
@@ -6712,7 +6986,7 @@
     {
      "index": 4,
      "title": "Behind the Back Curl (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "2DBCA395",
      "superset_id": null,
      "sets": [
@@ -6731,7 +7005,7 @@
     {
      "index": 5,
      "title": "Bicep Curl (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "ADA8623C",
      "superset_id": null,
      "sets": [
@@ -6750,7 +7024,7 @@
     {
      "index": 6,
      "title": "Triceps Rope Pushdown",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "94B7239B",
      "superset_id": null,
      "sets": [
@@ -6791,7 +7065,7 @@
     {
      "index": 0,
      "title": "Pull Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "729237D1",
      "superset_id": null,
      "sets": [
@@ -6830,7 +7104,7 @@
     {
      "index": 1,
      "title": "Iso-Lateral Low Row",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "91FAFBA3",
      "superset_id": null,
      "sets": [
@@ -6859,7 +7133,7 @@
     {
      "index": 2,
      "title": "Lat Pulldown (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "6A6C31A5",
      "superset_id": null,
      "sets": [
@@ -6888,7 +7162,7 @@
     {
      "index": 3,
      "title": "Reverse Fly Single Arm (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "9264ADA1",
      "superset_id": null,
      "sets": [
@@ -6929,7 +7203,7 @@
     {
      "index": 0,
      "title": "Bench Press (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "79D0BB3A",
      "superset_id": null,
      "sets": [
@@ -6978,7 +7252,7 @@
     {
      "index": 1,
      "title": "Butterfly (Pec Deck)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "9DCE2D64",
      "superset_id": null,
      "sets": [
@@ -7007,7 +7281,7 @@
     {
      "index": 2,
      "title": "Incline Bench Press (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "07B38369",
      "superset_id": null,
      "sets": [
@@ -7036,7 +7310,7 @@
     {
      "index": 3,
      "title": "Skullcrusher (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "68F8A292",
      "superset_id": null,
      "sets": [
@@ -7065,7 +7339,7 @@
     {
      "index": 4,
      "title": "Crunch (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "EB43ADD4",
      "superset_id": null,
      "sets": [
@@ -7116,7 +7390,7 @@
     {
      "index": 0,
      "title": "Bulgarian Split Squat (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B5D3A742",
      "superset_id": null,
      "sets": [
@@ -7145,7 +7419,7 @@
     {
      "index": 1,
      "title": "Lying Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B8127AD1",
      "superset_id": null,
      "sets": [
@@ -7184,7 +7458,7 @@
     {
      "index": 2,
      "title": "Leg Extension (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "75A4F6C4",
      "superset_id": null,
      "sets": [
@@ -7213,7 +7487,7 @@
     {
      "index": 3,
      "title": "Seated Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "11A123F3",
      "superset_id": null,
      "sets": [
@@ -7232,7 +7506,7 @@
     {
      "index": 4,
      "title": "Hip Abduction (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "F4B4C6EE",
      "superset_id": null,
      "sets": [
@@ -7261,7 +7535,7 @@
     {
      "index": 5,
      "title": "Hip Adduction (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "8BEBFED6",
      "superset_id": null,
      "sets": [
@@ -7290,7 +7564,7 @@
     {
      "index": 6,
      "title": "Standing Calf Raise (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "E05C2C38",
      "superset_id": null,
      "sets": [
@@ -7331,7 +7605,7 @@
     {
      "index": 0,
      "title": "Shoulder Press (Machine Plates)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "059E835D",
      "superset_id": null,
      "sets": [
@@ -7370,7 +7644,7 @@
     {
      "index": 1,
      "title": "Triceps Rope Pushdown",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "94B7239B",
      "superset_id": null,
      "sets": [
@@ -7399,7 +7673,7 @@
     {
      "index": 2,
      "title": "Behind the Back Curl (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "2DBCA395",
      "superset_id": null,
      "sets": [
@@ -7428,7 +7702,7 @@
     {
      "index": 3,
      "title": "Reverse Fly Single Arm (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "9264ADA1",
      "superset_id": null,
      "sets": [
@@ -7457,7 +7731,7 @@
     {
      "index": 4,
      "title": "Single Arm Lateral Raise (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "DE68C825",
      "superset_id": null,
      "sets": [
@@ -7486,7 +7760,7 @@
     {
      "index": 5,
      "title": "Preacher Curl (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "4F942934",
      "superset_id": null,
      "sets": [
@@ -7525,7 +7799,7 @@
     {
      "index": 6,
      "title": "Skullcrusher (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "68F8A292",
      "superset_id": null,
      "sets": [
@@ -7566,7 +7840,7 @@
     {
      "index": 0,
      "title": "Squat (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D04AC939",
      "superset_id": null,
      "sets": [
@@ -7605,7 +7879,7 @@
     {
      "index": 1,
      "title": "Seated Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "11A123F3",
      "superset_id": null,
      "sets": [
@@ -7634,7 +7908,7 @@
     {
      "index": 2,
      "title": "Leg Extension (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "75A4F6C4",
      "superset_id": null,
      "sets": [
@@ -7663,7 +7937,7 @@
     {
      "index": 3,
      "title": "Back Extension (Weighted Hyperextension)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "091737FA",
      "superset_id": null,
      "sets": [
@@ -7714,7 +7988,7 @@
     {
      "index": 0,
      "title": "Bench Press (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "79D0BB3A",
      "superset_id": null,
      "sets": [
@@ -7753,7 +8027,7 @@
     {
      "index": 1,
      "title": "Chest Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "78683336",
      "superset_id": null,
      "sets": [
@@ -7782,7 +8056,7 @@
     {
      "index": 2,
      "title": "Incline Bench Press (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "50DFDFAB",
      "superset_id": null,
      "sets": [
@@ -7823,7 +8097,7 @@
     {
      "index": 0,
      "title": "Pull Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "729237D1",
      "superset_id": null,
      "sets": [
@@ -7872,7 +8146,7 @@
     {
      "index": 1,
      "title": "Seated Cable Row - V Grip (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "0393F233",
      "superset_id": null,
      "sets": [
@@ -7901,7 +8175,7 @@
     {
      "index": 2,
      "title": "Lat Pulldown (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "6A6C31A5",
      "superset_id": null,
      "sets": [
@@ -7930,7 +8204,7 @@
     {
      "index": 3,
      "title": "Rear Delt Reverse Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D8281C62",
      "superset_id": null,
      "sets": [
@@ -7959,7 +8233,7 @@
     {
      "index": 4,
      "title": "Hanging Leg Raise",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "F8356514",
      "superset_id": null,
      "sets": [
@@ -8000,7 +8274,7 @@
     {
      "index": 0,
      "title": "Shoulder Press (Machine Plates)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "059E835D",
      "superset_id": null,
      "sets": [
@@ -8039,7 +8313,7 @@
     {
      "index": 1,
      "title": "Behind the Back Curl (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "2DBCA395",
      "superset_id": 0,
      "sets": [
@@ -8068,7 +8342,7 @@
     {
      "index": 2,
      "title": "Triceps Rope Pushdown",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "94B7239B",
      "superset_id": 0,
      "sets": [
@@ -8097,7 +8371,7 @@
     {
      "index": 3,
      "title": "Lateral Raise (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "BE289E45",
      "superset_id": null,
      "sets": [
@@ -8126,7 +8400,7 @@
     {
      "index": 4,
      "title": "Hammer Curl (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "7E3BC8B6",
      "superset_id": null,
      "sets": [
@@ -8145,7 +8419,7 @@
     {
      "index": 5,
      "title": "Skullcrusher (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "68F8A292",
      "superset_id": null,
      "sets": [
@@ -8186,7 +8460,7 @@
     {
      "index": 0,
      "title": "Incline Bench Press (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "07B38369",
      "superset_id": null,
      "sets": [
@@ -8215,7 +8489,7 @@
     {
      "index": 1,
      "title": "Chest Dip (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "29472BE1",
      "superset_id": null,
      "sets": [
@@ -8244,7 +8518,7 @@
     {
      "index": 2,
      "title": "Chest Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "78683336",
      "superset_id": null,
      "sets": [
@@ -8273,7 +8547,7 @@
     {
      "index": 3,
      "title": "Chest Press (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "7EB3F7C3",
      "superset_id": null,
      "sets": [
@@ -8314,7 +8588,7 @@
     {
      "index": 0,
      "title": "Pull Up",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "1B2B1E7C",
      "superset_id": null,
      "sets": [
@@ -8343,7 +8617,7 @@
     {
      "index": 1,
      "title": "Iso-Lateral Low Row",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "91FAFBA3",
      "superset_id": null,
      "sets": [
@@ -8372,7 +8646,7 @@
     {
      "index": 2,
      "title": "Rear Delt Reverse Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D8281C62",
      "superset_id": null,
      "sets": [
@@ -8401,7 +8675,7 @@
     {
      "index": 3,
      "title": "Lat Pulldown (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "6A6C31A5",
      "superset_id": null,
      "sets": [
@@ -8442,7 +8716,7 @@
     {
      "index": 0,
      "title": "Rear Delt Reverse Fly (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "C315DC2A",
      "superset_id": null,
      "sets": [
@@ -8471,7 +8745,7 @@
     {
      "index": 1,
      "title": "Incline Bench Press (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "50DFDFAB",
      "superset_id": null,
      "sets": [
@@ -8510,7 +8784,7 @@
     {
      "index": 2,
      "title": "Bicep Curl (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "ADA8623C",
      "superset_id": null,
      "sets": [
@@ -8539,7 +8813,7 @@
     {
      "index": 3,
      "title": "Single Arm Triceps Pushdown (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "552AB030",
      "superset_id": null,
      "sets": [
@@ -8568,7 +8842,7 @@
     {
      "index": 4,
      "title": "Lateral Raise (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "422B08F1",
      "superset_id": null,
      "sets": [
@@ -8597,7 +8871,7 @@
     {
      "index": 5,
      "title": "Reverse Curl (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "9F48F858",
      "superset_id": null,
      "sets": [
@@ -8626,7 +8900,7 @@
     {
      "index": 6,
      "title": "Hammer Curl (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "36E8F14E",
      "superset_id": null,
      "sets": [
@@ -8657,7 +8931,7 @@
     {
      "index": 0,
      "title": "Squat (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D04AC939",
      "superset_id": null,
      "sets": [
@@ -8735,7 +9009,7 @@
     {
      "index": 2,
      "title": "Back Extension (Weighted Hyperextension)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "091737FA",
      "superset_id": null,
      "sets": [
@@ -8754,7 +9028,7 @@
     {
      "index": 3,
      "title": "Leg Extension (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "75A4F6C4",
      "superset_id": null,
      "sets": [
@@ -8773,7 +9047,7 @@
     {
      "index": 4,
      "title": "Seated Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "11A123F3",
      "superset_id": null,
      "sets": [
@@ -8804,7 +9078,7 @@
     {
      "index": 0,
      "title": "Bench Press (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "79D0BB3A",
      "superset_id": null,
      "sets": [
@@ -8843,7 +9117,7 @@
     {
      "index": 1,
      "title": "Pull Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "729237D1",
      "superset_id": null,
      "sets": [
@@ -8882,7 +9156,7 @@
     {
      "index": 2,
      "title": "Butterfly (Pec Deck)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "9DCE2D64",
      "superset_id": null,
      "sets": [
@@ -8911,7 +9185,7 @@
     {
      "index": 3,
      "title": "Iso-Lateral Low Row",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "91FAFBA3",
      "superset_id": null,
      "sets": [
@@ -8940,7 +9214,7 @@
     {
      "index": 4,
      "title": "Rear Delt Reverse Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D8281C62",
      "superset_id": null,
      "sets": [
@@ -8981,7 +9255,7 @@
     {
      "index": 0,
      "title": "Lateral Raise (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "BE289E45",
      "superset_id": 0,
      "sets": [
@@ -9010,7 +9284,7 @@
     {
      "index": 1,
      "title": "Behind the Back Curl (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "2DBCA395",
      "superset_id": 0,
      "sets": [
@@ -9039,7 +9313,7 @@
     {
      "index": 2,
      "title": "Shoulder Press (Machine Plates)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "059E835D",
      "superset_id": null,
      "sets": [
@@ -9078,7 +9352,7 @@
     {
      "index": 3,
      "title": "Triceps Rope Pushdown",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "94B7239B",
      "superset_id": 1,
      "sets": [
@@ -9107,7 +9381,7 @@
     {
      "index": 4,
      "title": "Reverse Fly Single Arm (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "9264ADA1",
      "superset_id": 1,
      "sets": [
@@ -9136,7 +9410,7 @@
     {
      "index": 5,
      "title": "Hammer Curl (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "7E3BC8B6",
      "superset_id": null,
      "sets": [
@@ -9165,7 +9439,7 @@
     {
      "index": 6,
      "title": "Skullcrusher (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "68F8A292",
      "superset_id": null,
      "sets": [
@@ -9194,7 +9468,7 @@
     {
      "index": 7,
      "title": "Chin Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "023943F1",
      "superset_id": null,
      "sets": [
@@ -9245,7 +9519,7 @@
     {
      "index": 0,
      "title": "Chest Dip (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "29472BE1",
      "superset_id": null,
      "sets": [
@@ -9284,7 +9558,7 @@
     {
      "index": 1,
      "title": "Chest Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "78683336",
      "superset_id": null,
      "sets": [
@@ -9313,7 +9587,7 @@
     {
      "index": 2,
      "title": "Pull Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "729237D1",
      "superset_id": null,
      "sets": [
@@ -9352,7 +9626,7 @@
     {
      "index": 3,
      "title": "Chest Press (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "7EB3F7C3",
      "superset_id": null,
      "sets": [
@@ -9391,7 +9665,7 @@
     {
      "index": 4,
      "title": "Iso-Lateral Low Row",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "91FAFBA3",
      "superset_id": null,
      "sets": [
@@ -9420,7 +9694,7 @@
     {
      "index": 5,
      "title": "Incline Bench Press (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "07B38369",
      "superset_id": null,
      "sets": [
@@ -9451,7 +9725,7 @@
     {
      "index": 0,
      "title": "Hack Squat (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "1E42FD5F",
      "superset_id": null,
      "sets": [
@@ -9480,7 +9754,7 @@
     {
      "index": 1,
      "title": "Romanian Deadlift (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "2B4B7310",
      "superset_id": null,
      "sets": [
@@ -9519,7 +9793,7 @@
     {
      "index": 2,
      "title": "Hip Abduction (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "F4B4C6EE",
      "superset_id": null,
      "sets": [
@@ -9548,7 +9822,7 @@
     {
      "index": 3,
      "title": "Hip Adduction (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "8BEBFED6",
      "superset_id": null,
      "sets": [
@@ -9577,7 +9851,7 @@
     {
      "index": 4,
      "title": "Standing Calf Raise (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "E05C2C38",
      "superset_id": null,
      "sets": [
@@ -9606,7 +9880,7 @@
     {
      "index": 5,
      "title": "Leg Extension (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "75A4F6C4",
      "superset_id": null,
      "sets": [
@@ -9635,7 +9909,7 @@
     {
      "index": 6,
      "title": "Seated Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "11A123F3",
      "superset_id": null,
      "sets": [
@@ -9676,7 +9950,7 @@
     {
      "index": 0,
      "title": "Shoulder Press (Machine Plates)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "059E835D",
      "superset_id": null,
      "sets": [
@@ -9725,7 +9999,7 @@
     {
      "index": 1,
      "title": "Bicep Curl (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "A5AC6449",
      "superset_id": null,
      "sets": [
@@ -9764,7 +10038,7 @@
     {
      "index": 2,
      "title": "Triceps Rope Pushdown",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "94B7239B",
      "superset_id": null,
      "sets": [
@@ -9803,7 +10077,7 @@
     {
      "index": 3,
      "title": "Single Arm Lateral Raise (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "DE68C825",
      "superset_id": null,
      "sets": [
@@ -9832,7 +10106,7 @@
     {
      "index": 4,
      "title": "Reverse Fly Single Arm (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "9264ADA1",
      "superset_id": null,
      "sets": [
@@ -9861,7 +10135,7 @@
     {
      "index": 5,
      "title": "Skullcrusher (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "68F8A292",
      "superset_id": null,
      "sets": [
@@ -9890,7 +10164,7 @@
     {
      "index": 6,
      "title": "Hammer Curl (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "7E3BC8B6",
      "superset_id": null,
      "sets": [
@@ -9919,7 +10193,7 @@
     {
      "index": 7,
      "title": "Seated Palms Up Wrist Curl",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "1006DF48",
      "superset_id": null,
      "sets": [
@@ -9948,7 +10222,7 @@
     {
      "index": 8,
      "title": "Reverse Wrist Curl (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D8460FA6",
      "superset_id": null,
      "sets": [
@@ -9967,7 +10241,7 @@
     {
      "index": 9,
      "title": "Leg Raise Parallel Bars",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "0482DA98",
      "superset_id": null,
      "sets": [
@@ -9986,7 +10260,7 @@
     {
      "index": 10,
      "title": "Dead Hang",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B9380898",
      "superset_id": null,
      "sets": [
@@ -10017,7 +10291,7 @@
     {
      "index": 0,
      "title": "Pull Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "729237D1",
      "superset_id": null,
      "sets": [
@@ -10056,7 +10330,7 @@
     {
      "index": 1,
      "title": "Iso-Lateral Low Row",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "91FAFBA3",
      "superset_id": null,
      "sets": [
@@ -10085,7 +10359,7 @@
     {
      "index": 2,
      "title": "Lat Pulldown (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "6A6C31A5",
      "superset_id": null,
      "sets": [
@@ -10114,7 +10388,7 @@
     {
      "index": 3,
      "title": "Back Extension (Weighted Hyperextension)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "091737FA",
      "superset_id": null,
      "sets": [
@@ -10165,7 +10439,7 @@
     {
      "index": 0,
      "title": "Pull Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "729237D1",
      "superset_id": null,
      "sets": [
@@ -10204,7 +10478,7 @@
     {
      "index": 1,
      "title": "Seated Cable Row - Bar Grip",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "F1D60854",
      "superset_id": null,
      "sets": [
@@ -10223,7 +10497,7 @@
     {
      "index": 2,
      "title": "Seated Cable Row - V Grip (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "0393F233",
      "superset_id": null,
      "sets": [
@@ -10242,7 +10516,7 @@
     {
      "index": 3,
      "title": "Rear Delt Reverse Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D8281C62",
      "superset_id": null,
      "sets": [
@@ -10271,7 +10545,7 @@
     {
      "index": 4,
      "title": "Behind the Back Curl (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "2DBCA395",
      "superset_id": 0,
      "sets": [
@@ -10300,7 +10574,7 @@
     {
      "index": 5,
      "title": "Triceps Rope Pushdown",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "94B7239B",
      "superset_id": 0,
      "sets": [
@@ -10329,7 +10603,7 @@
     {
      "index": 6,
      "title": "Crunch (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "EB43ADD4",
      "superset_id": null,
      "sets": [
@@ -10370,7 +10644,7 @@
     {
      "index": 0,
      "title": "Lying Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B8127AD1",
      "superset_id": null,
      "sets": [
@@ -10409,7 +10683,7 @@
     {
      "index": 1,
      "title": "Bulgarian Split Squat",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B5D3A742",
      "superset_id": null,
      "sets": [
@@ -10438,7 +10712,7 @@
     {
      "index": 2,
      "title": "Romanian Deadlift (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "2B4B7310",
      "superset_id": null,
      "sets": [
@@ -10467,7 +10741,7 @@
     {
      "index": 3,
      "title": "Hip Abduction (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "F4B4C6EE",
      "superset_id": 0,
      "sets": [
@@ -10496,7 +10770,7 @@
     {
      "index": 4,
      "title": "Hip Adduction (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "8BEBFED6",
      "superset_id": 0,
      "sets": [
@@ -10525,7 +10799,7 @@
     {
      "index": 5,
      "title": "Leg Extension (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "75A4F6C4",
      "superset_id": null,
      "sets": [
@@ -10554,7 +10828,7 @@
     {
      "index": 6,
      "title": "Standing Calf Raise (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "E05C2C38",
      "superset_id": null,
      "sets": [
@@ -10585,7 +10859,7 @@
     {
      "index": 0,
      "title": "Bench Press (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "79D0BB3A",
      "superset_id": null,
      "sets": [
@@ -10634,7 +10908,7 @@
     {
      "index": 1,
      "title": "Butterfly (Pec Deck)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "9DCE2D64",
      "superset_id": null,
      "sets": [
@@ -10663,7 +10937,7 @@
     {
      "index": 2,
      "title": "Chest Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "78683336",
      "superset_id": null,
      "sets": [
@@ -10692,7 +10966,7 @@
     {
      "index": 3,
      "title": "Chest Dip",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "6FCD7755",
      "superset_id": null,
      "sets": [
@@ -10721,7 +10995,7 @@
     {
      "index": 4,
      "title": "Incline Bench Press (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "07B38369",
      "superset_id": null,
      "sets": [
@@ -10752,7 +11026,7 @@
     {
      "index": 0,
      "title": "Pull Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "729237D1",
      "superset_id": null,
      "sets": [
@@ -10781,7 +11055,7 @@
     {
      "index": 1,
      "title": "Iso-Lateral Low Row",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "91FAFBA3",
      "superset_id": null,
      "sets": [
@@ -10820,7 +11094,7 @@
     {
      "index": 2,
      "title": "Pulldown",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "aaae0510-eb87-4340-a17d-95763851b7d1",
      "superset_id": null,
      "sets": [
@@ -10849,7 +11123,7 @@
     {
      "index": 3,
      "title": "Crunch (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "EB43ADD4",
      "superset_id": null,
      "sets": [
@@ -10878,7 +11152,7 @@
     {
      "index": 4,
      "title": "Dragonfly",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B7192800",
      "superset_id": null,
      "sets": [
@@ -10897,7 +11171,7 @@
     {
      "index": 5,
      "title": "Leg Raise Parallel Bars",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "0482DA98",
      "superset_id": null,
      "sets": [
@@ -10938,7 +11212,7 @@
     {
      "index": 0,
      "title": "Shoulder Press (Machine Plates)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "059E835D",
      "superset_id": null,
      "sets": [
@@ -10987,7 +11261,7 @@
     {
      "index": 1,
      "title": "Single Arm Lateral Raise (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "DE68C825",
      "superset_id": 0,
      "sets": [
@@ -11016,7 +11290,7 @@
     {
      "index": 2,
      "title": "Triceps Rope Pushdown",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "94B7239B",
      "superset_id": 0,
      "sets": [
@@ -11055,7 +11329,7 @@
     {
      "index": 3,
      "title": "Behind the Back Curl (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "2DBCA395",
      "superset_id": null,
      "sets": [
@@ -11084,7 +11358,7 @@
     {
      "index": 4,
      "title": "Rear Delt Reverse Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D8281C62",
      "superset_id": null,
      "sets": [
@@ -11113,7 +11387,7 @@
     {
      "index": 5,
      "title": "Skullcrusher (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "68F8A292",
      "superset_id": null,
      "sets": [
@@ -11142,7 +11416,7 @@
     {
      "index": 6,
      "title": "Hammer Curl (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "7E3BC8B6",
      "superset_id": null,
      "sets": [
@@ -11171,7 +11445,7 @@
     {
      "index": 7,
      "title": "Shrug (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "ABEC557F",
      "superset_id": null,
      "sets": [
@@ -11212,7 +11486,7 @@
     {
      "index": 0,
      "title": "Shoulder Press (Machine Plates)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "059E835D",
      "superset_id": null,
      "sets": [
@@ -11251,7 +11525,7 @@
     {
      "index": 1,
      "title": "Behind the Back Curl (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "2DBCA395",
      "superset_id": null,
      "sets": [
@@ -11280,7 +11554,7 @@
     {
      "index": 2,
      "title": "Lateral Raise (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "BE289E45",
      "superset_id": null,
      "sets": [
@@ -11309,7 +11583,7 @@
     {
      "index": 3,
      "title": "Triceps Rope Pushdown",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "94B7239B",
      "superset_id": null,
      "sets": [
@@ -11348,7 +11622,7 @@
     {
      "index": 4,
      "title": "Hammer Curl (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "7E3BC8B6",
      "superset_id": null,
      "sets": [
@@ -11377,7 +11651,7 @@
     {
      "index": 5,
      "title": "Skullcrusher (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "68F8A292",
      "superset_id": null,
      "sets": [
@@ -11406,7 +11680,7 @@
     {
      "index": 6,
      "title": "Shrug (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "ABEC557F",
      "superset_id": null,
      "sets": [
@@ -11447,7 +11721,7 @@
     {
      "index": 0,
      "title": "Bench Press (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "79D0BB3A",
      "superset_id": null,
      "sets": [
@@ -11496,7 +11770,7 @@
     {
      "index": 1,
      "title": "Chest Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "78683336",
      "superset_id": null,
      "sets": [
@@ -11535,7 +11809,7 @@
     {
      "index": 2,
      "title": "Incline Bench Press (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "07B38369",
      "superset_id": null,
      "sets": [
@@ -11605,7 +11879,7 @@
     {
      "index": 0,
      "title": "Squat (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D04AC939",
      "superset_id": null,
      "sets": [
@@ -11644,7 +11918,7 @@
     {
      "index": 1,
      "title": "Hip Thrust (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "68CE0B9B",
      "superset_id": null,
      "sets": [
@@ -11673,7 +11947,7 @@
     {
      "index": 2,
      "title": "Leg Extension (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "75A4F6C4",
      "superset_id": 0,
      "sets": [
@@ -11702,7 +11976,7 @@
     {
      "index": 3,
      "title": "Seated Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "11A123F3",
      "superset_id": 0,
      "sets": [
@@ -11731,7 +12005,7 @@
     {
      "index": 4,
      "title": "Hip Abduction (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "F4B4C6EE",
      "superset_id": 1,
      "sets": [
@@ -11760,7 +12034,7 @@
     {
      "index": 5,
      "title": "Hip Adduction (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "8BEBFED6",
      "superset_id": 1,
      "sets": [
@@ -11789,7 +12063,7 @@
     {
      "index": 6,
      "title": "Standing Calf Raise (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "E05C2C38",
      "superset_id": null,
      "sets": [
@@ -11830,7 +12104,7 @@
     {
      "index": 0,
      "title": "Pull Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "729237D1",
      "superset_id": null,
      "sets": [
@@ -11869,7 +12143,7 @@
     {
      "index": 1,
      "title": "Seated Cable Row - V Grip (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "0393F233",
      "superset_id": null,
      "sets": [
@@ -11898,7 +12172,7 @@
     {
      "index": 2,
      "title": "Lat Pulldown (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "6A6C31A5",
      "superset_id": null,
      "sets": [
@@ -11927,7 +12201,7 @@
     {
      "index": 3,
      "title": "Rear Delt Reverse Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D8281C62",
      "superset_id": null,
      "sets": [
@@ -11956,7 +12230,7 @@
     {
      "index": 4,
      "title": "Back Extension (Weighted Hyperextension)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "091737FA",
      "superset_id": null,
      "sets": [
@@ -12007,7 +12281,7 @@
     {
      "index": 0,
      "title": "Shoulder Press (Machine Plates)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "059E835D",
      "superset_id": null,
      "sets": [
@@ -12046,7 +12320,7 @@
     {
      "index": 1,
      "title": "Triceps Rope Pushdown",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "94B7239B",
      "superset_id": null,
      "sets": [
@@ -12075,7 +12349,7 @@
     {
      "index": 2,
      "title": "Behind the Back Curl (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "2DBCA395",
      "superset_id": null,
      "sets": [
@@ -12133,7 +12407,7 @@
     {
      "index": 4,
      "title": "Skullcrusher (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "68F8A292",
      "superset_id": null,
      "sets": [
@@ -12220,7 +12494,7 @@
     {
      "index": 7,
      "title": "Shrug (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "ABEC557F",
      "superset_id": null,
      "sets": [
@@ -12261,7 +12535,7 @@
     {
      "index": 0,
      "title": "Pull Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "729237D1",
      "superset_id": null,
      "sets": [
@@ -12300,7 +12574,7 @@
     {
      "index": 1,
      "title": "Seated Cable Row - V Grip (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "0393F233",
      "superset_id": null,
      "sets": [
@@ -12329,7 +12603,7 @@
     {
      "index": 2,
      "title": "Lat Pulldown (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "6A6C31A5",
      "superset_id": null,
      "sets": [
@@ -12358,7 +12632,7 @@
     {
      "index": 3,
      "title": "Rear Delt Reverse Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D8281C62",
      "superset_id": null,
      "sets": [
@@ -12387,7 +12661,7 @@
     {
      "index": 4,
      "title": "Crunch (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "EB43ADD4",
      "superset_id": null,
      "sets": [
@@ -12457,7 +12731,7 @@
     {
      "index": 0,
      "title": "Bicep Curl (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "ADA8623C",
      "superset_id": null,
      "sets": [
@@ -12496,7 +12770,7 @@
     {
      "index": 1,
      "title": "Triceps Rope Pushdown",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "94B7239B",
      "superset_id": null,
      "sets": [
@@ -12525,7 +12799,7 @@
     {
      "index": 2,
      "title": "Leg Extension (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "75A4F6C4",
      "superset_id": 0,
      "sets": [
@@ -12554,7 +12828,7 @@
     {
      "index": 3,
      "title": "Seated Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "11A123F3",
      "superset_id": 0,
      "sets": [
@@ -12583,7 +12857,7 @@
     {
      "index": 4,
      "title": "Hack Squat (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "1E42FD5F",
      "superset_id": null,
      "sets": [
@@ -12612,7 +12886,7 @@
     {
      "index": 5,
      "title": "Hip Abduction (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "F4B4C6EE",
      "superset_id": 1,
      "sets": [
@@ -12641,7 +12915,7 @@
     {
      "index": 6,
      "title": "Hip Adduction (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "8BEBFED6",
      "superset_id": 1,
      "sets": [
@@ -12682,7 +12956,7 @@
     {
      "index": 0,
      "title": "Shoulder Press (Machine Plates)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "059E835D",
      "superset_id": null,
      "sets": [
@@ -12721,7 +12995,7 @@
     {
      "index": 1,
      "title": "Bench Press (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "79D0BB3A",
      "superset_id": null,
      "sets": [
@@ -12760,7 +13034,7 @@
     {
      "index": 2,
      "title": "Chest Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "78683336",
      "superset_id": null,
      "sets": [
@@ -12789,7 +13063,7 @@
     {
      "index": 3,
      "title": "Crunch (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "EB43ADD4",
      "superset_id": null,
      "sets": [
@@ -12830,7 +13104,7 @@
     {
      "index": 0,
      "title": "Behind the Back Curl (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "2DBCA395",
      "superset_id": 0,
      "sets": [
@@ -12869,7 +13143,7 @@
     {
      "index": 1,
      "title": "Triceps Rope Pushdown",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "94B7239B",
      "superset_id": 0,
      "sets": [
@@ -12908,7 +13182,7 @@
     {
      "index": 2,
      "title": "Single Arm Lateral Raise (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "DE68C825",
      "superset_id": null,
      "sets": [
@@ -12937,7 +13211,7 @@
     {
      "index": 3,
      "title": "Bicep Curl (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "A5AC6449",
      "superset_id": null,
      "sets": [
@@ -12956,7 +13230,7 @@
     {
      "index": 4,
      "title": "Hammer Curl (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "36E8F14E",
      "superset_id": null,
      "sets": [
@@ -12985,7 +13259,7 @@
     {
      "index": 5,
      "title": "Skullcrusher (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "68F8A292",
      "superset_id": null,
      "sets": [
@@ -13016,7 +13290,7 @@
     {
      "index": 0,
      "title": "Shoulder Press (Machine Plates)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "059E835D",
      "superset_id": null,
      "sets": [
@@ -13065,7 +13339,7 @@
     {
      "index": 1,
      "title": "Behind the Back Curl (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "2DBCA395",
      "superset_id": null,
      "sets": [
@@ -13094,7 +13368,7 @@
     {
      "index": 2,
      "title": "Triceps Pushdown",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "93A552C6",
      "superset_id": null,
      "sets": [
@@ -13133,7 +13407,7 @@
     {
      "index": 3,
      "title": "Lateral Raise (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "BE289E45",
      "superset_id": null,
      "sets": [
@@ -13162,7 +13436,7 @@
     {
      "index": 4,
      "title": "Hammer Curl (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "36E8F14E",
      "superset_id": null,
      "sets": [
@@ -13203,7 +13477,7 @@
     {
      "index": 0,
      "title": "Back Extension (Weighted Hyperextension)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "091737FA",
      "superset_id": null,
      "sets": [
@@ -13242,7 +13516,7 @@
     {
      "index": 1,
      "title": "Seated Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "11A123F3",
      "superset_id": 0,
      "sets": [
@@ -13271,7 +13545,7 @@
     {
      "index": 2,
      "title": "Leg Extension (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "75A4F6C4",
      "superset_id": 0,
      "sets": [
@@ -13300,7 +13574,7 @@
     {
      "index": 3,
      "title": "Squat (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D04AC939",
      "superset_id": null,
      "sets": [
@@ -13329,7 +13603,7 @@
     {
      "index": 4,
      "title": "Ab Wheel",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "99D5F10E",
      "superset_id": null,
      "sets": [
@@ -13348,7 +13622,7 @@
     {
      "index": 5,
      "title": "Crunch (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "EB43ADD4",
      "superset_id": null,
      "sets": [
@@ -13377,7 +13651,7 @@
     {
      "index": 6,
      "title": "Torso Rotation",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "FBB62888",
      "superset_id": null,
      "sets": [
@@ -13406,7 +13680,7 @@
     {
      "index": 7,
      "title": "Hip Abduction (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "F4B4C6EE",
      "superset_id": null,
      "sets": [
@@ -13435,7 +13709,7 @@
     {
      "index": 8,
      "title": "Hip Adduction (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "8BEBFED6",
      "superset_id": null,
      "sets": [
@@ -13476,7 +13750,7 @@
     {
      "index": 0,
      "title": "Chest Dip",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "6FCD7755",
      "superset_id": null,
      "sets": [
@@ -13505,7 +13779,7 @@
     {
      "index": 1,
      "title": "Bench Press (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "79D0BB3A",
      "superset_id": null,
      "sets": [
@@ -13534,7 +13808,7 @@
     {
      "index": 2,
      "title": "Chest Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "78683336",
      "superset_id": null,
      "sets": [
@@ -13563,7 +13837,7 @@
     {
      "index": 3,
      "title": "Chest Press (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "7EB3F7C3",
      "superset_id": null,
      "sets": [
@@ -13604,7 +13878,7 @@
     {
      "index": 0,
      "title": "Pull Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "729237D1",
      "superset_id": null,
      "sets": [
@@ -13643,7 +13917,7 @@
     {
      "index": 1,
      "title": "Iso-Lateral Low Row",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "91FAFBA3",
      "superset_id": null,
      "sets": [
@@ -13672,7 +13946,7 @@
     {
      "index": 2,
      "title": "Lat Pulldown (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "6A6C31A5",
      "superset_id": null,
      "sets": [
@@ -13711,7 +13985,7 @@
     {
      "index": 3,
      "title": "Rear Delt Reverse Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D8281C62",
      "superset_id": null,
      "sets": [
@@ -13752,7 +14026,7 @@
     {
      "index": 0,
      "title": "Pull Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "729237D1",
      "superset_id": null,
      "sets": [
@@ -13771,7 +14045,7 @@
     {
      "index": 1,
      "title": "Triceps Rope Pushdown",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "94B7239B",
      "superset_id": null,
      "sets": [
@@ -13810,7 +14084,7 @@
     {
      "index": 2,
      "title": "Behind the Back Curl (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "2DBCA395",
      "superset_id": null,
      "sets": [
@@ -13839,7 +14113,7 @@
     {
      "index": 3,
      "title": "Single Arm Lateral Raise (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "DE68C825",
      "superset_id": null,
      "sets": [
@@ -13868,7 +14142,7 @@
     {
      "index": 4,
      "title": "Bicep Curl (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "A5AC6449",
      "superset_id": null,
      "sets": [
@@ -13909,7 +14183,7 @@
     {
      "index": 0,
      "title": "Bench Press (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "79D0BB3A",
      "superset_id": null,
      "sets": [
@@ -13958,7 +14232,7 @@
     {
      "index": 1,
      "title": "Chest Dip",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "6FCD7755",
      "superset_id": null,
      "sets": [
@@ -13987,7 +14261,7 @@
     {
      "index": 2,
      "title": "Chest Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "78683336",
      "superset_id": null,
      "sets": [
@@ -14028,7 +14302,7 @@
     {
      "index": 0,
      "title": "Deadlift (Smith Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "20870ED5",
      "superset_id": null,
      "sets": [
@@ -14057,7 +14331,7 @@
     {
      "index": 1,
      "title": "Bulgarian Split Squat",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B5D3A742",
      "superset_id": null,
      "sets": [
@@ -14086,7 +14360,7 @@
     {
      "index": 2,
      "title": "Leg Extension (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "75A4F6C4",
      "superset_id": 0,
      "sets": [
@@ -14115,7 +14389,7 @@
     {
      "index": 3,
      "title": "Seated Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "11A123F3",
      "superset_id": 0,
      "sets": [
@@ -14144,7 +14418,7 @@
     {
      "index": 4,
      "title": "Standing Calf Raise (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "E05C2C38",
      "superset_id": null,
      "sets": [
@@ -14175,7 +14449,7 @@
     {
      "index": 0,
      "title": "Back Extension (Weighted Hyperextension)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "091737FA",
      "superset_id": null,
      "sets": [
@@ -14214,7 +14488,7 @@
     {
      "index": 1,
      "title": "Hanging Leg Raise",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "F8356514",
      "superset_id": null,
      "sets": [
@@ -14243,7 +14517,7 @@
     {
      "index": 2,
      "title": "Shoulder Press (Machine Plates)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "059E835D",
      "superset_id": null,
      "sets": [
@@ -14282,7 +14556,7 @@
     {
      "index": 3,
      "title": "Ab Wheel",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "99D5F10E",
      "superset_id": null,
      "sets": [
@@ -14340,7 +14614,7 @@
     {
      "index": 5,
      "title": "Triceps Rope Pushdown",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "94B7239B",
      "superset_id": null,
      "sets": [
@@ -14398,7 +14672,7 @@
     {
      "index": 7,
      "title": "Hammer Curl (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "36E8F14E",
      "superset_id": null,
      "sets": [
@@ -14439,7 +14713,7 @@
     {
      "index": 0,
      "title": "Pull Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "729237D1",
      "superset_id": null,
      "sets": [
@@ -14478,7 +14752,7 @@
     {
      "index": 1,
      "title": "Crunch (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "EB43ADD4",
      "superset_id": null,
      "sets": [
@@ -14497,7 +14771,7 @@
     {
      "index": 2,
      "title": "Iso-Lateral Low Row",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "91FAFBA3",
      "superset_id": null,
      "sets": [
@@ -14536,7 +14810,7 @@
     {
      "index": 3,
      "title": "Lat Pulldown (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "6A6C31A5",
      "superset_id": null,
      "sets": [
@@ -14577,7 +14851,7 @@
     {
      "index": 0,
      "title": "Pull Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "729237D1",
      "superset_id": null,
      "sets": [
@@ -14616,7 +14890,7 @@
     {
      "index": 1,
      "title": "Iso-Lateral Low Row",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "91FAFBA3",
      "superset_id": null,
      "sets": [
@@ -14645,7 +14919,7 @@
     {
      "index": 2,
      "title": "Lat Pulldown (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "6A6C31A5",
      "superset_id": null,
      "sets": [
@@ -14674,7 +14948,7 @@
     {
      "index": 3,
      "title": "Rear Delt Reverse Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D8281C62",
      "superset_id": null,
      "sets": [
@@ -14715,7 +14989,7 @@
     {
      "index": 0,
      "title": "Bench Press (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "79D0BB3A",
      "superset_id": null,
      "sets": [
@@ -14754,7 +15028,7 @@
     {
      "index": 1,
      "title": "Chest Dip (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "29472BE1",
      "superset_id": null,
      "sets": [
@@ -14783,7 +15057,7 @@
     {
      "index": 2,
      "title": "Chest Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "78683336",
      "superset_id": null,
      "sets": [
@@ -14824,7 +15098,7 @@
     {
      "index": 0,
      "title": "Back Extension (Weighted Hyperextension)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "091737FA",
      "superset_id": null,
      "sets": [
@@ -14853,7 +15127,7 @@
     {
      "index": 1,
      "title": "Bulgarian Split Squat",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B5D3A742",
      "superset_id": null,
      "sets": [
@@ -14882,7 +15156,7 @@
     {
      "index": 2,
      "title": "Ab Wheel",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "99D5F10E",
      "superset_id": null,
      "sets": [
@@ -14901,7 +15175,7 @@
     {
      "index": 3,
      "title": "Torso Rotation",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "FBB62888",
      "superset_id": null,
      "sets": [
@@ -14930,7 +15204,7 @@
     {
      "index": 4,
      "title": "Calf Extension (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "47B9DF13",
      "superset_id": null,
      "sets": [
@@ -14949,7 +15223,7 @@
     {
      "index": 5,
      "title": "Leg Extension (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "75A4F6C4",
      "superset_id": null,
      "sets": [
@@ -14978,7 +15252,7 @@
     {
      "index": 6,
      "title": "Seated Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "11A123F3",
      "superset_id": null,
      "sets": [
@@ -15019,7 +15293,7 @@
     {
      "index": 0,
      "title": "Pull Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "729237D1",
      "superset_id": null,
      "sets": [
@@ -15058,7 +15332,7 @@
     {
      "index": 1,
      "title": "Iso-Lateral Low Row",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "91FAFBA3",
      "superset_id": null,
      "sets": [
@@ -15097,7 +15371,7 @@
     {
      "index": 2,
      "title": "Incline Bench Press (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "07B38369",
      "superset_id": null,
      "sets": [
@@ -15126,7 +15400,7 @@
     {
      "index": 3,
      "title": "Lat Pulldown (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "6A6C31A5",
      "superset_id": null,
      "sets": [
@@ -15155,7 +15429,7 @@
     {
      "index": 4,
      "title": "Chest Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "78683336",
      "superset_id": null,
      "sets": [
@@ -15196,7 +15470,7 @@
     {
      "index": 0,
      "title": "Bulgarian Split Squat",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B5D3A742",
      "superset_id": null,
      "sets": [
@@ -15225,7 +15499,7 @@
     {
      "index": 1,
      "title": "Back Extension (Weighted Hyperextension)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "091737FA",
      "superset_id": null,
      "sets": [
@@ -15254,7 +15528,7 @@
     {
      "index": 2,
      "title": "Lying Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B8127AD1",
      "superset_id": null,
      "sets": [
@@ -15322,7 +15596,7 @@
     {
      "index": 4,
      "title": "Seated Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "11A123F3",
      "superset_id": 0,
      "sets": [
@@ -15351,7 +15625,7 @@
     {
      "index": 5,
      "title": "Single Leg Standing Calf Raise (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B05C2C29",
      "superset_id": null,
      "sets": [
@@ -15382,7 +15656,7 @@
     {
      "index": 0,
      "title": "Chest Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "78683336",
      "superset_id": null,
      "sets": [
@@ -15421,7 +15695,7 @@
     {
      "index": 1,
      "title": "Bench Press (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "79D0BB3A",
      "superset_id": null,
      "sets": [
@@ -15460,7 +15734,7 @@
     {
      "index": 2,
      "title": "Chest Dip",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "6FCD7755",
      "superset_id": null,
      "sets": [
@@ -15489,7 +15763,7 @@
     {
      "index": 3,
      "title": "Shoulder Press (Machine Plates)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "059E835D",
      "superset_id": null,
      "sets": [
@@ -15530,7 +15804,7 @@
     {
      "index": 0,
      "title": "Pull Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "729237D1",
      "superset_id": null,
      "sets": [
@@ -15579,7 +15853,7 @@
     {
      "index": 1,
      "title": "Iso-Lateral Low Row",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "91FAFBA3",
      "superset_id": null,
      "sets": [
@@ -15608,7 +15882,7 @@
     {
      "index": 2,
      "title": "Lat Pulldown (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "6A6C31A5",
      "superset_id": null,
      "sets": [
@@ -15637,7 +15911,7 @@
     {
      "index": 3,
      "title": "Seated Cable Row - V Grip (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "0393F233",
      "superset_id": null,
      "sets": [
@@ -15678,7 +15952,7 @@
     {
      "index": 0,
      "title": "Rear Delt Reverse Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D8281C62",
      "superset_id": null,
      "sets": [
@@ -15707,7 +15981,7 @@
     {
      "index": 1,
      "title": "Single Arm Lateral Raise (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "DE68C825",
      "superset_id": null,
      "sets": [
@@ -15736,7 +16010,7 @@
     {
      "index": 2,
      "title": "Shoulder Press (Machine Plates)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "059E835D",
      "superset_id": null,
      "sets": [
@@ -15765,7 +16039,7 @@
     {
      "index": 3,
      "title": "Behind the Back Curl (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "2DBCA395",
      "superset_id": null,
      "sets": [
@@ -15794,7 +16068,7 @@
     {
      "index": 4,
      "title": "Triceps Rope Pushdown",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "94B7239B",
      "superset_id": 0,
      "sets": [
@@ -15823,7 +16097,7 @@
     {
      "index": 5,
      "title": "Hammer Curl (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "36E8F14E",
      "superset_id": 0,
      "sets": [
@@ -15852,7 +16126,7 @@
     {
      "index": 6,
      "title": "Ab Wheel",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "99D5F10E",
      "superset_id": null,
      "sets": [
@@ -15881,7 +16155,7 @@
     {
      "index": 7,
      "title": "Hammer Curl (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "7E3BC8B6",
      "superset_id": null,
      "sets": [
@@ -15910,7 +16184,7 @@
     {
      "index": 8,
      "title": "Seated Palms Up Wrist Curl",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "1006DF48",
      "superset_id": null,
      "sets": [
@@ -15929,7 +16203,7 @@
     {
      "index": 9,
      "title": "Shrug (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "0B841777",
      "superset_id": null,
      "sets": [
@@ -15970,7 +16244,7 @@
     {
      "index": 0,
      "title": "Lying Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B8127AD1",
      "superset_id": null,
      "sets": [
@@ -16009,7 +16283,7 @@
     {
      "index": 1,
      "title": "Leg Extension (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "75A4F6C4",
      "superset_id": 0,
      "sets": [
@@ -16038,7 +16312,7 @@
     {
      "index": 2,
      "title": "Seated Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "11A123F3",
      "superset_id": 0,
      "sets": [
@@ -16057,7 +16331,7 @@
     {
      "index": 3,
      "title": "Back Extension (Weighted Hyperextension)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "091737FA",
      "superset_id": null,
      "sets": [
@@ -16086,7 +16360,7 @@
     {
      "index": 4,
      "title": "Ab Wheel",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "99D5F10E",
      "superset_id": null,
      "sets": [
@@ -16127,7 +16401,7 @@
     {
      "index": 0,
      "title": "Pull Up",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "1B2B1E7C",
      "superset_id": null,
      "sets": [
@@ -16166,7 +16440,7 @@
     {
      "index": 1,
      "title": "Iso-Lateral Low Row",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "91FAFBA3",
      "superset_id": null,
      "sets": [
@@ -16195,7 +16469,7 @@
     {
      "index": 2,
      "title": "Lat Pulldown (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "6A6C31A5",
      "superset_id": null,
      "sets": [
@@ -16224,7 +16498,7 @@
     {
      "index": 3,
      "title": "Seated Cable Row - Bar Grip",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "F1D60854",
      "superset_id": null,
      "sets": [
@@ -16265,7 +16539,7 @@
     {
      "index": 0,
      "title": "Bench Press (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "79D0BB3A",
      "superset_id": null,
      "sets": [
@@ -16324,7 +16598,7 @@
     {
      "index": 1,
      "title": "Chest Dip",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "6FCD7755",
      "superset_id": null,
      "sets": [
@@ -16353,7 +16627,7 @@
     {
      "index": 2,
      "title": "Chest Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "78683336",
      "superset_id": null,
      "sets": [
@@ -16382,7 +16656,7 @@
     {
      "index": 3,
      "title": "Shoulder Press (Machine Plates)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "059E835D",
      "superset_id": null,
      "sets": [
@@ -16423,7 +16697,7 @@
     {
      "index": 0,
      "title": "Cycling",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D8F7F851",
      "superset_id": null,
      "sets": [
@@ -16442,7 +16716,7 @@
     {
      "index": 1,
      "title": "Kettlebell Goblet Squat",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "A127DA73",
      "superset_id": null,
      "sets": [
@@ -16461,7 +16735,7 @@
     {
      "index": 2,
      "title": "Bulgarian Split Squat",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B5D3A742",
      "superset_id": null,
      "sets": [
@@ -16490,7 +16764,7 @@
     {
      "index": 3,
      "title": "Back Extension (Weighted Hyperextension)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "091737FA",
      "superset_id": null,
      "sets": [
@@ -16519,7 +16793,7 @@
     {
      "index": 4,
      "title": "Lying Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B8127AD1",
      "superset_id": null,
      "sets": [
@@ -16548,7 +16822,7 @@
     {
      "index": 5,
      "title": "Leg Extension (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "75A4F6C4",
      "superset_id": null,
      "sets": [
@@ -16577,7 +16851,7 @@
     {
      "index": 6,
      "title": "Seated Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "11A123F3",
      "superset_id": null,
      "sets": [
@@ -16606,7 +16880,7 @@
     {
      "index": 7,
      "title": "Standing Calf Raise (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "E05C2C38",
      "superset_id": null,
      "sets": [
@@ -16635,7 +16909,7 @@
     {
      "index": 8,
      "title": "Ab Wheel",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "99D5F10E",
      "superset_id": null,
      "sets": [
@@ -16676,7 +16950,7 @@
     {
      "index": 0,
      "title": "Pull Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "729237D1",
      "superset_id": null,
      "sets": [
@@ -16715,7 +16989,7 @@
     {
      "index": 1,
      "title": "Seated Cable Row - Bar Grip",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "F1D60854",
      "superset_id": null,
      "sets": [
@@ -16744,7 +17018,7 @@
     {
      "index": 2,
      "title": "Rear Delt Reverse Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D8281C62",
      "superset_id": null,
      "sets": [
@@ -16773,7 +17047,7 @@
     {
      "index": 3,
      "title": "Lat Pulldown (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "473CF5B8",
      "superset_id": null,
      "sets": [
@@ -16802,7 +17076,7 @@
     {
      "index": 4,
      "title": "Shrug (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "0B841777",
      "superset_id": null,
      "sets": [
@@ -16821,7 +17095,7 @@
     {
      "index": 5,
      "title": "Shrug (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "ABEC557F",
      "superset_id": null,
      "sets": [
@@ -16852,7 +17126,7 @@
     {
      "index": 0,
      "title": "Lying Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B8127AD1",
      "superset_id": null,
      "sets": [
@@ -16891,7 +17165,7 @@
     {
      "index": 1,
      "title": "Squat (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D04AC939",
      "superset_id": null,
      "sets": [
@@ -16930,7 +17204,7 @@
     {
      "index": 2,
      "title": "Leg Extension (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "75A4F6C4",
      "superset_id": null,
      "sets": [
@@ -16959,7 +17233,7 @@
     {
      "index": 3,
      "title": "Seated Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "11A123F3",
      "superset_id": null,
      "sets": [
@@ -16978,7 +17252,7 @@
     {
      "index": 4,
      "title": "Standing Calf Raise (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "E05C2C38",
      "superset_id": null,
      "sets": [
@@ -17009,7 +17283,7 @@
     {
      "index": 0,
      "title": "Shoulder Press (Machine Plates)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "059E835D",
      "superset_id": null,
      "sets": [
@@ -17048,7 +17322,7 @@
     {
      "index": 1,
      "title": "Bicep Curl (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "37FCC2BB",
      "superset_id": null,
      "sets": [
@@ -17077,7 +17351,7 @@
     {
      "index": 2,
      "title": "Triceps Rope Pushdown",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "94B7239B",
      "superset_id": null,
      "sets": [
@@ -17116,7 +17390,7 @@
     {
      "index": 3,
      "title": "Crunch (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "EB43ADD4",
      "superset_id": null,
      "sets": [
@@ -17145,7 +17419,7 @@
     {
      "index": 4,
      "title": "Torso Rotation",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "FBB62888",
      "superset_id": null,
      "sets": [
@@ -17174,7 +17448,7 @@
     {
      "index": 5,
      "title": "Behind the Back Curl (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "2DBCA395",
      "superset_id": null,
      "sets": [
@@ -17203,7 +17477,7 @@
     {
      "index": 6,
      "title": "Lateral Raise (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "BE289E45",
      "superset_id": null,
      "sets": [
@@ -17244,7 +17518,7 @@
     {
      "index": 0,
      "title": "Bench Press (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "79D0BB3A",
      "superset_id": null,
      "sets": [
@@ -17303,7 +17577,7 @@
     {
      "index": 1,
      "title": "Chest Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "78683336",
      "superset_id": null,
      "sets": [
@@ -17332,7 +17606,7 @@
     {
      "index": 2,
      "title": "Chest Dip",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "6FCD7755",
      "superset_id": null,
      "sets": [
@@ -17361,7 +17635,7 @@
     {
      "index": 3,
      "title": "Ab Wheel",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "99D5F10E",
      "superset_id": null,
      "sets": [
@@ -17402,7 +17676,7 @@
     {
      "index": 0,
      "title": "Pull Up (Weighted)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "729237D1",
      "superset_id": null,
      "sets": [
@@ -17441,7 +17715,7 @@
     {
      "index": 1,
      "title": "Iso-Lateral Row (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "AA1EB7D8",
      "superset_id": null,
      "sets": [
@@ -17470,7 +17744,7 @@
     {
      "index": 2,
      "title": "Seated Cable Row - V Grip (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "0393F233",
      "superset_id": null,
      "sets": [
@@ -17509,7 +17783,7 @@
     {
      "index": 3,
      "title": "Rear Delt Reverse Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D8281C62",
      "superset_id": null,
      "sets": [
@@ -17548,7 +17822,7 @@
     {
      "index": 4,
      "title": "Behind the Back Curl (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "2DBCA395",
      "superset_id": null,
      "sets": [
@@ -17577,7 +17851,7 @@
     {
      "index": 5,
      "title": "Hammer Curl (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "7E3BC8B6",
      "superset_id": null,
      "sets": [
@@ -17606,7 +17880,7 @@
     {
      "index": 6,
      "title": "Seated Palms Up Wrist Curl",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "1006DF48",
      "superset_id": null,
      "sets": [
@@ -17656,7 +17930,7 @@
     {
      "index": 0,
      "title": "Ab Wheel",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "99D5F10E",
      "superset_id": null,
      "sets": [
@@ -17685,7 +17959,7 @@
     {
      "index": 1,
      "title": "Bulgarian Split Squat",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B5D3A742",
      "superset_id": null,
      "sets": [
@@ -17714,7 +17988,7 @@
     {
      "index": 2,
      "title": "Lying Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B8127AD1",
      "superset_id": null,
      "sets": [
@@ -17753,7 +18027,7 @@
     {
      "index": 3,
      "title": "Leg Extension (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "75A4F6C4",
      "superset_id": null,
      "sets": [
@@ -17782,7 +18056,7 @@
     {
      "index": 4,
      "title": "Single Leg Standing Calf Raise (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B05C2C29",
      "superset_id": null,
      "sets": [
@@ -17823,7 +18097,7 @@
     {
      "index": 0,
      "title": "Chest Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "78683336",
      "superset_id": null,
      "sets": [
@@ -17862,7 +18136,7 @@
     {
      "index": 1,
      "title": "Shoulder Press (Machine Plates)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "059E835D",
      "superset_id": null,
      "sets": [
@@ -17901,7 +18175,7 @@
     {
      "index": 2,
      "title": "Chest Dip",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "6FCD7755",
      "superset_id": null,
      "sets": [
@@ -17930,7 +18204,7 @@
     {
      "index": 3,
      "title": "Decline Bench Press (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "FAF31231",
      "superset_id": null,
      "sets": [
@@ -17971,7 +18245,7 @@
     {
      "index": 0,
      "title": "Lying Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B8127AD1",
      "superset_id": null,
      "sets": [
@@ -18020,7 +18294,7 @@
     {
      "index": 1,
      "title": "Squat (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D04AC939",
      "superset_id": null,
      "sets": [
@@ -18059,7 +18333,7 @@
     {
      "index": 2,
      "title": "Ab Wheel",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "99D5F10E",
      "superset_id": null,
      "sets": [
@@ -18088,7 +18362,7 @@
     {
      "index": 3,
      "title": "Leg Extension (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "75A4F6C4",
      "superset_id": 0,
      "sets": [
@@ -18117,7 +18391,7 @@
     {
      "index": 4,
      "title": "Seated Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "11A123F3",
      "superset_id": 0,
      "sets": [
@@ -18146,7 +18420,7 @@
     {
      "index": 5,
      "title": "Standing Calf Raise (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "E05C2C38",
      "superset_id": null,
      "sets": [
@@ -18177,7 +18451,7 @@
     {
      "index": 0,
      "title": "Shoulder Press (Machine Plates)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "059E835D",
      "superset_id": null,
      "sets": [
@@ -18226,7 +18500,7 @@
     {
      "index": 1,
      "title": "Behind the Back Curl (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "2DBCA395",
      "superset_id": null,
      "sets": [
@@ -18265,7 +18539,7 @@
     {
      "index": 2,
      "title": "Triceps Pushdown",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "93A552C6",
      "superset_id": null,
      "sets": [
@@ -18304,7 +18578,7 @@
     {
      "index": 3,
      "title": "Lateral Raise (Cable)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "BE289E45",
      "superset_id": null,
      "sets": [
@@ -18333,7 +18607,7 @@
     {
      "index": 4,
      "title": "Hammer Curl (Dumbbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "7E3BC8B6",
      "superset_id": null,
      "sets": [
@@ -18374,7 +18648,7 @@
     {
      "index": 0,
      "title": "Bulgarian Split Squat",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B5D3A742",
      "superset_id": null,
      "sets": [
@@ -18413,7 +18687,7 @@
     {
      "index": 1,
      "title": "Lying Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B8127AD1",
      "superset_id": null,
      "sets": [
@@ -18452,7 +18726,7 @@
     {
      "index": 2,
      "title": "Leg Extension (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "75A4F6C4",
      "superset_id": null,
      "sets": [
@@ -18491,7 +18765,7 @@
     {
      "index": 3,
      "title": "Seated Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "11A123F3",
      "superset_id": null,
      "sets": [
@@ -18520,7 +18794,7 @@
     {
      "index": 4,
      "title": "Single Leg Standing Calf Raise (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B05C2C29",
      "superset_id": null,
      "sets": [
@@ -18549,7 +18823,7 @@
     {
      "index": 5,
      "title": "Ab Wheel",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "99D5F10E",
      "superset_id": null,
      "sets": [
@@ -18600,7 +18874,7 @@
     {
      "index": 0,
      "title": "Pull Up",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "1B2B1E7C",
      "superset_id": null,
      "sets": [
@@ -18639,7 +18913,7 @@
     {
      "index": 1,
      "title": "Seated Cable Row - Bar Grip",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "F1D60854",
      "superset_id": null,
      "sets": [
@@ -18678,7 +18952,7 @@
     {
      "index": 2,
      "title": "Lat Pulldown (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "473CF5B8",
      "superset_id": null,
      "sets": [
@@ -18717,7 +18991,7 @@
     {
      "index": 3,
      "title": "Rear Delt Reverse Fly (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D8281C62",
      "superset_id": null,
      "sets": [
@@ -18768,7 +19042,7 @@
     {
      "index": 0,
      "title": "Bulgarian Split Squat",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B5D3A742",
      "superset_id": null,
      "sets": [
@@ -18787,7 +19061,7 @@
     {
      "index": 1,
      "title": "Lying Leg Curl (Machine)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "B8127AD1",
      "superset_id": null,
      "sets": [
@@ -18836,7 +19110,7 @@
     {
      "index": 2,
      "title": "Squat (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "D04AC939",
      "superset_id": null,
      "sets": [
@@ -18875,7 +19149,7 @@
     {
      "index": 3,
      "title": "Ab Wheel",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "99D5F10E",
      "superset_id": null,
      "sets": [
@@ -18904,7 +19178,7 @@
     {
      "index": 4,
      "title": "Good Morning (Barbell)",
-     "notes": "",
+     "notes": null,
      "exercise_template_id": "4180C405",
      "superset_id": null,
      "sets": [

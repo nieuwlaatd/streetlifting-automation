@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-10-06T12:03:23+00:00",
+ "bijgewerkt": "2026-10-06T23:59:58+00:00",
  "dagen": {
   "2026-09-24 donderdag": {
    "plan_datum": "2026-09-24",
@@ -776,6 +776,122 @@
     }
    ],
    "extra": [],
+   "dagnotitie": ""
+  },
+  "2026-10-05 maandag": {
+   "plan_datum": "2026-10-05",
+   "dag": "maandag",
+   "week": 5,
+   "thema": "Primaire Dip + Secundaire Pull-Up",
+   "sessie_datum": "2026-10-06",
+   "sessie_titel": "SL 1 · Ma wk5 — Primaire Dip + Secundaire Pull-Up",
+   "gekoppeld_op": "oefeningen",
+   "oefeningen": [
+    {
+     "rij": 10,
+     "plan": "Competition Dip",
+     "voorschrift": "3x3 RPE 9 37,5-40 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Chest Dip (Weighted)",
+     "sets": [
+      "40x3 @8.5",
+      "40x3 @9",
+      "40x3 @9"
+     ],
+     "rpe": "8.5-9",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 11,
+     "plan": "Competition Dip",
+     "voorschrift": "3x6 RPE 8 20-25 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Chest Dip (Weighted)",
+     "sets": [
+      "20x6 @6",
+      "25x6 @8",
+      "25x6 @8.5"
+     ],
+     "rpe": "6-8.5",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 12,
+     "plan": "Competition Chin-up",
+     "voorschrift": "3x5 RPE 32,5-35-37,5",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Chin Up (Weighted)",
+     "sets": [
+      "32.5x5 @7",
+      "35x5 @8",
+      "37.5x5 @9"
+     ],
+     "rpe": "7-9",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 13,
+     "plan": "45 degree Incline Dumbbell Press",
+     "voorschrift": "3x6-12",
+     "notitie": "Was gesloopt bij de 2e set en wss te weinig rust.",
+     "status": "gedaan",
+     "uitgevoerd_als": "Incline Bench Press (Dumbbell)",
+     "sets": [
+      "52x8 @9",
+      "52x3 @9",
+      "40x9 @9"
+     ],
+     "rpe": "9",
+     "afwijking": "reps 3-9 i.p.v. 6-12"
+    },
+    {
+     "rij": 14,
+     "plan": "Cable Side Raise",
+     "voorschrift": "2x10-15",
+     "notitie": "Rechter schouder voelde heel zwaar, dus gewicht gedropped voor 2e set",
+     "status": "gedaan",
+     "uitgevoerd_als": "Single Arm Lateral Raise (Cable)",
+     "sets": [
+      "7.5x12 @9.5",
+      "5x20 @8.5"
+     ],
+     "rpe": "8.5-9.5",
+     "afwijking": "reps 12-20 i.p.v. 10-15"
+    },
+    {
+     "rij": 15,
+     "plan": "Plate Loaded Knee Raise",
+     "voorschrift": "3x6-12",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Plate Loaded Knee Raise",
+     "sets": [
+      "10x6 @9"
+     ],
+     "rpe": "9",
+     "afwijking": "1 sets i.p.v. 3"
+    },
+    {
+     "rij": 16,
+     "plan": "Skull Crusher",
+     "voorschrift": "2x6-12",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Skullcrusher (Dumbbell)",
+     "sets": [
+      "20x8 @9",
+      "20x6 @10"
+     ],
+     "rpe": "9-10",
+     "afwijking": "volgens plan"
+    }
+   ],
+   "extra": [
+    "Crunch (Machine): 47.5x7 @9, 45x7 @9 (Knee raises was weer bezet)"
+   ],
    "dagnotitie": ""
   }
  }
