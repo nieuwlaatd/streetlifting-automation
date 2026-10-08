@@ -1,9 +1,9 @@
 {
- "gegenereerd_op": "2026-10-07T11:48:42+00:00",
- "vandaag": "2026-10-07",
- "weekdag": 2,
- "dagthema": "Pull zwaar",
- "kernlift_vandaag": "pullup",
+ "gegenereerd_op": "2026-10-08T00:21:05+00:00",
+ "vandaag": "2026-10-08",
+ "weekdag": 3,
+ "dagthema": "Squat zwaar",
+ "kernlift_vandaag": "squat",
  "positie": {
   "week": 5,
   "cyclusweek": 5,
@@ -12,29 +12,29 @@
   "deload": false,
   "startdatum": "2026-09-07"
  },
- "lichaamsgewicht": 77.13,
+ "lichaamsgewicht": 77.19,
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-10-07T11:48:32+00:00",
+  "opgehaald": "2026-10-08T00:20:48+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
-  "gewicht_7d_kg": 77.13,
-  "gewicht_vorige_7d_kg": 77.35,
-  "verandering_per_week_kg": -0.22,
-  "nog_af_tot_73_kg": 4.1,
-  "vet_pct_7d": 17.47,
-  "kcal_7d": 2116.33,
-  "eiwit_7d_g": 126.5,
-  "eiwit_per_kg": 1.64,
+  "gewicht_7d_kg": 77.19,
+  "gewicht_vorige_7d_kg": 77.33,
+  "verandering_per_week_kg": -0.14,
+  "nog_af_tot_73_kg": 4.2,
+  "vet_pct_7d": 17.5,
+  "kcal_7d": 2407.17,
+  "eiwit_7d_g": 151.67,
+  "eiwit_per_kg": 1.96,
   "dagen_met_voeding_7d": 6,
-  "dagen_met_gewicht_7d": 6,
-  "slaap_7d_uur": 8.49,
-  "kortste_nacht_7d_uur": 7.9,
+  "dagen_met_gewicht_7d": 5,
+  "slaap_7d_uur": 8.59,
+  "kortste_nacht_7d_uur": 8.08,
   "nachten_onder_6u_7d": 0,
-  "verbrand_7d_kcal": 2789.0,
-  "stappen_7d": 6501.71,
-  "energiebalans_7d_kcal": -691.67
+  "verbrand_7d_kcal": 2806.86,
+  "stappen_7d": 6844.14,
+  "energiebalans_7d_kcal": -401.0
  },
  "stand": {
   "dip": {
@@ -204,7 +204,7 @@
      "reps": 5,
      "rpe": 7,
      "type": "normal",
-     "e1rm": 61.6,
+     "e1rm": 61.7,
      "variant": null
     },
     {
@@ -459,7 +459,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-10-06",
+    "datum": "2026-10-07",
     "sets": 4,
     "reps": 4,
     "kg": 35.0
@@ -471,7 +471,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-10-06",
+    "datum": "2026-10-07",
     "sets": 4,
     "reps": 4,
     "kg": 47.5
@@ -483,7 +483,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-10-06",
+    "datum": "2026-10-07",
     "sets": 5,
     "reps": 5,
     "kg": 85.0
