@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-10-08T00:21:16+00:00",
+ "bijgewerkt": "2026-10-08T12:03:46+00:00",
  "dagen": {
   "2026-09-24 donderdag": {
    "plan_datum": "2026-09-24",
@@ -891,6 +891,124 @@
    ],
    "extra": [
     "Crunch (Machine): 47.5x7 @9, 45x7 @9 (Knee raises was weer bezet)"
+   ],
+   "dagnotitie": ""
+  },
+  "2026-10-08 donderdag": {
+   "plan_datum": "2026-10-08",
+   "dag": "donderdag",
+   "week": 5,
+   "thema": "Primaire Pull-Up + Tertiaire Dip + Squat",
+   "sessie_datum": "2026-10-08",
+   "sessie_titel": "SL 2 · Di wk5 — Secundaire Squat + Muscle up",
+   "gekoppeld_op": "weekdag",
+   "oefeningen": [
+    {
+     "rij": 30,
+     "plan": "Competition Pull-Up",
+     "voorschrift": "3x6 RPE 9 35-37,5 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Pull Up",
+     "sets": [
+      "BWx8 @6",
+      "BWx8"
+     ],
+     "rpe": "6",
+     "afwijking": "2 sets i.p.v. 3; reps 8 i.p.v. 6"
+    },
+    {
+     "rij": 31,
+     "plan": "Competition Pull-Up",
+     "voorschrift": "1x3 RPE 9 50-55 kg",
+     "notitie": "",
+     "status": "niet gedaan",
+     "sets": [],
+     "rpe": "",
+     "afwijking": "niet gedaan"
+    },
+    {
+     "rij": 32,
+     "plan": "2s Paused Dip",
+     "voorschrift": "2x4 RPE 6 20-22,5 kg",
+     "notitie": "",
+     "status": "niet gedaan",
+     "sets": [],
+     "rpe": "",
+     "afwijking": "niet gedaan"
+    },
+    {
+     "rij": 33,
+     "plan": "Close Grip Larsen Press",
+     "voorschrift": "2x7 RPE 8 65-67,5 kg",
+     "notitie": "",
+     "status": "niet gedaan",
+     "sets": [],
+     "rpe": "",
+     "afwijking": "niet gedaan"
+    },
+    {
+     "rij": 34,
+     "plan": "2s Paused Squat",
+     "voorschrift": "3x4 RPE 6 70-72,5 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Pause Squat (Barbell)",
+     "sets": [
+      "72.5x5 @6",
+      "72.5x5 @7"
+     ],
+     "rpe": "6-7",
+     "afwijking": "2 sets i.p.v. 3; reps 5 i.p.v. 4"
+    },
+    {
+     "rij": 35,
+     "plan": "Cable Fly",
+     "voorschrift": "2x8-15",
+     "notitie": "",
+     "status": "vervangen",
+     "uitgevoerd_als": "Straight Arm Lat Pulldown (Cable)",
+     "sets": [
+      "35x8 @8",
+      "37.5x6 @8.5",
+      "30x10 @6"
+     ],
+     "rpe": "6-8.5",
+     "afwijking": "vervangen door Straight Arm Lat Pulldown (Cable)"
+    },
+    {
+     "rij": 36,
+     "plan": "Cable Knee Tuck",
+     "voorschrift": "3x10-15",
+     "notitie": "Single leg eerste 2 sets. Laatste set met 2 benen",
+     "status": "vervangen",
+     "uitgevoerd_als": "Leg Extension (Machine)",
+     "sets": [
+      "35x18 @9.5",
+      "30x16 @8",
+      "62.5x10 @9.5"
+     ],
+     "rpe": "8-9.5",
+     "afwijking": "vervangen door Leg Extension (Machine)"
+    },
+    {
+     "rij": 37,
+     "plan": "Ab Roll Out",
+     "voorschrift": "3xx",
+     "notitie": "",
+     "status": "vervangen",
+     "uitgevoerd_als": "Seated Cable Row - Bar Grip",
+     "sets": [
+      "80x8 @8.5",
+      "70x6 @8.5"
+     ],
+     "rpe": "8.5",
+     "afwijking": "vervangen door Seated Cable Row - Bar Grip"
+    }
+   ],
+   "extra": [
+    "Squat (Barbell): 77.5x3 @7",
+    "Spider Curl (Dumbbell): 40x10 @8, 40x9 @9, 40x9 @9.5"
    ],
    "dagnotitie": ""
   }
