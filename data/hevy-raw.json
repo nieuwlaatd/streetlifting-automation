@@ -73,6 +73,290 @@
  ],
  "workouts": [
   {
+   "id": "e5eb7683-fc63-4383-a7a2-e74a6cfc34be",
+   "title": "SL 3 · Do wk5 — Primaire Pull-Up + Tertiaire Dip + Squat",
+   "routine_id": "0c61bdb9-9ed4-4053-a8bd-02b8f4007bd1",
+   "description": "",
+   "start_time": "2026-10-09T14:48:17+00:00",
+   "end_time": "2026-10-09T16:34:53+00:00",
+   "updated_at": "2026-10-09T16:57:08.272Z",
+   "created_at": "2026-10-09T16:34:57.577Z",
+   "exercises": [
+    {
+     "index": 0,
+     "title": "Pull Up (Weighted)",
+     "notes": null,
+     "exercise_template_id": "729237D1",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 35,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 7,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 35,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 8,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "normal",
+       "weight_kg": 35,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 8.5,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "title": "Pull Up (Weighted)",
+     "notes": null,
+     "exercise_template_id": "729237D1",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 55,
+       "reps": 2,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9.5,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "title": "Chest Dip (Weighted)",
+     "notes": null,
+     "exercise_template_id": "29472BE1",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 20,
+       "reps": 4,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 40,
+       "reps": 4,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "title": "Bench Press (Barbell)",
+     "notes": null,
+     "exercise_template_id": "79D0BB3A",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 65,
+       "reps": 7,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 7.5,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 65,
+       "reps": 7,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 8,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "title": "Pause Squat (Barbell)",
+     "notes": null,
+     "exercise_template_id": "CE1054CE",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "warmup",
+       "weight_kg": 60,
+       "reps": 4,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 70,
+       "reps": 4,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "normal",
+       "weight_kg": 70,
+       "reps": 4,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      },
+      {
+       "index": 3,
+       "type": "normal",
+       "weight_kg": 70,
+       "reps": 4,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 7,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 5,
+     "title": "Chest Fly (Machine)",
+     "notes": null,
+     "exercise_template_id": "78683336",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 35,
+       "reps": 8,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 10,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 30,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9.5,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 6,
+     "title": "Hip Thrust (Machine)",
+     "notes": null,
+     "exercise_template_id": "68CE0B9B",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 60,
+       "reps": 8,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 80,
+       "reps": 8,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 8,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "normal",
+       "weight_kg": 80,
+       "reps": 8,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 7,
+     "title": "Ab Wheel",
+     "notes": null,
+     "exercise_template_id": "99D5F10E",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": null,
+       "reps": 12,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": null,
+       "reps": 10,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "normal",
+       "weight_kg": null,
+       "reps": 10,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      }
+     ]
+    }
+   ]
+  },
+  {
    "id": "9d8315a7-af50-4fd0-8642-42c4a1f4a36f",
    "title": "SL 2 · Di wk5 — Secundaire Squat + Muscle up",
    "routine_id": "f1945136-113c-426a-841a-b0b094c00b9a",
