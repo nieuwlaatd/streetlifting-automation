@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-10-10T11:12:28+00:00",
+ "bijgewerkt": "2026-10-10T23:45:04+00:00",
  "dagen": {
   "2026-09-24 donderdag": {
    "plan_datum": "2026-09-24",
@@ -1014,6 +1014,161 @@
       "BWx12",
       "BWx10",
       "BWx10"
+     ],
+     "rpe": "",
+     "afwijking": "volgens plan"
+    }
+   ],
+   "extra": [],
+   "dagnotitie": ""
+  },
+  "2026-10-10 zaterdag": {
+   "plan_datum": "2026-10-10",
+   "dag": "zaterdag",
+   "week": 5,
+   "thema": "Primaire Muscle-Up + Squat + Secundaire Dip + Tertiaire Pull-Up",
+   "sessie_datum": "2026-10-10",
+   "sessie_titel": "SL 4 · Za wk5 — Primaire Muscle-Up + Squat + Secundaire Dip + Tertiaire Pull-Up",
+   "gekoppeld_op": "weekdag",
+   "oefeningen": [
+    {
+     "rij": 41,
+     "plan": "Competition Squat",
+     "voorschrift": "3x5 RPE 7->8->9 80-95 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Squat (Barbell)",
+     "sets": [
+      "80x5 @7",
+      "90x5 @8.5",
+      "95x4 @9.5"
+     ],
+     "rpe": "7-9.5",
+     "afwijking": "reps 4-5 i.p.v. 5"
+    },
+    {
+     "rij": 42,
+     "plan": "Competition Squat",
+     "voorschrift": "2x7 RPE 8 70-75 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Squat (Barbell)",
+     "sets": [
+      "70x7 @8",
+      "70x7 @8"
+     ],
+     "rpe": "8",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 43,
+     "plan": "Band Assisted Muscle-Up",
+     "voorschrift": "2x10",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Band Assisted Muscle-Up",
+     "sets": [
+      "BWx8 @9",
+      "BWx7 @9.5"
+     ],
+     "rpe": "9-9.5",
+     "afwijking": "reps 7-8 i.p.v. 10"
+    },
+    {
+     "rij": 44,
+     "plan": "3-1-0 Tempo Dip",
+     "voorschrift": "1x3 RPE 7 20-25 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Chest Dip (Weighted)",
+     "sets": [
+      "20x4 @7"
+     ],
+     "rpe": "7",
+     "afwijking": "reps 4 i.p.v. 3"
+    },
+    {
+     "rij": 45,
+     "plan": "Competition Dip",
+     "voorschrift": "2x6 RPE 6 10-15 kg",
+     "notitie": "Eerste set rpe 4",
+     "status": "gedaan",
+     "uitgevoerd_als": "Chest Dip (Weighted)",
+     "sets": [
+      "15x6 @4",
+      "20x6 @6"
+     ],
+     "rpe": "4-6",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 46,
+     "plan": "3s Tempo Pull-Up",
+     "voorschrift": "2x5 RPE 6 10-15 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Pull Up (Weighted)",
+     "sets": [
+      "15x5 @8",
+      "15x5 @9.5"
+     ],
+     "rpe": "8-9.5",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 47,
+     "plan": "Leg Curl",
+     "voorschrift": "2x8-15",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Lying Leg Curl (Machine)",
+     "sets": [
+      "45x10 @9.5",
+      "40x8 @9.5"
+     ],
+     "rpe": "9.5",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 48,
+     "plan": "Wide Grip Row",
+     "voorschrift": "2x6-12",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Seated Cable Row - Bar Wide Grip",
+     "sets": [
+      "80x10 @8.5",
+      "90x5 @9.5",
+      "70x3 @9.5"
+     ],
+     "rpe": "8.5-9.5",
+     "afwijking": "3 sets i.p.v. 2; reps 3-10 i.p.v. 6-12"
+    },
+    {
+     "rij": 49,
+     "plan": "Tricep Extension",
+     "voorschrift": "2x8-15",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Triceps Rope Pushdown",
+     "sets": [
+      "30x5",
+      "25x8",
+      "20x8"
+     ],
+     "rpe": "",
+     "afwijking": "3 sets i.p.v. 2; reps 5-8 i.p.v. 8-15"
+    },
+    {
+     "rij": 50,
+     "plan": "Side Plank Leg Raised",
+     "voorschrift": "2x30 sec",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Side Plank",
+     "sets": [
+      "31s",
+      "31s"
      ],
      "rpe": "",
      "afwijking": "volgens plan"

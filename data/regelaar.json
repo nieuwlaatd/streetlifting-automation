@@ -135,17 +135,25 @@
     "nieuwe_factor": 1.025,
     "kg": 42.5,
     "kg_volgens_plan": 42.5
+   },
+   {
+    "datum": "2026-10-10",
+    "oordeel": "goed",
+    "reden": "binnen het plafond, beste set rekent uit op e1RM 42.7",
+    "nieuwe_factor": 1.025,
+    "kg": 42.5,
+    "kg_volgens_plan": 42.5
    }
   ],
-  "laatste_beoordeelde_sessie": "2026-10-09"
+  "laatste_beoordeelde_sessie": "2026-10-10"
  },
  "pullup": {
-  "factor": 1.0,
+  "factor": 0.95,
   "laatste_voorschrift": {
    "datum": "2026-10-10",
    "sets": 4,
    "reps": 4,
-   "kg": 47.5
+   "kg": 45.0
   },
   "log": [
    {
@@ -267,17 +275,25 @@
     "nieuwe_factor": 1.0,
     "kg": 47.5,
     "kg_volgens_plan": 47.5
+   },
+   {
+    "datum": "2026-10-10",
+    "oordeel": "te_zwaar",
+    "reden": "RPE 9.5 gelogd, boven het plafond",
+    "nieuwe_factor": 0.95,
+    "kg": 45.0,
+    "kg_volgens_plan": 47.5
    }
   ],
-  "laatste_beoordeelde_sessie": "2026-10-09"
+  "laatste_beoordeelde_sessie": "2026-10-10"
  },
  "squat": {
-  "factor": 1.0,
+  "factor": 0.95,
   "laatste_voorschrift": {
    "datum": "2026-10-10",
    "sets": 5,
    "reps": 5,
-   "kg": 85.0
+   "kg": 82.5
   },
   "log": [
    {
@@ -399,9 +415,17 @@
     "nieuwe_factor": 1.0,
     "kg": 85.0,
     "kg_volgens_plan": 85.0
+   },
+   {
+    "datum": "2026-10-10",
+    "oordeel": "te_zwaar",
+    "reden": "RPE 9.5 gelogd, boven het plafond",
+    "nieuwe_factor": 0.95,
+    "kg": 82.5,
+    "kg_volgens_plan": 87.5
    }
   ],
-  "laatste_beoordeelde_sessie": "2026-10-09"
+  "laatste_beoordeelde_sessie": "2026-10-10"
  },
  "versie": 2
 }
