@@ -1,5 +1,5 @@
 {
- "opgehaald": "2026-10-11T14:29:39+00:00",
+ "opgehaald": "2026-10-11T14:36:02+00:00",
  "bron": "https://docs.google.com/spreadsheets/d/1QGxPFQB17u9zDPNXMl74pcVUERlX2g7RwZBRk-Trpfo/export?format=xlsx",
  "blokken": [
   {
@@ -1181,8 +1181,8 @@
        "sets": "3",
        "reps": "5",
        "rpe_load": "27,5-30-32,5",
-       "rpe": "27,5-30-32,5",
-       "kg": "",
+       "rpe": "",
+       "kg": "27,5-30-32,5",
        "opmerking": ""
       },
       {
@@ -1560,8 +1560,8 @@
        "sets": "3",
        "reps": "5",
        "rpe_load": "32,5-35-37,5",
-       "rpe": "32,5-35-37,5",
-       "kg": "",
+       "rpe": "",
+       "kg": "32,5-35-37,5",
        "opmerking": ""
       },
       {
@@ -1939,8 +1939,8 @@
        "sets": "3",
        "reps": "4",
        "rpe_load": "27,5>30>32,5",
-       "rpe": "27,5>30>32,5",
-       "kg": "",
+       "rpe": "",
+       "kg": "27,5>30>32,5",
        "opmerking": ""
       },
       {
@@ -2022,8 +2022,8 @@
        "sets": "3",
        "reps": "4",
        "rpe_load": "65->70->75",
-       "rpe": "65->70->75",
-       "kg": "",
+       "rpe": "",
+       "kg": "65->70->75",
        "opmerking": ""
       },
       {
