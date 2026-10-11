@@ -197,10 +197,23 @@ def kies_dag(workout, dagen):
     if not kandidaten:
         return None, "valt buiten het datumbereik van elke geplande dag"
 
-    op_weekdag = [d for d in kandidaten if d["weekdag"] == datum.weekday()]
-    if op_weekdag and overlap(op_weekdag[0]) >= 2:
-        return op_weekdag[0], "weekdag"
-    beste = max(kandidaten, key=overlap)
+    # De routine zegt zelf voor welke dag hij bedoeld is: "SL 2 · Di wk5".
+    # Dat is het sterkste signaal. Op 8 oktober trainde Dylan de dinsdag op een
+    # donderdag, en koppelde de weekdag hem aan Kajs pull-up-donderdag.
+    m = re.search(r"\b(Ma|Di|Wo|Do|Vr|Za|Zo) wk(\d+)\b", workout.get("title") or "")
+    if m:
+        op_titel = [d for d in kandidaten
+                    if hevy_routines.KORT.get(d["dag"]) == m.group(1)
+                    and d.get("week") == int(m.group(2)) and overlap(d) >= 2]
+        if op_titel:
+            return min(op_titel, key=lambda d: abs(
+                (datum - dt.date.fromisoformat(d["datum"])).days) if d.get("datum") else 0), "titel"
+
+    # Zonder titel: de dag met de meeste overlap. De weekdag beslist alleen
+    # bij een gelijke stand, niet meer bij twee toevallig gedeelde oefeningen.
+    beste = max(kandidaten, key=lambda d: (overlap(d), d["weekdag"] == datum.weekday()))
+    if beste["weekdag"] == datum.weekday() and overlap(beste) >= 2:
+        return beste, "weekdag"
     return (beste, "oefeningen") if overlap(beste) >= 3 else (None, "te weinig overlap")
 
 
@@ -487,19 +500,47 @@ UITVOERING_PAD = "data/uitvoering.json"
 EIGEN_KOPTEKST = ("Buiten plan gedaan", "Extra buiten plan", "Dagnotitie")
 
 
-def schrijf_uitvoering(verslagen):
+def sessie_sleutel(v):
+    """Welke Hevy-sessie hoort bij een verslag? Datum en titel, die heeft ook een oud verslag."""
+    return f"{v.get('sessie_datum')} {v.get('sessie_titel')}"
+
+
+def lees_uitvoering():
+    try:
+        return json.load(open(UITVOERING_PAD, encoding="utf-8")).get("dagen", {})
+    except (FileNotFoundError, ValueError):
+        return {}
+
+
+def herkoppelingen(verslagen, vorige):
+    """Vergelijkt de nieuwe koppeling met die van de vorige run.
+
+    Markeert elk verslag waarvan de dag eerder een andere sessie kreeg: die
+    cellen schreef dit script zelf, dus ze mogen over. Geeft de sleutels terug
+    van dagen die hun sessie kwijtraakten aan een andere dag.
+    """
+    nu = {sessie_sleutel(v): f"{v['plan_datum']} {v['dag']}" for v in verslagen}
+    for v in verslagen:
+        oud = vorige.get(f"{v['plan_datum']} {v['dag']}")
+        v["herkoppeld"] = bool(oud) and sessie_sleutel(oud) != sessie_sleutel(v)
+    doelen = set(nu.values())
+    return [sleutel for sleutel, oud in vorige.items()
+            if sleutel not in doelen and sessie_sleutel(oud) in nu]
+
+
+def schrijf_uitvoering(verslagen, verweesd=()):
     """Bewaart de koppeling per geplande dag, zodat het weekrapport hem leest.
 
-    Oudere dagen blijven staan: dit script kijkt maar tien dagen terug.
+    Oudere dagen blijven staan: dit script kijkt maar tien dagen terug. Een dag
+    waarvan de sessie nu bij een andere dag hoort gaat eruit, anders telt het
+    weekrapport dezelfde training twee keer.
     """
-    try:
-        bestaand = json.load(open(UITVOERING_PAD, encoding="utf-8"))
-    except (FileNotFoundError, ValueError):
-        bestaand = {}
-    dagen = bestaand.get("dagen", {})
+    dagen = lees_uitvoering()
+    for sleutel in verweesd:
+        dagen.pop(sleutel, None)
     for v in verslagen:
         dagen[f"{v['plan_datum']} {v['dag']}"] = {
-            k: v[k] for k in v if k not in ("tabblad", "kolom", "kop_rij")}
+            k: v[k] for k in v if k not in ("tabblad", "kolom", "kop_rij", "herkoppeld")}
     uit = {"bijgewerkt": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
            "dagen": dict(sorted(dagen.items()))}
     with open(UITVOERING_PAD, "w", encoding="utf-8") as f:
@@ -533,7 +574,14 @@ def main():
             print(f"  {w['start_time'][:10]} {w.get('title', '')!r}: overgeslagen ({reden})")
             continue
         verslagen.append(verslag_van(w, dag, reden))
-    schrijf_uitvoering(verslagen)
+    verweesd = herkoppelingen(verslagen, lees_uitvoering())
+    for v in verslagen:
+        if v["herkoppeld"]:
+            print(f"  {v['dag']} {v['plan_datum']} krijgt een andere sessie dan eerst; "
+                  "eerder ingevulde cellen worden vervangen")
+    for sleutel in verweesd:
+        print(f"  {sleutel} hield een sessie die nu elders hoort; die dag wordt leeggemaakt")
+    schrijf_uitvoering(verslagen, verweesd)
 
     client = sheets_client()
     if client is None:
@@ -553,13 +601,39 @@ def main():
         r = waarden[rij - 1] if len(waarden) >= rij else []
         return (r[kol - 1] if len(r) >= kol else "") or ""
 
+    def wis_dag(dag):
+        """Maakt de uitvoeringscellen van een dag leeg, plus de eigen kopregeltekst."""
+        b = Blok(dag)
+        uit = [{"range": b.a1(b.rpe, o["rij"], b.notitie),
+                "values": [[""] * (b.notitie - b.rpe + 1)]} for o in dag["oefeningen"]]
+        if str(cel(b.tab, dag["kop_rij"], b.notitie)).strip().startswith(EIGEN_KOPTEKST):
+            uit.append({"range": b.a1(b.notitie, dag["kop_rij"]), "values": [[""]]})
+        return uit
+
     updates, tekstcellen, opmaak = [], set(), set()
+    per_sleutel = {f"{d.get('datum')} {d['dag']}": d for d in dagen}
+    for sleutel in verweesd:
+        if sleutel in per_sleutel:
+            updates.extend(wis_dag(per_sleutel[sleutel]))
     for v in verslagen:
         b = Blok({"tabblad": v["tabblad"], "kolom": v["kolom"]})
         kop = v["kop_rij"] + 1                    # de OEFENING|SETS|... regel
         opmaak.add((b.tab, b.start, kop, True))
         gevuld = 0
-        for r in v["oefeningen"]:
+        vervang_dag = v["herkoppeld"] and not overschrijf
+        if vervang_dag:
+            # De cellen van deze dag komen van een verkeerde koppeling in een
+            # eerdere run. Hele rij in een keer, zodat er geen sets van de
+            # vorige sessie blijven hangen.
+            for r in v["oefeningen"]:
+                sets = (r["sets"][:5] + [""] * 5)[:5]
+                updates.append({"range": b.a1(b.rpe, r["rij"], b.notitie),
+                                 "values": [[r["rpe"], *sets, r["afwijking"], r["notitie"]]]})
+                if r["rpe"]:
+                    tekstcellen.add((b.tab, b.rpe, r["rij"]))
+                gevuld += sum(1 for x in sets if x)
+                opmaak.add((b.tab, b.start, r["rij"], False))
+        for r in ([] if vervang_dag else v["oefeningen"]):
             rij = r["rij"]
             # Geldig is "6", "8.5" of een bereik als "6-8". Een datum uit een
             # oudere versie van dit script heeft twee streepjes en valt af.
@@ -591,14 +665,16 @@ def main():
         if v["dagnotitie"]:
             kopdelen.append("Dagnotitie: " + notities.samenvatting(v["dagnotitie"]))
         huidig = str(cel(b.tab, v["kop_rij"], b.notitie)).strip()
-        if kopdelen and (overschrijf or not huidig or huidig.startswith(EIGEN_KOPTEKST)):
+        if kopdelen and (overschrijf or v["herkoppeld"] or not huidig
+                         or huidig.startswith(EIGEN_KOPTEKST)):
             nieuw = " — ".join(kopdelen)
             if nieuw != huidig:
                 updates.append({"range": b.a1(b.notitie, v["kop_rij"]), "values": [[nieuw]]})
             opmaak.add((b.tab, b.start, v["kop_rij"], False))
-        elif not kopdelen and huidig.startswith("Buiten plan gedaan"):
+        elif not kopdelen and huidig.startswith(EIGEN_KOPTEKST):
             # Een oefening die eerder als 'buiten plan' bovenaan kwam, staat nu
-            # als vervanger op zijn eigen regel. De oude kopregel klopt niet meer.
+            # als vervanger op zijn eigen regel, of de dag kreeg een andere
+            # sessie. De oude kopregel klopt dan niet meer.
             updates.append({"range": b.a1(b.notitie, v["kop_rij"]), "values": [[""]]})
         if overschrijf or not cel(b.tab, kop, b.afwijking):
             updates.append({"range": b.a1(b.afwijking, kop, b.notitie),
@@ -615,11 +691,10 @@ def main():
             continue
         b = Blok(dag)
         rijen = [o["rij"] for o in dag["oefeningen"]]
-        if any(cel(b.tab, r, k) for r in rijen for k in range(b.rpe, b.notitie + 1)):
+        if any(cel(b.tab, r, k) for r in rijen for k in range(b.rpe, b.notitie + 1)) or str(
+                cel(b.tab, dag["kop_rij"], b.notitie)).strip().startswith(EIGEN_KOPTEKST):
             print(f"  {dag['dag']} ({gepland}) ligt in de toekomst; ingevulde cellen worden gewist")
-            for r in rijen:
-                updates.append({"range": b.a1(b.rpe, r, b.notitie),
-                                "values": [[""] * (b.notitie - b.rpe + 1)]})
+            updates.extend(wis_dag(dag))
 
     if not updates:
         print("Niets in te vullen; alles stond al of er was geen match.")
