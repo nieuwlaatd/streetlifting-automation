@@ -1,5 +1,5 @@
 {
- "gegenereerd_op": "2026-10-11T18:38:24+00:00",
+ "gegenereerd_op": "2026-10-11T20:16:20+00:00",
  "vandaag": "2026-10-11",
  "weekdag": 6,
  "dagthema": null,
@@ -16,7 +16,7 @@
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-10-11T18:38:11+00:00",
+  "opgehaald": "2026-10-11T20:16:09+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
   "gewicht_7d_kg": 76.73,
@@ -24,9 +24,9 @@
   "verandering_per_week_kg": -0.55,
   "nog_af_tot_73_kg": 3.7,
   "vet_pct_7d": 17.27,
-  "kcal_7d": 2461.43,
-  "eiwit_7d_g": 140.43,
-  "eiwit_per_kg": 1.83,
+  "kcal_7d": 2532.43,
+  "eiwit_7d_g": 146.14,
+  "eiwit_per_kg": 1.9,
   "dagen_met_voeding_7d": 7,
   "dagen_met_gewicht_7d": 6,
   "slaap_7d_uur": 8.96,
@@ -34,7 +34,7 @@
   "nachten_onder_6u_7d": 0,
   "verbrand_7d_kcal": 2721.71,
   "stappen_7d": 6231.29,
-  "energiebalans_7d_kcal": -260.29
+  "energiebalans_7d_kcal": -189.29
  },
  "stand": {
   "dip": {
@@ -462,7 +462,7 @@
     "datum": "2026-10-11",
     "sets": 4,
     "reps": 4,
-    "kg": 42.5
+    "kg": 35.0
    },
    "gemist": false
   },
