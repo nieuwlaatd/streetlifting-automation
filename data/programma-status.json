@@ -1,5 +1,5 @@
 {
- "gegenereerd_op": "2026-10-11T14:42:02+00:00",
+ "gegenereerd_op": "2026-10-11T18:38:24+00:00",
  "vandaag": "2026-10-11",
  "weekdag": 6,
  "dagthema": null,
@@ -16,7 +16,7 @@
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-10-11T14:41:47+00:00",
+  "opgehaald": "2026-10-11T18:38:11+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
   "gewicht_7d_kg": 76.73,
@@ -24,9 +24,9 @@
   "verandering_per_week_kg": -0.55,
   "nog_af_tot_73_kg": 3.7,
   "vet_pct_7d": 17.27,
-  "kcal_7d": 2299.29,
-  "eiwit_7d_g": 133.86,
-  "eiwit_per_kg": 1.74,
+  "kcal_7d": 2461.43,
+  "eiwit_7d_g": 140.43,
+  "eiwit_per_kg": 1.83,
   "dagen_met_voeding_7d": 7,
   "dagen_met_gewicht_7d": 6,
   "slaap_7d_uur": 8.96,
@@ -34,21 +34,21 @@
   "nachten_onder_6u_7d": 0,
   "verbrand_7d_kcal": 2721.71,
   "stappen_7d": 6231.29,
-  "energiebalans_7d_kcal": -422.43
+  "energiebalans_7d_kcal": -260.29
  },
  "stand": {
   "dip": {
-   "e1rm": 63.9,
+   "e1rm": 55.9,
    "e1rm_onderbouwing": [
-    {
-     "datum": "2026-10-09",
-     "set": "40 kg x 4 @ RPE 6",
-     "e1rm": 71.0
-    },
     {
      "datum": "2026-10-06",
      "set": "40 kg x 3 @ RPE 8.5",
      "e1rm": 56.7
+    },
+    {
+     "datum": "2026-09-14",
+     "set": "30 kg x 3 @ RPE 6",
+     "e1rm": 55.0
     }
    ],
    "bron": "hevy",
@@ -94,11 +94,11 @@
     },
     {
      "datum": "2026-10-09",
-     "gewicht": 40,
+     "gewicht": 20,
      "reps": 4,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 71.0,
+     "e1rm": 45.7,
      "variant": null
     },
     {
@@ -420,10 +420,10 @@
    "sets": 4,
    "reps": 4,
    "percentage": 84.0,
-   "kg": 42.5,
+   "kg": 35.0,
    "rpe_plafond": 8.5,
    "correctiefactor": 1.025,
-   "kg_volgens_plan": 42.5,
+   "kg_volgens_plan": 35.0,
    "afwijking_kg": 0.0,
    "bijgesteld_omdat": null,
    "sessie_gemist": false
@@ -539,6 +539,6 @@
   "kernsets_met_rpe": 27,
   "kernsets_tot_falen": 0
  },
- "totaal_nu": 244.0,
+ "totaal_nu": 236.0,
  "totaal_doel": 367
 }
