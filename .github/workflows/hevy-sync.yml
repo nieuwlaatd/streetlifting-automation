@@ -7,7 +7,10 @@ on:
   schedule:
     # 05:15 UTC, ruim voor het dagbericht van 06:00 UTC
     - cron: "15 5 * * *"
-    # 16:15 UTC op zondag, voor het weekrapport van 17:00 UTC
+    # Zondag extra vroeg en middag: het weekrapport draait zondag 23:00 (NL) en
+    # geplande runs lopen hier uren uit, dus de zondagtraining moet er ruim
+    # voor binnen zijn.
+    - cron: "0 12 * * 0"
     - cron: "15 16 * * 0"
     # 20:30 UTC, oftewel 22:30 bij Dylan: een avondtraining staat daarmee
     # dezelfde dag nog in het document van de coach in plaats van pas morgen.
