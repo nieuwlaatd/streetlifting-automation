@@ -1,5 +1,5 @@
 {
- "gegenereerd_op": "2026-10-11T11:25:32+00:00",
+ "gegenereerd_op": "2026-10-11T14:29:37+00:00",
  "vandaag": "2026-10-11",
  "weekdag": 6,
  "dagthema": null,
@@ -16,7 +16,7 @@
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-10-11T11:25:23+00:00",
+  "opgehaald": "2026-10-11T14:29:25+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
   "gewicht_7d_kg": 76.73,
@@ -227,8 +227,8 @@
     }
    ],
    "laatste_notitie": {
-    "datum": "2026-09-29",
-    "tekst": "Eerste was rpe 3 of 4, de tweede was rpe 5"
+    "datum": "2026-10-10",
+    "tekst": "3 sec omhoog, 3 seconden naar beneden"
    }
   },
   "squat": {
@@ -459,7 +459,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-10-10",
+    "datum": "2026-10-11",
     "sets": 4,
     "reps": 4,
     "kg": 42.5
@@ -471,7 +471,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-10-10",
+    "datum": "2026-10-11",
     "sets": 4,
     "reps": 4,
     "kg": 45.0
@@ -483,7 +483,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-10-10",
+    "datum": "2026-10-11",
     "sets": 5,
     "reps": 5,
     "kg": 82.5
