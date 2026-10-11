@@ -105,6 +105,11 @@ def splits_rpe_load(waarde):
     if "/" in waarde:
         rpe, kg = waarde.split("/", 1)
         return rpe.strip(), kg.strip()
+    # Zonder schuine streep kan het ook een kilo-opbouw zijn: '27,5>30>32,5'
+    # of '65->70->75' (Blok 1.1). Een RPE gaat niet boven de 10.
+    getallen = [float(g.replace(",", ".")) for g in re.findall(r"\d+(?:[.,]\d+)?", waarde)]
+    if getallen and min(getallen) > 10:
+        return "", waarde
     return waarde, ""
 
 

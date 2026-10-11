@@ -58,6 +58,11 @@ MAP = {
     "Ab Roll Out": ("99D5F10E", None),
     "Competition Squat": ("D04AC939", None),
     "Band Assisted Muscle-Up": ("f2734cb1-6a7a-4801-80c5-6d948b342c49", None),
+    # Nieuw in Blok 1.1. Het eigen muscle-up-template heeft geen gewichtsveld,
+    # dus het gewicht gaat in de notitie, zoals sheets_log dat al leest.
+    "Band Assisted Weighted Muscle-Up": ("f2734cb1-6a7a-4801-80c5-6d948b342c49",
+                                         "Gewogen: zet het gewicht in de notitie, bv. '5 bij de eerste 5 bij de laatste'"),
+    "Diagonal Weighted Pull-up": ("729237D1", "Diagonaal, gewogen"),   # Pull Up (Weighted)
     "3-1-0 Tempo Dip": ("29472BE1", "Tempo 3-1-0"),
     "3s Tempo Pull-Up": ("729237D1", "3 sec zakken"),   # gewogen: gewicht kan erbij
     "Leg Curl": ("B8127AD1", None),
@@ -205,7 +210,8 @@ def bouw_routines(schema, vandaag=None):
                 if rpe and rpe.lower() != "x":
                     stukken.append(f"RPE {rpe}")
                 if o.get("kg"):
-                    stukken.append(f"{o['kg']} kg")
+                    # '5/BW' betekent lichaamsgewicht; daar hoort geen 'kg' achter.
+                    stukken.append(o["kg"] if o["kg"].upper() == "BW" else f"{o['kg']} kg")
                 if extra:
                     stukken.append(extra)
                 if o["opmerking"]:
