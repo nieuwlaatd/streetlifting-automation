@@ -1,5 +1,5 @@
 {
- "gegenereerd_op": "2026-10-13T02:12:05+00:00",
+ "gegenereerd_op": "2026-10-13T12:44:20+00:00",
  "vandaag": "2026-10-13",
  "weekdag": 1,
  "dagthema": null,
@@ -12,29 +12,29 @@
   "deload": true,
   "startdatum": "2026-09-07"
  },
- "lichaamsgewicht": 76.89,
+ "lichaamsgewicht": 76.94,
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-10-13T02:11:48+00:00",
+  "opgehaald": "2026-10-13T12:44:08+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
-  "gewicht_7d_kg": 76.89,
+  "gewicht_7d_kg": 76.94,
   "gewicht_vorige_7d_kg": 77.02,
-  "verandering_per_week_kg": -0.13,
+  "verandering_per_week_kg": -0.08,
   "nog_af_tot_73_kg": 3.9,
-  "vet_pct_7d": 17.37,
-  "kcal_7d": 2699.33,
-  "eiwit_7d_g": 149.83,
-  "eiwit_per_kg": 1.95,
-  "dagen_met_voeding_7d": 6,
-  "dagen_met_gewicht_7d": 6,
-  "slaap_7d_uur": 9.15,
-  "kortste_nacht_7d_uur": 8.77,
+  "vet_pct_7d": 17.4,
+  "kcal_7d": 2373.0,
+  "eiwit_7d_g": 131.71,
+  "eiwit_per_kg": 1.71,
+  "dagen_met_voeding_7d": 7,
+  "dagen_met_gewicht_7d": 7,
+  "slaap_7d_uur": 8.89,
+  "kortste_nacht_7d_uur": 7.35,
   "nachten_onder_6u_7d": 0,
   "verbrand_7d_kcal": 2615.29,
   "stappen_7d": 6054.29,
-  "energiebalans_7d_kcal": 47.5
+  "energiebalans_7d_kcal": -242.29
  },
  "stand": {
   "dip": {
@@ -135,7 +135,7 @@
    }
   },
   "pullup": {
-   "e1rm": 70.1,
+   "e1rm": 70.2,
    "e1rm_onderbouwing": [
     {
      "datum": "2026-10-01",
@@ -145,7 +145,7 @@
     {
      "datum": "2026-09-29",
      "set": "30 kg x 5 @ RPE 5",
-     "e1rm": 69.5
+     "e1rm": 69.6
     }
    ],
    "bron": "hevy",
@@ -159,7 +159,7 @@
      "reps": 5,
      "rpe": 8,
      "type": "normal",
-     "e1rm": 61.2,
+     "e1rm": 61.3,
      "variant": null
     },
     {
@@ -459,7 +459,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-10-12",
+    "datum": "2026-10-13",
     "sets": 2,
     "reps": 5,
     "kg": 5.0
@@ -471,7 +471,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-10-12",
+    "datum": "2026-10-13",
     "sets": 2,
     "reps": 5,
     "kg": 12.5
@@ -483,7 +483,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-10-12",
+    "datum": "2026-10-13",
     "sets": 2,
     "reps": 5,
     "kg": 60.0
@@ -539,6 +539,6 @@
   "kernsets_met_rpe": 27,
   "kernsets_tot_falen": 0
  },
- "totaal_nu": 236.1,
+ "totaal_nu": 236.2,
  "totaal_doel": 367
 }
