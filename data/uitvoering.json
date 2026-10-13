@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-10-13T12:44:23+00:00",
+ "bijgewerkt": "2026-10-13T23:49:29+00:00",
  "dagen": {
   "2026-09-24 donderdag": {
    "plan_datum": "2026-09-24",
@@ -1288,6 +1288,150 @@
     }
    ],
    "extra": [],
+   "dagnotitie": ""
+  },
+  "2026-10-13 dinsdag": {
+   "plan_datum": "2026-10-13",
+   "dag": "dinsdag",
+   "week": 1,
+   "thema": "Primaire Dip + Secundaire Pull-Up + Squat",
+   "sessie_datum": "2026-10-13",
+   "sessie_titel": "SL 1 · Di wk1 — Primaire Dip + Secundaire Pull-Up + Squat",
+   "gekoppeld_op": "titel",
+   "oefeningen": [
+    {
+     "rij": 10,
+     "plan": "Competition Dip",
+     "voorschrift": "3x3 RPE 5 20-25 kg",
+     "notitie": "Eerste rpe 4, tweede rpe 5, derde ook rpe 5",
+     "status": "gedaan",
+     "uitgevoerd_als": "Chest Dip (Weighted)",
+     "sets": [
+      "25x3 @4",
+      "25x3 @5",
+      "25x3"
+     ],
+     "rpe": "4-5",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 11,
+     "plan": "Competition Dip",
+     "voorschrift": "3x5 RPE 5 12,5-17,5 kg",
+     "notitie": "Merk dat ik telkens bij de eerste rep aarzel ofz en daardoor ook last van mijn elleboog krijg. Daarna gaan ze soepel.",
+     "status": "gedaan",
+     "uitgevoerd_als": "Chest Dip (Weighted)",
+     "sets": [
+      "15x5",
+      "15x5",
+      "15x5"
+     ],
+     "rpe": "",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 12,
+     "plan": "Competition Chin-up",
+     "voorschrift": "3x4 27,5>30>32,5 kg",
+     "notitie": "Eerste set rpe 4, tweede set rpe 5",
+     "status": "gedaan",
+     "uitgevoerd_als": "Chin Up (Weighted)",
+     "sets": [
+      "27.5x4 @4",
+      "30x4 @5",
+      "32.5x4 @6"
+     ],
+     "rpe": "4-6",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 13,
+     "plan": "3-1-0 Tempo Squat",
+     "voorschrift": "1x3 RPE 6 70-75 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Squat (Barbell)",
+     "sets": [
+      "70x3 @6"
+     ],
+     "rpe": "6",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 14,
+     "plan": "Paused Squat",
+     "voorschrift": "2x5 RPE 5 65-70 kg",
+     "notitie": "Eerste set rpe 5",
+     "status": "gedaan",
+     "uitgevoerd_als": "Pause Squat (Barbell)",
+     "sets": [
+      "70x5 @5",
+      "70x5 @6"
+     ],
+     "rpe": "5-6",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 15,
+     "plan": "45 degree Incline Dumbbell Press",
+     "voorschrift": "3x6-12",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Incline Bench Press (Dumbbell)",
+     "sets": [
+      "52x8 @9.5",
+      "52x6 @9.5",
+      "40x8 @9"
+     ],
+     "rpe": "9-9.5",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 16,
+     "plan": "Cable Side Raise",
+     "voorschrift": "2x10-15",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Single Arm Lateral Raise (Cable)",
+     "sets": [
+      "7.5x14",
+      "7.5x16"
+     ],
+     "rpe": "",
+     "afwijking": "reps 14-16 i.p.v. 10-15"
+    },
+    {
+     "rij": 17,
+     "plan": "Plate Loaded Knee Raise",
+     "voorschrift": "3x6-12",
+     "notitie": "Ik deed hem met een dumbbel. Ging iets makkelijker",
+     "status": "gedaan",
+     "uitgevoerd_als": "Plate Loaded Knee Raise",
+     "sets": [
+      "12x10 @7",
+      "12x10 @7"
+     ],
+     "rpe": "7",
+     "afwijking": "2 sets i.p.v. 3"
+    },
+    {
+     "rij": 18,
+     "plan": "Skull Crusher",
+     "voorschrift": "2x6-12",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Skullcrusher (Dumbbell)",
+     "sets": [
+      "20x6 @9",
+      "20x6 @10"
+     ],
+     "rpe": "9-10",
+     "afwijking": "volgens plan"
+    }
+   ],
+   "extra": [
+    "Leg Raise Parallel Bars: BWx13 @7 (Deze gedaan ipv een extra set knee raises)"
+   ],
    "dagnotitie": ""
   }
  }
