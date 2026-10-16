@@ -1,5 +1,5 @@
 {
- "gegenereerd_op": "2026-10-16T09:52:47+00:00",
+ "gegenereerd_op": "2026-10-16T22:58:21+00:00",
  "vandaag": "2026-10-16",
  "weekdag": 4,
  "dagthema": "Volume + muscle-up",
@@ -16,7 +16,7 @@
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-10-16T09:52:32+00:00",
+  "opgehaald": "2026-10-16T22:58:09+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
   "gewicht_7d_kg": 76.74,
@@ -24,17 +24,17 @@
   "verandering_per_week_kg": -0.39,
   "nog_af_tot_73_kg": 3.7,
   "vet_pct_7d": 17.29,
-  "kcal_7d": 2798.83,
-  "eiwit_7d_g": 149.5,
-  "eiwit_per_kg": 1.95,
-  "dagen_met_voeding_7d": 6,
+  "kcal_7d": 2713.86,
+  "eiwit_7d_g": 146.43,
+  "eiwit_per_kg": 1.91,
+  "dagen_met_voeding_7d": 7,
   "dagen_met_gewicht_7d": 7,
   "slaap_7d_uur": 8.64,
   "kortste_nacht_7d_uur": 7.35,
   "nachten_onder_6u_7d": 0,
   "verbrand_7d_kcal": 2563.71,
   "stappen_7d": 5482.43,
-  "energiebalans_7d_kcal": 268.5
+  "energiebalans_7d_kcal": 150.14
  },
  "stand": {
   "dip": {
@@ -459,7 +459,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-10-15",
+    "datum": "2026-10-16",
     "sets": 2,
     "reps": 5,
     "kg": 5.0
@@ -471,7 +471,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-10-15",
+    "datum": "2026-10-16",
     "sets": 2,
     "reps": 5,
     "kg": 12.5
@@ -481,9 +481,9 @@
   "squat": {
    "factor": 0.95,
    "oordeel_vorige_sessie": null,
-   "reden": "geen RPE gelogd, niets te beoordelen",
+   "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-10-15",
+    "datum": "2026-10-16",
     "sets": 2,
     "reps": 5,
     "kg": 60.0
