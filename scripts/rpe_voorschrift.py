@@ -24,6 +24,10 @@ VERTALING VAN KAJS NOTATIE
 
 Wat hier wordt ingevuld krijgt "rpe_bron": "voorschrift", zodat het in de
 cijfers te onderscheiden blijft van wat Dylan zelf logde.
+
+GEBRUIKT DOOR
+hevy_sync.py (geschat maximum, regelaar, weekcijfers), sheets_log.py (Kajs
+Sheet) en het lokale dashboardscript bouw.py, zodat overal dezelfde RPE geldt.
 """
 
 import json
