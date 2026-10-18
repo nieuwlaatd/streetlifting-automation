@@ -12,6 +12,7 @@ percentages uit het hoofd vermenigvuldigt maakt fouten; Python niet.
 Omgevingsvariabele: HEVY_API_KEY
 """
 
+import copy
 import datetime as dt
 import json
 import os
@@ -23,6 +24,7 @@ import urllib.request
 import herstel
 import notities
 import regelaar
+import rpe_voorschrift
 
 BASE = "https://api.hevyapp.com"
 START = dt.date(2026, 9, 7)          # week 1, dag 1
@@ -290,6 +292,11 @@ def main():
     except urllib.error.HTTPError as e:
         sys.exit(f"Hevy API gaf HTTP {e.code}: {e.reason}")
 
+    # Een leeg RPE-veld betekent: gedaan op Kajs voorgeschreven RPE (zie
+    # rpe_voorschrift.py). hevy-raw.json blijft onbewerkt, dus eerst een kopie.
+    ruw = copy.deepcopy(workouts)
+    aangevuld = rpe_voorschrift.vul_aan(workouts, rpe_voorschrift.lees_dagen())
+
     bw = LICHAAMSGEWICHT_TERUGVAL
     gewichten = [(m.get("date"), m.get("weight_kg")) for m in metingen if m.get("weight_kg")]
     gewichten.sort()
@@ -504,7 +511,7 @@ def main():
     # de zes dagen daarvoor, niet over een venster dat over twee weken valt.
     verslag_zondag = vandaag - dt.timedelta(days=(vandaag.weekday() + 1) % 7)
     week_grens = verslag_zondag - dt.timedelta(days=6)
-    dipsets = pullsets = kern_totaal = kern_met_rpe = kern_falen = 0
+    dipsets = pullsets = kern_totaal = kern_met_rpe = kern_falen = kern_aangenomen = 0
     sessiedagen, sessies_week = set(), []
     for w in workouts:
         datum = (w.get("start_time") or "")[:10]
@@ -522,6 +529,7 @@ def main():
             if any(titel in t for t in LIFTS.values()):
                 kern_totaal += len(werk)
                 kern_met_rpe += sum(1 for s in werk if s.get("rpe") is not None)
+                kern_aangenomen += sum(1 for s in werk if s.get("rpe_bron") == "voorschrift")
                 kern_falen += sum(1 for s in werk if s.get("type") == "failure")
 
     # ---- Herstel: slaap, stappen en vermoeidheid uit je Hevy-notities ----
@@ -562,7 +570,9 @@ def main():
         },
         # Hiermee ziet het rapport of de data compleet is en of het al verstuurd is.
         "laatste_training": max(((w.get("start_time") or "") for w in workouts), default=None),
-        "e1rm_methode": ("Per set: RPE-tabel (RTS), RPE uit het veld of uit de notitie, "
+        "e1rm_methode": ("Per set: RPE-tabel (RTS), RPE uit de notitie, anders uit het veld, "
+                         "anders de RPE die Kaj voorschreef (een leeg veld betekent: zoals "
+                         "voorgeschreven; bij een bereik telt de bovenkant), "
                          "geldig van RPE 5 tot 10; bij dip, pull-up en muscle-up over "
                          "lichaamsgewicht plus extra gewicht. Per lift: gemiddelde van de "
                          "beste set uit de twee beste sessies van de laatste 6 weken. "
@@ -573,6 +583,7 @@ def main():
             "pullupwerksets": pullsets, "pullupdoel": 7,
             "kernsets": kern_totaal,
             "kernsets_met_rpe": kern_met_rpe,
+            "kernsets_rpe_volgens_voorschrift": kern_aangenomen,
             "kernsets_tot_falen": kern_falen,
         },
         "totaal_nu": round(sum(
@@ -583,12 +594,13 @@ def main():
     uit = pathlib.Path("data")
     uit.mkdir(exist_ok=True)
     (uit / "hevy-raw.json").write_text(
-        json.dumps({"lichaamsmetingen": metingen, "workouts": workouts}, indent=1, ensure_ascii=False),
+        json.dumps({"lichaamsmetingen": metingen, "workouts": ruw}, indent=1, ensure_ascii=False),
         encoding="utf-8")
     (uit / "programma-status.json").write_text(
         json.dumps(status, indent=1, ensure_ascii=False), encoding="utf-8")
 
     print(f"{len(workouts)} sessies opgehaald, lichaamsgewicht {bw} kg")
+    print(f"{aangevuld} sets zonder RPE aangevuld met Kajs voorschrift")
     print(f"week {pos['week']}, cyclusweek {pos['cyclusweek']}, blok {pos['blok']}")
     for lift in ("dip", "pullup", "squat"):
         v = voorschrift[lift]

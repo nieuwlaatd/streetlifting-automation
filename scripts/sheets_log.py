@@ -36,6 +36,7 @@ import urllib.request
 
 import hevy_routines
 import notities
+import rpe_voorschrift
 
 SHEET_ID = "1QGxPFQB17u9zDPNXMl74pcVUERlX2g7RwZBRk-Trpfo"
 BASE = "https://api.hevyapp.com"
@@ -564,6 +565,9 @@ def main():
     if not recent:
         print(f"Geen sessies in de afgelopen {DAGEN_TERUG} dagen.")
         return
+
+    # Een leeg RPE-veld is gedaan op Kajs voorgeschreven RPE (rpe_voorschrift.py).
+    rpe_voorschrift.vul_aan(recent, dagen)
 
     # Eerst koppelen, los van Google: het weekrapport heeft dit ook nodig als
     # de Sheet even niet bereikbaar is of de service-account ontbreekt.
