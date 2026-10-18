@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-10-18T16:09:22+00:00",
+ "bijgewerkt": "2026-10-18T17:17:00+00:00",
  "dagen": {
   "2026-09-24 donderdag": {
    "plan_datum": "2026-09-24",
@@ -1632,6 +1632,175 @@
    "extra": [
     "Hip Thrust (Machine): 80x8 @8, 80x8 @7, 85x8 @8 (In plaats van cable knee tuck)"
    ],
+   "dagnotitie": ""
+  },
+  "2026-10-18 zondag": {
+   "plan_datum": "2026-10-18",
+   "dag": "zondag",
+   "week": 1,
+   "thema": "Primaire Pull-Up + Secundaire Muscle-Up + Dip + Tertiaire Squat",
+   "sessie_datum": "2026-10-18",
+   "sessie_titel": "SL 4 · Zo wk1 — Primaire Pull-Up + Secundaire Muscle-Up + Dip + Tertiaire Squat",
+   "gekoppeld_op": "titel",
+   "oefeningen": [
+    {
+     "rij": 40,
+     "plan": "Competition Pull-Up",
+     "voorschrift": "3x5 RPE 5 20-25 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Pull Up (Weighted)",
+     "sets": [
+      "20x5 @5",
+      "20x5 @5",
+      "20x5 @5"
+     ],
+     "rpe": "5",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 41,
+     "plan": "Competition Pull-Up",
+     "voorschrift": "1x3 RPE 5 25-30 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Pull Up (Weighted)",
+     "sets": [
+      "30x3 @5"
+     ],
+     "rpe": "5",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 42,
+     "plan": "Diagonal Weighted Pull-up",
+     "voorschrift": "2x6 RPE 5",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Pull Up (Weighted)",
+     "sets": [
+      "5x6 @5",
+      "5x6 @5"
+     ],
+     "rpe": "5",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 43,
+     "plan": "3-1-0 Tempo Dip",
+     "voorschrift": "1x3 RPE 5 15-20 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Chest Dip (Weighted)",
+     "sets": [
+      "20x3 @6"
+     ],
+     "rpe": "6",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 44,
+     "plan": "Competition Dip",
+     "voorschrift": "2x6 RPE 5 10-15 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Chest Dip (Weighted)",
+     "sets": [
+      "15x6 @5",
+      "15x6 @5"
+     ],
+     "rpe": "5",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 45,
+     "plan": "2s Paused Squat",
+     "voorschrift": "3x4 RPE 5 60-65 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Pause Squat (Barbell)",
+     "sets": [
+      "60x4 @5",
+      "60x4 @5",
+      "60x4 @5"
+     ],
+     "rpe": "5",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 46,
+     "plan": "Leg Curl",
+     "voorschrift": "2x8-15",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Lying Leg Curl (Machine)",
+     "sets": [
+      "45x9 @9.5",
+      "42.5x10 @9.5",
+      "42.5x9 @9.5"
+     ],
+     "rpe": "9.5",
+     "afwijking": "3 sets i.p.v. 2"
+    },
+    {
+     "rij": 47,
+     "plan": "Bar Cable Pullover",
+     "voorschrift": "3x4-8",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Straight Arm Lat Pulldown (Cable)",
+     "sets": [
+      "30x6 @8",
+      "35x6 @9.5",
+      "25x7 @9.5"
+     ],
+     "rpe": "8-9.5",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 48,
+     "plan": "Wide Grip Row",
+     "voorschrift": "2x6-12",
+     "notitie": "Niet genoeg rust genomen",
+     "status": "gedaan",
+     "uitgevoerd_als": "Seated Cable Row - Bar Wide Grip",
+     "sets": [
+      "80x8 @8",
+      "75x7 @9"
+     ],
+     "rpe": "8-9",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 49,
+     "plan": "Tricep Extension",
+     "voorschrift": "2x8-15",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Triceps Rope Pushdown",
+     "sets": [
+      "25x10 @9.5",
+      "20x10 @9"
+     ],
+     "rpe": "9-9.5",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 50,
+     "plan": "Side Plank Leg Raised",
+     "voorschrift": "2x30 sec",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Side Plank",
+     "sets": [
+      "45s",
+      "34s"
+     ],
+     "rpe": "",
+     "afwijking": "volgens plan"
+    }
+   ],
+   "extra": [],
    "dagnotitie": ""
   }
  }
