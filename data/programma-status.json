@@ -1,5 +1,5 @@
 {
- "gegenereerd_op": "2026-10-18T15:30:26+00:00",
+ "gegenereerd_op": "2026-10-18T16:09:18+00:00",
  "vandaag": "2026-10-18",
  "weekdag": 6,
  "dagthema": null,
@@ -16,7 +16,7 @@
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-10-18T15:30:12+00:00",
+  "opgehaald": "2026-10-18T16:08:58+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
   "gewicht_7d_kg": 76.89,
@@ -78,54 +78,54 @@
      "datum": "2026-10-13",
      "gewicht": 25,
      "reps": 3,
-     "rpe": null,
+     "rpe": 5.0,
      "type": "normal",
-     "e1rm": 35.2,
+     "e1rm": 53.7,
      "variant": null
     },
     {
      "datum": "2026-10-13",
      "gewicht": 15,
      "reps": 5,
-     "rpe": null,
+     "rpe": 5.0,
      "type": "normal",
-     "e1rm": 30.3,
+     "e1rm": 49.0,
      "variant": null
     },
     {
      "datum": "2026-10-13",
      "gewicht": 15,
      "reps": 5,
-     "rpe": null,
+     "rpe": 5.0,
      "type": "normal",
-     "e1rm": 30.3,
+     "e1rm": 49.0,
      "variant": null
     },
     {
      "datum": "2026-10-13",
      "gewicht": 15,
      "reps": 5,
-     "rpe": null,
+     "rpe": 5.0,
      "type": "normal",
-     "e1rm": 30.3,
+     "e1rm": 49.0,
      "variant": null
     },
     {
      "datum": "2026-10-16",
      "gewicht": 25,
      "reps": 3,
-     "rpe": null,
+     "rpe": 5.0,
      "type": "normal",
-     "e1rm": 35.2,
+     "e1rm": 53.7,
      "variant": null
     },
     {
      "datum": "2026-10-16",
      "gewicht": 25,
      "reps": 3,
-     "rpe": null,
+     "rpe": 5.0,
      "type": "normal",
-     "e1rm": 35.2,
+     "e1rm": 53.7,
      "variant": null
     }
    ],
@@ -202,27 +202,27 @@
      "datum": "2026-10-16",
      "gewicht": 0,
      "reps": 4,
-     "rpe": null,
+     "rpe": 5.0,
      "type": "normal",
-     "e1rm": 10.3,
+     "e1rm": 23.0,
      "variant": null
     },
     {
      "datum": "2026-10-16",
      "gewicht": 0,
      "reps": 4,
-     "rpe": null,
+     "rpe": 5.0,
      "type": "normal",
-     "e1rm": 10.3,
+     "e1rm": 23.0,
      "variant": null
     },
     {
      "datum": "2026-10-16",
      "gewicht": 0,
      "reps": 4,
-     "rpe": null,
+     "rpe": 5.0,
      "type": "normal",
-     "e1rm": 10.3,
+     "e1rm": 23.0,
      "variant": null
     }
    ],
@@ -308,18 +308,18 @@
      "datum": "2026-10-15",
      "gewicht": 60,
      "reps": 7,
-     "rpe": null,
+     "rpe": 6.0,
      "type": "normal",
-     "e1rm": 71.0,
+     "e1rm": 80.0,
      "variant": null
     },
     {
      "datum": "2026-10-15",
      "gewicht": 60,
      "reps": 7,
-     "rpe": null,
+     "rpe": 6.0,
      "type": "normal",
-     "e1rm": 71.0,
+     "e1rm": 80.0,
      "variant": null
     }
    ],
@@ -367,7 +367,7 @@
      "datum": "2026-10-15",
      "gewicht": 50,
      "reps": 7,
-     "rpe": null,
+     "rpe": 5.0,
      "type": "normal",
      "e1rm": null,
      "variant": "met band"
@@ -403,7 +403,7 @@
      "datum": "2026-10-15",
      "gewicht": 0,
      "reps": 1,
-     "rpe": null,
+     "rpe": 5.0,
      "type": "normal",
      "e1rm": null,
      "variant": "met band"
@@ -524,7 +524,7 @@
   ]
  },
  "laatste_training": "2026-10-16T14:45:49+00:00",
- "e1rm_methode": "Per set: RPE-tabel (RTS), RPE uit het veld of uit de notitie, geldig van RPE 5 tot 10; bij dip, pull-up en muscle-up over lichaamsgewicht plus extra gewicht. Per lift: gemiddelde van de beste set uit de twee beste sessies van de laatste 6 weken. Sets zonder RPE tellen alleen als er geen sets met RPE zijn.",
+ "e1rm_methode": "Per set: RPE-tabel (RTS), RPE uit de notitie, anders uit het veld, anders de RPE die Kaj voorschreef (een leeg veld betekent: zoals voorgeschreven; bij een bereik telt de bovenkant), geldig van RPE 5 tot 10; bij dip, pull-up en muscle-up over lichaamsgewicht plus extra gewicht. Per lift: gemiddelde van de beste set uit de twee beste sessies van de laatste 6 weken. Sets zonder RPE tellen alleen als er geen sets met RPE zijn.",
  "afgelopen_7_dagen": {
   "sessies": 3,
   "dipwerksets": 8,
@@ -532,7 +532,8 @@
   "pullupwerksets": 6,
   "pullupdoel": 7,
   "kernsets": 25,
-  "kernsets_met_rpe": 5,
+  "kernsets_met_rpe": 20,
+  "kernsets_rpe_volgens_voorschrift": 15,
   "kernsets_tot_falen": 0
  },
  "totaal_nu": 236.1,
