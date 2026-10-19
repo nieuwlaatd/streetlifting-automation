@@ -1,5 +1,5 @@
 {
- "opgehaald": "2026-10-19T10:48:36+00:00",
+ "opgehaald": "2026-10-19T23:53:35+00:00",
  "bron": "https://docs.google.com/spreadsheets/d/1QGxPFQB17u9zDPNXMl74pcVUERlX2g7RwZBRk-Trpfo/export?format=xlsx",
  "blokken": [
   {
@@ -2533,8 +2533,8 @@
     {
      "dag": "zondag",
      "weekdag": 6,
-     "datum_label": "Oktober 18",
-     "datum": "2026-10-18",
+     "datum_label": "Oktober 25",
+     "datum": "2026-10-25",
      "thema": "Primaire Pull-Up + Secundaire Muscle-Up + Dip + Tertiaire Squat",
      "tabblad": "Blok 1.1",
      "kolom": 16,
@@ -2546,9 +2546,9 @@
        "naam": "Competition Pull-Up",
        "sets": "3",
        "reps": "5",
-       "rpe_load": "5/20-25",
-       "rpe": "5",
-       "kg": "20-25",
+       "rpe_load": "6/25-27,5",
+       "rpe": "6",
+       "kg": "25-27,5",
        "opmerking": ""
       },
       {
@@ -2556,9 +2556,9 @@
        "naam": "Competition Pull-Up",
        "sets": "1",
        "reps": "3",
-       "rpe_load": "5/25-30",
-       "rpe": "5",
-       "kg": "25-30",
+       "rpe_load": "6/35-37,5",
+       "rpe": "6",
+       "kg": "35-37,5",
        "opmerking": ""
       },
       {
@@ -2566,8 +2566,8 @@
        "naam": "Diagonal Weighted Pull-up",
        "sets": "2",
        "reps": "6",
-       "rpe_load": "5",
-       "rpe": "5",
+       "rpe_load": "6",
+       "rpe": "6",
        "kg": "",
        "opmerking": ""
       },
@@ -2576,9 +2576,9 @@
        "naam": "3-1-0 Tempo Dip",
        "sets": "1",
        "reps": "3",
-       "rpe_load": "5/15-20",
-       "rpe": "5",
-       "kg": "15-20",
+       "rpe_load": "6/20-22,5",
+       "rpe": "6",
+       "kg": "20-22,5",
        "opmerking": ""
       },
       {
@@ -2586,9 +2586,9 @@
        "naam": "Competition Dip",
        "sets": "2",
        "reps": "6",
-       "rpe_load": "5/10-15",
-       "rpe": "5",
-       "kg": "10-15",
+       "rpe_load": "6/15-20",
+       "rpe": "6",
+       "kg": "15-20",
        "opmerking": ""
       },
       {
@@ -2596,8 +2596,8 @@
        "naam": "2s Paused Squat",
        "sets": "3",
        "reps": "4",
-       "rpe_load": "5/60-65",
-       "rpe": "5",
+       "rpe_load": "5,5-6/60-65",
+       "rpe": "5,5-6",
        "kg": "60-65",
        "opmerking": ""
       },
