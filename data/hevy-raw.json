@@ -73,6 +73,309 @@
  ],
  "workouts": [
   {
+   "id": "4bdf7b7a-d13d-4a20-b569-d7062dff8c24",
+   "title": "SL 1 · Di wk2 — Primaire Dip + Secundaire Pull-Up + Squat",
+   "routine_id": "7efd22ce-6d43-48f5-bc6b-3e0b21d5c9ea",
+   "description": "",
+   "start_time": "2026-10-20T07:09:43+00:00",
+   "end_time": "2026-10-20T08:54:14+00:00",
+   "updated_at": "2026-10-20T08:54:16.029Z",
+   "created_at": "2026-10-20T08:54:16.029Z",
+   "exercises": [
+    {
+     "index": 0,
+     "title": "Chest Dip (Weighted)",
+     "notes": null,
+     "exercise_template_id": "29472BE1",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 30,
+       "reps": 3,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 30,
+       "reps": 3,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "normal",
+       "weight_kg": 30,
+       "reps": 3,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "title": "Chest Dip (Weighted)",
+     "notes": null,
+     "exercise_template_id": "29472BE1",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 20,
+       "reps": 5,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 20,
+       "reps": 5,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "normal",
+       "weight_kg": 20,
+       "reps": 5,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 7,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "title": "Chin Up (Weighted)",
+     "notes": "Eerste set rpe 4, tweede set rpe 4, derde set rpe 5",
+     "exercise_template_id": "023943F1",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 30,
+       "reps": 4,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 32.5,
+       "reps": 4,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "normal",
+       "weight_kg": 35,
+       "reps": 4,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "title": "Squat (Barbell)",
+     "notes": null,
+     "exercise_template_id": "D04AC939",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 70,
+       "reps": 3,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "title": "Pause Squat (Barbell)",
+     "notes": null,
+     "exercise_template_id": "CE1054CE",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 70,
+       "reps": 5,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 70,
+       "reps": 5,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 7,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 5,
+     "title": "Incline Bench Press (Dumbbell)",
+     "notes": null,
+     "exercise_template_id": "07B38369",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 52,
+       "reps": 8,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 52,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9.5,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "normal",
+       "weight_kg": 40,
+       "reps": 8,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 6,
+     "title": "Single Arm Lateral Raise (Cable)",
+     "notes": null,
+     "exercise_template_id": "DE68C825",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 7.5,
+       "reps": 16,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 7.5,
+       "reps": 14,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9.5,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 7,
+     "title": "Skullcrusher (Barbell)",
+     "notes": null,
+     "exercise_template_id": "875F585F",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 20,
+       "reps": 10,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9.5,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 20,
+       "reps": 8,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9.5,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 8,
+     "title": "Standing Calf Raise (Machine)",
+     "notes": null,
+     "exercise_template_id": "E05C2C38",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 80,
+       "reps": 21,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 80,
+       "reps": 17,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      }
+     ]
+    }
+   ]
+  },
+  {
    "id": "8382faca-7142-419b-a1ee-f1fc40e57cab",
    "title": "SL 4 · Zo wk1 — Primaire Pull-Up + Secundaire Muscle-Up + Dip + Tertiaire Squat",
    "routine_id": "2cfde704-2660-4f50-aeb1-a98b4ca265b9",
