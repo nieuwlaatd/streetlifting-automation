@@ -2,7 +2,7 @@
  "status": "ok",
  "fouten_aanvulling": [],
  "rechten_ontbreken": [],
- "opgehaald": "2026-10-21T10:12:02+00:00",
+ "opgehaald": "2026-10-21T23:32:36+00:00",
  "bron": "Google Health API",
  "streefgewicht_kg": 73,
  "samenvatting": {
@@ -11,9 +11,9 @@
   "verandering_per_week_kg": -0.07,
   "nog_af_tot_73_kg": 3.8,
   "vet_pct_7d": 17.3,
-  "kcal_7d": 2372.29,
-  "eiwit_7d_g": 150.57,
-  "eiwit_per_kg": 1.96,
+  "kcal_7d": 2663.43,
+  "eiwit_7d_g": 167.86,
+  "eiwit_per_kg": 2.19,
   "dagen_met_voeding_7d": 7,
   "dagen_met_gewicht_7d": 5,
   "slaap_7d_uur": 8.54,
@@ -21,7 +21,7 @@
   "nachten_onder_6u_7d": 0,
   "verbrand_7d_kcal": 2522.86,
   "stappen_7d": 4318.43,
-  "energiebalans_7d_kcal": -150.57
+  "energiebalans_7d_kcal": 140.57
  },
  "_veldnamen": {
   "weight": {
@@ -832,10 +832,10 @@
    "datum": "2026-10-20",
    "gewicht_kg": 77.03,
    "vet_pct": 17.4,
-   "kcal": 310,
-   "eiwit_g": 22,
-   "koolhydraten_g": 1,
-   "vet_g": 24,
+   "kcal": 2348,
+   "eiwit_g": 143,
+   "koolhydraten_g": 276,
+   "vet_g": 70,
    "voedingslogs": 1,
    "slaap_uur": 8.67,
    "verbrand_kcal": 2609,
