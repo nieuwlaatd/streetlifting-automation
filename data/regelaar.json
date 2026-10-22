@@ -2,7 +2,7 @@
  "dip": {
   "factor": 1.025,
   "laatste_voorschrift": {
-   "datum": "2026-10-21",
+   "datum": "2026-10-22",
    "sets": 4,
    "reps": 5,
    "kg": 22.5
@@ -174,7 +174,7 @@
  "pullup": {
   "factor": 0.95,
   "laatste_voorschrift": {
-   "datum": "2026-10-21",
+   "datum": "2026-10-22",
    "sets": 4,
    "reps": 5,
    "kg": 30.0
@@ -338,7 +338,7 @@
  "squat": {
   "factor": 0.95,
   "laatste_voorschrift": {
-   "datum": "2026-10-21",
+   "datum": "2026-10-22",
    "sets": 5,
    "reps": 5,
    "kg": 75.0
@@ -495,9 +495,17 @@
     "nieuwe_factor": 0.95,
     "kg": 75.0,
     "kg_volgens_plan": 80.0
+   },
+   {
+    "datum": "2026-10-22",
+    "oordeel": "goed",
+    "reden": "binnen het plafond, beste set rekent uit op e1RM 101.3",
+    "nieuwe_factor": 0.95,
+    "kg": 75.0,
+    "kg_volgens_plan": 80.0
    }
   ],
-  "laatste_beoordeelde_sessie": "2026-10-20"
+  "laatste_beoordeelde_sessie": "2026-10-22"
  },
  "versie": 2
 }

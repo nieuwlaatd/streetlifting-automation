@@ -2,26 +2,26 @@
  "status": "ok",
  "fouten_aanvulling": [],
  "rechten_ontbreken": [],
- "opgehaald": "2026-10-21T23:32:36+00:00",
+ "opgehaald": "2026-10-22T10:13:52+00:00",
  "bron": "Google Health API",
  "streefgewicht_kg": 73,
  "samenvatting": {
-  "gewicht_7d_kg": 76.77,
-  "gewicht_vorige_7d_kg": 76.84,
-  "verandering_per_week_kg": -0.07,
-  "nog_af_tot_73_kg": 3.8,
-  "vet_pct_7d": 17.3,
-  "kcal_7d": 2663.43,
-  "eiwit_7d_g": 167.86,
-  "eiwit_per_kg": 2.19,
-  "dagen_met_voeding_7d": 7,
+  "gewicht_7d_kg": 76.87,
+  "gewicht_vorige_7d_kg": 76.7,
+  "verandering_per_week_kg": 0.17,
+  "nog_af_tot_73_kg": 3.9,
+  "vet_pct_7d": 17.34,
+  "kcal_7d": 2663.17,
+  "eiwit_7d_g": 170.83,
+  "eiwit_per_kg": 2.22,
+  "dagen_met_voeding_7d": 6,
   "dagen_met_gewicht_7d": 5,
-  "slaap_7d_uur": 8.54,
+  "slaap_7d_uur": 8.7,
   "kortste_nacht_7d_uur": 7.75,
   "nachten_onder_6u_7d": 0,
-  "verbrand_7d_kcal": 2522.86,
-  "stappen_7d": 4318.43,
-  "energiebalans_7d_kcal": 140.57
+  "verbrand_7d_kcal": 2582.14,
+  "stappen_7d": 4817.71,
+  "energiebalans_7d_kcal": 51.0
  },
  "_veldnamen": {
   "weight": {
@@ -147,6 +147,7 @@
    "dataSource": {
     "recordingMethod": "str",
     "device": {
+     "formFactor": "str",
      "displayName": "str"
     },
     "platform": "str"
@@ -297,7 +298,7 @@
   },
   {
    "datum": "2026-09-09",
-   "gewicht_kg": 76.0,
+   "gewicht_kg": null,
    "vet_pct": null,
    "kcal": 2406,
    "eiwit_g": 169,
@@ -305,8 +306,8 @@
    "vet_g": 90,
    "voedingslogs": 1,
    "slaap_uur": null,
-   "verbrand_kcal": 2622,
-   "stappen": 3844
+   "verbrand_kcal": null,
+   "stappen": null
   },
   {
    "datum": "2026-09-10",
@@ -851,6 +852,19 @@
    "vet_g": null,
    "voedingslogs": 0,
    "slaap_uur": 8.23,
+   "verbrand_kcal": 2402,
+   "stappen": 4622
+  },
+  {
+   "datum": "2026-10-22",
+   "gewicht_kg": 77.05,
+   "vet_pct": 17.4,
+   "kcal": null,
+   "eiwit_g": null,
+   "koolhydraten_g": null,
+   "vet_g": null,
+   "voedingslogs": 0,
+   "slaap_uur": 9.72,
    "verbrand_kcal": null,
    "stappen": null
   }
