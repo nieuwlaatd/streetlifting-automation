@@ -1,5 +1,5 @@
 {
- "gegenereerd_op": "2026-10-22T10:14:07+00:00",
+ "gegenereerd_op": "2026-10-22T23:30:42+00:00",
  "vandaag": "2026-10-22",
  "weekdag": 3,
  "dagthema": "Squat zwaar",
@@ -16,7 +16,7 @@
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-10-22T10:13:52+00:00",
+  "opgehaald": "2026-10-22T23:30:30+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
   "gewicht_7d_kg": 76.87,
@@ -24,17 +24,17 @@
   "verandering_per_week_kg": 0.17,
   "nog_af_tot_73_kg": 3.9,
   "vet_pct_7d": 17.34,
-  "kcal_7d": 2663.17,
-  "eiwit_7d_g": 170.83,
-  "eiwit_per_kg": 2.22,
-  "dagen_met_voeding_7d": 6,
+  "kcal_7d": 2650.57,
+  "eiwit_7d_g": 173.86,
+  "eiwit_per_kg": 2.26,
+  "dagen_met_voeding_7d": 7,
   "dagen_met_gewicht_7d": 5,
   "slaap_7d_uur": 8.7,
   "kortste_nacht_7d_uur": 7.75,
   "nachten_onder_6u_7d": 0,
   "verbrand_7d_kcal": 2582.14,
   "stappen_7d": 4817.71,
-  "energiebalans_7d_kcal": 51.0
+  "energiebalans_7d_kcal": 68.43
  },
  "stand": {
   "dip": {
@@ -333,18 +333,9 @@
    "e1rm_onderbouwing": [],
    "bron": "hevy",
    "target_nu": 0.0,
-   "aantal_werksets_totaal": 20,
+   "aantal_werksets_totaal": 21,
    "laatste_sessie": "2026-10-22",
    "laatste_sets": [
-    {
-     "datum": "2026-10-15",
-     "gewicht": 50,
-     "reps": 7,
-     "rpe": 5.0,
-     "type": "normal",
-     "e1rm": null,
-     "variant": "met band"
-    },
     {
      "datum": "2026-10-15",
      "gewicht": 25,
@@ -407,6 +398,15 @@
      "type": "normal",
      "e1rm": null,
      "variant": "met band"
+    },
+    {
+     "datum": "2026-10-22",
+     "gewicht": 25,
+     "reps": 4,
+     "rpe": 9,
+     "type": "normal",
+     "e1rm": null,
+     "variant": "met band"
     }
    ],
    "laatste_notitie": {
@@ -449,7 +449,7 @@
    "correctiefactor": 0.95,
    "kg_volgens_plan": 80.0,
    "afwijking_kg": -5.0,
-   "bijgesteld_omdat": "binnen het plafond, beste set rekent uit op e1RM 101.3",
+   "bijgesteld_omdat": null,
    "sessie_gemist": false
   }
  },
@@ -459,7 +459,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-10-21",
+    "datum": "2026-10-22",
     "sets": 4,
     "reps": 5,
     "kg": 22.5
@@ -471,7 +471,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-10-21",
+    "datum": "2026-10-22",
     "sets": 4,
     "reps": 5,
     "kg": 30.0
@@ -480,10 +480,10 @@
   },
   "squat": {
    "factor": 0.95,
-   "oordeel_vorige_sessie": "goed",
-   "reden": "binnen het plafond, beste set rekent uit op e1RM 101.3",
+   "oordeel_vorige_sessie": null,
+   "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-10-21",
+    "datum": "2026-10-22",
     "sets": 5,
     "reps": 5,
     "kg": 75.0

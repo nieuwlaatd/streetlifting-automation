@@ -79,7 +79,7 @@
    "description": "Begonnen met rows doordat squat bezet was",
    "start_time": "2026-10-22T08:47:07+00:00",
    "end_time": "2026-10-22T10:02:15+00:00",
-   "updated_at": "2026-10-22T10:02:37.991Z",
+   "updated_at": "2026-10-22T14:51:21.926Z",
    "created_at": "2026-10-22T10:02:37.991Z",
    "exercises": [
     {
@@ -179,6 +179,16 @@
       },
       {
        "index": 2,
+       "type": "normal",
+       "weight_kg": 25,
+       "reps": 4,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9,
+       "custom_metric": null
+      },
+      {
+       "index": 3,
        "type": "normal",
        "weight_kg": 25,
        "reps": 4,

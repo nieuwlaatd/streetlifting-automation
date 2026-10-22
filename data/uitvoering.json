@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-10-22T10:14:11+00:00",
+ "bijgewerkt": "2026-10-22T23:30:45+00:00",
  "dagen": {
   "2026-09-24 donderdag": {
    "plan_datum": "2026-09-24",
@@ -1993,10 +1993,11 @@
      "sets": [
       "50x4 @6",
       "25x4 @9.5",
+      "25x4 @9",
       "25x4 @9"
      ],
      "rpe": "6-9.5",
-     "afwijking": "3 sets i.p.v. 4"
+     "afwijking": "volgens plan"
     },
     {
      "rij": 25,
