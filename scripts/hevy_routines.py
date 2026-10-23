@@ -71,6 +71,64 @@ MAP = {
     "Side Plank Leg Raised": ("E3EDA509", "Been geheven"),
 }
 
+# ---- Kajs naam vinden, ook als hij hem net anders schrijft ----
+#
+# Kaj typt zijn schema met de hand. Dezelfde oefening heet de ene week "Plate
+# Loaded Knee Raise" en de volgende "Loaded Knee Raise". Op exacte naam viel
+# zo'n oefening stil uit de routine (20 oktober 2026, en eerder de gewogen
+# muscle-up en diagonale pull-up). Daarom vier stappen, van streng naar ruim;
+# elke stap telt alleen als er precies een kandidaat overblijft.
+
+SAMENVOEGEN = [("pull up", "pullup"), ("chin up", "chinup"), ("muscle up", "muscleup"),
+               ("skull crusher", "skullcrusher"), ("roll out", "rollout")]
+
+# Wat de laatste bouw_routines-run niet of maar bij benadering kon koppelen.
+CONTROLE = {"ontbrekend": [], "benaderd": []}
+
+
+def _woorden(naam):
+    t = " ".join(re.findall(r"[a-z0-9]+", (naam or "").lower()))
+    for a, b in SAMENVOEGEN:
+        t = t.replace(a, b)
+    # Meervoud en vervoeging gelijktrekken: raises/raise, paused/pause.
+    return tuple(w[:-1] if len(w) > 3 and w[-1] in "sd" else w for w in t.split())
+
+
+def zoek(naam):
+    """Kajs oefeningnaam naar de sleutel in MAP. Geeft (sleutel, hoe) of (None, None)."""
+    naam = (naam or "").strip()
+    if naam in MAP:
+        return naam, "exact"
+    doel = _woorden(naam)
+    if not doel:
+        return None, None
+    sleutels = {k: _woorden(k) for k in MAP}
+
+    gelijk = [k for k, w in sleutels.items() if w == doel]
+    if len(gelijk) == 1:
+        return gelijk[0], "schrijfwijze"
+
+    # Alle woorden van de een zitten in de ander: "Loaded Knee Raise" in
+    # "Plate Loaded Knee Raise".
+    deel = [k for k, w in sleutels.items() if set(doel) <= set(w) or set(w) <= set(doel)]
+    if len(deel) == 1:
+        return deel[0], "deel van de naam"
+
+    import difflib
+    tekst = {k: " ".join(w) for k, w in sleutels.items()}
+    scores = sorted(((difflib.SequenceMatcher(None, " ".join(doel), t).ratio(), k)
+                     for k, t in tekst.items()), reverse=True)
+    if scores and scores[0][0] >= 0.85 and (len(scores) == 1 or scores[0][0] - scores[1][0] >= 0.05):
+        return scores[0][1], "lijkt op"
+    return None, None
+
+
+def kaj_sleutel(naam):
+    """Kajs naam zoals hij in MAP staat, of de naam zelf als er niets past."""
+    sleutel, _ = zoek(naam)
+    return sleutel or (naam or "").strip()
+
+
 KORT = {"maandag": "Ma", "dinsdag": "Di", "woensdag": "Wo",
         "donderdag": "Do", "vrijdag": "Vr", "zaterdag": "Za", "zondag": "Zo"}
 
@@ -193,15 +251,24 @@ def bouw_routines(schema, vandaag=None):
     if blok is None:
         return uit
     print(f"Week {blok.get('week')} uit '{blok['blok']}' wordt in Hevy gezet.")
+    CONTROLE["ontbrekend"].clear()
+    CONTROLE["benaderd"].clear()
     for _ in [blok]:
         for i, dag in enumerate(blok["dagen"], start=1):
-            oefeningen = []
+            oefeningen, missend = [], []
             for o in dag["oefeningen"]:
-                gevonden = MAP.get(o["naam"])
-                if not gevonden:
-                    print(f"  LET OP: geen Hevy-oefening voor {o['naam']!r}, overgeslagen")
+                sleutel, hoe = zoek(o["naam"])
+                if sleutel is None:
+                    print(f"  LET OP: geen Hevy-oefening voor {o['naam']!r}")
+                    missend.append(f"{o['naam'].strip()} {o['sets']}x{o['reps']}")
+                    CONTROLE["ontbrekend"].append({"dag": dag["dag"], "datum": dag.get("datum"),
+                                                   "oefening": o["naam"].strip()})
                     continue
-                template, extra = gevonden
+                if hoe != "exact":
+                    print(f"  {o['naam']!r} gekoppeld aan {sleutel!r} ({hoe})")
+                    CONTROLE["benaderd"].append({"dag": dag["dag"], "oefening": o["naam"].strip(),
+                                                 "gekoppeld_aan": sleutel, "hoe": hoe})
+                template, extra = MAP[sleutel]
                 stukken = [f"Kaj: {o['naam']}"]
                 # Vanaf week 2 geeft Kaj naast de RPE een kilobereik. Dat komt
                 # als richtlijn in de notitie en niet in het gewichtsveld: de
@@ -226,6 +293,11 @@ def bouw_routines(schema, vandaag=None):
                     "notes": " · ".join(stukken),
                     "sets": maak_sets(o, template),
                 })
+            # Een oefening zonder Hevy-koppeling verdwijnt niet stil: hij staat
+            # bovenaan de routine, zodat Dylan hem in de sportschool zelf toevoegt.
+            if missend and oefeningen:
+                oefeningen[0]["notes"] = ("LET OP, staat niet in deze routine, zelf toevoegen: "
+                                          + "; ".join(missend) + " · " + (oefeningen[0]["notes"] or ""))
             thema = dag["thema"] or dag["dag"].capitalize()
             week = f" wk{blok['week']}" if blok.get("week") else ""
             titel = f"{MAP_PREFIX} {i} · {KORT[dag['dag']]}{week} — {thema}"
@@ -265,7 +337,11 @@ def main():
             break
         pagina += 1
 
-    for sleutel, titel, oefeningen in bouw_routines(schema):
+    routines = bouw_routines(schema)
+    # Voor de controlestap aan het eind van de workflow en voor het weekrapport.
+    with open("data/routine-controle.json", "w", encoding="utf-8") as f:
+        json.dump(CONTROLE, f, indent=1, ensure_ascii=False)
+    for sleutel, titel, oefeningen in routines:
         body = {"routine": {"title": titel, "exercises": oefeningen}}
         if sleutel in bestaand:
             api(f"/v1/routines/{bestaand[sleutel]}", "PUT", body, key)

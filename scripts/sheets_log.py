@@ -177,7 +177,7 @@ def kies_dag(workout, dagen):
 
     def overlap(dag):
         """Hoeveel oefeningen uit de sessie passen op een regel van deze dag."""
-        plan = {o["naam"].strip() for o in dag["oefeningen"]}
+        plan = {hevy_routines.kaj_sleutel(o["naam"]) for o in dag["oefeningen"]}
         return sum(1 for namen in gedaan if plan & set(namen))
 
     def plausibel(dag):
@@ -361,7 +361,7 @@ def koppel(workout, dag):
     for pos, oef in enumerate(oefeningen):
         namen = kaj_namen(oef)
         doel = next((i for i, o in enumerate(plan)
-                     if o["naam"].strip() in namen and i not in toewijzing), None)
+                     if hevy_routines.kaj_sleutel(o["naam"]) in namen and i not in toewijzing), None)
         if doel is None:
             losse.append(pos)
         else:

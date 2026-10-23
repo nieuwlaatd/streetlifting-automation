@@ -112,3 +112,18 @@ jobs:
           done
           echo "Kon na drie pogingen niet pushen." >&2
           exit 1
+
+      # Kon een oefening uit Kajs Sheet aan geen enkele Hevy-oefening gekoppeld
+      # worden, dan faalt de run hier, na het vastleggen. GitHub mailt dan, in
+      # plaats van dat de oefening stil uit de routine valt.
+      - name: Controle - staat alles van Kaj in Hevy?
+        run: |
+          python - <<'EOF'
+          import json, sys
+          c = json.load(open("data/routine-controle.json", encoding="utf-8"))
+          for b in c.get("benaderd", []):
+              print(f"::notice::{b['dag']}: '{b['oefening']}' gekoppeld aan '{b['gekoppeld_aan']}' ({b['hoe']})")
+          for o in c.get("ontbrekend", []):
+              print(f"::error::{o['dag']} {o['datum']}: '{o['oefening']}' heeft geen Hevy-oefening; voeg hem toe aan MAP in scripts/hevy_routines.py")
+          sys.exit(1 if c.get("ontbrekend") else 0)
+          EOF
