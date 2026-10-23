@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-10-23T10:07:04+00:00",
+ "bijgewerkt": "2026-10-23T23:22:46+00:00",
  "dagen": {
   "2026-09-24 donderdag": {
    "plan_datum": "2026-09-24",
@@ -2047,6 +2047,107 @@
    ],
    "extra": [],
    "dagnotitie": "Begonnen met rows doordat squat bezet was"
+  },
+  "2026-10-23 vrijdag": {
+   "plan_datum": "2026-10-23",
+   "dag": "vrijdag",
+   "week": 2,
+   "thema": "Tertiaire Dip + Pull-Up",
+   "sessie_datum": "2026-10-23",
+   "sessie_titel": "SL 3 · Vr wk2 — Tertiaire Dip + Pull-Up",
+   "gekoppeld_op": "titel",
+   "oefeningen": [
+    {
+     "rij": 31,
+     "plan": "3s Tempo Pull-Up",
+     "voorschrift": "3x4 RPE 6 5-10 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Pull Up (Weighted)",
+     "sets": [
+      "10x4 @6",
+      "10x4 @6",
+      "10x4 @6"
+     ],
+     "rpe": "6",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 32,
+     "plan": "2s Paused Dip",
+     "voorschrift": "2x3 RPE 6 25-30 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Chest Dip (Weighted)",
+     "sets": [
+      "25x3 @6",
+      "25x3 @6"
+     ],
+     "rpe": "6",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 33,
+     "plan": "Close Grip Larsen Press",
+     "voorschrift": "2x6 RPE 6 60-65 kg",
+     "notitie": "Voor de lol geprobeert. 100 Niet gelukt",
+     "status": "niet gedaan",
+     "sets": [],
+     "rpe": "",
+     "afwijking": "niet gedaan"
+    },
+    {
+     "rij": 34,
+     "plan": "Cable Fly",
+     "voorschrift": "2x8-15",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Chest Fly (Machine)",
+     "sets": [
+      "30x8 @8",
+      "30x8 @10"
+     ],
+     "rpe": "8-10",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 35,
+     "plan": "Cable Knee Tuck",
+     "voorschrift": "3x10-15",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Cable Knee Tuck",
+     "sets": [
+      "15x12 @9",
+      "15x12 @9"
+     ],
+     "rpe": "9",
+     "afwijking": "2 sets i.p.v. 3"
+    },
+    {
+     "rij": 36,
+     "plan": "Ab Roll Out",
+     "voorschrift": "3xx",
+     "notitie": "Ipv abb roller",
+     "status": "vervangen",
+     "uitgevoerd_als": "Dragonfly",
+     "sets": [
+      "BWx6",
+      "BWx6",
+      "BWx6"
+     ],
+     "rpe": "",
+     "afwijking": "vervangen door Dragonfly"
+    }
+   ],
+   "extra": [
+    "Bench Press (Barbell): 60x6 @6, 60x6 @6",
+    "Pull Up: BWx22 @9.5",
+    "Cable Laying Lateral Raise: 10x6 @8, 10x8 @8",
+    "Iso-Lateral Low Row: 160x10 @6, 200x8 @8.5 (Met 1 arm dus delen door 2)",
+    "One Arm Pullup: BWx1 (Alleen met rechterarm)"
+   ],
+   "dagnotitie": "Getraind met Noah dus extra oefeningen"
   }
  }
 }

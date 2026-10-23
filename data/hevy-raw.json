@@ -73,6 +73,347 @@
  ],
  "workouts": [
   {
+   "id": "ef74861b-875d-4a4a-a2ee-6199f10b8085",
+   "title": "SL 3 · Vr wk2 — Tertiaire Dip + Pull-Up",
+   "routine_id": "0c61bdb9-9ed4-4053-a8bd-02b8f4007bd1",
+   "description": "Getraind met Noah dus extra oefeningen",
+   "start_time": "2026-10-23T13:14:18+00:00",
+   "end_time": "2026-10-23T15:15:23+00:00",
+   "updated_at": "2026-10-23T15:54:58.447Z",
+   "created_at": "2026-10-23T15:16:01.449Z",
+   "exercises": [
+    {
+     "index": 0,
+     "title": "Bench Press (Barbell)",
+     "notes": "Voor de lol geprobeert. 100 Niet gelukt",
+     "exercise_template_id": "79D0BB3A",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "warmup",
+       "weight_kg": 60,
+       "reps": 4,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "warmup",
+       "weight_kg": 80,
+       "reps": 3,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "warmup",
+       "weight_kg": 90,
+       "reps": 2,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "title": "Pull Up (Weighted)",
+     "notes": null,
+     "exercise_template_id": "729237D1",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 10,
+       "reps": 4,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 10,
+       "reps": 4,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "normal",
+       "weight_kg": 10,
+       "reps": 4,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "title": "Chest Dip (Weighted)",
+     "notes": null,
+     "exercise_template_id": "29472BE1",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 25,
+       "reps": 3,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 25,
+       "reps": 3,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "title": "Bench Press (Barbell)",
+     "notes": null,
+     "exercise_template_id": "79D0BB3A",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 60,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 60,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "title": "Chest Fly (Machine)",
+     "notes": null,
+     "exercise_template_id": "78683336",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 30,
+       "reps": 8,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 8,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 30,
+       "reps": 8,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 10,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 5,
+     "title": "Cable Knee Tuck",
+     "notes": null,
+     "exercise_template_id": "daa1345e-d274-4b11-b584-c4b8472d876d",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 15,
+       "reps": 12,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 15,
+       "reps": 12,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 6,
+     "title": "Dragonfly",
+     "notes": "Ipv abb roller",
+     "exercise_template_id": "B7192800",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": null,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": null,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "normal",
+       "weight_kg": null,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 7,
+     "title": "Pull Up",
+     "notes": null,
+     "exercise_template_id": "1B2B1E7C",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": null,
+       "reps": 22,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9.5,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 8,
+     "title": "Cable Laying Lateral Raise",
+     "notes": null,
+     "exercise_template_id": "188c0693-b657-4781-a3ca-54ef76a7c930",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 10,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 8,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 10,
+       "reps": 8,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 8,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 9,
+     "title": "Iso-Lateral Low Row",
+     "notes": "Met 1 arm dus delen door 2",
+     "exercise_template_id": "91FAFBA3",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 160,
+       "reps": 10,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "failure",
+       "weight_kg": 200,
+       "reps": 8,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 8.5,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 10,
+     "title": "One Arm Pullup",
+     "notes": "Alleen met rechterarm",
+     "exercise_template_id": "33619c48-cc30-46a8-b304-8f7f7a5bea6c",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": null,
+       "reps": 1,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": null,
+       "custom_metric": null
+      }
+     ]
+    }
+   ]
+  },
+  {
    "id": "a098e852-0c8d-4b5a-be1d-8448497f19ce",
    "title": "SL 2 · Do wk2 — Primaire Squat + Muscle Up",
    "routine_id": "f1945136-113c-426a-841a-b0b094c00b9a",

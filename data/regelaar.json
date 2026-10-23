@@ -9,14 +9,6 @@
   },
   "log": [
    {
-    "datum": "2026-09-05",
-    "oordeel": "te_zwaar",
-    "reden": "RPE 10 gelogd, boven het plafond",
-    "nieuwe_factor": 0.95,
-    "kg": 15.0,
-    "kg_volgens_plan": 15.0
-   },
-   {
     "datum": "2026-09-09",
     "oordeel": "te_zwaar",
     "reden": "2 van 4 sets gehaald",
@@ -167,9 +159,17 @@
     "nieuwe_factor": 1.025,
     "kg": 22.5,
     "kg_volgens_plan": 22.5
+   },
+   {
+    "datum": "2026-10-23",
+    "oordeel": "goed",
+    "reden": "binnen het plafond, beste set rekent uit op e1RM 48.9",
+    "nieuwe_factor": 1.025,
+    "kg": 22.5,
+    "kg_volgens_plan": 22.5
    }
   ],
-  "laatste_beoordeelde_sessie": "2026-10-20"
+  "laatste_beoordeelde_sessie": "2026-10-23"
  },
  "pullup": {
   "factor": 0.95,
@@ -331,9 +331,17 @@
     "nieuwe_factor": 0.95,
     "kg": 30.0,
     "kg_volgens_plan": 32.5
+   },
+   {
+    "datum": "2026-10-23",
+    "oordeel": "goed",
+    "reden": "binnen het plafond, beste set rekent uit op e1RM 33.1",
+    "nieuwe_factor": 0.95,
+    "kg": 30.0,
+    "kg_volgens_plan": 32.5
    }
   ],
-  "laatste_beoordeelde_sessie": "2026-10-20"
+  "laatste_beoordeelde_sessie": "2026-10-23"
  },
  "squat": {
   "factor": 0.95,
