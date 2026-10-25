@@ -1,7 +1,7 @@
 {
- "gegenereerd_op": "2026-10-24T22:40:29+00:00",
- "vandaag": "2026-10-24",
- "weekdag": 5,
+ "gegenereerd_op": "2026-10-25T09:50:17+00:00",
+ "vandaag": "2026-10-25",
+ "weekdag": 6,
  "dagthema": null,
  "kernlift_vandaag": null,
  "positie": {
@@ -12,29 +12,29 @@
   "deload": false,
   "startdatum": "2026-09-07"
  },
- "lichaamsgewicht": 76.84,
+ "lichaamsgewicht": 76.73,
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-10-24T09:33:42+00:00",
+  "opgehaald": "2026-10-25T09:50:02+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
-  "gewicht_7d_kg": 76.84,
-  "gewicht_vorige_7d_kg": 76.85,
-  "verandering_per_week_kg": -0.01,
-  "nog_af_tot_73_kg": 3.8,
-  "vet_pct_7d": 17.32,
-  "kcal_7d": 2713.5,
-  "eiwit_7d_g": 182.67,
-  "eiwit_per_kg": 2.38,
-  "dagen_met_voeding_7d": 6,
-  "dagen_met_gewicht_7d": 4,
-  "slaap_7d_uur": 9.08,
-  "kortste_nacht_7d_uur": 8.23,
+  "gewicht_7d_kg": 76.73,
+  "gewicht_vorige_7d_kg": 76.89,
+  "verandering_per_week_kg": -0.16,
+  "nog_af_tot_73_kg": 3.7,
+  "vet_pct_7d": 17.26,
+  "kcal_7d": 2216.0,
+  "eiwit_7d_g": 153.29,
+  "eiwit_per_kg": 2.0,
+  "dagen_met_voeding_7d": 7,
+  "dagen_met_gewicht_7d": 5,
+  "slaap_7d_uur": 8.98,
+  "kortste_nacht_7d_uur": 7.53,
   "nachten_onder_6u_7d": 0,
-  "verbrand_7d_kcal": 2469.29,
-  "stappen_7d": 3997.71,
-  "energiebalans_7d_kcal": 259.17
+  "verbrand_7d_kcal": 2492.43,
+  "stappen_7d": 4027.14,
+  "energiebalans_7d_kcal": -276.43
  },
  "stand": {
   "dip": {
@@ -48,7 +48,7 @@
     {
      "datum": "2026-09-14",
      "set": "30 kg x 3 @ RPE 6",
-     "e1rm": 55.1
+     "e1rm": 55.0
     }
    ],
    "bron": "hevy",
@@ -62,7 +62,7 @@
      "reps": 3,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 55.1,
+     "e1rm": 55.0,
      "variant": null
     },
     {
@@ -71,7 +71,7 @@
      "reps": 3,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 55.1,
+     "e1rm": 55.0,
      "variant": null
     },
     {
@@ -80,7 +80,7 @@
      "reps": 3,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 55.1,
+     "e1rm": 55.0,
      "variant": null
     },
     {
@@ -89,7 +89,7 @@
      "reps": 5,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 50.6,
+     "e1rm": 50.5,
      "variant": null
     },
     {
@@ -98,7 +98,7 @@
      "reps": 5,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 50.6,
+     "e1rm": 50.5,
      "variant": null
     },
     {
@@ -159,7 +159,7 @@
      "reps": 6,
      "rpe": 5.0,
      "type": "normal",
-     "e1rm": 34.6,
+     "e1rm": 34.5,
      "variant": null
     },
     {
@@ -168,7 +168,7 @@
      "reps": 6,
      "rpe": 5.0,
      "type": "normal",
-     "e1rm": 34.6,
+     "e1rm": 34.5,
      "variant": null
     },
     {
@@ -186,7 +186,7 @@
      "reps": 4,
      "rpe": 4.0,
      "type": "normal",
-     "e1rm": 65.2,
+     "e1rm": 65.1,
      "variant": null
     },
     {
@@ -500,44 +500,40 @@
   }
  },
  "verslagweek": {
-  "week": 6,
-  "cyclusweek": 6,
+  "week": 7,
+  "cyclusweek": 1,
   "blok": 1,
   "voor_start": false,
-  "deload": true,
+  "deload": false,
   "startdatum": "2026-09-07",
-  "van": "2026-10-12",
-  "tot_en_met": "2026-10-18",
+  "van": "2026-10-19",
+  "tot_en_met": "2026-10-25",
   "sessies": [
    {
-    "datum": "2026-10-13",
-    "titel": "SL 1 · Di wk1 — Primaire Dip + Secundaire Pull-Up + Squat"
+    "datum": "2026-10-20",
+    "titel": "SL 1 · Di wk2 — Primaire Dip + Secundaire Pull-Up + Squat"
    },
    {
-    "datum": "2026-10-15",
-    "titel": "SL 2 · Do wk1 — Primaire Squat + Muscle Up"
+    "datum": "2026-10-22",
+    "titel": "SL 2 · Do wk2 — Primaire Squat + Muscle Up"
    },
    {
-    "datum": "2026-10-16",
-    "titel": "SL 3 · Vr wk1 — Tertiaire Dip + Pull-Up"
-   },
-   {
-    "datum": "2026-10-18",
-    "titel": "SL 4 · Zo wk1 — Primaire Pull-Up + Secundaire Muscle-Up + Dip + Tertiaire Squat"
+    "datum": "2026-10-23",
+    "titel": "SL 3 · Vr wk2 — Tertiaire Dip + Pull-Up"
    }
   ]
  },
  "laatste_training": "2026-10-23T13:14:18+00:00",
  "e1rm_methode": "Per set: RPE-tabel (RTS), RPE uit de notitie, anders uit het veld, anders de RPE die Kaj voorschreef (een leeg veld betekent: zoals voorgeschreven; bij een bereik telt de bovenkant), geldig van RPE 5 tot 10; bij dip, pull-up en muscle-up over lichaamsgewicht plus extra gewicht. Per lift: gemiddelde van de beste set uit de twee beste sessies van de laatste 6 weken. Sets zonder RPE tellen alleen als er geen sets met RPE zijn.",
  "afgelopen_7_dagen": {
-  "sessies": 4,
-  "dipwerksets": 11,
+  "sessies": 3,
+  "dipwerksets": 8,
   "dipdoel": 10,
-  "pullupwerksets": 12,
+  "pullupwerksets": 7,
   "pullupdoel": 7,
-  "kernsets": 34,
-  "kernsets_met_rpe": 29,
-  "kernsets_rpe_volgens_voorschrift": 23,
+  "kernsets": 24,
+  "kernsets_met_rpe": 19,
+  "kernsets_rpe_volgens_voorschrift": 0,
   "kernsets_tot_falen": 0
  },
  "totaal_nu": 236.0,
