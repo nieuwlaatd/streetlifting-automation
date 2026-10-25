@@ -1,5 +1,5 @@
 {
- "opgehaald": "2026-10-25T15:41:40+00:00",
+ "opgehaald": "2026-10-25T18:55:18+00:00",
  "bron": "https://docs.google.com/spreadsheets/d/1QGxPFQB17u9zDPNXMl74pcVUERlX2g7RwZBRk-Trpfo/export?format=xlsx",
  "blokken": [
   {
@@ -2598,6 +2598,385 @@
        "reps": "4",
        "rpe_load": "5,5-6/60-65",
        "rpe": "5,5-6",
+       "kg": "60-65",
+       "opmerking": ""
+      },
+      {
+       "rij": 46,
+       "naam": "Leg Curl",
+       "sets": "2",
+       "reps": "8-15",
+       "rpe_load": "",
+       "rpe": "",
+       "kg": "",
+       "opmerking": ""
+      },
+      {
+       "rij": 47,
+       "naam": "Bar Cable Pullover",
+       "sets": "3",
+       "reps": "4-8",
+       "rpe_load": "",
+       "rpe": "",
+       "kg": "",
+       "opmerking": ""
+      },
+      {
+       "rij": 48,
+       "naam": "Wide Grip Row",
+       "sets": "2",
+       "reps": "6-12",
+       "rpe_load": "",
+       "rpe": "",
+       "kg": "",
+       "opmerking": ""
+      },
+      {
+       "rij": 49,
+       "naam": "Tricep Extension",
+       "sets": "2",
+       "reps": "8-15",
+       "rpe_load": "",
+       "rpe": "",
+       "kg": "",
+       "opmerking": ""
+      },
+      {
+       "rij": 50,
+       "naam": "Side Plank Leg Raised",
+       "sets": "2",
+       "reps": "30 sec",
+       "rpe_load": "",
+       "rpe": "",
+       "kg": "",
+       "opmerking": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "blok": "Blok 1.1",
+   "week": 3,
+   "kolom": 31,
+   "dagen": [
+    {
+     "dag": "dinsdag",
+     "weekdag": 1,
+     "datum_label": "Oktober 27",
+     "datum": "2026-10-27",
+     "thema": "Primaire Dip + Secundaire Pull-Up + Squat",
+     "tabblad": "Blok 1.1",
+     "kolom": 31,
+     "week": 3,
+     "kop_rij": 8,
+     "oefeningen": [
+      {
+       "rij": 10,
+       "naam": "Competition Dip",
+       "sets": "3",
+       "reps": "3",
+       "rpe_load": "7/30-35",
+       "rpe": "7",
+       "kg": "30-35",
+       "opmerking": ""
+      },
+      {
+       "rij": 11,
+       "naam": "Competition Dip",
+       "sets": "3",
+       "reps": "5",
+       "rpe_load": "7/20-22,5",
+       "rpe": "7",
+       "kg": "20-22,5",
+       "opmerking": ""
+      },
+      {
+       "rij": 12,
+       "naam": "Competition Chin-up",
+       "sets": "3",
+       "reps": "4",
+       "rpe_load": "32,5>37,5>40",
+       "rpe": "",
+       "kg": "32,5>37,5>40",
+       "opmerking": ""
+      },
+      {
+       "rij": 13,
+       "naam": "3-1-0 Tempo Squat",
+       "sets": "1",
+       "reps": "3",
+       "rpe_load": "7/75-77,5",
+       "rpe": "7",
+       "kg": "75-77,5",
+       "opmerking": ""
+      },
+      {
+       "rij": 14,
+       "naam": "Paused Squat",
+       "sets": "2",
+       "reps": "5",
+       "rpe_load": "6/72,5-75",
+       "rpe": "6",
+       "kg": "72,5-75",
+       "opmerking": ""
+      },
+      {
+       "rij": 15,
+       "naam": "45 degree Incline Dumbbell Press",
+       "sets": "3",
+       "reps": "6-12",
+       "rpe_load": "",
+       "rpe": "",
+       "kg": "",
+       "opmerking": ""
+      },
+      {
+       "rij": 16,
+       "naam": "Cable Side Raise",
+       "sets": "2",
+       "reps": "10-15",
+       "rpe_load": "",
+       "rpe": "",
+       "kg": "",
+       "opmerking": ""
+      },
+      {
+       "rij": 17,
+       "naam": "Loaded Knee Raise",
+       "sets": "3",
+       "reps": "6-12",
+       "rpe_load": "",
+       "rpe": "",
+       "kg": "",
+       "opmerking": ""
+      },
+      {
+       "rij": 18,
+       "naam": "Skull Crusher",
+       "sets": "2",
+       "reps": "6-12",
+       "rpe_load": "",
+       "rpe": "",
+       "kg": "",
+       "opmerking": ""
+      }
+     ]
+    },
+    {
+     "dag": "donderdag",
+     "weekdag": 3,
+     "datum_label": "Oktober 29",
+     "datum": "2026-10-29",
+     "thema": "Primaire Squat + Muscle Up",
+     "tabblad": "Blok 1.1",
+     "kolom": 31,
+     "week": 3,
+     "kop_rij": 20,
+     "oefeningen": [
+      {
+       "rij": 22,
+       "naam": "Competition Squat",
+       "sets": "3",
+       "reps": "4",
+       "rpe_load": "75->82,5->87,5",
+       "rpe": "",
+       "kg": "75->82,5->87,5",
+       "opmerking": ""
+      },
+      {
+       "rij": 23,
+       "naam": "Competition Squat",
+       "sets": "2",
+       "reps": "7",
+       "rpe_load": "6-6,5/62,5-65",
+       "rpe": "6-6,5",
+       "kg": "62,5-65",
+       "opmerking": ""
+      },
+      {
+       "rij": 24,
+       "naam": "Band Assisted Weighted Muscle-Up",
+       "sets": "4",
+       "reps": "4",
+       "rpe_load": "7",
+       "rpe": "7",
+       "kg": "",
+       "opmerking": ""
+      },
+      {
+       "rij": 25,
+       "naam": "Leg Extension",
+       "sets": "3",
+       "reps": "8-15",
+       "rpe_load": "",
+       "rpe": "",
+       "kg": "",
+       "opmerking": ""
+      },
+      {
+       "rij": 26,
+       "naam": "Cable row",
+       "sets": "2",
+       "reps": "6-12",
+       "rpe_load": "",
+       "rpe": "",
+       "kg": "",
+       "opmerking": ""
+      },
+      {
+       "rij": 27,
+       "naam": "Spider Curl",
+       "sets": "3",
+       "reps": "6-12",
+       "rpe_load": "",
+       "rpe": "",
+       "kg": "",
+       "opmerking": ""
+      }
+     ]
+    },
+    {
+     "dag": "vrijdag",
+     "weekdag": 4,
+     "datum_label": "Oktober 30",
+     "datum": "2026-10-30",
+     "thema": "Tertiaire Dip + Pull-Up",
+     "tabblad": "Blok 1.1",
+     "kolom": 31,
+     "week": 3,
+     "kop_rij": 29,
+     "oefeningen": [
+      {
+       "rij": 31,
+       "naam": "3s Tempo Pull-Up",
+       "sets": "3",
+       "reps": "4",
+       "rpe_load": "6-6,5/10-15",
+       "rpe": "6-6,5",
+       "kg": "10-15",
+       "opmerking": ""
+      },
+      {
+       "rij": 32,
+       "naam": "2s Paused Dip",
+       "sets": "2",
+       "reps": "3",
+       "rpe_load": "6/25-30",
+       "rpe": "6",
+       "kg": "25-30",
+       "opmerking": ""
+      },
+      {
+       "rij": 33,
+       "naam": "Close Grip Larsen Press",
+       "sets": "2",
+       "reps": "6",
+       "rpe_load": "6/60-65",
+       "rpe": "6",
+       "kg": "60-65",
+       "opmerking": ""
+      },
+      {
+       "rij": 34,
+       "naam": "Cable Fly",
+       "sets": "2",
+       "reps": "8-15",
+       "rpe_load": "",
+       "rpe": "",
+       "kg": "",
+       "opmerking": ""
+      },
+      {
+       "rij": 35,
+       "naam": "Cable Knee Tuck",
+       "sets": "3",
+       "reps": "10-15",
+       "rpe_load": "",
+       "rpe": "",
+       "kg": "",
+       "opmerking": ""
+      },
+      {
+       "rij": 36,
+       "naam": "Ab Roll Out",
+       "sets": "3",
+       "reps": "x",
+       "rpe_load": "",
+       "rpe": "",
+       "kg": "",
+       "opmerking": ""
+      }
+     ]
+    },
+    {
+     "dag": "zondag",
+     "weekdag": 6,
+     "datum_label": "November 01",
+     "datum": "2026-11-01",
+     "thema": "Primaire Pull-Up + Secundaire Muscle-Up + Dip + Tertiaire Squat",
+     "tabblad": "Blok 1.1",
+     "kolom": 31,
+     "week": 3,
+     "kop_rij": 38,
+     "oefeningen": [
+      {
+       "rij": 40,
+       "naam": "Competition Pull-Up",
+       "sets": "3",
+       "reps": "5",
+       "rpe_load": "7/30-35",
+       "rpe": "7",
+       "kg": "30-35",
+       "opmerking": ""
+      },
+      {
+       "rij": 41,
+       "naam": "Competition Pull-Up",
+       "sets": "1",
+       "reps": "3",
+       "rpe_load": "7/40-45",
+       "rpe": "7",
+       "kg": "40-45",
+       "opmerking": ""
+      },
+      {
+       "rij": 42,
+       "naam": "Diagonal Weighted Pull-up",
+       "sets": "2",
+       "reps": "6",
+       "rpe_load": "7",
+       "rpe": "7",
+       "kg": "",
+       "opmerking": ""
+      },
+      {
+       "rij": 43,
+       "naam": "3-1-0 Tempo Dip",
+       "sets": "1",
+       "reps": "3",
+       "rpe_load": "7/25-27,5",
+       "rpe": "7",
+       "kg": "25-27,5",
+       "opmerking": ""
+      },
+      {
+       "rij": 44,
+       "naam": "Competition Dip",
+       "sets": "2",
+       "reps": "6",
+       "rpe_load": "6/15-20",
+       "rpe": "6",
+       "kg": "15-20",
+       "opmerking": ""
+      },
+      {
+       "rij": 45,
+       "naam": "2s Paused Squat",
+       "sets": "3",
+       "reps": "4",
+       "rpe_load": "6/60-65",
+       "rpe": "6",
        "kg": "60-65",
        "opmerking": ""
       },

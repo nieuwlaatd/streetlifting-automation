@@ -9,14 +9,6 @@
   },
   "log": [
    {
-    "datum": "2026-09-09",
-    "oordeel": "te_zwaar",
-    "reden": "2 van 4 sets gehaald",
-    "nieuwe_factor": 0.9025,
-    "kg": 15.0,
-    "kg_volgens_plan": 17.5
-   },
-   {
     "datum": "2026-09-10",
     "oordeel": "te_zwaar",
     "reden": "0 van 4 sets gehaald",
@@ -167,9 +159,17 @@
     "nieuwe_factor": 1.025,
     "kg": 22.5,
     "kg_volgens_plan": 22.5
+   },
+   {
+    "datum": "2026-10-25",
+    "oordeel": "goed",
+    "reden": "binnen het plafond, beste set rekent uit op e1RM 42.6",
+    "nieuwe_factor": 1.025,
+    "kg": 22.5,
+    "kg_volgens_plan": 22.5
    }
   ],
-  "laatste_beoordeelde_sessie": "2026-10-23"
+  "laatste_beoordeelde_sessie": "2026-10-25"
  },
  "pullup": {
   "factor": 0.95,
@@ -180,14 +180,6 @@
    "kg": 30.0
   },
   "log": [
-   {
-    "datum": "2026-09-09",
-    "oordeel": "te_zwaar",
-    "reden": "2 van 4 sets gehaald",
-    "nieuwe_factor": 0.95,
-    "kg": 27.5,
-    "kg_volgens_plan": 27.5
-   },
    {
     "datum": "2026-09-10",
     "oordeel": "te_zwaar",
@@ -339,9 +331,17 @@
     "nieuwe_factor": 0.95,
     "kg": 30.0,
     "kg_volgens_plan": 32.5
+   },
+   {
+    "datum": "2026-10-25",
+    "oordeel": "goed",
+    "reden": "binnen het plafond, beste set rekent uit op e1RM 62.6",
+    "nieuwe_factor": 0.95,
+    "kg": 30.0,
+    "kg_volgens_plan": 32.5
    }
   ],
-  "laatste_beoordeelde_sessie": "2026-10-23"
+  "laatste_beoordeelde_sessie": "2026-10-25"
  },
  "squat": {
   "factor": 0.95,
@@ -352,14 +352,6 @@
    "kg": 75.0
   },
   "log": [
-   {
-    "datum": "2026-09-03",
-    "oordeel": "te_makkelijk",
-    "reden": "zwaarder gedraaid dan voorgeschreven en gehaald",
-    "nieuwe_factor": 1.025,
-    "kg": 70.0,
-    "kg_volgens_plan": 67.5
-   },
    {
     "datum": "2026-09-09",
     "oordeel": "te_zwaar",
@@ -511,9 +503,17 @@
     "nieuwe_factor": 0.95,
     "kg": 75.0,
     "kg_volgens_plan": 80.0
+   },
+   {
+    "datum": "2026-10-25",
+    "oordeel": "goed",
+    "reden": "binnen het plafond, beste set rekent uit op e1RM 77.9",
+    "nieuwe_factor": 0.95,
+    "kg": 75.0,
+    "kg_volgens_plan": 80.0
    }
   ],
-  "laatste_beoordeelde_sessie": "2026-10-22"
+  "laatste_beoordeelde_sessie": "2026-10-25"
  },
  "versie": 2
 }
