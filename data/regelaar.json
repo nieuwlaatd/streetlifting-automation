@@ -353,14 +353,6 @@
   },
   "log": [
    {
-    "datum": "2026-09-10",
-    "oordeel": "te_zwaar",
-    "reden": "0 van 5 sets gehaald",
-    "nieuwe_factor": 0.925,
-    "kg": 62.5,
-    "kg_volgens_plan": 67.5
-   },
-   {
     "datum": "2026-09-12",
     "oordeel": "te_zwaar",
     "reden": "2 van 5 sets gehaald",
@@ -511,9 +503,17 @@
     "nieuwe_factor": 0.95,
     "kg": 77.5,
     "kg_volgens_plan": 82.5
+   },
+   {
+    "datum": "2026-10-29",
+    "oordeel": "goed",
+    "reden": "binnen het plafond, beste set rekent uit op e1RM 108",
+    "nieuwe_factor": 0.95,
+    "kg": 77.5,
+    "kg_volgens_plan": 82.5
    }
   ],
-  "laatste_beoordeelde_sessie": "2026-10-27"
+  "laatste_beoordeelde_sessie": "2026-10-29"
  },
  "versie": 2
 }
