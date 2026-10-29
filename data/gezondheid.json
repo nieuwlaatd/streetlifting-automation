@@ -2,26 +2,26 @@
  "status": "ok",
  "fouten_aanvulling": [],
  "rechten_ontbreken": [],
- "opgehaald": "2026-10-28T11:22:00+00:00",
+ "opgehaald": "2026-10-29T00:14:14+00:00",
  "bron": "Google Health API",
  "streefgewicht_kg": 73,
  "samenvatting": {
-  "gewicht_7d_kg": 76.21,
-  "gewicht_vorige_7d_kg": 76.77,
-  "verandering_per_week_kg": -0.56,
-  "nog_af_tot_73_kg": 3.2,
-  "vet_pct_7d": 16.94,
-  "kcal_7d": 2157.71,
-  "eiwit_7d_g": 137.71,
-  "eiwit_per_kg": 1.81,
-  "dagen_met_voeding_7d": 7,
-  "dagen_met_gewicht_7d": 7,
-  "slaap_7d_uur": 8.99,
+  "gewicht_7d_kg": 76.08,
+  "gewicht_vorige_7d_kg": 76.87,
+  "verandering_per_week_kg": -0.79,
+  "nog_af_tot_73_kg": 3.1,
+  "vet_pct_7d": 16.87,
+  "kcal_7d": 2362.83,
+  "eiwit_7d_g": 144.5,
+  "eiwit_per_kg": 1.9,
+  "dagen_met_voeding_7d": 6,
+  "dagen_met_gewicht_7d": 6,
+  "slaap_7d_uur": 8.86,
   "kortste_nacht_7d_uur": 7.53,
   "nachten_onder_6u_7d": 0,
-  "verbrand_7d_kcal": 2543.0,
-  "stappen_7d": 3918.43,
-  "energiebalans_7d_kcal": -385.29
+  "verbrand_7d_kcal": 2517.57,
+  "stappen_7d": 3510.43,
+  "energiebalans_7d_kcal": -203.67
  },
  "_veldnamen": {
   "weight": {
@@ -389,16 +389,16 @@
   },
   {
    "datum": "2026-09-16",
-   "gewicht_kg": 76.5,
-   "vet_pct": 17.1,
+   "gewicht_kg": null,
+   "vet_pct": null,
    "kcal": 2386,
    "eiwit_g": 139,
    "koolhydraten_g": 260,
    "vet_g": 87,
    "voedingslogs": 1,
    "slaap_uur": 8.92,
-   "verbrand_kcal": 2450,
-   "stappen": 4860
+   "verbrand_kcal": null,
+   "stappen": null
   },
   {
    "datum": "2026-09-17",
@@ -924,10 +924,10 @@
    "datum": "2026-10-27",
    "gewicht_kg": 75.65,
    "vet_pct": 16.6,
-   "kcal": 765,
-   "eiwit_g": 47,
-   "koolhydraten_g": 44,
-   "vet_g": 43,
+   "kcal": 2413,
+   "eiwit_g": 142,
+   "koolhydraten_g": 228,
+   "vet_g": 99,
    "voedingslogs": 1,
    "slaap_uur": 8.5,
    "verbrand_kcal": 2611,
@@ -943,8 +943,8 @@
    "vet_g": null,
    "voedingslogs": 0,
    "slaap_uur": 8.53,
-   "verbrand_kcal": null,
-   "stappen": null
+   "verbrand_kcal": 2224,
+   "stappen": 1766
   }
  ]
 }
