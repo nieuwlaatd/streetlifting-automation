@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-10-30T11:25:31+00:00",
+ "bijgewerkt": "2026-10-30T23:58:23+00:00",
  "dagen": {
   "2026-09-24 donderdag": {
    "plan_datum": "2026-09-24",
@@ -2556,6 +2556,107 @@
       "32x9 @9.5"
      ],
      "rpe": "9.5",
+     "afwijking": "volgens plan"
+    }
+   ],
+   "extra": [],
+   "dagnotitie": ""
+  },
+  "2026-10-30 vrijdag": {
+   "plan_datum": "2026-10-30",
+   "dag": "vrijdag",
+   "week": 3,
+   "thema": "Tertiaire Dip + Pull-Up",
+   "sessie_datum": "2026-10-30",
+   "sessie_titel": "SL 3 · Vr wk3 — Tertiaire Dip + Pull-Up",
+   "gekoppeld_op": "titel",
+   "oefeningen": [
+    {
+     "rij": 31,
+     "plan": "3s Tempo Pull-Up",
+     "voorschrift": "3x4 RPE 6-6,5 10-15 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Pull Up (Weighted)",
+     "sets": [
+      "15x4 @6",
+      "15x4 @6",
+      "15x4 @7"
+     ],
+     "rpe": "6-7",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 32,
+     "plan": "2s Paused Dip",
+     "voorschrift": "2x3 RPE 6 25-30 kg",
+     "notitie": "2 sec pause rep",
+     "status": "gedaan",
+     "uitgevoerd_als": "Chest Dip (Weighted)",
+     "sets": [
+      "30x3 @6",
+      "30x3 @6"
+     ],
+     "rpe": "6",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 33,
+     "plan": "Close Grip Larsen Press",
+     "voorschrift": "2x6 RPE 6 60-65 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Bench Press (Barbell)",
+     "sets": [
+      "65x6 @6",
+      "65x6 @6"
+     ],
+     "rpe": "6",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 34,
+     "plan": "Cable Fly",
+     "voorschrift": "2x8-15",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Chest Fly (Machine)",
+     "sets": [
+      "30x9 @9",
+      "27.5x8 @9.5",
+      "20x3"
+     ],
+     "rpe": "9-9.5",
+     "afwijking": "3 sets i.p.v. 2; reps 3-9 i.p.v. 8-15"
+    },
+    {
+     "rij": 35,
+     "plan": "Cable Knee Tuck",
+     "voorschrift": "3x10-15",
+     "notitie": "Reps per been",
+     "status": "gedaan",
+     "uitgevoerd_als": "Cable Knee Tuck",
+     "sets": [
+      "15x12 @6",
+      "15x12 @7",
+      "15x12 @7.5"
+     ],
+     "rpe": "6-7.5",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 36,
+     "plan": "Ab Roll Out",
+     "voorschrift": "3xx",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Ab Wheel",
+     "sets": [
+      "BWx16 @7",
+      "BWx14 @7",
+      "BWx12 @8"
+     ],
+     "rpe": "7-8",
      "afwijking": "volgens plan"
     }
    ],

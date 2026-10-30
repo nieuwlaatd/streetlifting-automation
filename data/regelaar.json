@@ -9,14 +9,6 @@
   },
   "log": [
    {
-    "datum": "2026-09-12",
-    "oordeel": "te_zwaar",
-    "reden": "0 van 4 sets gehaald",
-    "nieuwe_factor": 0.8145,
-    "kg": 12.5,
-    "kg_volgens_plan": 17.5
-   },
-   {
     "datum": "2026-09-14",
     "oordeel": "te_zwaar",
     "reden": "0 van 4 sets gehaald",
@@ -167,9 +159,17 @@
     "nieuwe_factor": 1.0506,
     "kg": 27.5,
     "kg_volgens_plan": 27.5
+   },
+   {
+    "datum": "2026-10-30",
+    "oordeel": "goed",
+    "reden": "binnen het plafond, beste set rekent uit op e1RM 54.9",
+    "nieuwe_factor": 1.0506,
+    "kg": 27.5,
+    "kg_volgens_plan": 27.5
    }
   ],
-  "laatste_beoordeelde_sessie": "2026-10-27"
+  "laatste_beoordeelde_sessie": "2026-10-30"
  },
  "pullup": {
   "factor": 0.95,
@@ -180,14 +180,6 @@
    "kg": 32.5
   },
   "log": [
-   {
-    "datum": "2026-09-12",
-    "oordeel": "te_zwaar",
-    "reden": "notitie meldt dat het te zwaar was",
-    "nieuwe_factor": 0.8574,
-    "kg": 25.0,
-    "kg_volgens_plan": 27.5
-   },
    {
     "datum": "2026-09-14",
     "oordeel": "te_zwaar",
@@ -339,9 +331,17 @@
     "nieuwe_factor": 0.95,
     "kg": 32.5,
     "kg_volgens_plan": 35.0
+   },
+   {
+    "datum": "2026-10-30",
+    "oordeel": "goed",
+    "reden": "binnen het plafond, beste set rekent uit op e1RM 39.2",
+    "nieuwe_factor": 0.95,
+    "kg": 32.5,
+    "kg_volgens_plan": 35.0
    }
   ],
-  "laatste_beoordeelde_sessie": "2026-10-27"
+  "laatste_beoordeelde_sessie": "2026-10-30"
  },
  "squat": {
   "factor": 0.95,
