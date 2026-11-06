@@ -1,9 +1,9 @@
 {
- "gegenereerd_op": "2026-11-05T13:14:42+00:00",
- "vandaag": "2026-11-05",
- "weekdag": 3,
- "dagthema": "Squat zwaar",
- "kernlift_vandaag": "squat",
+ "gegenereerd_op": "2026-11-06T01:04:15+00:00",
+ "vandaag": "2026-11-06",
+ "weekdag": 4,
+ "dagthema": "Volume + muscle-up",
+ "kernlift_vandaag": null,
  "positie": {
   "week": 9,
   "cyclusweek": 3,
@@ -12,29 +12,29 @@
   "deload": false,
   "startdatum": "2026-09-07"
  },
- "lichaamsgewicht": 76.1,
+ "lichaamsgewicht": 76.04,
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-11-05T13:14:27+00:00",
+  "opgehaald": "2026-11-06T01:03:56+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
-  "gewicht_7d_kg": 76.1,
+  "gewicht_7d_kg": 76.04,
   "gewicht_vorige_7d_kg": 76.06,
-  "verandering_per_week_kg": 0.04,
-  "nog_af_tot_73_kg": 3.1,
-  "vet_pct_7d": 16.88,
-  "kcal_7d": 2138.29,
-  "eiwit_7d_g": 126.14,
-  "eiwit_per_kg": 1.66,
-  "dagen_met_voeding_7d": 7,
-  "dagen_met_gewicht_7d": 6,
-  "slaap_7d_uur": 8.14,
+  "verandering_per_week_kg": -0.02,
+  "nog_af_tot_73_kg": 3.0,
+  "vet_pct_7d": 16.84,
+  "kcal_7d": 2494.83,
+  "eiwit_7d_g": 135.83,
+  "eiwit_per_kg": 1.79,
+  "dagen_met_voeding_7d": 6,
+  "dagen_met_gewicht_7d": 5,
+  "slaap_7d_uur": 8.12,
   "kortste_nacht_7d_uur": 7.1,
   "nachten_onder_6u_7d": 0,
-  "verbrand_7d_kcal": 2387.43,
-  "stappen_7d": 3512.43,
-  "energiebalans_7d_kcal": -249.14
+  "verbrand_7d_kcal": 2407.14,
+  "stappen_7d": 3933.86,
+  "energiebalans_7d_kcal": 158.83
  },
  "stand": {
   "dip": {
@@ -43,7 +43,7 @@
     {
      "datum": "2026-10-27",
      "set": "35 kg x 3 @ RPE 6",
-     "e1rm": 61.1
+     "e1rm": 61.0
     },
     {
      "datum": "2026-11-03",
@@ -232,7 +232,7 @@
    }
   },
   "squat": {
-   "e1rm": 110.1,
+   "e1rm": 110.6,
    "e1rm_onderbouwing": [
     {
      "datum": "2026-09-26",
@@ -240,61 +240,16 @@
      "e1rm": 111.1
     },
     {
-     "datum": "2026-10-10",
-     "set": "90 kg x 5 @ RPE 8.5",
-     "e1rm": 109.1
+     "datum": "2026-11-05",
+     "set": "92.5 kg x 4 @ RPE 8",
+     "e1rm": 110.1
     }
    ],
    "bron": "hevy",
    "target_nu": 115.0,
-   "aantal_werksets_totaal": 107,
-   "laatste_sessie": "2026-11-03",
+   "aantal_werksets_totaal": 112,
+   "laatste_sessie": "2026-11-05",
    "laatste_sets": [
-    {
-     "datum": "2026-10-29",
-     "gewicht": 65,
-     "reps": 7,
-     "rpe": 6,
-     "type": "normal",
-     "e1rm": 86.7,
-     "variant": null
-    },
-    {
-     "datum": "2026-10-29",
-     "gewicht": 65,
-     "reps": 7,
-     "rpe": 6,
-     "type": "normal",
-     "e1rm": 86.7,
-     "variant": null
-    },
-    {
-     "datum": "2026-11-01",
-     "gewicht": 65,
-     "reps": 4,
-     "rpe": 6,
-     "type": "normal",
-     "e1rm": 82.3,
-     "variant": null
-    },
-    {
-     "datum": "2026-11-01",
-     "gewicht": 65,
-     "reps": 4,
-     "rpe": 6,
-     "type": "normal",
-     "e1rm": 82.3,
-     "variant": null
-    },
-    {
-     "datum": "2026-11-01",
-     "gewicht": 65,
-     "reps": 4,
-     "rpe": 6,
-     "type": "normal",
-     "e1rm": 82.3,
-     "variant": null
-    },
     {
      "datum": "2026-11-03",
      "gewicht": 80,
@@ -321,6 +276,51 @@
      "type": "normal",
      "e1rm": 90.9,
      "variant": null
+    },
+    {
+     "datum": "2026-11-05",
+     "gewicht": 80,
+     "reps": 4,
+     "rpe": 6,
+     "type": "normal",
+     "e1rm": 101.3,
+     "variant": null
+    },
+    {
+     "datum": "2026-11-05",
+     "gewicht": 87.5,
+     "reps": 4,
+     "rpe": 7,
+     "type": "normal",
+     "e1rm": 108.0,
+     "variant": null
+    },
+    {
+     "datum": "2026-11-05",
+     "gewicht": 92.5,
+     "reps": 4,
+     "rpe": 8,
+     "type": "normal",
+     "e1rm": 110.1,
+     "variant": null
+    },
+    {
+     "datum": "2026-11-05",
+     "gewicht": 67.5,
+     "reps": 7,
+     "rpe": 7,
+     "type": "normal",
+     "e1rm": 88.2,
+     "variant": null
+    },
+    {
+     "datum": "2026-11-05",
+     "gewicht": 67.5,
+     "reps": 7,
+     "rpe": 7.5,
+     "type": "normal",
+     "e1rm": 86.4,
+     "variant": null
     }
    ],
    "laatste_notitie": {
@@ -333,38 +333,11 @@
    "e1rm_onderbouwing": [],
    "bron": "hevy",
    "target_nu": 0.0,
-   "aantal_werksets_totaal": 25,
-   "laatste_sessie": "2026-10-29",
+   "aantal_werksets_totaal": 30,
+   "laatste_sessie": "2026-11-05",
    "laatste_sets": [
     {
-     "datum": "2026-10-22",
-     "gewicht": 50,
-     "reps": 4,
-     "rpe": 6,
-     "type": "normal",
-     "e1rm": null,
-     "variant": "met band"
-    },
-    {
-     "datum": "2026-10-22",
-     "gewicht": 25,
-     "reps": 4,
-     "rpe": 9.5,
-     "type": "normal",
-     "e1rm": null,
-     "variant": "met band"
-    },
-    {
-     "datum": "2026-10-22",
-     "gewicht": 25,
-     "reps": 4,
-     "rpe": 9,
-     "type": "normal",
-     "e1rm": null,
-     "variant": "met band"
-    },
-    {
-     "datum": "2026-10-22",
+     "datum": "2026-10-29",
      "gewicht": 25,
      "reps": 4,
      "rpe": 9,
@@ -374,7 +347,43 @@
     },
     {
      "datum": "2026-10-29",
+     "gewicht": 50,
+     "reps": 4,
+     "rpe": 6,
+     "type": "normal",
+     "e1rm": null,
+     "variant": "met band"
+    },
+    {
+     "datum": "2026-10-29",
      "gewicht": 25,
+     "reps": 4,
+     "rpe": 9,
+     "type": "normal",
+     "e1rm": null,
+     "variant": "met band"
+    },
+    {
+     "datum": "2026-11-05",
+     "gewicht": 45,
+     "reps": 4,
+     "rpe": 6,
+     "type": "normal",
+     "e1rm": null,
+     "variant": "met band"
+    },
+    {
+     "datum": "2026-11-05",
+     "gewicht": 25,
+     "reps": 4,
+     "rpe": 6,
+     "type": "normal",
+     "e1rm": null,
+     "variant": "met band"
+    },
+    {
+     "datum": "2026-11-05",
+     "gewicht": 18,
      "reps": 4,
      "rpe": 7,
      "type": "normal",
@@ -382,8 +391,8 @@
      "variant": "met band"
     },
     {
-     "datum": "2026-10-29",
-     "gewicht": 25,
+     "datum": "2026-11-05",
+     "gewicht": 10,
      "reps": 4,
      "rpe": 9,
      "type": "normal",
@@ -391,27 +400,18 @@
      "variant": "met band"
     },
     {
-     "datum": "2026-10-29",
-     "gewicht": 50,
-     "reps": 4,
-     "rpe": 6,
-     "type": "normal",
-     "e1rm": null,
-     "variant": "met band"
-    },
-    {
-     "datum": "2026-10-29",
-     "gewicht": 25,
-     "reps": 4,
-     "rpe": 9,
+     "datum": "2026-11-05",
+     "gewicht": 0,
+     "reps": 1,
+     "rpe": 8.0,
      "type": "normal",
      "e1rm": null,
      "variant": "met band"
     }
    ],
    "laatste_notitie": {
-    "datum": "2026-10-15",
-    "tekst": "Ik gebruikte gewoon een lichtere band. De eerste was nog met een zwaardere band. De rest met lichtere band\n\nDe zware geeft ongeveer 23 tot 57 kilo mee\nDe lichte ongeveer 16 tot 38\n\nLaatste rep was zonder band"
+    "datum": "2026-11-05",
+    "tekst": "Eerste met zware band en 5 kilo extra. Derde set met een band tussen de 11 en 30 kg. Laatste rode band tussen de 7 en 16"
    }
   }
  },
@@ -447,9 +447,9 @@
    "kg": 80.0,
    "rpe_plafond": 8,
    "correctiefactor": 0.95,
-   "kg_volgens_plan": 82.5,
-   "afwijking_kg": -2.5,
-   "bijgesteld_omdat": null,
+   "kg_volgens_plan": 85.0,
+   "afwijking_kg": -5.0,
+   "bijgesteld_omdat": "binnen het plafond, beste set rekent uit op e1RM 110.1",
    "sessie_gemist": false
   }
  },
@@ -480,8 +480,8 @@
   },
   "squat": {
    "factor": 0.95,
-   "oordeel_vorige_sessie": null,
-   "reden": null,
+   "oordeel_vorige_sessie": "goed",
+   "reden": "binnen het plafond, beste set rekent uit op e1RM 110.1",
    "vorig_voorschrift": {
     "datum": "2026-11-05",
     "sets": 5,
@@ -527,7 +527,7 @@
    }
   ]
  },
- "laatste_training": "2026-11-03T11:13:09+00:00",
+ "laatste_training": "2026-11-05T15:20:25+00:00",
  "e1rm_methode": "Per set: RPE-tabel (RTS), RPE uit de notitie, anders uit het veld, anders de RPE die Kaj voorschreef (een leeg veld betekent: zoals voorgeschreven; bij een bereik telt de bovenkant), geldig van RPE 5 tot 10; bij dip, pull-up en muscle-up over lichaamsgewicht plus extra gewicht. Per lift: gemiddelde van de beste set uit de twee beste sessies van de laatste 6 weken. Sets zonder RPE tellen alleen als er geen sets met RPE zijn.",
  "afgelopen_7_dagen": {
   "sessies": 4,
@@ -540,6 +540,6 @@
   "kernsets_rpe_volgens_voorschrift": 1,
   "kernsets_tot_falen": 0
  },
- "totaal_nu": 241.5,
+ "totaal_nu": 242.0,
  "totaal_doel": 367
 }
