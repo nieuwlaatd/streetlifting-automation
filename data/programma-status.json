@@ -1,8 +1,8 @@
 {
- "gegenereerd_op": "2026-11-06T12:58:33+00:00",
- "vandaag": "2026-11-06",
- "weekdag": 4,
- "dagthema": "Volume + muscle-up",
+ "gegenereerd_op": "2026-11-07T00:14:24+00:00",
+ "vandaag": "2026-11-07",
+ "weekdag": 5,
+ "dagthema": null,
  "kernlift_vandaag": null,
  "positie": {
   "week": 9,
@@ -16,25 +16,25 @@
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-11-06T12:58:15+00:00",
+  "opgehaald": "2026-11-07T00:14:07+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
   "gewicht_7d_kg": 75.97,
-  "gewicht_vorige_7d_kg": 76.06,
-  "verandering_per_week_kg": -0.09,
+  "gewicht_vorige_7d_kg": 76.03,
+  "verandering_per_week_kg": -0.06,
   "nog_af_tot_73_kg": 3.0,
   "vet_pct_7d": 16.8,
-  "kcal_7d": 2153.43,
-  "eiwit_7d_g": 116.57,
-  "eiwit_per_kg": 1.53,
-  "dagen_met_voeding_7d": 7,
+  "kcal_7d": 2372.0,
+  "eiwit_7d_g": 132.17,
+  "eiwit_per_kg": 1.74,
+  "dagen_met_voeding_7d": 6,
   "dagen_met_gewicht_7d": 6,
   "slaap_7d_uur": 8.38,
   "kortste_nacht_7d_uur": 7.1,
   "nachten_onder_6u_7d": 0,
-  "verbrand_7d_kcal": 2407.14,
-  "stappen_7d": 3933.86,
-  "energiebalans_7d_kcal": -253.71
+  "verbrand_7d_kcal": 2401.43,
+  "stappen_7d": 3982.86,
+  "energiebalans_7d_kcal": -13.83
  },
  "stand": {
   "dip": {
@@ -425,7 +425,7 @@
    "correctiefactor": 1.0506,
    "kg_volgens_plan": 30.0,
    "afwijking_kg": 2.5,
-   "bijgesteld_omdat": "binnen het plafond, beste set rekent uit op e1RM 61",
+   "bijgesteld_omdat": null,
    "sessie_gemist": false
   },
   "pullup": {
@@ -437,7 +437,7 @@
    "correctiefactor": 0.95,
    "kg_volgens_plan": 37.5,
    "afwijking_kg": 0.0,
-   "bijgesteld_omdat": "binnen het plafond, beste set rekent uit op e1RM 39.4",
+   "bijgesteld_omdat": null,
    "sessie_gemist": false
   },
   "squat": {
@@ -456,8 +456,8 @@
  "terugkoppeling": {
   "dip": {
    "factor": 1.0506,
-   "oordeel_vorige_sessie": "goed",
-   "reden": "binnen het plafond, beste set rekent uit op e1RM 61",
+   "oordeel_vorige_sessie": null,
+   "reden": null,
    "vorig_voorschrift": {
     "datum": "2026-11-06",
     "sets": 4,
@@ -468,8 +468,8 @@
   },
   "pullup": {
    "factor": 0.95,
-   "oordeel_vorige_sessie": "goed",
-   "reden": "binnen het plafond, beste set rekent uit op e1RM 39.4",
+   "oordeel_vorige_sessie": null,
+   "reden": null,
    "vorig_voorschrift": {
     "datum": "2026-11-06",
     "sets": 4,
