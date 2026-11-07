@@ -1,8 +1,10 @@
 {
  "status": "ok",
- "fouten_aanvulling": [],
+ "fouten_aanvulling": [
+  "verbrand: HTTP 503 The service is currently unavailable."
+ ],
  "rechten_ontbreken": [],
- "opgehaald": "2026-11-07T11:44:53+00:00",
+ "opgehaald": "2026-11-07T23:49:31+00:00",
  "bron": "Google Health API",
  "streefgewicht_kg": 73,
  "samenvatting": {
@@ -11,17 +13,17 @@
   "verandering_per_week_kg": -0.1,
   "nog_af_tot_73_kg": 2.9,
   "vet_pct_7d": 16.77,
-  "kcal_7d": 2372.0,
-  "eiwit_7d_g": 132.17,
+  "kcal_7d": 2420.71,
+  "eiwit_7d_g": 132.43,
   "eiwit_per_kg": 1.74,
-  "dagen_met_voeding_7d": 6,
+  "dagen_met_voeding_7d": 7,
   "dagen_met_gewicht_7d": 7,
   "slaap_7d_uur": 8.52,
   "kortste_nacht_7d_uur": 7.1,
   "nachten_onder_6u_7d": 0,
-  "verbrand_7d_kcal": 2401.43,
+  "verbrand_7d_kcal": null,
   "stappen_7d": 3982.86,
-  "energiebalans_7d_kcal": -13.83
+  "energiebalans_7d_kcal": null
  },
  "_veldnamen": {
   "weight": {
@@ -527,7 +529,7 @@
    "vet_g": 126,
    "voedingslogs": 1,
    "slaap_uur": 8.78,
-   "verbrand_kcal": 2542,
+   "verbrand_kcal": null,
    "stappen": 4503
   },
   {
@@ -540,7 +542,7 @@
    "vet_g": 112,
    "voedingslogs": 1,
    "slaap_uur": 8.37,
-   "verbrand_kcal": 2646,
+   "verbrand_kcal": null,
    "stappen": 3998
   },
   {
@@ -553,7 +555,7 @@
    "vet_g": 89,
    "voedingslogs": 1,
    "slaap_uur": 8.43,
-   "verbrand_kcal": 2460,
+   "verbrand_kcal": null,
    "stappen": 4791
   },
   {
@@ -566,7 +568,7 @@
    "vet_g": 73,
    "voedingslogs": 1,
    "slaap_uur": 9.12,
-   "verbrand_kcal": 2902,
+   "verbrand_kcal": null,
    "stappen": 6871
   },
   {
@@ -579,7 +581,7 @@
    "vet_g": 38,
    "voedingslogs": 1,
    "slaap_uur": 9.33,
-   "verbrand_kcal": 2663,
+   "verbrand_kcal": null,
    "stappen": 3347
   },
   {
@@ -592,7 +594,7 @@
    "vet_g": 57,
    "voedingslogs": 1,
    "slaap_uur": 8.95,
-   "verbrand_kcal": 3518,
+   "verbrand_kcal": null,
    "stappen": 12186
   },
   {
@@ -605,7 +607,7 @@
    "vet_g": 86,
    "voedingslogs": 1,
    "slaap_uur": 9.37,
-   "verbrand_kcal": 2443,
+   "verbrand_kcal": null,
    "stappen": 4893
   },
   {
@@ -618,7 +620,7 @@
    "vet_g": 75,
    "voedingslogs": 1,
    "slaap_uur": 8.15,
-   "verbrand_kcal": 2166,
+   "verbrand_kcal": null,
    "stappen": 2793
   },
   {
@@ -631,7 +633,7 @@
    "vet_g": 88,
    "voedingslogs": 1,
    "slaap_uur": 8.35,
-   "verbrand_kcal": 3623,
+   "verbrand_kcal": null,
    "stappen": 10169
   },
   {
@@ -644,7 +646,7 @@
    "vet_g": 102,
    "voedingslogs": 1,
    "slaap_uur": 8.75,
-   "verbrand_kcal": 2536,
+   "verbrand_kcal": null,
    "stappen": 4191
   },
   {
@@ -657,7 +659,7 @@
    "vet_g": 145,
    "voedingslogs": 1,
    "slaap_uur": 8.08,
-   "verbrand_kcal": 3182,
+   "verbrand_kcal": null,
    "stappen": 7925
   },
   {
@@ -670,7 +672,7 @@
    "vet_g": 62,
    "voedingslogs": 1,
    "slaap_uur": 8.85,
-   "verbrand_kcal": 2664,
+   "verbrand_kcal": null,
    "stappen": 5746
   },
   {
@@ -683,7 +685,7 @@
    "vet_g": 55,
    "voedingslogs": 1,
    "slaap_uur": 10.17,
-   "verbrand_kcal": 2748,
+   "verbrand_kcal": null,
    "stappen": 4923
   },
   {
@@ -696,7 +698,7 @@
    "vet_g": 82,
    "voedingslogs": 1,
    "slaap_uur": 10.37,
-   "verbrand_kcal": 2846,
+   "verbrand_kcal": null,
    "stappen": 6765
   },
   {
@@ -709,7 +711,7 @@
    "vet_g": 108,
    "voedingslogs": 1,
    "slaap_uur": 9.62,
-   "verbrand_kcal": 2471,
+   "verbrand_kcal": null,
    "stappen": 3878
   },
   {
@@ -722,7 +724,7 @@
    "vet_g": 176,
    "voedingslogs": 1,
    "slaap_uur": 8.77,
-   "verbrand_kcal": 3050,
+   "verbrand_kcal": null,
    "stappen": 8209
   },
   {
@@ -735,7 +737,7 @@
    "vet_g": 96,
    "voedingslogs": 1,
    "slaap_uur": 9.3,
-   "verbrand_kcal": 2276,
+   "verbrand_kcal": null,
    "stappen": 4914
   },
   {
@@ -748,7 +750,7 @@
    "vet_g": 114,
    "voedingslogs": 1,
    "slaap_uur": 8.38,
-   "verbrand_kcal": 2898,
+   "verbrand_kcal": null,
    "stappen": 7123
   },
   {
@@ -761,7 +763,7 @@
    "vet_g": 62,
    "voedingslogs": 1,
    "slaap_uur": 9.35,
-   "verbrand_kcal": 1987,
+   "verbrand_kcal": null,
    "stappen": 1127
   },
   {
@@ -774,7 +776,7 @@
    "vet_g": 74,
    "voedingslogs": 1,
    "slaap_uur": 8.63,
-   "verbrand_kcal": 2867,
+   "verbrand_kcal": null,
    "stappen": 6340
   },
   {
@@ -787,7 +789,7 @@
    "vet_g": 59,
    "voedingslogs": 1,
    "slaap_uur": 7.75,
-   "verbrand_kcal": 2770,
+   "verbrand_kcal": null,
    "stappen": 7242
   },
   {
@@ -800,7 +802,7 @@
    "vet_g": 92,
    "voedingslogs": 1,
    "slaap_uur": 9.25,
-   "verbrand_kcal": 2146,
+   "verbrand_kcal": null,
    "stappen": 2136
   },
   {
@@ -813,7 +815,7 @@
    "vet_g": 87,
    "voedingslogs": 1,
    "slaap_uur": 9.5,
-   "verbrand_kcal": 2915,
+   "verbrand_kcal": null,
    "stappen": 5815
   },
   {
@@ -826,7 +828,7 @@
    "vet_g": 114,
    "voedingslogs": 1,
    "slaap_uur": 9.48,
-   "verbrand_kcal": 2272,
+   "verbrand_kcal": null,
    "stappen": 3695
   },
   {
@@ -839,7 +841,7 @@
    "vet_g": 70,
    "voedingslogs": 1,
    "slaap_uur": 8.67,
-   "verbrand_kcal": 2349,
+   "verbrand_kcal": null,
    "stappen": 3815
   },
   {
@@ -852,7 +854,7 @@
    "vet_g": 65,
    "voedingslogs": 1,
    "slaap_uur": 8.68,
-   "verbrand_kcal": 2316,
+   "verbrand_kcal": null,
    "stappen": 4622
   },
   {
@@ -865,7 +867,7 @@
    "vet_g": 84,
    "voedingslogs": 1,
    "slaap_uur": 9.72,
-   "verbrand_kcal": 2346,
+   "verbrand_kcal": null,
    "stappen": 3537
   },
   {
@@ -878,7 +880,7 @@
    "vet_g": 32,
    "voedingslogs": 1,
    "slaap_uur": 10.12,
-   "verbrand_kcal": 2597,
+   "verbrand_kcal": null,
    "stappen": 4305
   },
   {
@@ -891,7 +893,7 @@
    "vet_g": 131,
    "voedingslogs": 1,
    "slaap_uur": 9.55,
-   "verbrand_kcal": 2216,
+   "verbrand_kcal": null,
    "stappen": 2357
   },
   {
@@ -904,7 +906,7 @@
    "vet_g": 96,
    "voedingslogs": 1,
    "slaap_uur": 7.53,
-   "verbrand_kcal": 3088,
+   "verbrand_kcal": null,
    "stappen": 5395
   },
   {
@@ -917,7 +919,7 @@
    "vet_g": 71,
    "voedingslogs": 1,
    "slaap_uur": 8.95,
-   "verbrand_kcal": 2193,
+   "verbrand_kcal": null,
    "stappen": 2746
   },
   {
@@ -930,7 +932,7 @@
    "vet_g": 99,
    "voedingslogs": 1,
    "slaap_uur": 11.37,
-   "verbrand_kcal": 2708,
+   "verbrand_kcal": null,
    "stappen": 4422
   },
   {
@@ -943,7 +945,7 @@
    "vet_g": 72,
    "voedingslogs": 1,
    "slaap_uur": 8.53,
-   "verbrand_kcal": 2060,
+   "verbrand_kcal": null,
    "stappen": 1762
   },
   {
@@ -956,7 +958,7 @@
    "vet_g": 90,
    "voedingslogs": 1,
    "slaap_uur": 9.25,
-   "verbrand_kcal": 2696,
+   "verbrand_kcal": null,
    "stappen": 4431
   },
   {
@@ -969,7 +971,7 @@
    "vet_g": 149,
    "voedingslogs": 1,
    "slaap_uur": 8.25,
-   "verbrand_kcal": 2535,
+   "verbrand_kcal": null,
    "stappen": 4071
   },
   {
@@ -982,7 +984,7 @@
    "vet_g": 82,
    "voedingslogs": 1,
    "slaap_uur": 8.37,
-   "verbrand_kcal": 1906,
+   "verbrand_kcal": null,
    "stappen": 1337
   },
   {
@@ -995,7 +997,7 @@
    "vet_g": 74,
    "voedingslogs": 1,
    "slaap_uur": 8.25,
-   "verbrand_kcal": 2434,
+   "verbrand_kcal": null,
    "stappen": 3517
   },
   {
@@ -1008,7 +1010,7 @@
    "vet_g": 86,
    "voedingslogs": 1,
    "slaap_uur": 8.9,
-   "verbrand_kcal": 2046,
+   "verbrand_kcal": null,
    "stappen": 1509
   },
   {
@@ -1021,7 +1023,7 @@
    "vet_g": 78,
    "voedingslogs": 1,
    "slaap_uur": 7.1,
-   "verbrand_kcal": 2637,
+   "verbrand_kcal": null,
    "stappen": 4854
   },
   {
@@ -1034,7 +1036,7 @@
    "vet_g": 83,
    "voedingslogs": 1,
    "slaap_uur": 8.42,
-   "verbrand_kcal": 2458,
+   "verbrand_kcal": null,
    "stappen": 4868
   },
   {
@@ -1047,20 +1049,20 @@
    "vet_g": 107,
    "voedingslogs": 1,
    "slaap_uur": 7.67,
-   "verbrand_kcal": 2834,
+   "verbrand_kcal": null,
    "stappen": 7381
   },
   {
    "datum": "2026-11-06",
    "gewicht_kg": 75.6,
    "vet_pct": 16.6,
-   "kcal": null,
-   "eiwit_g": null,
-   "koolhydraten_g": null,
-   "vet_g": null,
-   "voedingslogs": 0,
+   "kcal": 2713,
+   "eiwit_g": 134,
+   "koolhydraten_g": 220,
+   "vet_g": 140,
+   "voedingslogs": 1,
    "slaap_uur": 9.95,
-   "verbrand_kcal": 2495,
+   "verbrand_kcal": null,
    "stappen": 4414
   },
   {
