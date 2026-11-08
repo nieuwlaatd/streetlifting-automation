@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-11-08T11:57:30+00:00",
+ "bijgewerkt": "2026-11-08T17:43:02+00:00",
  "dagen": {
   "2026-09-24 donderdag": {
    "plan_datum": "2026-09-24",
@@ -3178,6 +3178,176 @@
     }
    ],
    "extra": [],
+   "dagnotitie": ""
+  },
+  "2026-11-09 zondag": {
+   "plan_datum": "2026-11-09",
+   "dag": "zondag",
+   "week": 4,
+   "thema": "Primaire Pull-Up + Secundaire Muscle-Up + Dip + Tertiaire Squat",
+   "sessie_datum": "2026-11-08",
+   "sessie_titel": "SL 4 · Zo wk4 — Primaire Pull-Up + Secundaire Muscle-Up + Dip + Tertiaire Squat",
+   "gekoppeld_op": "titel",
+   "oefeningen": [
+    {
+     "rij": 40,
+     "plan": "Competition Pull-Up",
+     "voorschrift": "3x5 RPE 8 35-40 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Pull Up (Weighted)",
+     "sets": [
+      "40x5 @7",
+      "40x5 @8",
+      "40x5 @8.5"
+     ],
+     "rpe": "7-8.5",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 41,
+     "plan": "Competition Pull-Up",
+     "voorschrift": "1x3 RPE 8 45-50 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Pull Up (Weighted)",
+     "sets": [
+      "50x3 @8.5"
+     ],
+     "rpe": "8.5",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 42,
+     "plan": "Diagonal Weighted Pull-up",
+     "voorschrift": "2x6 RPE 7",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Pull Up (Weighted)",
+     "sets": [
+      "5x6 @6",
+      "5x6 @7"
+     ],
+     "rpe": "6-7",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 43,
+     "plan": "3-1-0 Tempo Dip",
+     "voorschrift": "1x3 RPE 7-7,5 30-35 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Chest Dip (Weighted)",
+     "sets": [
+      "35x3 @6"
+     ],
+     "rpe": "6",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 44,
+     "plan": "Competition Dip",
+     "voorschrift": "2x6 RPE 6 25-30 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Chest Dip (Weighted)",
+     "sets": [
+      "30x6 @6",
+      "30x6 @7"
+     ],
+     "rpe": "6-7",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 45,
+     "plan": "2s Paused Squat",
+     "voorschrift": "3x4 RPE 6 60-65 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Pause Squat (Barbell)",
+     "sets": [
+      "65x4 @6",
+      "65x4 @6",
+      "65x4 @6"
+     ],
+     "rpe": "6",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 46,
+     "plan": "Leg Curl",
+     "voorschrift": "2x8-15",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Lying Leg Curl (Machine)",
+     "sets": [
+      "45x10 @9.5",
+      "40x9 @9.5"
+     ],
+     "rpe": "9.5",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 47,
+     "plan": "Bar Cable Pullover",
+     "voorschrift": "3x4-8",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Straight Arm Lat Pulldown (Cable)",
+     "sets": [
+      "35x7 @9.5",
+      "35x6 @10",
+      "30x6 @9.5"
+     ],
+     "rpe": "9.5-10",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 48,
+     "plan": "Wide Grip Row",
+     "voorschrift": "2x6-12",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Seated Cable Row - Bar Wide Grip",
+     "sets": [
+      "70x9 @9",
+      "70x8 @9.5"
+     ],
+     "rpe": "9-9.5",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 49,
+     "plan": "Tricep Extension",
+     "voorschrift": "2x8-15",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Triceps Rope Pushdown",
+     "sets": [
+      "25x8 @9",
+      "20x10 @9"
+     ],
+     "rpe": "9",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 50,
+     "plan": "Side Plank Leg Raised",
+     "voorschrift": "2x30 sec",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Side Plank",
+     "sets": [
+      "36s",
+      "33s"
+     ],
+     "rpe": "",
+     "afwijking": "volgens plan"
+    }
+   ],
+   "extra": [
+    "Seated Cable Row - Bar Grip: 90x7 @10"
+   ],
    "dagnotitie": ""
   }
  }
