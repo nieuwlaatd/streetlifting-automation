@@ -13,6 +13,7 @@ maken. Hevy toont bij een leeg gewichtsveld vanzelf wat je vorige keer deed.
 Omgevingsvariabele: HEVY_API_KEY
 """
 
+import datetime as dt
 import json
 import os
 import re
@@ -223,7 +224,7 @@ def notitie(oefening, hevy_titel_afwijkend):
     return " · ".join(delen) or None
 
 
-def huidige_week(blokken, vandaag):
+def huidige_week(blokken, vandaag, workouts=()):
     """Het weekblok dat nu aan de beurt is.
 
     Dat is de eerste week waarvan de laatste trainingsdag nog niet voorbij is.
@@ -238,16 +239,38 @@ def huidige_week(blokken, vandaag):
         datums = [d["datum"] for d in blok["dagen"] if d.get("datum")]
         return max(datums) if datums else "0000"
 
+    def afgerond(blok):
+        # Kaj zet soms een verkeerde datum bij een dag (week 4 van blok 1.1 had
+        # zondag op 9 november). Staan alle dagen van de week al in Hevy, dan is
+        # de week klaar, wat de Sheet ook zegt. Gezocht wordt op "wkN" in de
+        # titel en vanaf een paar dagen voor de eerste dag, omdat Kaj per blok
+        # weer bij week 1 begint.
+        datums = [d["datum"] for d in blok["dagen"] if d.get("datum")]
+        if not blok.get("week") or not datums:
+            return False
+        vanaf = (dt.date.fromisoformat(min(datums)) - dt.timedelta(days=3)).isoformat()
+        gedaan = {(w.get("title") or "").split(" · ")[0] for w in workouts
+                  if re.search(rf"\bwk{blok['week']}\b", w.get("title") or "")
+                  and (w.get("start_time") or "")[:10] >= vanaf}
+        return len(gedaan) >= len(blok["dagen"])
+
     for blok in blokken:
-        if laatste_dag(blok) >= vandaag.isoformat():
+        if laatste_dag(blok) >= vandaag.isoformat() and not afgerond(blok):
             return blok
     return blokken[-1] if blokken else None
 
 
-def bouw_routines(schema, vandaag=None):
-    import datetime as dt
+def lees_workouts():
+    try:
+        return json.load(open("data/hevy-raw.json", encoding="utf-8")).get("workouts") or []
+    except FileNotFoundError:
+        return []
+
+
+def bouw_routines(schema, vandaag=None, workouts=None):
     uit = []
-    blok = huidige_week(schema["blokken"], vandaag or dt.date.today())
+    blok = huidige_week(schema["blokken"], vandaag or dt.date.today(),
+                        lees_workouts() if workouts is None else workouts)
     if blok is None:
         return uit
     print(f"Week {blok.get('week')} uit '{blok['blok']}' wordt in Hevy gezet.")
