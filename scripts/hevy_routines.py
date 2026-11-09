@@ -70,6 +70,7 @@ MAP = {
     "Wide Grip Row": ("C3BCABB3", None),
     "Tricep Extension": ("94B7239B", None),
     "Side Plank Leg Raised": ("E3EDA509", "Been geheven"),
+    "Butterfly Pec Dec": ("9DCE2D64", None),      # Butterfly (Pec Deck)
 }
 
 # ---- Kajs naam vinden, ook als hij hem net anders schrijft ----
