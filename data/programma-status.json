@@ -1,9 +1,9 @@
 {
- "gegenereerd_op": "2026-11-10T13:29:49+00:00",
- "vandaag": "2026-11-10",
- "weekdag": 1,
- "dagthema": null,
- "kernlift_vandaag": null,
+ "gegenereerd_op": "2026-11-11T00:48:45+00:00",
+ "vandaag": "2026-11-11",
+ "weekdag": 2,
+ "dagthema": "Pull zwaar",
+ "kernlift_vandaag": "pullup",
  "positie": {
   "week": 10,
   "cyclusweek": 4,
@@ -12,43 +12,43 @@
   "deload": false,
   "startdatum": "2026-09-07"
  },
- "lichaamsgewicht": 75.67,
+ "lichaamsgewicht": 75.51,
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-11-10T13:29:35+00:00",
+  "opgehaald": "2026-11-11T00:48:32+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
-  "gewicht_7d_kg": 75.67,
-  "gewicht_vorige_7d_kg": 75.97,
-  "verandering_per_week_kg": -0.3,
-  "nog_af_tot_73_kg": 2.7,
-  "vet_pct_7d": 16.63,
-  "kcal_7d": 2329.57,
-  "eiwit_7d_g": 141.0,
-  "eiwit_per_kg": 1.86,
-  "dagen_met_voeding_7d": 7,
-  "dagen_met_gewicht_7d": 6,
-  "slaap_7d_uur": 8.87,
+  "gewicht_7d_kg": 75.51,
+  "gewicht_vorige_7d_kg": 76.18,
+  "verandering_per_week_kg": -0.67,
+  "nog_af_tot_73_kg": 2.5,
+  "vet_pct_7d": 16.54,
+  "kcal_7d": 2622.67,
+  "eiwit_7d_g": 155.17,
+  "eiwit_per_kg": 2.05,
+  "dagen_met_voeding_7d": 6,
+  "dagen_met_gewicht_7d": 5,
+  "slaap_7d_uur": 8.96,
   "kortste_nacht_7d_uur": 7.67,
   "nachten_onder_6u_7d": 0,
-  "verbrand_7d_kcal": 2441.86,
-  "stappen_7d": 3975.57,
-  "energiebalans_7d_kcal": -112.29
+  "verbrand_7d_kcal": 2372.71,
+  "stappen_7d": 3522.71,
+  "energiebalans_7d_kcal": 213.33
  },
  "stand": {
   "dip": {
-   "e1rm": 62.6,
+   "e1rm": 62.5,
    "e1rm_onderbouwing": [
     {
      "datum": "2026-11-08",
      "set": "30 kg x 6 @ RPE 6",
-     "e1rm": 64.3
+     "e1rm": 64.2
     },
     {
      "datum": "2026-10-27",
      "set": "35 kg x 3 @ RPE 6",
-     "e1rm": 61.0
+     "e1rm": 60.9
     }
    ],
    "bron": "hevy",
@@ -62,7 +62,7 @@
      "reps": 5,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 56.8,
+     "e1rm": 56.7,
      "variant": null
     },
     {
@@ -71,7 +71,7 @@
      "reps": 5,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 56.8,
+     "e1rm": 56.7,
      "variant": null
     },
     {
@@ -80,7 +80,7 @@
      "reps": 5,
      "rpe": 7,
      "type": "normal",
-     "e1rm": 51.8,
+     "e1rm": 51.7,
      "variant": null
     },
     {
@@ -89,7 +89,7 @@
      "reps": 3,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 61.0,
+     "e1rm": 60.9,
      "variant": null
     },
     {
@@ -98,7 +98,7 @@
      "reps": 3,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 61.0,
+     "e1rm": 60.9,
      "variant": null
     },
     {
@@ -107,7 +107,7 @@
      "reps": 3,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 61.0,
+     "e1rm": 60.9,
      "variant": null
     },
     {
@@ -116,7 +116,7 @@
      "reps": 6,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 64.3,
+     "e1rm": 64.2,
      "variant": null
     },
     {
@@ -125,7 +125,7 @@
      "reps": 6,
      "rpe": 7,
      "type": "normal",
-     "e1rm": 60.6,
+     "e1rm": 60.5,
      "variant": null
     }
    ],
@@ -159,7 +159,7 @@
      "reps": 4,
      "rpe": 7,
      "type": "normal",
-     "e1rm": 39.4,
+     "e1rm": 39.3,
      "variant": null
     },
     {
@@ -168,7 +168,7 @@
      "reps": 4,
      "rpe": 7.5,
      "type": "normal",
-     "e1rm": 37.3,
+     "e1rm": 37.2,
      "variant": null
     },
     {
@@ -204,7 +204,7 @@
      "reps": 3,
      "rpe": 8.5,
      "type": "normal",
-     "e1rm": 68.0,
+     "e1rm": 67.9,
      "variant": null
     },
     {
@@ -213,7 +213,7 @@
      "reps": 6,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 31.2,
+     "e1rm": 31.1,
      "variant": null
     },
     {
@@ -222,7 +222,7 @@
      "reps": 6,
      "rpe": 7,
      "type": "normal",
-     "e1rm": 28.4,
+     "e1rm": 28.3,
      "variant": null
     }
    ],
@@ -540,6 +540,6 @@
   "kernsets_rpe_volgens_voorschrift": 1,
   "kernsets_tot_falen": 0
  },
- "totaal_nu": 242.9,
+ "totaal_nu": 242.8,
  "totaal_doel": 367
 }
