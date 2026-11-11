@@ -1,5 +1,5 @@
 {
- "gegenereerd_op": "2026-11-11T00:48:45+00:00",
+ "gegenereerd_op": "2026-11-11T12:44:45+00:00",
  "vandaag": "2026-11-11",
  "weekdag": 2,
  "dagthema": "Pull zwaar",
@@ -16,7 +16,7 @@
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-11-11T00:48:32+00:00",
+  "opgehaald": "2026-11-11T12:44:26+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
   "gewicht_7d_kg": 75.51,
@@ -29,7 +29,7 @@
   "eiwit_per_kg": 2.05,
   "dagen_met_voeding_7d": 6,
   "dagen_met_gewicht_7d": 5,
-  "slaap_7d_uur": 8.96,
+  "slaap_7d_uur": 9.27,
   "kortste_nacht_7d_uur": 7.67,
   "nachten_onder_6u_7d": 0,
   "verbrand_7d_kcal": 2372.71,
@@ -459,7 +459,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-11-10",
+    "datum": "2026-11-11",
     "sets": 5,
     "reps": 4,
     "kg": 37.5
@@ -471,7 +471,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-11-10",
+    "datum": "2026-11-11",
     "sets": 5,
     "reps": 4,
     "kg": 40.0
@@ -483,7 +483,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-11-10",
+    "datum": "2026-11-11",
     "sets": 5,
     "reps": 5,
     "kg": 80.0
