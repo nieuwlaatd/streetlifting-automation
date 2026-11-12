@@ -1,5 +1,5 @@
 {
- "gegenereerd_op": "2026-11-12T01:58:49+00:00",
+ "gegenereerd_op": "2026-11-12T13:47:57+00:00",
  "vandaag": "2026-11-12",
  "weekdag": 3,
  "dagthema": "Squat zwaar",
@@ -12,25 +12,25 @@
   "deload": false,
   "startdatum": "2026-09-07"
  },
- "lichaamsgewicht": 75.47,
+ "lichaamsgewicht": 75.44,
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-11-12T01:58:37+00:00",
+  "opgehaald": "2026-11-12T13:47:42+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
-  "gewicht_7d_kg": 75.47,
+  "gewicht_7d_kg": 75.44,
   "gewicht_vorige_7d_kg": 76.1,
-  "verandering_per_week_kg": -0.63,
-  "nog_af_tot_73_kg": 2.5,
-  "vet_pct_7d": 16.52,
+  "verandering_per_week_kg": -0.66,
+  "nog_af_tot_73_kg": 2.4,
+  "vet_pct_7d": 16.5,
   "kcal_7d": 2646.0,
   "eiwit_7d_g": 152.17,
   "eiwit_per_kg": 2.02,
   "dagen_met_voeding_7d": 6,
-  "dagen_met_gewicht_7d": 5,
-  "slaap_7d_uur": 9.59,
-  "kortste_nacht_7d_uur": 8.73,
+  "dagen_met_gewicht_7d": 6,
+  "slaap_7d_uur": 9.4,
+  "kortste_nacht_7d_uur": 8.45,
   "nachten_onder_6u_7d": 0,
   "verbrand_7d_kcal": 2324.29,
   "stappen_7d": 3004.43,
@@ -135,7 +135,7 @@
    }
   },
   "pullup": {
-   "e1rm": 70.7,
+   "e1rm": 70.6,
    "e1rm_onderbouwing": [
     {
      "datum": "2026-11-08",
@@ -145,7 +145,7 @@
     {
      "datum": "2026-11-03",
      "set": "45 kg x 4 @ RPE 7.5",
-     "e1rm": 70.6
+     "e1rm": 70.5
     }
    ],
    "bron": "hevy",
@@ -459,7 +459,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-11-11",
+    "datum": "2026-11-12",
     "sets": 5,
     "reps": 4,
     "kg": 37.5
@@ -471,7 +471,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-11-11",
+    "datum": "2026-11-12",
     "sets": 5,
     "reps": 4,
     "kg": 40.0
@@ -483,7 +483,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-11-11",
+    "datum": "2026-11-12",
     "sets": 5,
     "reps": 5,
     "kg": 80.0
@@ -540,6 +540,6 @@
   "kernsets_rpe_volgens_voorschrift": 1,
   "kernsets_tot_falen": 0
  },
- "totaal_nu": 242.8,
+ "totaal_nu": 242.7,
  "totaal_doel": 367
 }
