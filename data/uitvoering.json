@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-11-12T13:48:00+00:00",
+ "bijgewerkt": "2026-11-13T01:23:45+00:00",
  "dagen": {
   "2026-09-24 donderdag": {
    "plan_datum": "2026-09-24",
@@ -3349,6 +3349,109 @@
     "Seated Cable Row - Bar Grip: 90x7 @10"
    ],
    "dagnotitie": ""
+  },
+  "2026-11-12 donderdag": {
+   "plan_datum": "2026-11-12",
+   "dag": "donderdag",
+   "week": 5,
+   "thema": "Primaire Squat + Muscle Up",
+   "sessie_datum": "2026-11-12",
+   "sessie_titel": "SL 2 · Do wk5 — Primaire Squat + Muscle Up",
+   "gekoppeld_op": "titel",
+   "oefeningen": [
+    {
+     "rij": 22,
+     "plan": "Competition Squat",
+     "voorschrift": "3x4 80->90->100 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Squat (Barbell)",
+     "sets": [
+      "75x4 @6",
+      "85x4 @6",
+      "90x4 @7.5"
+     ],
+     "rpe": "6-7.5",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 23,
+     "plan": "Competition Squat",
+     "voorschrift": "2x7 RPE 7-7,5 65-70 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Squat (Barbell)",
+     "sets": [
+      "65x7 @6",
+      "65x7 @6"
+     ],
+     "rpe": "6",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 24,
+     "plan": "Band Assisted Weighted Muscle-Up",
+     "voorschrift": "4x4 RPE 9",
+     "notitie": "",
+     "status": "vervangen",
+     "uitgevoerd_als": "Chest Dip (Weighted)",
+     "sets": [
+      "35x3 @7",
+      "35x3 @6",
+      "35x3 @7",
+      "20x5 @6",
+      "20x5 @6"
+     ],
+     "rpe": "6-7",
+     "afwijking": "vervangen door Chest Dip (Weighted)"
+    },
+    {
+     "rij": 25,
+     "plan": "Leg Extension",
+     "voorschrift": "3x8-15",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Leg Extension (Machine)",
+     "sets": [
+      "35x16 @8",
+      "35x16 @8",
+      "62.5x12 @10"
+     ],
+     "rpe": "8-10",
+     "afwijking": "reps 12-16 i.p.v. 8-15"
+    },
+    {
+     "rij": 26,
+     "plan": "Cable row",
+     "voorschrift": "2x6-12",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Seated Cable Row - Bar Grip",
+     "sets": [
+      "70x10 @6",
+      "90x6 @9.5"
+     ],
+     "rpe": "6-9.5",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 27,
+     "plan": "Spider Curl",
+     "voorschrift": "3x6-12",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Spider Curl (Dumbbell)",
+     "sets": [
+      "40x10 @9.5",
+      "40x8 @9.5",
+      "40x8 @9.5"
+     ],
+     "rpe": "9.5",
+     "afwijking": "volgens plan"
+    }
+   ],
+   "extra": [],
+   "dagnotitie": "Workout van week 3 gedaan ivm ziekte. Daarom dinsdag niet gegaan"
   }
  }
 }
