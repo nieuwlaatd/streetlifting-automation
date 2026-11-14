@@ -2,26 +2,26 @@
  "status": "ok",
  "fouten_aanvulling": [],
  "rechten_ontbreken": [],
- "opgehaald": "2026-11-13T13:08:35+00:00",
+ "opgehaald": "2026-11-14T00:58:37+00:00",
  "bron": "Google Health API",
  "streefgewicht_kg": 73,
  "samenvatting": {
-  "gewicht_7d_kg": 75.4,
-  "gewicht_vorige_7d_kg": 75.97,
-  "verandering_per_week_kg": -0.57,
-  "nog_af_tot_73_kg": 2.4,
-  "vet_pct_7d": 16.47,
-  "kcal_7d": 2606.0,
+  "gewicht_7d_kg": 75.34,
+  "gewicht_vorige_7d_kg": 75.93,
+  "verandering_per_week_kg": -0.59,
+  "nog_af_tot_73_kg": 2.3,
+  "vet_pct_7d": 16.44,
+  "kcal_7d": 2556.5,
   "eiwit_7d_g": 154.67,
   "eiwit_per_kg": 2.05,
   "dagen_met_voeding_7d": 6,
-  "dagen_met_gewicht_7d": 6,
-  "slaap_7d_uur": 9.18,
+  "dagen_met_gewicht_7d": 5,
+  "slaap_7d_uur": 9.15,
   "kortste_nacht_7d_uur": 8.45,
   "nachten_onder_6u_7d": 0,
-  "verbrand_7d_kcal": 2285.29,
-  "stappen_7d": 2444.0,
-  "energiebalans_7d_kcal": 366.67
+  "verbrand_7d_kcal": 2296.57,
+  "stappen_7d": 2458.71,
+  "energiebalans_7d_kcal": 306.17
  },
  "_veldnamen": {
   "weight": {
@@ -597,16 +597,16 @@
   },
   {
    "datum": "2026-10-02",
-   "gewicht_kg": 77.2,
-   "vet_pct": 17.5,
+   "gewicht_kg": null,
+   "vet_pct": null,
    "kcal": 1948,
    "eiwit_g": 96,
    "koolhydraten_g": 195,
    "vet_g": 86,
    "voedingslogs": 1,
    "slaap_uur": 9.37,
-   "verbrand_kcal": 2443,
-   "stappen": 4893
+   "verbrand_kcal": null,
+   "stappen": null
   },
   {
    "datum": "2026-10-03",
@@ -1132,11 +1132,11 @@
    "datum": "2026-11-12",
    "gewicht_kg": 75.3,
    "vet_pct": 16.4,
-   "kcal": null,
-   "eiwit_g": null,
-   "koolhydraten_g": null,
-   "vet_g": null,
-   "voedingslogs": 0,
+   "kcal": 2416,
+   "eiwit_g": 134,
+   "koolhydraten_g": 219,
+   "vet_g": 109,
+   "voedingslogs": 1,
    "slaap_uur": 8.45,
    "verbrand_kcal": 2561,
    "stappen": 3458
@@ -1151,8 +1151,8 @@
    "vet_g": null,
    "voedingslogs": 0,
    "slaap_uur": 8.63,
-   "verbrand_kcal": null,
-   "stappen": null
+   "verbrand_kcal": 2574,
+   "stappen": 4517
   }
  ]
 }

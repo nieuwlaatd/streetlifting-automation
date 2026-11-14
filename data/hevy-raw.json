@@ -1,6 +1,13 @@
 {
  "lichaamsmetingen": [
   {
+   "id": 78386659,
+   "date": "2026-11-13",
+   "weight_kg": 75.3499984741211,
+   "fat_percent": 16.44,
+   "created_at": "2026-11-13T14:21:38.115Z"
+  },
+  {
    "id": 78214862,
    "date": "2026-11-12",
    "weight_kg": 75.30000305175781,
@@ -22,11 +29,25 @@
    "created_at": "2026-11-12T11:02:21.968Z"
   },
   {
+   "id": 78386658,
+   "date": "2026-11-08",
+   "weight_kg": 75.55000305175781,
+   "fat_percent": 16.56,
+   "created_at": "2026-11-13T14:21:38.115Z"
+  },
+  {
    "id": 77432167,
    "date": "2026-11-07",
    "weight_kg": 75.69999694824219,
    "fat_percent": 16.64,
    "created_at": "2026-11-07T14:15:39.448Z"
+  },
+  {
+   "id": 78386657,
+   "date": "2026-11-06",
+   "weight_kg": 75.5999984741211,
+   "fat_percent": 16.59,
+   "created_at": "2026-11-13T14:21:38.115Z"
   },
   {
    "id": 77151030,
@@ -48,30 +69,274 @@
    "weight_kg": 76.1500015258789,
    "fat_percent": 16.92,
    "created_at": "2026-11-03T11:13:00.377Z"
-  },
-  {
-   "id": 76795934,
-   "date": "2026-11-02",
-   "weight_kg": 76.0999984741211,
-   "fat_percent": 16.89,
-   "created_at": "2026-11-03T11:13:00.377Z"
-  },
-  {
-   "id": 76420060,
-   "date": "2026-11-01",
-   "weight_kg": 76,
-   "fat_percent": 16.83,
-   "created_at": "2026-11-01T09:12:46.429Z"
-  },
-  {
-   "id": 76173428,
-   "date": "2026-10-30",
-   "weight_kg": 76.4000015258789,
-   "fat_percent": 17.07,
-   "created_at": "2026-10-30T10:24:31.412Z"
   }
  ],
  "workouts": [
+  {
+   "id": "33b1c1a2-29c8-4cc7-b293-66fd2cd816ac",
+   "title": "SL 3 · Vr wk5 — Tertiaire Dip + Pull-Up",
+   "routine_id": "0c61bdb9-9ed4-4053-a8bd-02b8f4007bd1",
+   "description": "Nog een beetje ziekz dus ging niet heel soepel. Muscle up van gister, vandaag gedaan",
+   "start_time": "2026-11-13T14:47:59+00:00",
+   "end_time": "2026-11-13T16:11:51+00:00",
+   "updated_at": "2026-11-13T16:12:21.261Z",
+   "created_at": "2026-11-13T16:12:21.261Z",
+   "exercises": [
+    {
+     "index": 0,
+     "title": "Pull Up (Weighted)",
+     "notes": null,
+     "exercise_template_id": "729237D1",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 20,
+       "reps": 4,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 7,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 20,
+       "reps": 4,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 7,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "normal",
+       "weight_kg": 20,
+       "reps": 4,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 7.5,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "title": "Chest Dip (Weighted)",
+     "notes": null,
+     "exercise_template_id": "29472BE1",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 35,
+       "reps": 3,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 8,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 25,
+       "reps": 3,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "title": "Band Assisted Muscle-Up",
+     "notes": null,
+     "exercise_template_id": "f2734cb1-6a7a-4801-80c5-6d948b342c49",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 25,
+       "reps": 4,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 8.5,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 25,
+       "reps": 4,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 7,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "normal",
+       "weight_kg": 25,
+       "reps": 4,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 8,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "title": "Bench Press (Barbell)",
+     "notes": null,
+     "exercise_template_id": "79D0BB3A",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 70,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 70,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 7,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "title": "Chest Fly (Machine)",
+     "notes": null,
+     "exercise_template_id": "78683336",
+     "superset_id": null,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 35,
+       "reps": 8,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 10,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 30,
+       "reps": 6,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9.5,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "normal",
+       "weight_kg": 25,
+       "reps": 7,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9.5,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 5,
+     "title": "Cable Knee Tuck",
+     "notes": null,
+     "exercise_template_id": "daa1345e-d274-4b11-b584-c4b8472d876d",
+     "superset_id": 0,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": 15,
+       "reps": 12,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 7,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": 17.5,
+       "reps": 12,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9.5,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "normal",
+       "weight_kg": 17.5,
+       "reps": 12,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 9,
+       "custom_metric": null
+      }
+     ]
+    },
+    {
+     "index": 6,
+     "title": "Ab Wheel",
+     "notes": null,
+     "exercise_template_id": "99D5F10E",
+     "superset_id": 0,
+     "sets": [
+      {
+       "index": 0,
+       "type": "normal",
+       "weight_kg": null,
+       "reps": 12,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      },
+      {
+       "index": 1,
+       "type": "normal",
+       "weight_kg": null,
+       "reps": 12,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      },
+      {
+       "index": 2,
+       "type": "normal",
+       "weight_kg": null,
+       "reps": 16,
+       "distance_meters": null,
+       "duration_seconds": null,
+       "rpe": 6,
+       "custom_metric": null
+      }
+     ]
+    }
+   ]
+  },
   {
    "id": "05388205-df4c-4828-9df5-29497f5b38d7",
    "title": "SL 2 · Do wk5 — Primaire Squat + Muscle Up",
