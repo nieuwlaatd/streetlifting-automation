@@ -1,5 +1,5 @@
 {
- "gegenereerd_op": "2026-11-15T00:06:49+00:00",
+ "gegenereerd_op": "2026-11-15T12:46:20+00:00",
  "vandaag": "2026-11-15",
  "weekdag": 6,
  "dagthema": null,
@@ -12,24 +12,24 @@
   "deload": false,
   "startdatum": "2026-09-07"
  },
- "lichaamsgewicht": 75.41,
+ "lichaamsgewicht": 75.36,
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-11-15T00:06:30+00:00",
+  "opgehaald": "2026-11-15T12:46:06+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
-  "gewicht_7d_kg": 75.41,
+  "gewicht_7d_kg": 75.36,
   "gewicht_vorige_7d_kg": 75.86,
-  "verandering_per_week_kg": -0.45,
+  "verandering_per_week_kg": -0.5,
   "nog_af_tot_73_kg": 2.4,
-  "vet_pct_7d": 16.48,
+  "vet_pct_7d": 16.45,
   "kcal_7d": 2489.67,
   "eiwit_7d_g": 146.5,
   "eiwit_per_kg": 1.94,
   "dagen_met_voeding_7d": 6,
-  "dagen_met_gewicht_7d": 5,
-  "slaap_7d_uur": 9.01,
+  "dagen_met_gewicht_7d": 6,
+  "slaap_7d_uur": 9.06,
   "kortste_nacht_7d_uur": 8.32,
   "nachten_onder_6u_7d": 0,
   "verbrand_7d_kcal": 2303.43,
@@ -125,7 +125,7 @@
      "reps": 3,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 48.6,
+     "e1rm": 48.5,
      "variant": null
     }
    ],
@@ -459,7 +459,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-11-14",
+    "datum": "2026-11-15",
     "sets": 5,
     "reps": 4,
     "kg": 37.5
@@ -471,7 +471,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-11-14",
+    "datum": "2026-11-15",
     "sets": 5,
     "reps": 4,
     "kg": 40.0
@@ -483,7 +483,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-11-14",
+    "datum": "2026-11-15",
     "sets": 5,
     "reps": 5,
     "kg": 80.0
