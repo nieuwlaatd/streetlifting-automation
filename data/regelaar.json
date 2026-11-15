@@ -9,14 +9,6 @@
   },
   "log": [
    {
-    "datum": "2026-09-29",
-    "oordeel": "te_zwaar",
-    "reden": "0 van 5 sets gehaald",
-    "nieuwe_factor": 0.8,
-    "kg": 25.0,
-    "kg_volgens_plan": 30.0
-   },
-   {
     "datum": "2026-10-02",
     "oordeel": "te_zwaar",
     "reden": "0 van 5 sets gehaald",
@@ -167,9 +159,17 @@
     "nieuwe_factor": 1.0506,
     "kg": 37.5,
     "kg_volgens_plan": 37.5
+   },
+   {
+    "datum": "2026-11-15",
+    "oordeel": "goed",
+    "reden": "binnen het plafond, beste set rekent uit op e1RM 54.7",
+    "nieuwe_factor": 1.0506,
+    "kg": 37.5,
+    "kg_volgens_plan": 37.5
    }
   ],
-  "laatste_beoordeelde_sessie": "2026-11-13"
+  "laatste_beoordeelde_sessie": "2026-11-15"
  },
  "pullup": {
   "factor": 0.95,
@@ -180,14 +180,6 @@
    "kg": 40.0
   },
   "log": [
-   {
-    "datum": "2026-09-26",
-    "oordeel": "te_zwaar",
-    "reden": "0 van 4 sets gehaald",
-    "nieuwe_factor": 0.8,
-    "kg": 27.5,
-    "kg_volgens_plan": 32.5
-   },
    {
     "datum": "2026-09-29",
     "oordeel": "te_zwaar",
@@ -339,9 +331,17 @@
     "nieuwe_factor": 0.95,
     "kg": 40.0,
     "kg_volgens_plan": 42.5
+   },
+   {
+    "datum": "2026-11-15",
+    "oordeel": "goed",
+    "reden": "binnen het plafond, beste set rekent uit op e1RM 69.9",
+    "nieuwe_factor": 0.95,
+    "kg": 40.0,
+    "kg_volgens_plan": 42.5
    }
   ],
-  "laatste_beoordeelde_sessie": "2026-11-13"
+  "laatste_beoordeelde_sessie": "2026-11-15"
  },
  "squat": {
   "factor": 0.95,
@@ -352,14 +352,6 @@
    "kg": 80.0
   },
   "log": [
-   {
-    "datum": "2026-09-26",
-    "oordeel": "te_zwaar",
-    "reden": "3 van 5 sets gehaald",
-    "nieuwe_factor": 0.8,
-    "kg": 65.0,
-    "kg_volgens_plan": 80.0
-   },
    {
     "datum": "2026-10-01",
     "oordeel": "te_zwaar",
@@ -511,9 +503,17 @@
     "nieuwe_factor": 0.95,
     "kg": 80.0,
     "kg_volgens_plan": 85.0
+   },
+   {
+    "datum": "2026-11-15",
+    "oordeel": "goed",
+    "reden": "binnen het plafond, beste set rekent uit op e1RM 82.3",
+    "nieuwe_factor": 0.95,
+    "kg": 80.0,
+    "kg_volgens_plan": 85.0
    }
   ],
-  "laatste_beoordeelde_sessie": "2026-11-12"
+  "laatste_beoordeelde_sessie": "2026-11-15"
  },
  "versie": 2
 }

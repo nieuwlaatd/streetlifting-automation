@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-11-15T12:46:23+00:00",
+ "bijgewerkt": "2026-11-15T18:34:25+00:00",
  "dagen": {
   "2026-09-24 donderdag": {
    "plan_datum": "2026-09-24",
@@ -3555,6 +3555,173 @@
     "Band Assisted Muscle-Up: 25x4 @8.5, 25x4 @7, 25x4 @8"
    ],
    "dagnotitie": "Nog een beetje ziekz dus ging niet heel soepel. Muscle up van gister, vandaag gedaan"
+  },
+  "2026-11-15 zondag": {
+   "plan_datum": "2026-11-15",
+   "dag": "zondag",
+   "week": 5,
+   "thema": "Primaire Pull-Up + Secundaire Muscle-Up + Dip + Tertiaire Squat",
+   "sessie_datum": "2026-11-15",
+   "sessie_titel": "SL 4 · Zo wk5 — Primaire Pull-Up + Secundaire Muscle-Up + Dip + Tertiaire Squat",
+   "gekoppeld_op": "titel",
+   "oefeningen": [
+    {
+     "rij": 40,
+     "plan": "Competition Pull-Up",
+     "voorschrift": "3x5 RPE 8 40-42,5 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Pull Up (Weighted)",
+     "sets": [
+      "35x5 @6",
+      "35x5 @6",
+      "40x5 @7.5"
+     ],
+     "rpe": "6-7.5",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 41,
+     "plan": "Competition Pull-Up",
+     "voorschrift": "1x3 RPE 9 50-55 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Pull Up (Weighted)",
+     "sets": [
+      "50x3 @9"
+     ],
+     "rpe": "9",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 42,
+     "plan": "Diagonal Weighted Pull-up",
+     "voorschrift": "2x6 RPE 7-8",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Pull Up (Weighted)",
+     "sets": [
+      "10x6 @7.5"
+     ],
+     "rpe": "7.5",
+     "afwijking": "1 sets i.p.v. 2"
+    },
+    {
+     "rij": 43,
+     "plan": "3-1-0 Tempo Dip",
+     "voorschrift": "1x3 RPE 8 35-40 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Chest Dip (Weighted)",
+     "sets": [
+      "30x3 @6"
+     ],
+     "rpe": "6",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 44,
+     "plan": "Competition Dip",
+     "voorschrift": "2x6 RPE 6-6,5 30-32,5 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Chest Dip (Weighted)",
+     "sets": [
+      "30x6 @7",
+      "30x6 @9"
+     ],
+     "rpe": "7-9",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 45,
+     "plan": "2s Paused Squat",
+     "voorschrift": "3x4 RPE 6 65-70 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Pause Squat (Barbell)",
+     "sets": [
+      "65x4 @6",
+      "65x4 @6",
+      "65x4 @6"
+     ],
+     "rpe": "6",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 46,
+     "plan": "Leg Curl",
+     "voorschrift": "2x8-15",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Lying Leg Curl (Machine)",
+     "sets": [
+      "45x8 @9.5",
+      "40x8 @9.5"
+     ],
+     "rpe": "9.5",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 47,
+     "plan": "Bar Cable Pullover",
+     "voorschrift": "3x4-8",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Straight Arm Lat Pulldown (Cable)",
+     "sets": [
+      "35x7 @9",
+      "35x5 @9.5",
+      "30x6 @9.5"
+     ],
+     "rpe": "9-9.5",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 48,
+     "plan": "Wide Grip Row",
+     "voorschrift": "2x6-12",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Seated Cable Row - Bar Wide Grip",
+     "sets": [
+      "70x8 @9.5",
+      "70x7 @9.5"
+     ],
+     "rpe": "9.5",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 49,
+     "plan": "Tricep Extension",
+     "voorschrift": "2x8-15",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Triceps Rope Pushdown",
+     "sets": [
+      "25x8 @10",
+      "15x10 @8.5"
+     ],
+     "rpe": "8.5-10",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 50,
+     "plan": "Side Plank Leg Raised",
+     "voorschrift": "2x30 sec",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Side Plank",
+     "sets": [
+      "30s",
+      "32s"
+     ],
+     "rpe": "",
+     "afwijking": "volgens plan"
+    }
+   ],
+   "extra": [],
+   "dagnotitie": ""
   }
  }
 }
