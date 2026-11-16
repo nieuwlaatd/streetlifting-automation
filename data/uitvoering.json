@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-11-16T00:13:13+00:00",
+ "bijgewerkt": "2026-11-16T13:41:30+00:00",
  "dagen": {
   "2026-09-24 donderdag": {
    "plan_datum": "2026-09-24",
@@ -3601,10 +3601,11 @@
      "status": "gedaan",
      "uitgevoerd_als": "Pull Up (Weighted)",
      "sets": [
-      "10x6 @7.5"
+      "10x6 @7.5",
+      "10x6 @7"
      ],
-     "rpe": "7.5",
-     "afwijking": "1 sets i.p.v. 2"
+     "rpe": "7-7.5",
+     "afwijking": "volgens plan"
     },
     {
      "rij": 43,
