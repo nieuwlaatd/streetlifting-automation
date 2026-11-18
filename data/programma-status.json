@@ -1,5 +1,5 @@
 {
- "gegenereerd_op": "2026-11-18T02:32:20+00:00",
+ "gegenereerd_op": "2026-11-18T14:01:53+00:00",
  "vandaag": "2026-11-18",
  "weekdag": 2,
  "dagthema": "Pull zwaar",
@@ -425,7 +425,7 @@
    "correctiefactor": 1.0506,
    "kg_volgens_plan": 42.5,
    "afwijking_kg": 0.0,
-   "bijgesteld_omdat": "binnen het plafond, beste set rekent uit op e1RM 62.7",
+   "bijgesteld_omdat": null,
    "sessie_gemist": false
   },
   "pullup": {
@@ -437,7 +437,7 @@
    "correctiefactor": 0.95,
    "kg_volgens_plan": 47.5,
    "afwijking_kg": -2.5,
-   "bijgesteld_omdat": "binnen het plafond, beste set rekent uit op e1RM 73.2",
+   "bijgesteld_omdat": null,
    "sessie_gemist": false
   },
   "squat": {
@@ -449,17 +449,17 @@
    "correctiefactor": 0.95,
    "kg_volgens_plan": 87.5,
    "afwijking_kg": -5.0,
-   "bijgesteld_omdat": "binnen het plafond, beste set rekent uit op e1RM 95.2",
+   "bijgesteld_omdat": null,
    "sessie_gemist": false
   }
  },
  "terugkoppeling": {
   "dip": {
    "factor": 1.0506,
-   "oordeel_vorige_sessie": "goed",
-   "reden": "binnen het plafond, beste set rekent uit op e1RM 62.7",
+   "oordeel_vorige_sessie": null,
+   "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-11-17",
+    "datum": "2026-11-18",
     "sets": 4,
     "reps": 4,
     "kg": 42.5
@@ -468,10 +468,10 @@
   },
   "pullup": {
    "factor": 0.95,
-   "oordeel_vorige_sessie": "goed",
-   "reden": "binnen het plafond, beste set rekent uit op e1RM 73.2",
+   "oordeel_vorige_sessie": null,
+   "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-11-17",
+    "datum": "2026-11-18",
     "sets": 4,
     "reps": 4,
     "kg": 45.0
@@ -480,10 +480,10 @@
   },
   "squat": {
    "factor": 0.95,
-   "oordeel_vorige_sessie": "goed",
-   "reden": "binnen het plafond, beste set rekent uit op e1RM 95.2",
+   "oordeel_vorige_sessie": null,
+   "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-11-17",
+    "datum": "2026-11-18",
     "sets": 5,
     "reps": 5,
     "kg": 82.5
