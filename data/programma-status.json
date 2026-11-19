@@ -1,5 +1,5 @@
 {
- "gegenereerd_op": "2026-11-19T01:58:08+00:00",
+ "gegenereerd_op": "2026-11-19T14:27:39+00:00",
  "vandaag": "2026-11-19",
  "weekdag": 3,
  "dagthema": "Squat zwaar",
@@ -16,7 +16,7 @@
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-11-19T01:57:52+00:00",
+  "opgehaald": "2026-11-19T14:27:27+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
   "gewicht_7d_kg": 75.43,
@@ -29,7 +29,7 @@
   "eiwit_per_kg": 1.96,
   "dagen_met_voeding_7d": 6,
   "dagen_met_gewicht_7d": 6,
-  "slaap_7d_uur": 8.56,
+  "slaap_7d_uur": 8.53,
   "kortste_nacht_7d_uur": 7.72,
   "nachten_onder_6u_7d": 0,
   "verbrand_7d_kcal": 2464.71,
@@ -459,7 +459,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-11-18",
+    "datum": "2026-11-19",
     "sets": 4,
     "reps": 4,
     "kg": 42.5
@@ -471,7 +471,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-11-18",
+    "datum": "2026-11-19",
     "sets": 4,
     "reps": 4,
     "kg": 45.0
@@ -483,7 +483,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-11-18",
+    "datum": "2026-11-19",
     "sets": 5,
     "reps": 5,
     "kg": 82.5
