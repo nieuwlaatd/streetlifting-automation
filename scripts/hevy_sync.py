@@ -29,11 +29,11 @@ import rpe_voorschrift
 BASE = "https://api.hevyapp.com"
 START = dt.date(2026, 9, 7)          # week 1, dag 1
 LICHAAMSGEWICHT_TERUGVAL = 77.0
-UITGANG = {"dip": 52.5, "pullup": 60.0, "squat": 100.0, "muscleup": None}
+UITGANG = {"dip": 52.5, "pullup": 60.0, "squat": 100.0, "muscleup": None, "chinup": None}
 
 LIFTS = {
     "dip": ("Chest Dip (Weighted)",),
-    "pullup": ("Pull Up (Weighted)", "Chin Up (Weighted)"),
+    "pullup": ("Pull Up (Weighted)",),
     "squat": ("Squat (Barbell)",),
     # Hevy schrijft "Muscle Up", Kajs oefening heet "Band Assisted Muscle-Up".
     # Door dat streepje matchte de oude lijst de bandvariant niet, en meldde
@@ -41,8 +41,14 @@ LIFTS = {
     # Dylan er op 12 september nog mee trainde.
     "muscleup": ("Muscle Up", "Muscle-Up", "Muscle Up (Weighted)", "Bar Muscle Up",
                  "Band Assisted Muscle-Up"),
+    # Tot 19 november 2026 telde de chin-up mee als pull-up. Hij is zwaarder te
+    # trekken dan de wedstrijdpull-up, dus het weekrapport schreef 45 kg x 4
+    # op 17 november toe aan de pull-up terwijl Dylan die dag alleen chin-ups
+    # deed. Nu een eigen lift: wel gevolgd, niet in het totaal en geen doel.
+    "chinup": ("Chin Up (Weighted)",),
 }
-LICHAAMSGEBONDEN = {"dip", "pullup", "muscleup"}   # percentage over systeembelasting
+KERNLIFTS = ("dip", "pullup", "squat", "muscleup")   # samen het wedstrijdtotaal
+LICHAAMSGEBONDEN = {"dip", "pullup", "muscleup", "chinup"}   # percentage over systeembelasting
 
 # reps -> {rpe: percentage van 1RM}
 RPE_TABEL = {
@@ -216,6 +222,8 @@ def programma_positie(vandaag):
 
 
 def target_op_week(lift, week):
+    if lift not in TARGETS:
+        return None
     punten = TARGETS[lift]
     start = UITGANG[lift] or 0
     vorige_wk, vorige_val = 0, start
@@ -413,9 +421,8 @@ def main():
             oud["factor"] = 1.0
         state["versie"] = REGELAAR_VERSIE
     terugkoppeling = {}
-    for lift, titels in LIFTS.items():
-        if lift == "muscleup":
-            continue
+    for lift in ("dip", "pullup", "squat"):
+        titels = LIFTS[lift]
         eerder = state.get(lift, {})
         factor = float(eerder.get("factor", 1.0))
         vorig = eerder.get("laatste_voorschrift")
@@ -524,7 +531,8 @@ def main():
             werk = [s for s in oef.get("sets", []) if s.get("type") != "warmup"]
             if titel in LIFTS["dip"] or titel == "Chest Dip":
                 dipsets += len(werk)
-            if titel in LIFTS["pullup"] or titel == "Pull Up":
+            # Chin-ups zijn trekwerk en tellen hier wel mee, net als voorheen.
+            if titel in LIFTS["pullup"] + LIFTS["chinup"] or titel == "Pull Up":
                 pullsets += len(werk)
             if any(titel in t for t in LIFTS.values()):
                 kern_totaal += len(werk)
@@ -573,10 +581,12 @@ def main():
         "e1rm_methode": ("Per set: RPE-tabel (RTS), RPE uit de notitie, anders uit het veld, "
                          "anders de RPE die Kaj voorschreef (een leeg veld betekent: zoals "
                          "voorgeschreven; bij een bereik telt de bovenkant), "
-                         "geldig van RPE 5 tot 10; bij dip, pull-up en muscle-up over "
+                         "geldig van RPE 5 tot 10; bij dip, pull-up, chin-up en muscle-up over "
                          "lichaamsgewicht plus extra gewicht. Per lift: gemiddelde van de "
                          "beste set uit de twee beste sessies van de laatste 6 weken. "
-                         "Sets zonder RPE tellen alleen als er geen sets met RPE zijn."),
+                         "Sets zonder RPE tellen alleen als er geen sets met RPE zijn. "
+                         "De chin-up is een eigen lift (stand.chinup): niet in het totaal, "
+                         "geen target; tot 19 november 2026 telde hij als pull-up."),
         "afgelopen_7_dagen": {
             "sessies": len(sessiedagen),
             "dipwerksets": dipsets, "dipdoel": 10,
@@ -587,7 +597,7 @@ def main():
             "kernsets_tot_falen": kern_falen,
         },
         "totaal_nu": round(sum(
-            (stand[l]["e1rm"] or 0) for l in ("dip", "pullup", "squat", "muscleup")), 1),
+            (stand[l]["e1rm"] or 0) for l in KERNLIFTS), 1),
         "totaal_doel": 367,
     }
 
