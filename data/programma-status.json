@@ -1,9 +1,9 @@
 {
- "gegenereerd_op": "2026-11-18T14:01:53+00:00",
- "vandaag": "2026-11-18",
- "weekdag": 2,
- "dagthema": "Pull zwaar",
- "kernlift_vandaag": "pullup",
+ "gegenereerd_op": "2026-11-19T01:58:08+00:00",
+ "vandaag": "2026-11-19",
+ "weekdag": 3,
+ "dagthema": "Squat zwaar",
+ "kernlift_vandaag": "squat",
  "positie": {
   "week": 11,
   "cyclusweek": 5,
@@ -12,29 +12,29 @@
   "deload": false,
   "startdatum": "2026-09-07"
  },
- "lichaamsgewicht": 75.4,
+ "lichaamsgewicht": 75.43,
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-11-18T02:32:07+00:00",
+  "opgehaald": "2026-11-19T01:57:52+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
-  "gewicht_7d_kg": 75.4,
-  "gewicht_vorige_7d_kg": 75.47,
-  "verandering_per_week_kg": -0.07,
+  "gewicht_7d_kg": 75.43,
+  "gewicht_vorige_7d_kg": 75.44,
+  "verandering_per_week_kg": -0.01,
   "nog_af_tot_73_kg": 2.4,
-  "vet_pct_7d": 16.47,
-  "kcal_7d": 2372.33,
+  "vet_pct_7d": 16.48,
+  "kcal_7d": 2410.5,
   "eiwit_7d_g": 147.67,
   "eiwit_per_kg": 1.96,
   "dagen_met_voeding_7d": 6,
   "dagen_met_gewicht_7d": 6,
-  "slaap_7d_uur": 8.46,
+  "slaap_7d_uur": 8.56,
   "kortste_nacht_7d_uur": 7.72,
   "nachten_onder_6u_7d": 0,
-  "verbrand_7d_kcal": 2418.57,
-  "stappen_7d": 3585.0,
-  "energiebalans_7d_kcal": 14.0
+  "verbrand_7d_kcal": 2464.71,
+  "stappen_7d": 3700.29,
+  "energiebalans_7d_kcal": -58.0
  },
  "stand": {
   "dip": {
@@ -168,7 +168,7 @@
      "reps": 5,
      "rpe": 7.5,
      "type": "normal",
-     "e1rm": 68.8,
+     "e1rm": 68.9,
      "variant": null
     },
     {
