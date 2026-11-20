@@ -1,9 +1,9 @@
 {
- "gegenereerd_op": "2026-11-19T16:47:38+00:00",
- "vandaag": "2026-11-19",
- "weekdag": 3,
- "dagthema": "Squat zwaar",
- "kernlift_vandaag": "squat",
+ "gegenereerd_op": "2026-11-20T01:51:58+00:00",
+ "vandaag": "2026-11-20",
+ "weekdag": 4,
+ "dagthema": "Volume + muscle-up",
+ "kernlift_vandaag": null,
  "positie": {
   "week": 11,
   "cyclusweek": 5,
@@ -12,29 +12,29 @@
   "deload": false,
   "startdatum": "2026-09-07"
  },
- "lichaamsgewicht": 75.43,
+ "lichaamsgewicht": 75.45,
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-11-19T16:47:19+00:00",
+  "opgehaald": "2026-11-20T01:51:44+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
-  "gewicht_7d_kg": 75.43,
-  "gewicht_vorige_7d_kg": 75.44,
-  "verandering_per_week_kg": -0.01,
-  "nog_af_tot_73_kg": 2.4,
-  "vet_pct_7d": 16.48,
-  "kcal_7d": 2400.43,
-  "eiwit_7d_g": 145.0,
-  "eiwit_per_kg": 1.92,
-  "dagen_met_voeding_7d": 7,
-  "dagen_met_gewicht_7d": 6,
-  "slaap_7d_uur": 8.53,
+  "gewicht_7d_kg": 75.45,
+  "gewicht_vorige_7d_kg": 75.4,
+  "verandering_per_week_kg": 0.05,
+  "nog_af_tot_73_kg": 2.5,
+  "vet_pct_7d": 16.5,
+  "kcal_7d": 2450.0,
+  "eiwit_7d_g": 152.33,
+  "eiwit_per_kg": 2.02,
+  "dagen_met_voeding_7d": 6,
+  "dagen_met_gewicht_7d": 5,
+  "slaap_7d_uur": 8.51,
   "kortste_nacht_7d_uur": 7.72,
   "nachten_onder_6u_7d": 0,
-  "verbrand_7d_kcal": 2464.71,
-  "stappen_7d": 3700.29,
-  "energiebalans_7d_kcal": -64.29
+  "verbrand_7d_kcal": 2459.0,
+  "stappen_7d": 3651.71,
+  "energiebalans_7d_kcal": 1.33
  },
  "stand": {
   "dip": {
@@ -98,7 +98,7 @@
      "reps": 3,
      "rpe": 8.5,
      "type": "normal",
-     "e1rm": 59.3,
+     "e1rm": 59.4,
      "variant": null
     },
     {
@@ -415,12 +415,12 @@
    }
   },
   "chinup": {
-   "e1rm": 71.8,
+   "e1rm": 71.9,
    "e1rm_onderbouwing": [
     {
      "datum": "2026-11-17",
      "set": "45 kg x 4 @ RPE 7",
-     "e1rm": 73.2
+     "e1rm": 73.3
     },
     {
      "datum": "2026-11-03",
@@ -493,7 +493,7 @@
      "reps": 4,
      "rpe": 7,
      "type": "normal",
-     "e1rm": 73.2,
+     "e1rm": 73.3,
      "variant": null
     },
     {
