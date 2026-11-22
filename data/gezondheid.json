@@ -2,26 +2,26 @@
  "status": "ok",
  "fouten_aanvulling": [],
  "rechten_ontbreken": [],
- "opgehaald": "2026-11-21T13:29:24+00:00",
+ "opgehaald": "2026-11-22T00:35:41+00:00",
  "bron": "Google Health API",
  "streefgewicht_kg": 73,
  "samenvatting": {
-  "gewicht_7d_kg": 75.32,
-  "gewicht_vorige_7d_kg": 75.43,
-  "verandering_per_week_kg": -0.11,
-  "nog_af_tot_73_kg": 2.3,
-  "vet_pct_7d": 16.42,
-  "kcal_7d": 2307.43,
-  "eiwit_7d_g": 131.43,
-  "eiwit_per_kg": 1.74,
-  "dagen_met_voeding_7d": 7,
-  "dagen_met_gewicht_7d": 6,
-  "slaap_7d_uur": 8.71,
+  "gewicht_7d_kg": 75.36,
+  "gewicht_vorige_7d_kg": 75.36,
+  "verandering_per_week_kg": 0.0,
+  "nog_af_tot_73_kg": 2.4,
+  "vet_pct_7d": 16.44,
+  "kcal_7d": 2505.33,
+  "eiwit_7d_g": 151.83,
+  "eiwit_per_kg": 2.01,
+  "dagen_met_voeding_7d": 6,
+  "dagen_met_gewicht_7d": 5,
+  "slaap_7d_uur": 8.6,
   "kortste_nacht_7d_uur": 7.72,
   "nachten_onder_6u_7d": 0,
-  "verbrand_7d_kcal": 2391.29,
-  "stappen_7d": 3182.0,
-  "energiebalans_7d_kcal": -83.86
+  "verbrand_7d_kcal": 2383.57,
+  "stappen_7d": 3137.14,
+  "energiebalans_7d_kcal": 70.83
  },
  "_veldnamen": {
   "weight": {
@@ -701,16 +701,16 @@
   },
   {
    "datum": "2026-10-10",
-   "gewicht_kg": 75.75,
-   "vet_pct": 16.7,
+   "gewicht_kg": null,
+   "vet_pct": null,
    "kcal": 2773,
    "eiwit_g": 155,
    "koolhydraten_g": 288,
    "vet_g": 108,
    "voedingslogs": 1,
    "slaap_uur": 9.62,
-   "verbrand_kcal": 2471,
-   "stappen": 3878
+   "verbrand_kcal": null,
+   "stappen": null
   },
   {
    "datum": "2026-10-11",
@@ -1236,10 +1236,10 @@
    "datum": "2026-11-20",
    "gewicht_kg": 75.45,
    "vet_pct": 16.5,
-   "kcal": 1388,
-   "eiwit_g": 41,
-   "koolhydraten_g": 108,
-   "vet_g": 87,
+   "kcal": 2705,
+   "eiwit_g": 159,
+   "koolhydraten_g": 200,
+   "vet_g": 137,
    "voedingslogs": 1,
    "slaap_uur": 7.87,
    "verbrand_kcal": 2100,
@@ -1255,8 +1255,8 @@
    "vet_g": null,
    "voedingslogs": 0,
    "slaap_uur": 10.37,
-   "verbrand_kcal": null,
-   "stappen": null
+   "verbrand_kcal": 2078,
+   "stappen": 1372
   }
  ]
 }
