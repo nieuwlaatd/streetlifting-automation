@@ -1,5 +1,5 @@
 {
- "gegenereerd_op": "2026-11-23T01:04:07+00:00",
+ "gegenereerd_op": "2026-11-23T16:01:14+00:00",
  "vandaag": "2026-11-23",
  "weekdag": 0,
  "dagthema": "Dip zwaar",
@@ -12,29 +12,29 @@
   "deload": true,
   "startdatum": "2026-09-07"
  },
- "lichaamsgewicht": 75.25,
+ "lichaamsgewicht": 75.23,
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-11-23T01:03:53+00:00",
+  "opgehaald": "2026-11-23T16:00:56+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
-  "gewicht_7d_kg": 75.25,
+  "gewicht_7d_kg": 75.23,
   "gewicht_vorige_7d_kg": 75.39,
-  "verandering_per_week_kg": -0.14,
+  "verandering_per_week_kg": -0.16,
   "nog_af_tot_73_kg": 2.2,
-  "vet_pct_7d": 16.36,
+  "vet_pct_7d": 16.35,
   "kcal_7d": 2467.67,
   "eiwit_7d_g": 147.17,
   "eiwit_per_kg": 1.96,
   "dagen_met_voeding_7d": 6,
-  "dagen_met_gewicht_7d": 5,
-  "slaap_7d_uur": 8.93,
+  "dagen_met_gewicht_7d": 6,
+  "slaap_7d_uur": 8.9,
   "kortste_nacht_7d_uur": 7.87,
   "nachten_onder_6u_7d": 0,
-  "verbrand_7d_kcal": 2321.14,
+  "verbrand_7d_kcal": 2324.43,
   "stappen_7d": 2754.71,
-  "energiebalans_7d_kcal": 82.83
+  "energiebalans_7d_kcal": 74.5
  },
  "stand": {
   "dip": {
@@ -556,10 +556,10 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-11-22",
-    "sets": 4,
-    "reps": 4,
-    "kg": 42.5
+    "datum": "2026-11-23",
+    "sets": 2,
+    "reps": 5,
+    "kg": 12.5
    },
    "gemist": false
   },
@@ -568,10 +568,10 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-11-22",
-    "sets": 4,
-    "reps": 4,
-    "kg": 45.0
+    "datum": "2026-11-23",
+    "sets": 2,
+    "reps": 5,
+    "kg": 15.0
    },
    "gemist": false
   },
@@ -580,10 +580,10 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-11-22",
-    "sets": 5,
+    "datum": "2026-11-23",
+    "sets": 2,
     "reps": 5,
-    "kg": 82.5
+    "kg": 60.0
    },
    "gemist": false
   }
