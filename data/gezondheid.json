@@ -2,26 +2,26 @@
  "status": "ok",
  "fouten_aanvulling": [],
  "rechten_ontbreken": [],
- "opgehaald": "2026-11-24T04:55:17+00:00",
+ "opgehaald": "2026-11-24T15:55:05+00:00",
  "bron": "Google Health API",
  "streefgewicht_kg": 73,
  "samenvatting": {
-  "gewicht_7d_kg": 75.24,
+  "gewicht_7d_kg": 75.15,
   "gewicht_vorige_7d_kg": 75.38,
-  "verandering_per_week_kg": -0.14,
+  "verandering_per_week_kg": -0.23,
   "nog_af_tot_73_kg": 2.2,
-  "vet_pct_7d": 16.36,
-  "kcal_7d": 2360.5,
-  "eiwit_7d_g": 139.0,
-  "eiwit_per_kg": 1.85,
-  "dagen_met_voeding_7d": 6,
-  "dagen_met_gewicht_7d": 5,
-  "slaap_7d_uur": 9.03,
+  "vet_pct_7d": 16.3,
+  "kcal_7d": 2140.57,
+  "eiwit_7d_g": 127.43,
+  "eiwit_per_kg": 1.7,
+  "dagen_met_voeding_7d": 7,
+  "dagen_met_gewicht_7d": 6,
+  "slaap_7d_uur": 8.92,
   "kortste_nacht_7d_uur": 7.87,
   "nachten_onder_6u_7d": 0,
   "verbrand_7d_kcal": 2290.57,
   "stappen_7d": 2327.29,
-  "energiebalans_7d_kcal": 46.5
+  "energiebalans_7d_kcal": -150.0
  },
  "_veldnamen": {
   "weight": {
@@ -46,7 +46,6 @@
       },
       "time": {
        "hours": "int",
-       "minutes": "int",
        "seconds": "int",
        "nanos": "int"
       }
@@ -77,7 +76,6 @@
       },
       "time": {
        "hours": "int",
-       "minutes": "int",
        "seconds": "int",
        "nanos": "int"
       }
@@ -1275,14 +1273,27 @@
    "datum": "2026-11-23",
    "gewicht_kg": 75.15,
    "vet_pct": 16.3,
+   "kcal": 821,
+   "eiwit_g": 58,
+   "koolhydraten_g": 105,
+   "vet_g": 16,
+   "voedingslogs": 1,
+   "slaap_uur": 8.72,
+   "verbrand_kcal": 2150,
+   "stappen": 1202
+  },
+  {
+   "datum": "2026-11-24",
+   "gewicht_kg": 74.7,
+   "vet_pct": 16.0,
    "kcal": null,
    "eiwit_g": null,
    "koolhydraten_g": null,
    "vet_g": null,
    "voedingslogs": 0,
-   "slaap_uur": 8.72,
-   "verbrand_kcal": 2150,
-   "stappen": 1202
+   "slaap_uur": 8.28,
+   "verbrand_kcal": null,
+   "stappen": null
   }
  ]
 }

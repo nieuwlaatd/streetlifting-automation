@@ -1,5 +1,5 @@
 {
- "gegenereerd_op": "2026-11-24T04:55:32+00:00",
+ "gegenereerd_op": "2026-11-24T15:55:21+00:00",
  "vandaag": "2026-11-24",
  "weekdag": 1,
  "dagthema": null,
@@ -12,29 +12,29 @@
   "deload": true,
   "startdatum": "2026-09-07"
  },
- "lichaamsgewicht": 75.24,
+ "lichaamsgewicht": 75.15,
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-11-24T04:55:17+00:00",
+  "opgehaald": "2026-11-24T15:55:05+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
-  "gewicht_7d_kg": 75.24,
+  "gewicht_7d_kg": 75.15,
   "gewicht_vorige_7d_kg": 75.38,
-  "verandering_per_week_kg": -0.14,
+  "verandering_per_week_kg": -0.23,
   "nog_af_tot_73_kg": 2.2,
-  "vet_pct_7d": 16.36,
-  "kcal_7d": 2360.5,
-  "eiwit_7d_g": 139.0,
-  "eiwit_per_kg": 1.85,
-  "dagen_met_voeding_7d": 6,
-  "dagen_met_gewicht_7d": 5,
-  "slaap_7d_uur": 9.03,
+  "vet_pct_7d": 16.3,
+  "kcal_7d": 2140.57,
+  "eiwit_7d_g": 127.43,
+  "eiwit_per_kg": 1.7,
+  "dagen_met_voeding_7d": 7,
+  "dagen_met_gewicht_7d": 6,
+  "slaap_7d_uur": 8.92,
   "kortste_nacht_7d_uur": 7.87,
   "nachten_onder_6u_7d": 0,
   "verbrand_7d_kcal": 2290.57,
   "stappen_7d": 2327.29,
-  "energiebalans_7d_kcal": 46.5
+  "energiebalans_7d_kcal": -150.0
  },
  "stand": {
   "dip": {
@@ -62,7 +62,7 @@
      "reps": 6,
      "rpe": 7,
      "type": "normal",
-     "e1rm": 60.5,
+     "e1rm": 60.4,
      "variant": null
     },
     {
@@ -125,7 +125,7 @@
      "reps": 5,
      "rpe": 8.5,
      "type": "normal",
-     "e1rm": 55.4,
+     "e1rm": 55.3,
      "variant": null
     }
    ],
@@ -222,7 +222,7 @@
      "reps": 6,
      "rpe": 7,
      "type": "normal",
-     "e1rm": 34.7,
+     "e1rm": 34.6,
      "variant": null
     }
    ],
@@ -439,7 +439,7 @@
      "reps": 4,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 67.5,
+     "e1rm": 67.4,
      "variant": null
     },
     {
@@ -556,7 +556,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-11-23",
+    "datum": "2026-11-24",
     "sets": 2,
     "reps": 5,
     "kg": 12.5
@@ -568,7 +568,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-11-23",
+    "datum": "2026-11-24",
     "sets": 2,
     "reps": 5,
     "kg": 15.0
@@ -580,7 +580,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-11-23",
+    "datum": "2026-11-24",
     "sets": 2,
     "reps": 5,
     "kg": 60.0
