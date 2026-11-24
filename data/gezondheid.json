@@ -2,26 +2,26 @@
  "status": "ok",
  "fouten_aanvulling": [],
  "rechten_ontbreken": [],
- "opgehaald": "2026-11-23T16:00:56+00:00",
+ "opgehaald": "2026-11-24T04:55:17+00:00",
  "bron": "Google Health API",
  "streefgewicht_kg": 73,
  "samenvatting": {
-  "gewicht_7d_kg": 75.23,
-  "gewicht_vorige_7d_kg": 75.39,
-  "verandering_per_week_kg": -0.16,
+  "gewicht_7d_kg": 75.24,
+  "gewicht_vorige_7d_kg": 75.38,
+  "verandering_per_week_kg": -0.14,
   "nog_af_tot_73_kg": 2.2,
-  "vet_pct_7d": 16.35,
-  "kcal_7d": 2467.67,
-  "eiwit_7d_g": 147.17,
-  "eiwit_per_kg": 1.96,
+  "vet_pct_7d": 16.36,
+  "kcal_7d": 2360.5,
+  "eiwit_7d_g": 139.0,
+  "eiwit_per_kg": 1.85,
   "dagen_met_voeding_7d": 6,
-  "dagen_met_gewicht_7d": 6,
-  "slaap_7d_uur": 8.9,
+  "dagen_met_gewicht_7d": 5,
+  "slaap_7d_uur": 9.03,
   "kortste_nacht_7d_uur": 7.87,
   "nachten_onder_6u_7d": 0,
-  "verbrand_7d_kcal": 2324.43,
-  "stappen_7d": 2754.71,
-  "energiebalans_7d_kcal": 74.5
+  "verbrand_7d_kcal": 2290.57,
+  "stappen_7d": 2327.29,
+  "energiebalans_7d_kcal": 46.5
  },
  "_veldnamen": {
   "weight": {
@@ -727,16 +727,16 @@
   },
   {
    "datum": "2026-10-12",
-   "gewicht_kg": 77.45,
-   "vet_pct": 17.7,
+   "gewicht_kg": null,
+   "vet_pct": null,
    "kcal": 2522,
    "eiwit_g": 148,
    "koolhydraten_g": 268,
    "vet_g": 96,
    "voedingslogs": 1,
    "slaap_uur": 9.3,
-   "verbrand_kcal": 2276,
-   "stappen": 4914
+   "verbrand_kcal": null,
+   "stappen": null
   },
   {
    "datum": "2026-10-13",
@@ -1262,11 +1262,11 @@
    "datum": "2026-11-22",
    "gewicht_kg": 75.0,
    "vet_pct": 16.2,
-   "kcal": null,
-   "eiwit_g": null,
-   "koolhydraten_g": null,
-   "vet_g": null,
-   "voedingslogs": 0,
+   "kcal": 2133,
+   "eiwit_g": 155,
+   "koolhydraten_g": 182,
+   "vet_g": 83,
+   "voedingslogs": 1,
    "slaap_uur": 9.8,
    "verbrand_kcal": 1912,
    "stappen": 1372
@@ -1281,8 +1281,8 @@
    "vet_g": null,
    "voedingslogs": 0,
    "slaap_uur": 8.72,
-   "verbrand_kcal": null,
-   "stappen": null
+   "verbrand_kcal": 2150,
+   "stappen": 1202
   }
  ]
 }
