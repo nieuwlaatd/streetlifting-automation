@@ -1,5 +1,5 @@
 {
- "gegenereerd_op": "2026-11-25T03:40:58+00:00",
+ "gegenereerd_op": "2026-11-25T15:38:47+00:00",
  "vandaag": "2026-11-25",
  "weekdag": 2,
  "dagthema": "Pull zwaar",
@@ -12,33 +12,33 @@
   "deload": true,
   "startdatum": "2026-09-07"
  },
- "lichaamsgewicht": 75.08,
+ "lichaamsgewicht": 74.99,
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-11-25T03:40:42+00:00",
+  "opgehaald": "2026-11-25T15:38:32+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
-  "gewicht_7d_kg": 75.08,
+  "gewicht_7d_kg": 74.99,
   "gewicht_vorige_7d_kg": 75.41,
-  "verandering_per_week_kg": -0.33,
-  "nog_af_tot_73_kg": 2.1,
-  "vet_pct_7d": 16.26,
-  "kcal_7d": 2400.83,
-  "eiwit_7d_g": 137.0,
-  "eiwit_per_kg": 1.82,
-  "dagen_met_voeding_7d": 6,
-  "dagen_met_gewicht_7d": 5,
-  "slaap_7d_uur": 8.89,
+  "verandering_per_week_kg": -0.42,
+  "nog_af_tot_73_kg": 2.0,
+  "vet_pct_7d": 16.2,
+  "kcal_7d": 2069.86,
+  "eiwit_7d_g": 117.57,
+  "eiwit_per_kg": 1.57,
+  "dagen_met_voeding_7d": 7,
+  "dagen_met_gewicht_7d": 6,
+  "slaap_7d_uur": 8.92,
   "kortste_nacht_7d_uur": 7.87,
   "nachten_onder_6u_7d": 0,
   "verbrand_7d_kcal": 2193.86,
   "stappen_7d": 1678.57,
-  "energiebalans_7d_kcal": 198.17
+  "energiebalans_7d_kcal": -124.0
  },
  "stand": {
   "dip": {
-   "e1rm": 63.4,
+   "e1rm": 63.3,
    "e1rm_onderbouwing": [
     {
      "datum": "2026-11-08",
@@ -48,7 +48,7 @@
     {
      "datum": "2026-11-17",
      "set": "47.5 kg x 3 @ RPE 9",
-     "e1rm": 62.7
+     "e1rm": 62.6
     }
    ],
    "bron": "hevy",
@@ -71,7 +71,7 @@
      "reps": 6,
      "rpe": 9,
      "type": "normal",
-     "e1rm": 52.1,
+     "e1rm": 52.0,
      "variant": null
     },
     {
@@ -80,7 +80,7 @@
      "reps": 3,
      "rpe": 9,
      "type": "normal",
-     "e1rm": 62.7,
+     "e1rm": 62.6,
      "variant": null
     },
     {
@@ -145,7 +145,7 @@
     {
      "datum": "2026-11-01",
      "set": "35 kg x 5 @ RPE 6",
-     "e1rm": 69.8
+     "e1rm": 69.7
     }
    ],
    "bron": "hevy",
@@ -168,7 +168,7 @@
      "reps": 4,
      "rpe": 7.5,
      "type": "normal",
-     "e1rm": 40.2,
+     "e1rm": 40.1,
      "variant": null
     },
     {
@@ -177,7 +177,7 @@
      "reps": 5,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 69.8,
+     "e1rm": 69.7,
      "variant": null
     },
     {
@@ -186,7 +186,7 @@
      "reps": 5,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 69.8,
+     "e1rm": 69.7,
      "variant": null
     },
     {
@@ -195,7 +195,7 @@
      "reps": 5,
      "rpe": 7.5,
      "type": "normal",
-     "e1rm": 68.8,
+     "e1rm": 68.7,
      "variant": null
     },
     {
@@ -204,7 +204,7 @@
      "reps": 3,
      "rpe": 9,
      "type": "normal",
-     "e1rm": 65.5,
+     "e1rm": 65.4,
      "variant": null
     },
     {
@@ -420,7 +420,7 @@
     {
      "datum": "2026-11-17",
      "set": "45 kg x 4 @ RPE 7",
-     "e1rm": 73.2
+     "e1rm": 73.1
     },
     {
      "datum": "2026-11-03",
@@ -457,7 +457,7 @@
      "reps": 4,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 64.3,
+     "e1rm": 64.2,
      "variant": null
     },
     {
@@ -493,7 +493,7 @@
      "reps": 4,
      "rpe": 7,
      "type": "normal",
-     "e1rm": 73.2,
+     "e1rm": 73.1,
      "variant": null
     },
     {
@@ -556,7 +556,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-11-24",
+    "datum": "2026-11-25",
     "sets": 2,
     "reps": 5,
     "kg": 12.5
@@ -568,7 +568,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-11-24",
+    "datum": "2026-11-25",
     "sets": 2,
     "reps": 5,
     "kg": 15.0
@@ -580,7 +580,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-11-24",
+    "datum": "2026-11-25",
     "sets": 2,
     "reps": 5,
     "kg": 60.0
@@ -625,6 +625,6 @@
   "kernsets_rpe_volgens_voorschrift": 0,
   "kernsets_tot_falen": 0
  },
- "totaal_nu": 243.2,
+ "totaal_nu": 243.1,
  "totaal_doel": 367
 }
