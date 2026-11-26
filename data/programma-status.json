@@ -1,5 +1,5 @@
 {
- "gegenereerd_op": "2026-11-26T02:59:38+00:00",
+ "gegenereerd_op": "2026-11-26T15:20:23+00:00",
  "vandaag": "2026-11-26",
  "weekdag": 3,
  "dagthema": "Squat zwaar",
@@ -12,29 +12,29 @@
   "deload": true,
   "startdatum": "2026-09-07"
  },
- "lichaamsgewicht": 74.99,
+ "lichaamsgewicht": 74.91,
  "lichaamsgewicht_bron": "google health, gemiddelde 7 dagen",
  "gezondheid": {
   "status": "ok",
-  "opgehaald": "2026-11-26T02:59:23+00:00",
+  "opgehaald": "2026-11-26T15:20:00+00:00",
   "fout": null,
   "streefgewicht_kg": 73,
-  "gewicht_7d_kg": 74.99,
+  "gewicht_7d_kg": 74.91,
   "gewicht_vorige_7d_kg": 75.43,
-  "verandering_per_week_kg": -0.44,
-  "nog_af_tot_73_kg": 2.0,
-  "vet_pct_7d": 16.2,
-  "kcal_7d": 2307.67,
-  "eiwit_7d_g": 132.0,
-  "eiwit_per_kg": 1.76,
-  "dagen_met_voeding_7d": 6,
-  "dagen_met_gewicht_7d": 6,
-  "slaap_7d_uur": 9.02,
+  "verandering_per_week_kg": -0.52,
+  "nog_af_tot_73_kg": 1.9,
+  "vet_pct_7d": 16.16,
+  "kcal_7d": 2109.0,
+  "eiwit_7d_g": 121.43,
+  "eiwit_per_kg": 1.62,
+  "dagen_met_voeding_7d": 7,
+  "dagen_met_gewicht_7d": 7,
+  "slaap_7d_uur": 8.88,
   "kortste_nacht_7d_uur": 7.87,
   "nachten_onder_6u_7d": 0,
   "verbrand_7d_kcal": 2111.14,
   "stappen_7d": 1539.0,
-  "energiebalans_7d_kcal": 191.17
+  "energiebalans_7d_kcal": -2.14
  },
  "stand": {
   "dip": {
@@ -43,7 +43,7 @@
     {
      "datum": "2026-11-08",
      "set": "30 kg x 6 @ RPE 6",
-     "e1rm": 64.1
+     "e1rm": 64.0
     },
     {
      "datum": "2026-11-17",
@@ -135,12 +135,12 @@
    }
   },
   "pullup": {
-   "e1rm": 70.2,
+   "e1rm": 70.1,
    "e1rm_onderbouwing": [
     {
      "datum": "2026-11-08",
      "set": "40 kg x 5 @ RPE 7",
-     "e1rm": 70.6
+     "e1rm": 70.5
     },
     {
      "datum": "2026-11-01",
@@ -425,7 +425,7 @@
     {
      "datum": "2026-11-03",
      "set": "45 kg x 4 @ RPE 7.5",
-     "e1rm": 70.5
+     "e1rm": 70.4
     }
    ],
    "bron": "hevy",
@@ -475,7 +475,7 @@
      "reps": 4,
      "rpe": 7.5,
      "type": "normal",
-     "e1rm": 70.5,
+     "e1rm": 70.4,
      "variant": null
     },
     {
@@ -484,7 +484,7 @@
      "reps": 4,
      "rpe": 6,
      "type": "normal",
-     "e1rm": 70.6,
+     "e1rm": 70.5,
      "variant": null
     },
     {
@@ -502,7 +502,7 @@
      "reps": 4,
      "rpe": 8.5,
      "type": "normal",
-     "e1rm": 72.1,
+     "e1rm": 72.0,
      "variant": null
     }
    ],
@@ -556,7 +556,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-11-25",
+    "datum": "2026-11-26",
     "sets": 2,
     "reps": 5,
     "kg": 12.5
@@ -568,7 +568,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-11-25",
+    "datum": "2026-11-26",
     "sets": 2,
     "reps": 5,
     "kg": 15.0
@@ -580,7 +580,7 @@
    "oordeel_vorige_sessie": null,
    "reden": null,
    "vorig_voorschrift": {
-    "datum": "2026-11-25",
+    "datum": "2026-11-26",
     "sets": 2,
     "reps": 5,
     "kg": 60.0
@@ -625,6 +625,6 @@
   "kernsets_rpe_volgens_voorschrift": 0,
   "kernsets_tot_falen": 0
  },
- "totaal_nu": 243.1,
+ "totaal_nu": 243.0,
  "totaal_doel": 367
 }
