@@ -2,26 +2,26 @@
  "status": "ok",
  "fouten_aanvulling": [],
  "rechten_ontbreken": [],
- "opgehaald": "2026-11-26T15:20:00+00:00",
+ "opgehaald": "2026-11-27T03:07:37+00:00",
  "bron": "Google Health API",
  "streefgewicht_kg": 73,
  "samenvatting": {
-  "gewicht_7d_kg": 74.91,
-  "gewicht_vorige_7d_kg": 75.43,
-  "verandering_per_week_kg": -0.52,
-  "nog_af_tot_73_kg": 1.9,
-  "vet_pct_7d": 16.16,
-  "kcal_7d": 2109.0,
-  "eiwit_7d_g": 121.43,
-  "eiwit_per_kg": 1.62,
-  "dagen_met_voeding_7d": 7,
-  "dagen_met_gewicht_7d": 7,
-  "slaap_7d_uur": 8.88,
-  "kortste_nacht_7d_uur": 7.87,
+  "gewicht_7d_kg": 74.83,
+  "gewicht_vorige_7d_kg": 75.45,
+  "verandering_per_week_kg": -0.62,
+  "nog_af_tot_73_kg": 1.8,
+  "vet_pct_7d": 16.1,
+  "kcal_7d": 2336.67,
+  "eiwit_7d_g": 137.33,
+  "eiwit_per_kg": 1.84,
+  "dagen_met_voeding_7d": 6,
+  "dagen_met_gewicht_7d": 6,
+  "slaap_7d_uur": 9.05,
+  "kortste_nacht_7d_uur": 8.05,
   "nachten_onder_6u_7d": 0,
-  "verbrand_7d_kcal": 2111.14,
-  "stappen_7d": 1539.0,
-  "energiebalans_7d_kcal": -2.14
+  "verbrand_7d_kcal": 2116.0,
+  "stappen_7d": 1632.57,
+  "energiebalans_7d_kcal": 283.0
  },
  "_veldnamen": {
   "weight": {
@@ -766,16 +766,16 @@
   },
   {
    "datum": "2026-10-15",
-   "gewicht_kg": 76.55,
-   "vet_pct": 17.2,
+   "gewicht_kg": null,
+   "vet_pct": null,
    "kcal": 2204,
    "eiwit_g": 128,
    "koolhydraten_g": 255,
    "vet_g": 74,
    "voedingslogs": 1,
    "slaap_uur": 8.63,
-   "verbrand_kcal": 2931,
-   "stappen": 6340
+   "verbrand_kcal": null,
+   "stappen": null
   },
   {
    "datum": "2026-10-16",
@@ -1301,10 +1301,10 @@
    "datum": "2026-11-25",
    "gewicht_kg": 74.55,
    "vet_pct": 15.9,
-   "kcal": 917,
-   "eiwit_g": 58,
-   "koolhydraten_g": 131,
-   "vet_g": 17,
+   "kcal": 2505,
+   "eiwit_g": 144,
+   "koolhydraten_g": 271,
+   "vet_g": 95,
    "voedingslogs": 1,
    "slaap_uur": 9.08,
    "verbrand_kcal": 2079,
@@ -1320,8 +1320,8 @@
    "vet_g": null,
    "voedingslogs": 0,
    "slaap_uur": 8.05,
-   "verbrand_kcal": null,
-   "stappen": null
+   "verbrand_kcal": 2490,
+   "stappen": 3773
   }
  ]
 }

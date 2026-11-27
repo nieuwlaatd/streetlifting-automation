@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-11-26T15:20:27+00:00",
+ "bijgewerkt": "2026-11-27T03:08:00+00:00",
  "dagen": {
   "2026-09-24 donderdag": {
    "plan_datum": "2026-09-24",
@@ -3864,6 +3864,144 @@
    ],
    "extra": [],
    "dagnotitie": "Toch weer een beetje ziek..."
+  },
+  "2026-11-24 dinsdag": {
+   "plan_datum": "2026-11-24",
+   "dag": "dinsdag",
+   "week": 1,
+   "thema": "Primaire Dip + Secundaire Pull-Up + Squat",
+   "sessie_datum": "2026-11-26",
+   "sessie_titel": "SL 1 · Di wk1 — Primaire Dip + Secundaire Pull-Up + Squat",
+   "gekoppeld_op": "titel",
+   "oefeningen": [
+    {
+     "rij": 10,
+     "plan": "Competition Dip",
+     "voorschrift": "3x3 RPE 5 20-25 kg",
+     "notitie": "Eerste set rpe 3 Tweede set rpe 4 Derde set rpe 4",
+     "status": "gedaan",
+     "uitgevoerd_als": "Chest Dip (Weighted)",
+     "sets": [
+      "25x3 @5",
+      "25x3 @3",
+      "25x3 @4"
+     ],
+     "rpe": "3-5",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 11,
+     "plan": "Competition Dip",
+     "voorschrift": "3x5 RPE 5 12,5-17,5 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Chest Dip (Weighted)",
+     "sets": [
+      "20x5 @5",
+      "20x5 @5",
+      "20x5 @5"
+     ],
+     "rpe": "5",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 12,
+     "plan": "Competition Chin-up",
+     "voorschrift": "3x4 27,5>30>32,5 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Chin Up (Weighted)",
+     "sets": [
+      "27.5x4 @6",
+      "30x4 @6",
+      "32.5x4 @6"
+     ],
+     "rpe": "6",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 13,
+     "plan": "3-1-0 Tempo Squat",
+     "voorschrift": "1x3 RPE 6 70-75 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Squat (Barbell)",
+     "sets": [
+      "70x3 @6"
+     ],
+     "rpe": "6",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 14,
+     "plan": "Paused Squat",
+     "voorschrift": "2x5 RPE 5 65-70 kg",
+     "notitie": "Helemaal buiten adem. Waarschijnlijk nog door ziekte",
+     "status": "gedaan",
+     "uitgevoerd_als": "Pause Squat (Barbell)",
+     "sets": [
+      "70x5 @7",
+      "70x5 @8.5"
+     ],
+     "rpe": "7-8.5",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 15,
+     "plan": "45 degree Incline Dumbbell Press",
+     "voorschrift": "3x6-12",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Incline Bench Press (Dumbbell)",
+     "sets": [
+      "52x8 @9",
+      "52x6 @9.5",
+      "40x8 @8"
+     ],
+     "rpe": "8-9.5",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 16,
+     "plan": "Cable Side Raise",
+     "voorschrift": "2x10-15",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Single Arm Lateral Raise (Cable)",
+     "sets": [
+      "7.5x18",
+      "7.5x16"
+     ],
+     "rpe": "",
+     "afwijking": "reps 16-18 i.p.v. 10-15"
+    },
+    {
+     "rij": 17,
+     "plan": "Plate Loaded Knee Raise",
+     "voorschrift": "3x6-12",
+     "notitie": "",
+     "status": "vervangen",
+     "uitgevoerd_als": "Skullcrusher (Barbell)",
+     "sets": [
+      "25x7 @9.5",
+      "25x6 @9.5"
+     ],
+     "rpe": "9.5",
+     "afwijking": "vervangen door Skullcrusher (Barbell)"
+    },
+    {
+     "rij": 18,
+     "plan": "Skull Crusher",
+     "voorschrift": "2x6-12",
+     "notitie": "",
+     "status": "niet gedaan",
+     "sets": [],
+     "rpe": "",
+     "afwijking": "niet gedaan"
+    }
+   ],
+   "extra": [],
+   "dagnotitie": "Moeizame sessie. Door weinig tijd de knee raises geskipped. Merkte goed dat ik ziek was de afgelopen 2 weken"
   }
  }
 }
