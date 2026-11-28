@@ -1,5 +1,5 @@
 {
- "bijgewerkt": "2026-11-27T15:08:22+00:00",
+ "bijgewerkt": "2026-11-28T02:53:49+00:00",
  "dagen": {
   "2026-09-24 donderdag": {
    "plan_datum": "2026-09-24",
@@ -4002,6 +4002,108 @@
    ],
    "extra": [],
    "dagnotitie": "Moeizame sessie. Door weinig tijd de knee raises geskipped. Merkte goed dat ik ziek was de afgelopen 2 weken"
+  },
+  "2026-11-26 donderdag": {
+   "plan_datum": "2026-11-26",
+   "dag": "donderdag",
+   "week": 1,
+   "thema": "Primaire Squat + Muscle Up",
+   "sessie_datum": "2026-11-27",
+   "sessie_titel": "SL 2 · Do wk1 — Primaire Squat + Muscle Up",
+   "gekoppeld_op": "titel",
+   "oefeningen": [
+    {
+     "rij": 22,
+     "plan": "Competition Squat",
+     "voorschrift": "3x4 65->70->75 kg",
+     "notitie": "Eerste rpe 3 Tweede rpe 4 Derde rpe 5",
+     "status": "gedaan",
+     "uitgevoerd_als": "Squat (Barbell)",
+     "sets": [
+      "65x4",
+      "70x4 @3",
+      "75x4 @4"
+     ],
+     "rpe": "3-4",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 23,
+     "plan": "Competition Squat",
+     "voorschrift": "2x7 RPE 6 60-65 kg",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Squat (Barbell)",
+     "sets": [
+      "65x7 @6",
+      "65x7 @6"
+     ],
+     "rpe": "6",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 24,
+     "plan": "Band Assisted Weighted Muscle-Up",
+     "voorschrift": "4x4 RPE 5",
+     "notitie": "Eerste rpe 3",
+     "status": "gedaan",
+     "uitgevoerd_als": "Band Assisted Muscle-Up",
+     "sets": [
+      "50x4 @3",
+      "25x4 @6",
+      "25x4 @6",
+      "25x4 @6"
+     ],
+     "rpe": "3-6",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 25,
+     "plan": "Leg Extension",
+     "voorschrift": "3x8-15",
+     "notitie": "Eerste twee single leg",
+     "status": "gedaan",
+     "uitgevoerd_als": "Leg Extension (Machine)",
+     "sets": [
+      "32.5x20 @8",
+      "37.5x18 @9",
+      "62.5x12 @9.5"
+     ],
+     "rpe": "8-9.5",
+     "afwijking": "reps 12-20 i.p.v. 8-15"
+    },
+    {
+     "rij": 26,
+     "plan": "Cable row",
+     "voorschrift": "2x6-12",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Seated Cable Row - Bar Grip",
+     "sets": [
+      "80x8 @9",
+      "75x8 @9"
+     ],
+     "rpe": "9",
+     "afwijking": "volgens plan"
+    },
+    {
+     "rij": 27,
+     "plan": "Spider Curl",
+     "voorschrift": "3x6-12",
+     "notitie": "",
+     "status": "gedaan",
+     "uitgevoerd_als": "Spider Curl (Dumbbell)",
+     "sets": [
+      "40x11 @9.5",
+      "40x9 @9.5",
+      "40x8 @9.5"
+     ],
+     "rpe": "9.5",
+     "afwijking": "volgens plan"
+    }
+   ],
+   "extra": [],
+   "dagnotitie": ""
   }
  }
 }
